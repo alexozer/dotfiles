@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/alex/build/windelicato-dotfiles'
+let g:netrw_dirhist_2='/home/alex/.config/sxhkd'
+let g:netrw_dirhist_3='/home/alex/.config'
+let g:netrw_dirhist_4='/home/alex'
+let g:netrw_dirhist_5='/home/alex/.adobe'
+let g:netrw_dirhist_6='/home/alex/.config/sxhkd'
