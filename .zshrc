@@ -45,7 +45,6 @@ alias svim='sudo vim'
 
 conf() {
 	case $1 in
-		xmonad)		vim ~/.xmonad/xmonad.hs ;;
 		conky)		vim ~/.conkyrc ;;
 		pacman)		svim /etc/pacman.conf ;;
 		ranger)		vim ~/.config/ranger/rc.conf ;;
@@ -71,8 +70,6 @@ alias light="solarize light"
 alias flip="solarize flip"
 alias sshs="ssh -p 26 oroide.com"
 alias wakeup="wol -i yogurt 00:02:b3:96:3a:89"
-alias netspace="lftp -u wei001 ftp.netspace.bucknell.edu"
-alias HUB='sudo mount -t cifs //bucknellhub.com/HUB /mnt/HUB -o user=hubguest'
 
 # Programs
 alias installfont='sudo fc-cache -f -v'
@@ -92,7 +89,6 @@ alias redwm='cd ~/dwm; makepkg -g >> PKGBUILD; makepkg -efi --noconfirm; killall
 #alias rm='rm -i'
 alias rmi='rm -i'
 #alias mv='mv -i'
-alias c='xsel -ib'
 alias emac='emacs -nw'
 alias h='history | tail'
 alias hg='history | grep '
