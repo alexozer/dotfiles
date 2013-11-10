@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Dependencies: clive
+youtube="http://www.youtube.com"
+vidFilename=`echo $*| sed s/\ /-/g`.webm
+
+echo $youtube$(curl -s "$youtube/results?search_query=$(echo $*| sed s/\ /%20/g)"| \
+	grep "/watch?"| cut -d\< -f4| cut -d\" -f2| grep -m 1 watch)| \
+	clive -O ~/vid/youtube/$vidFilename 
+echo "Video file:vid/youtube/$vidFilename"

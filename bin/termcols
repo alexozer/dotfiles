@@ -1,0 +1,11 @@
+#!/bin/bash
+tmpfile=/tmp/termcol_tmp
+grep -i "*" ~/.colors/$1 | cut -d '*' -f2 | sed s/:\ /\ =\ / | sort -V > ~/.config/termite/newcols > /tmp/termcol_tmp
+while read l
+do
+	if [ "`grep "#" < $l`" == "$l" ]
+	then
+		echo $l
+	fi
+done < $tmpfile
+exit

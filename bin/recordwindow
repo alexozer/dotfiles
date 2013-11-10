@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Which window to record?"
+recordmydesktop --windowid $(xwininfo | grep "Window id:" | cut -d' ' -f4) $*
+
+exit

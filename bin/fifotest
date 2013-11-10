@@ -1,0 +1,19 @@
+#!/bin/bash
+
+pipe=/tmp/testpipe
+
+trap "rm -f $pipe" EXIT
+
+if [[ ! -p $pipe ]]; then
+	mkfifo $pipe
+fi
+
+while read line <$pipe
+do
+	if [[ "$line" == 'quit' ]]; then
+		break
+	fi
+	echo $line
+done
+						
+echo "Reader exiting"
