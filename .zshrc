@@ -66,17 +66,6 @@ conf() {
 	esac
 }
 
-function music()
-{
-	sudo mount /dev/sda1/ ~/mount/
-	sleep 1
-	mpd
-	sleep 0.5
-	mpdscribble
-	sleep 3
-	ncmpcpp
-}
-
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"

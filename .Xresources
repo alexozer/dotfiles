@@ -63,17 +63,17 @@ urxvt*dynamicColors: on
 !urxvt*boldFont: xft:inconsolata:bold:size=11
 !urxvt*italicFont: xft:inconsolata:italic:size=11
 
-!urxvt*font: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
-!urxvt*boldfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
-!urxvt*italicfont: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
-!urxvt*bolditalicfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
+urxvt*font: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
+urxvt*boldfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
+urxvt*italicfont: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
+urxvt*bolditalicfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
 !
 !urxvt*font: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 !urxvt*boldFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 !urxvt*italicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 !urxvt*bolditalicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 
-urxvt*font: xft:meslolgsdz:size=12 
+!urxvt*font: xft:meslolgsdz:size=12 
 
 !Xft.dpi:	96
 Xft.rgba:	rgb
