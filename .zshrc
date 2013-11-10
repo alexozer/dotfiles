@@ -73,7 +73,6 @@ alias sshs="ssh -p 26 oroide.com"
 alias wakeup="wol -i yogurt 00:02:b3:96:3a:89"
 alias netspace="lftp -u wei001 ftp.netspace.bucknell.edu"
 alias HUB='sudo mount -t cifs //bucknellhub.com/HUB /mnt/HUB -o user=hubguest'
-alias HUBDropbox='sudo mount -t cifs //bucknellhub.com/Dropbox /mnt/HUBDropbox -o user=hubguest'
 
 # Programs
 alias installfont='sudo fc-cache -f -v'
