@@ -34,16 +34,6 @@ urxvt*dynamicColors: on
 !urxvt*italicFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
 !urxvt*bolditalicFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
 
-!urxvt*font: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-
-!urxvt*font: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-
 !urxvt*font: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
 !urxvt*boldFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
 !urxvt*italicFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
