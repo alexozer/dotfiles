@@ -68,7 +68,8 @@ conf() {
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs="ssh -p 26 oroide.com"
+alias sshs="ssh -p 554 sirvo"
+alias sshv="sshfs user@127.0.0.1:/boot/home ~/mnt -p 2222"
 alias wakeup="wol -i yogurt 00:02:b3:96:3a:89"
 
 # Programs

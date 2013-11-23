@@ -12,9 +12,10 @@ xset m 1 2 &
 syndaemon -i 0.4 -k -t -R -d &
 
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &
-feh --bg-fill /home/alex/pic/walls/qnbL9I.jpg &
 #unclutter -grab -noevents -root &
 urxvtd &
+feh --bg-fill /home/alex/pic/walls/qnbL9I.jpg &
+nm-applet &
 #compton -cCb &
 #redshift -l geoclue &
 asus-kbd-backlight off
