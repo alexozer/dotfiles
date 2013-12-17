@@ -1,9 +1,9 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/alex/build/windelicato-dotfiles'
-let g:netrw_dirhist_2='/home/alex/.config/sxhkd'
-let g:netrw_dirhist_3='/home/alex/.config'
-let g:netrw_dirhist_4='/home/alex'
-let g:netrw_dirhist_5='/home/alex/.adobe'
-let g:netrw_dirhist_6='/home/alex/.config/sxhkd'
-let g:netrw_dirhist_7='/home/alex/.ssh'
+let g:netrw_dirhist_1='/home/alex/mnt/pkg/haikuports/haiku-apps'
+let g:netrw_dirhist_2='/home/alex/mnt/pkg/haikuports/haiku-apps/becasso'
+let g:netrw_dirhist_3='/home/alex/mnt/pkg/haikuports/haiku-apps/becasso/work-2.0'
+let g:netrw_dirhist_4='/home/alex/mnt/pkg/haikuports/haiku-apps/becasso/work-2.0/sources'
+let g:netrw_dirhist_5='/home/alex/mnt/pkg/haikuports/haiku-apps/becasso/work-2.0/sources/becasso-2.0'
+let g:netrw_dirhist_6='/home/alex/.dotfiles/.vim/bundle/syntastic/plugin/syntastic'
+let g:netrw_dirhist_7='/home/alex/code/go/src/github.com/alexozer/gl-testing'

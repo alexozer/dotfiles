@@ -57,7 +57,7 @@ conf() {
 		tint2)		vim ~/.config/tint2/xmonad.tint2rc ;;
 		zsh)		vim ~/.zshrc && source ~/.zshrc ;;
 		termite)	vim ~/.config/termite/config ;;
-		bspwm)		vim ~/.config/bspwm/autostart ;;
+		bspwm)		vim ~/.config/bspwm/bspwmrc ;;
 		keys)		vim ~/.config/sxhkd/sxhkdrc ;;
 		panel)		vim ~/bin/panel ;;
 		bar)		vim ~/bin/panel_bar ;;
@@ -65,11 +65,13 @@ conf() {
 	esac
 }
 
+alias nocaps="xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &"
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs="ssh -p 554 sirvo"
-alias sshv="sshfs user@127.0.0.1:/boot/home ~/mnt -p 2222"
+alias sshs="ssh -p 26 sirvo"
+alias sshm="sshfs user@boseph:/boot/home ~/mnt"
+alias sshh="ssh user@boseph"
 alias wakeup="wol -i yogurt 00:02:b3:96:3a:89"
 
 # Programs

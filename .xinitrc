@@ -11,10 +11,9 @@ xsetroot -cursor_name left_ptr &
 xset m 1 2 &
 syndaemon -i 0.4 -k -t -R -d &
 
-xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &
 #unclutter -grab -noevents -root &
 urxvtd &
-feh --bg-fill /home/alex/pic/walls/qnbL9I.jpg &
+feh --bg-fill /home/alex/pic/walls/winterlake.png &
 nm-applet &
 #compton -cCb &
 #redshift -l geoclue &
@@ -28,5 +27,7 @@ asus-kbd-backlight off
 #export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
 thunar --daemon &
+
+sxhkd &
 
 exec wmrun.sh

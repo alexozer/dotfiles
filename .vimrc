@@ -65,6 +65,7 @@ nnoremap <F5> :silent !solarize flip<CR>:redraw!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Vim UI                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=a
 set relativenumber        " show relative line numbers
 "set cul                   " highlight current line
 set laststatus=2          " last window always has a statusline
@@ -110,22 +111,55 @@ noremap Y y$
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 06. Behavior                                                                  " 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set ofu=syntaxcomplete#Complete
-"let g:EclimCompletionMethod = 'omnifunc'
-
-"" Supertab settings, supertab + eclim == java win
- " Choose the type of completion dynamically
-let g:SuperTabDefaultCompletionType = "context"
- " Auto-select the longest completion
-let g:SuperTabLongestHighlight = 1
- "Does as it says...
-let g:SuperTabClosePreviewOnPopupClose = 1
-let g:EasyMotion_leader_key = '<Space>'
 
 let mapleader = ","
 let maplocalleader = "\\"
 
-nnoremap <silent> <leader>r :call system("urxvt&")<cr>
+nnoremap H <c-d>
+nnoremap L <c-u>
+set so=5
+
+" Move by screen lines, not file lines
+"set ofu=syntaxcomplete#Complete
+"let g:EclimCompletionMethod = 'omnifunc'
+
+" Format go code before saving
+"autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" Supertab settings, supertab + eclim == java win
+"  Choose the type of completion dynamically
+"let g:SuperTabDefaultCompletionType = "context"
+"  Auto-select the longest completion
+"let g:SuperTabLongestHighlight = 1
+"Does as it says...
+"let g:SuperTabClosePreviewOnPopupClose = 1
+
+" Easymotion
+let g:EasyMotion_leader_key = '<Space>'
+let g:EasyMotion_mapping_f = 'f'
+let g:EasyMotion_mapping_F = 'F'
+hi link EasyMotionShade Comment
+
+" Syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', }
+let g:syntastic_auto_jump = 1
+let g:syntastic_enable_balloons = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting = 0
+
+function! RunGo()
+	write
+	execute "!clear; go run " . bufname("%")
+	if v:shell_error
+		SyntasticCheck
+	else
+		SyntasticReset
+		Fmt
+	endif
+endfunction
+
+nnoremap <silent> <leader>r :call RunGo()<cr>
+
 " ,i imports whatever is needed for current line
 ""nnoremap <silent> <leader>ji :JavaImport<cr>
 " ,d opens javadoc for statement in browser
@@ -138,4 +172,3 @@ nnoremap <silent> <leader>r :call system("urxvt&")<cr>
 ""nnoremap <silent> <leader>jc :JavaCorrect<cr>
 " ,jr runs the Java program
 ""nnoremap <silent> <leader>jr :Java<cr>
-
