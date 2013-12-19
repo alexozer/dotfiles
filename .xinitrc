@@ -13,7 +13,7 @@ syndaemon -i 0.4 -k -t -R -d &
 
 #unclutter -grab -noevents -root &
 urxvtd &
-feh --bg-fill /home/alex/pic/walls/winterlake.png &
+feh --bg-fill /home/alex/pic/walls/liq-minimal.jpg &
 nm-applet &
 #compton -cCb &
 #redshift -l geoclue &
