@@ -15,7 +15,7 @@ syndaemon -i 0.4 -k -t -R -d &
 urxvtd &
 feh --bg-fill /home/alex/pic/walls/liq-minimal.jpg &
 nm-applet &
-#compton -cCb &
+compton -cCb &
 #redshift -l geoclue &
 asus-kbd-backlight off
 
