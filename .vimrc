@@ -20,6 +20,13 @@ execute pathogen#infect()
 inoremap <C-U> <C-G>u<C-U>
 
 set history=50		" keep 50 lines of command line history
+set undofile
+set backup
+set noswapfile
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Events                                                                 "
@@ -30,6 +37,8 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
+" Git commit messages, wrap to 72 characters and spellcheck
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -118,6 +127,10 @@ let maplocalleader = "\\"
 nnoremap H <c-d>
 nnoremap L <c-u>
 set so=5
+
+set foldmethod=syntax
+set nofoldenable
+set foldnestmax=1
 
 " Move by screen lines, not file lines
 "set ofu=syntaxcomplete#Complete

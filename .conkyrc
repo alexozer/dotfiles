@@ -14,4 +14,6 @@ TE${platform coretemp.0 temp 1}
 BA${battery_percent}
 BT${battery_time}
 DA${time %a %b %d}
-TI${time %I:%M}
+TIDisabled
+CO${time %I:%M}
+
