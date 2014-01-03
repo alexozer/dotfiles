@@ -12,7 +12,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 01. General                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+set nocompatible         " get rid of Vi compatibility mode
 execute pathogen#infect()                                     
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
@@ -131,6 +131,8 @@ set so=5
 set foldmethod=syntax
 set nofoldenable
 set foldnestmax=1
+
+set clipboard=unnamedplus
 
 " Move by screen lines, not file lines
 "set ofu=syntaxcomplete#Complete

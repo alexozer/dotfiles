@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/alex/mnt/pkg/haikuports/haiku-apps'
-let g:netrw_dirhist_2='/home/alex/mnt/pkg/haikuports/haiku-apps/becasso'
-let g:netrw_dirhist_3='/home/alex/mnt/pkg/haikuports/haiku-apps/becasso/work-2.0'
-let g:netrw_dirhist_4='/home/alex/mnt/pkg/haikuports/haiku-apps/becasso/work-2.0/sources'
-let g:netrw_dirhist_5='/home/alex/mnt/pkg/haikuports/haiku-apps/becasso/work-2.0/sources/becasso-2.0'
-let g:netrw_dirhist_6='/home/alex/.dotfiles/.vim/bundle/syntastic/plugin/syntastic'
-let g:netrw_dirhist_7='/home/alex/code/go/src/github.com/alexozer/gl-testing'
-let g:netrw_dirhist_8='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/vertcalcoffset'
-let g:netrw_dirhist_9='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/fragchangecolor'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/dev/shm/asd-alex/home/alex/build/opengl-tut/tut05-objects-in-Depth/data'
+let g:netrw_dirhist_2='/etc/hostsblock'
+let g:netrw_dirhist_3='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tmp/crap'
+let g:netrw_dirhist_4='/home/alex/.dotfiles/.vim/bundle/vim-notes/misc/notes/user'
