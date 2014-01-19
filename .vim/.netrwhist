@@ -1,6 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/dev/shm/asd-alex/home/alex/build/opengl-tut/tut05-objects-in-Depth/data'
 let g:netrw_dirhist_2='/etc/hostsblock'
 let g:netrw_dirhist_3='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tmp/crap'
 let g:netrw_dirhist_4='/home/alex/.dotfiles/.vim/bundle/vim-notes/misc/notes/user'
+let g:netrw_dirhist_5='/home/alex'
+let g:netrw_dirhist_6='/home/alex/.arduino'
+let g:netrw_dirhist_7='/home/alex'
+let g:netrw_dirhist_8='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/.git'
+let g:netrw_dirhist_9='/home/alex/code/go/src/github.com/alexozer/go-mesh'

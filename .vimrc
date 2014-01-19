@@ -68,7 +68,7 @@ set t_Co=16
 syntax enable
 " A dark bg actually means same as termcolors
 set background=dark
-colorscheme solarized
+colorscheme vincent
 nnoremap <F5> :silent !solarize flip<CR>:redraw!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -126,6 +126,10 @@ let maplocalleader = "\\"
 
 nnoremap H <c-d>
 nnoremap L <c-u>
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 set so=5
 
 set foldmethod=syntax
@@ -156,7 +160,7 @@ let g:EasyMotion_mapping_F = 'F'
 hi link EasyMotionShade Comment
 
 " Syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', }
+"let g:syntastic_mode_map = { 'mode': 'passive', }
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_balloons = 0
 let g:syntastic_check_on_wq = 0

@@ -65,16 +65,24 @@ conf() {
 	esac
 }
 
-alias nocaps="xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' &"
+function ssht(){
+  ssh $* -t 'tmux a || tmux || $SHELL'
+}
+
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs="ssh -p 26 sirvo"
-alias sshm="sshfs user@boseph:/boot/home ~/mnt"
-alias sshh="ssh user@boseph"
+alias sshs="ssht -p 26 sirvo"
+alias sshh="sshfs -p 2222 user@127.0.0.1: ~/mnt"
 alias wakeup="wol -i yogurt 00:02:b3:96:3a:89"
 
 # Programs
+#alias sc='systemctl'
+#alias scs='sc start'
+#alias scr='sc restart'
+#alias scx='sc stop'
+#alias sce='sc enable'
+#alias scd='sc disable'
 alias installfont='sudo fc-cache -f -v'
 alias muttb='mutt -F ~/.mutt/acct/wei001'
 alias muttg='mutt -F ~/.mutt/acct/windelicato'
@@ -92,7 +100,6 @@ alias redwm='cd ~/dwm; makepkg -g >> PKGBUILD; makepkg -efi --noconfirm; killall
 #alias rm='rm -i'
 alias rmi='rm -i'
 #alias mv='mv -i'
-alias emac='emacs -nw'
 alias h='history | tail'
 alias ch='chmod 755 '
 alias cdg='cd $GOPATH/src/github.com/alexozer'

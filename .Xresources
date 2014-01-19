@@ -58,14 +58,18 @@ URxvt*dynamicColors: on
 !URxvt*italicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-*
 !URxvt*bolditalicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 
-URxvt*font: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
-URxvt*boldfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
-URxvt*italicfont: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
-URxvt*bolditalicfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
+!URxvt*font: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
+!URxvt*boldfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
+!URxvt*italicfont: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
+!URxvt*bolditalicfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
 
 !URxvt.font                  : xft:Hermit:size=11
 !URxvt.boldFont              : xft:Hermit:bold:size=11
 !URxvt.italicFont            : xft:Hermit:italic:size=11
+
+URxvt.font                  : xft:DroidSansMono:size=12
+URxvt.boldFont              : xft:DroidSansMono:bold:size=12
+URxvt.italicFont            : xft:DroidSansMono:italic:size=12
 
 !URxvt.font: xft:meslolgsdz:size=12 
 !URxvt.boldFont: xft:meslolgsdz:size=12 
