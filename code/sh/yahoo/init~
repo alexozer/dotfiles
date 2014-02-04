@@ -1,0 +1,3 @@
+#!/bin/bash
+curl --cookie cjar --cookie-jar cjar --data "login=sdflkjsdflkj@rocketmail.com&passwd=nuggetbiscuit1" https://login.yahoo.com/ -v
+exit

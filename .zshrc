@@ -45,6 +45,7 @@ alias svim='sudo vim'
 
 conf() {
 	case $1 in
+		xmonad)		vim ~/.xmonad/xmonad.hs ;;
 		conky)		vim ~/.conkyrc ;;
 		pacman)		svim /etc/pacman.conf ;;
 		ranger)		vim ~/.config/ranger/rc.conf ;;
@@ -57,7 +58,7 @@ conf() {
 		tint2)		vim ~/.config/tint2/xmonad.tint2rc ;;
 		zsh)		vim ~/.zshrc && source ~/.zshrc ;;
 		termite)	vim ~/.config/termite/config ;;
-		bspwm)		vim ~/.config/bspwm/bspwmrc ;;
+		bspwm)		vim ~/.config/bspwm/autostart ;;
 		keys)		vim ~/.config/sxhkd/sxhkdrc ;;
 		panel)		vim ~/bin/panel ;;
 		bar)		vim ~/bin/panel_bar ;;
@@ -65,24 +66,27 @@ conf() {
 	esac
 }
 
-function ssht(){
-  ssh $* -t 'tmux a || tmux || $SHELL'
+function music()
+{
+	sudo mount /dev/sda1/ ~/mount/
+	sleep 1
+	mpd
+	sleep 0.5
+	mpdscribble
+	sleep 3
+	ncmpcpp
 }
 
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs="ssht -p 26 sirvo"
-alias sshh="sshfs -p 2222 user@127.0.0.1: ~/mnt"
+alias sshs="ssh -p 26 oroide.com"
 alias wakeup="wol -i yogurt 00:02:b3:96:3a:89"
+alias netspace="lftp -u wei001 ftp.netspace.bucknell.edu"
+alias HUB='sudo mount -t cifs //bucknellhub.com/HUB /mnt/HUB -o user=hubguest'
+alias HUBDropbox='sudo mount -t cifs //bucknellhub.com/Dropbox /mnt/HUBDropbox -o user=hubguest'
 
 # Programs
-#alias sc='systemctl'
-#alias scs='sc start'
-#alias scr='sc restart'
-#alias scx='sc stop'
-#alias sce='sc enable'
-#alias scd='sc disable'
 alias installfont='sudo fc-cache -f -v'
 alias muttb='mutt -F ~/.mutt/acct/wei001'
 alias muttg='mutt -F ~/.mutt/acct/windelicato'
@@ -100,9 +104,12 @@ alias redwm='cd ~/dwm; makepkg -g >> PKGBUILD; makepkg -efi --noconfirm; killall
 #alias rm='rm -i'
 alias rmi='rm -i'
 #alias mv='mv -i'
+alias c='xsel -ib'
+alias emac='emacs -nw'
 alias h='history | tail'
+alias hg='history | grep '
 alias ch='chmod 755 '
-alias cdg='cd $GOPATH/src/github.com/alexozer'
+alias cdg='cd ~/code/go/src/github.com/alexozer'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'

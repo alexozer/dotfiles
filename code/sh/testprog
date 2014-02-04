@@ -1,0 +1,4 @@
+#! /bin/sh
+bspc window --presel down
+title="$(basename $*)"
+
