@@ -1,9 +1,0 @@
-#!/bin/bash
-
-weightloss="1. First start by getting up earlier than usual. Around 5:30 AM to do some of you workouts. Getting up early shocks your metabolism because the body needs more energy to get going. Right? This will start your system on the road to weight loss. That early start with about 10 minutes of stretching. Have a cup of coffee to get the blood going also.
-2. Do all the sit-ups you can. Just do them. 15 or 20 whatever, we don't have a lot of time to work with. Rest 1 minute repeat, do this for 6 sets. Already you are breathing hard and feel worn, because the body is working extra hard at being up earlier and then going right into exercise. If the early morning hour lets you get your cardio in, go ahead and do it. 30 minutes. 
-3. Diet. Cut all current meal portions in half, just cut them in half, nothing fancy or complicated, CUT IN HALF! Cut out all bread products, all gravies, candies, chips, night snacks, etc. If you crave at night eat a banana, other fruit or best a non-fat yogurt. There are some tasty ones out there. 
-4. In the evening do another 6 sets of sit-ups maxing out each set. Cardio again. The trick is to stay with getting up earlier. Yes it’s hard, that’s why it is so effective. Why do you think the Army gets up so early, it is intense training to the max."
-
-echo $weightloss
-exit

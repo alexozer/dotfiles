@@ -1,7 +1,0 @@
-#!/bin/bash
-
-kSshServer="alex@nugget.mooo.com"
-ssh -p 26 $kSshServer ".local/bin/getyt $*" | mplayer -
-ssh -p 26 $kSshServer "cat \`cat /tmp/catlastvid\`" | mplayer -
-
-exit

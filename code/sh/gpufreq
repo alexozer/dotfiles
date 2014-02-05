@@ -1,6 +1,0 @@
-#!/bin/bash
-grep CAGF /sys/kernel/debug/dri/0/i915_cur_delayinfo
-grep Lowest /sys/kernel/debug/dri/0/i915_cur_delayinfo
-grep Nominal /sys/kernel/debug/dri/0/i915_cur_delayinfo
-exit
-
