@@ -1,7 +1,7 @@
 # Logout
 alt + q; l
 	bspc quit
-	
+
 # Raises volume
 #XF86AudioRaiseVolume
     #amixer set Master 3%+
@@ -38,7 +38,7 @@ alt + b
     bspc desktop --balance
 
 # Toggles floating or fullscreen
-alt + {s,f}
+alt + {t,f}
     bspc window --toggle {floating,fullscreen}
 
 # Toggles between last tag

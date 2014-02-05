@@ -51,7 +51,7 @@ conf() {
 		ranger)		vim ~/.config/ranger/rc.conf ;;
 		tmux)		vim ~/.tmux.conf ;;
 		vim)		vim ~/.vimrc ;;
-		xinit)		vim ~/.xinitrc ;;
+		xinit)		vim ~/.xprofile ;;
 		xresources)	vim ~/.Xresources && xrdb ~/.Xresources ;;
 		gtk2)		vim ~/.gtkrc-2.0 ;;
 		gtk3)		vim ~/.config/gtk-3.0/settings.ini ;;
