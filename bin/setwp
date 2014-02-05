@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ -e $1 ]]; then
+	readlink -f $1 > $HOME/.wallpaper
+	feh --bg-fill $1
+else
+	echo "File not found"
+fi
