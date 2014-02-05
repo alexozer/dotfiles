@@ -58,7 +58,7 @@ conf() {
 		tint2)		vim ~/.config/tint2/xmonad.tint2rc ;;
 		zsh)		vim ~/.zshrc && source ~/.zshrc ;;
 		termite)	vim ~/.config/termite/config ;;
-		bspwm)		vim ~/.config/bspwm/autostart ;;
+		bspwm)		vim ~/.config/bspwm/bspwmrc ;;
 		keys)		vim ~/.config/sxhkd/sxhkdrc ;;
 		panel)		vim ~/bin/panel ;;
 		bar)		vim ~/bin/panel_bar ;;

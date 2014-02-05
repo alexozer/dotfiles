@@ -4,5 +4,6 @@ if [[ -e $1 ]]; then
 	readlink -f $1 > $HOME/.wallpaper
 	feh --bg-fill $1
 else
-	echo "File not found"
+	echo "File not found."
+	exit 1
 fi

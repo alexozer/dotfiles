@@ -1,5 +1,5 @@
 # Logout
-ctrl + Escape; l
+alt + q; l
 	bspc quit
 	
 # Raises volume
@@ -18,7 +18,7 @@ ctrl + Escape; l
 #
 
 # Closes focused window
-alt + q
+alt + c
     bspc window --close
 
 # Flips leaves horizontally
@@ -60,7 +60,7 @@ alt + y
 
 # Flip the windows
 alt + {comma,period}
-    bspc desktop --flip {vertical,horizontal}
+	bspc desktop --flip {vertical,horizontal}
 
 # Rotate the windows
 alt + shift + {comma,period}
@@ -104,6 +104,9 @@ alt + @button{1-3}
 # Focus / swap window in direction
 alt + {_,shift + }{h,j,k,l}
     bspc window --{focus,swap} {left,down,up,right}
+
+alt + p
+	toggle-window-gap 80
 	
 #
 # wm independent hotkeys
@@ -118,7 +121,7 @@ alt + shift + w
 alt + space
     interrobang
 
-ctrl + Escape; {s,r,p}
+alt + q; {s,r,p}
 	systemctl {suspend,reboot,poweroff}
 
 # Reload sxhkd

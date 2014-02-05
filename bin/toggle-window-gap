@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [[ $(bspc config -d focused window_gap) == 0 ]]; then
+	bspc config -d focused window_gap $1
+else
+	bspc config -d focused window_gap 0
+fi
