@@ -1,79 +1,78 @@
 #include "/home/alex/.colors/solarized"
 
 ! #########################################
-urxvt.termName: rxvt-unicode-256color
-urxvt*perl-lib:			/usr/lib/urxvt/perl
-urxvt*perl-ext-common:		default,matcher
-!urxvt*perl-matcher: 		1
-!urxvt*matcher-button: 		1
-urxvt*urlLauncher:		/usr/bin/chromium
-!urxvt*cursorUnderline: 1
-!urxvt*letterspace: -1
-!urxvt*fading: 			10
-urxvt*fadeColor: 		#000000	
-urxvt*cursorBlink:		true
-urxvt*scrollBar:		false
-urxvt*depth:		32
-urxvt*internalBorder: 2
-urxvt*intensityStyles: false
-urxvt*fading: 0
-urxvt*dynamicColors: on
+URxvt.termName: rxvt-unicode-256color
+URxvt*perl-lib:			/usr/lib/URxvt/perl
+URxvt*perl-ext-common:		default,matcher
+!URxvt*perl-matcher: 		1
+!URxvt*matcher-button: 		1
+URxvt*urlLauncher:		/usr/bin/chromium
+!URxvt*cursorUnderline: 1
+!URxvt*letterspace: -1
+!URxvt*fading: 			10
+URxvt*cursorBlink:		true
+URxvt*scrollBar:		false
+!URxvt*depth:		32
+URxvt*internalBorder: 2
+URxvt*intensityStyles: false
+URxvt*dynamicColors: on
+URxvt*fading: 0
 
-!urxvt*font: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*font: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
 
-!urxvt*font: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*font: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
 
-!urxvt*font: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*font: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
 
-!urxvt*font: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*font: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
 
-!urxvt*font: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*font: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
 
-!urxvt*font: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*font: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
 
-!urxvt*font: -*-tamsyn-medium-r-normal-*-*-87-*-*-*-*-*-*
-!urxvt*boldFont: -*-tamsyn-bold-r-normal-*-*-87-*-*-*-*-*-*
-!urxvt*italicFont: -*-tamsyn-medium-r-normal-*-*-87-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-tamsyn-bold-r-normal-*-*-87-*-*-*-*-*-*
+!URxvt*font: -*-tamsyn-medium-r-normal-*-*-87-*-*-*-*-*-*
+!URxvt*boldFont: -*-tamsyn-bold-r-normal-*-*-87-*-*-*-*-*-*
+!URxvt*italicFont: -*-tamsyn-medium-r-normal-*-*-87-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-tamsyn-bold-r-normal-*-*-87-*-*-*-*-*-*
 
-!urxvt*font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
-!urxvt*boldFont: -*-terminus-bold-r-normal-*-12-*-*-*-*-*-*-*
-!urxvt*italicFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
-!urxvt*bolditalicFont: -*-terminus-bold-r-normal-*-12-*-*-*-*-*-*-*
+!URxvt*font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-terminus-bold-r-normal-*-12-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-terminus-bold-r-normal-*-12-*-*-*-*-*-*-*
 
-!urxvt*font: xft:inconsolata:size=11
-!urxvt*boldFont: xft:inconsolata:bold:size=11
-!urxvt*italicFont: xft:inconsolata:italic:size=11
+!URxvt*font: xft:inconsolata:size=11
+!URxvt*boldFont: xft:inconsolata:bold:size=11
+!URxvt*italicFont: xft:inconsolata:italic:size=11
 
-urxvt*font: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
-urxvt*boldfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
-urxvt*italicfont: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
-urxvt*bolditalicfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
+URxvt*font: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
+URxvt*boldfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
+URxvt*italicfont: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
+URxvt*bolditalicfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
 
-!urxvt*font: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
-!urxvt*boldFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
-!urxvt*italicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
-!urxvt*bolditalicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
+!URxvt*font: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
+!URxvt*boldFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
+!URxvt*italicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
+!URxvt*bolditalicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 
-!urxvt*font: xft:meslolgsdz:size=12 
+!URxvt*font: xft:meslolgsdz:size=12 
 
 !Xft.dpi:	96
 Xft.rgba:	rgb
