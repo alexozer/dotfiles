@@ -1,14 +1,12 @@
 #! /bin/sh
 
-bspc monitor -d I II III
+bspc monitor -d I II III IV V
 
 bspc config split_ratio                 0.52
 bspc config borderless_monocle          true
 bspc config gapless_monocle             true
 bspc config auto_alternate              false
 bspc config auto_cancel                 true
-bspc config top_padding                 $PANEL_HEIGHT
-bspc config history_aware_focus on
 
 bspc config border_width                2
 bspc config window_gap                  80
@@ -18,4 +16,4 @@ bspc config presel_border_color         "#AC4142"
 bspc config normal_frame_opacity        0.0
 bspc config focused_frame_opacity       0.05
 
-#panel &
+panel &

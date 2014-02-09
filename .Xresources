@@ -53,10 +53,10 @@ URxvt*fading: 0
 !URxvt*italicFont: -*-tamsyn-medium-r-normal-*-*-87-*-*-*-*-*-*
 !URxvt*bolditalicFont: -*-tamsyn-bold-r-normal-*-*-87-*-*-*-*-*-*
 
-!URxvt*font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
-!URxvt*boldFont: -*-terminus-bold-r-normal-*-12-*-*-*-*-*-*-*
-!URxvt*italicFont: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
-!URxvt*bolditalicFont: -*-terminus-bold-r-normal-*-12-*-*-*-*-*-*-*
+!URxvt*font: -*-terminus-medium-r-normal-*-18-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-terminus-bold-r-normal-*-18-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-terminus-medium-r-normal-*-18-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-terminus-bold-r-normal-*-18-*-*-*-*-*-*-*
 
 !URxvt*font: xft:inconsolata:size=11
 !URxvt*boldFont: xft:inconsolata:bold:size=11
@@ -72,7 +72,7 @@ URxvt*bolditalicfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
 !URxvt*italicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 !URxvt*bolditalicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 
-!URxvt*font: xft:meslolgsdz:size=12 
+!URxvt*font: xft:meslolgsdz:size=10 
 
 !Xft.dpi:	96
 Xft.rgba:	rgb

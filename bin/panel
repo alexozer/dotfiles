@@ -1,22 +1,102 @@
-#!/bin/sh
+#! /bin/sh
 
-flavor=${1:-bar}
-case "$flavor" in
-	bar)
-		cat "$PANEL_FIFO" | panel_bar | bar &
-		;;
-esac
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
+fi
 
-#clock -sf 'C[%a %b %d] [%l:%M %P]' &
-bspc control --put-status
-conky > "$PANEL_FIFO" &
-
-function cleanup() {
-	for proc in $(jobs -pr); do
-		# Sub-processes may be chained, so if one is killed, they may not all still exist
-		[ "$(jobs -pr | grep $proc)" ] && kill $proc
-	done
+cleanup() {
+	trap - TERM
+	bspc config top_padding 0
+	kill 0
 }
+trap 'cleanup' INT TERM QUIT EXIT
 
-trap cleanup SIGTERM SIGINT EXIT
+bspc config top_padding "$PANEL_HEIGHT"
+
+{
+	bspc control --subscribe &
+	sleep 0.01 # Don't choke bar
+	xtitle -s -f 'T%s' &
+	sleep 0.01
+	battery -s -f 'B%s %i' &
+	sleep 0.01
+	essid -s -w wlp2s0 -f 'N%s' &
+	sleep 0.01
+	clock -s -f 'C%a %d %I:%M' &
+} |\
+while read -r line ; do
+    case $line in
+		B*)
+			# battery output
+			IFS=' ' read -ra batStats <<< "${line#?}"
+			bat_status=${batStats[0]}
+
+			if [ "$bat_status" == "Charging" ]; then
+				battery_infos="\f9⮃ ⮒ ${batStats[1]}+"
+			elif [ "$bat_status" == "Discharging" ]; then
+				battery_infos="\f1⮃ ⮒ ${batStats[1]}-"
+			else 
+				battery_infos="\f7⮃ ⮎ AC"
+			fi
+			;;
+        C*)
+            # clock output
+            clock_infos="\f6⮃ ⭧ ${line#?}\fr"
+            ;;
+		N*)
+			# network
+			IFS=' |.' read -r -d'\0' -a wlInfo < /proc/net/wireless
+			sigStrength=${wlInfo[20]}
+
+			if [ $sigStrength -ge 65 ]; then
+				network_infos"\f3⮃ ‗▬▪▮ ${line#?}"
+			elif [ $sigStrength -ge 40 ]; then
+				network_infos="\f3⮃ ‗▬▪\f8▮ \f3${line#?}"
+			elif [ $sigStrength -lt 40 ]; then
+				network_infos="\f3⮃ ‗▬\f8▪▮ \f3${line#?}"
+			else
+				network_infos="\f8⮃ ‗▬▪▮ Not connected"
+			fi
+			;;
+        #T*)
+            ## xtitle output
+            #title_infos="\\f7❭ ${line#?}"
+            #;;
+        W*)
+            # bspwm internal state
+            wm_infos=""
+            IFS=':'
+            set -- ${line#?}
+            while [ $# -gt 0 ] ; do
+                item=$1
+                name=${item#?}
+                case $item in
+                    [OFU]*)
+                        # active desktop
+                        wm_infos="$wm_infos\\f7\\u3 • \\ur"
+						title_infos="${item#?}"
+                        ;;
+                    o*)
+                        # inactive but occupied desktop
+                        wm_infos="$wm_infos\\f7 • \\fr"
+                        ;;
+                    f*)
+                        # inactive desktop
+                        wm_infos="$wm_infos\\f8 ○ \\fr"
+                        ;;
+                    u*)
+                        # urgent desktop
+                        wm_infos="$wm_infos\\f1 • \\fr"
+                        ;;
+                esac
+                shift
+            done
+            ;;
+    esac
+	printf "%s\n" "\\l$title_infos\
+		\\c$wm_infos\
+		\\r$network_infos $battery_infos $clock_infos"
+done | bar
+
 wait

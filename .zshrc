@@ -61,7 +61,13 @@ conf() {
 		bspwm)		vim ~/.config/bspwm/bspwmrc ;;
 		keys)		vim ~/.config/sxhkd/sxhkdrc ;;
 		panel)		vim ~/bin/panel ;;
-		bar)		vim ~/bin/panel_bar ;;
+		bar)		
+			cd ~/build/bar
+			vim config.h
+			make 
+			sudo make clean install
+			popd
+			;;
 		*)		echo "Unknown application: $1" ;;
 	esac
 }

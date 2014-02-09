@@ -1,6 +1,6 @@
 # Logout
-alt + q; l
-	bspc quit
+alt + q; {l,k}
+	 killall panel; {bspc quit,panel}
 
 # Raises volume
 #XF86AudioRaiseVolume
@@ -38,8 +38,12 @@ alt + b
     bspc desktop --balance
 
 # Toggles floating or fullscreen
-alt + {t,f}
+alt + {t,shift + f}
     bspc window --toggle {floating,fullscreen}
+
+# Toggles monocle mode
+alt + f
+	bspc desktop --layout next
 
 # Toggles between last tag
 #alt + {grave,Tab}

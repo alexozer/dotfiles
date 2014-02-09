@@ -5,11 +5,11 @@
 
 
 set font      = fixed
-#set font      = -*-terminus-bold-r-normal--*-160-*-*-c-*-*-*
-set geometry  = bottom
+set font      = -*-terminus-medium-r-normal-*-18-*-*-*-*-*-*-*
+set geometry  = 500x20-1-1
 #set geometry  = 800x17+240+320
 set colors	  = #68B0E0 #000000 #242424 #48E084 #484848 #64FFAA
-set border    = 0px #BBE0EE
+set border    = 2px #A9A2A2
 set bangchar  = :
 set run_hook  = %s
 #set run_hook  = %s || (notify-send "Error: command not found";interrobang)
@@ -17,6 +17,7 @@ set autocomp  = 1
 set list      = true
 set last      = true
 set margin    = -80
+set shell	  = /usr/bin/zsh
 
 bang term     = urxvtc -e %s
 bang web      = dwb %s

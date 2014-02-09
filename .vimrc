@@ -178,16 +178,3 @@ function! RunGo()
 endfunction
 
 nnoremap <silent> <leader>r :call RunGo()<cr>
-
-" ,i imports whatever is needed for current line
-""nnoremap <silent> <leader>ji :JavaImport<cr>
-" ,d opens javadoc for statement in browser
-""nnoremap <silent> <leader>jd :JavaDocSearch -x declarations<cr>
-" ,<enter> searches context for statement
-""nnoremap <silent> <leader><cr> :JavaSearchContext<cr>
-" ,jv validates current java file
-""nnoremap <silent> <leader>jv :Validate<cr>
-" ,jc shows corrections for the current line of java
-""nnoremap <silent> <leader>jc :JavaCorrect<cr>
-" ,jr runs the Java program
-""nnoremap <silent> <leader>jr :Java<cr>
