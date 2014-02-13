@@ -14,7 +14,7 @@ trap 'cleanup' INT TERM QUIT EXIT
 
 bspc config top_padding "$PANEL_HEIGHT"
 
-readonly colortest="\l\f00[]()#=\f11[]()#=\f22[]()#=\f33[]()#=\f44[]()#=\f55[]()#=\f66[]()#=\f77[]()#=\f88[]()#=\f99[]()#="
+#readonly colortest="\l\f00[]()#=\f11[]()#=\f22[]()#=\f33[]()#=\f44[]()#=\f55[]()#=\f66[]()#=\f77[]()#=\f88[]()#=\f99[]()#="
 
 {
 	bspc control --subscribe &
