@@ -111,6 +111,7 @@ set softtabstop=4         " unify
 set shiftwidth=4          " indent/outdent by 4 columns
 set shiftround            " always indent/outdent to the nearest tabstop
 set smarttab              " use tabs at the start of a line, spaces elsewhere
+set cursorline
 "set nowrap                " don't wrap text
 " Don't use Ex mode, use Q for formatting
 map Q gq

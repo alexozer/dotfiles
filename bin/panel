@@ -14,55 +14,68 @@ trap 'cleanup' INT TERM QUIT EXIT
 
 bspc config top_padding "$PANEL_HEIGHT"
 
+readonly colortest="\l\f00[]()#=\f11[]()#=\f22[]()#=\f33[]()#=\f44[]()#=\f55[]()#=\f66[]()#=\f77[]()#=\f88[]()#=\f99[]()#="
+
 {
 	bspc control --subscribe &
 	sleep 0.01 # Don't choke bar
-	xtitle -s -f 'T%s' &
-	sleep 0.01
 	battery -s -f 'B%s %i' &
+	sleep 0.01
+	xtitle -s -f 'T%s' &
 	sleep 0.01
 	essid -s -w wlp2s0 -f 'N%s' &
 	sleep 0.01
-	clock -s -f 'C%a %d %I:%M' &
+	clock -s -f 'C\f9%a %d \fr%-l:%M' &
 } |\
 while read -r line ; do
     case $line in
+		T*)
+			# title output
+			title_infos="\f4❭ \f9${line#?}"
+			;;
 		B*)
 			# battery output
 			IFS=' ' read -ra batStats <<< "${line#?}"
 			bat_status=${batStats[0]}
+			bat_charge=${batStats[1]}
+
+			if [ $bat_charge -ge 50 ]; then
+				charge_color=6
+			elif [ $bat_charge -ge 20 ]; then
+				charge_color=1
+			else charge_color=8
+			fi
 
 			if [ "$bat_status" == "Charging" ]; then
-				battery_infos="\f9⮃ ⮒ ${batStats[1]}+"
+				battery_infos="\f4⮒ \fr${bat_charge}+"
 			elif [ "$bat_status" == "Discharging" ]; then
-				battery_infos="\f1⮃ ⮒ ${batStats[1]}-"
+				battery_infos="\f4⮒ \f${charge_color}${bat_charge}-"
 			else 
-				battery_infos="\f7⮃ ⮎ AC"
+				battery_infos="\f4⮎ \f9AC"
 			fi
 			;;
         C*)
             # clock output
-            clock_infos="\f6⮃ ⭧ ${line#?}\fr"
+            clock_infos="\f4⭧ ${line#?}"
             ;;
 		N*)
 			# network
-			IFS=' |.' read -r -d'\0' -a wlInfo < /proc/net/wireless
-			sigStrength=${wlInfo[20]}
+			net_name="${line#?}"
+			if [[ -n "$net_name" ]]; then
+				IFS=' |.' read -r -d'\0' -a wlInfo < /proc/net/wireless
+				sigStrength=${wlInfo[20]}
 
-			if [ $sigStrength -ge 65 ]; then
-				network_infos"\f3⮃ ‗▬▪▮ ${line#?}"
-			elif [ $sigStrength -ge 40 ]; then
-				network_infos="\f3⮃ ‗▬▪\f8▮ \f3${line#?}"
-			elif [ $sigStrength -lt 40 ]; then
-				network_infos="\f3⮃ ‗▬\f8▪▮ \f3${line#?}"
+				if [[ $sigStrength -ge 65 ]]; then
+					network_infos="\f4‗▬▪▮ \f9${net_name}"
+				elif [[ $sigStrength -ge 40 ]]; then
+					network_infos="\f4‗▬▪\f9▮ ${net_name}"
+				else
+					network_infos="\f4‗▬\f9▪▮ ${net_name}"
+				fi
 			else
-				network_infos="\f8⮃ ‗▬▪▮ Not connected"
+				network_infos="\f9‗▬▪▮ Not connected"
 			fi
 			;;
-        #T*)
-            ## xtitle output
-            #title_infos="\\f7❭ ${line#?}"
-            #;;
         W*)
             # bspwm internal state
             wm_infos=""
@@ -74,29 +87,28 @@ while read -r line ; do
                 case $item in
                     [OFU]*)
                         # active desktop
-                        wm_infos="$wm_infos\\f7\\u3 • \\ur"
-						title_infos="${item#?}"
+                        wm_infos="$wm_infos\f2\u4 • \ur"
                         ;;
                     o*)
                         # inactive but occupied desktop
-                        wm_infos="$wm_infos\\f7 • \\fr"
+                        wm_infos="$wm_infos\f2 • "
                         ;;
                     f*)
                         # inactive desktop
-                        wm_infos="$wm_infos\\f8 ○ \\fr"
+                        wm_infos="$wm_infos\f9 ○ "
                         ;;
                     u*)
                         # urgent desktop
-                        wm_infos="$wm_infos\\f1 • \\fr"
+                        wm_infos="$wm_infos\f8 • "
                         ;;
                 esac
                 shift
             done
             ;;
     esac
-	printf "%s\n" "\\l$title_infos\
-		\\c$wm_infos\
-		\\r$network_infos $battery_infos $clock_infos"
+	printf "%s\n" "$title_infos\
+		\c$wm_infos\
+		\r\f2⮃ $network_infos \f2⮃ $battery_infos \f2⮃ $clock_infos"
 done | bar
 
 wait

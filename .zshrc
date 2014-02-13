@@ -72,16 +72,8 @@ conf() {
 	esac
 }
 
-function music()
-{
-	sudo mount /dev/sda1/ ~/mount/
-	sleep 1
-	mpd
-	sleep 0.5
-	mpdscribble
-	sleep 3
-	ncmpcpp
-}
+# source custom colors:
+#eval $(dircolors -b ${HOME}/.dir_colors)
 
 alias dark="solarize dark"
 alias light="solarize light"
@@ -100,11 +92,9 @@ alias muttsuns='mutt -F ~/.mutt/acct/suns'
 alias bool='espresso -o eqntott'
 #alias compton='compton -cCfF -I 0.065 -O 0.065 -D 6' 
 #alias compton='compton -cCGfF -o 0.38 -O 200 -I 200 -t 0.02 -l 0.02 -r 3.2 -D2 -m 0.88'
-#alias scrot="scrot -q100  -d 5"
 alias alsamixer="alsamixer -g"
 alias equalizer="alsamixer -D equal"
-alias mysqlt="mysql -u root -p cargo_science"
-alias redwm='cd ~/dwm; makepkg -g >> PKGBUILD; makepkg -efi --noconfirm; killall dwm; /home/sunn/scripts/dwm-status;'
+alias htop="htop -C"
 
 # Shortcuts
 #alias rm='rm -i'
@@ -148,6 +138,3 @@ function cdl () { cd "$@" && ls; }
 
 set -o noclobber
 set -o vi
-
-export EDITOR="vim"
-export GOPATH="$HOME/code/go"

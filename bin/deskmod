@@ -4,8 +4,10 @@ lastdesk=$[$(bspc query -m -D | wc -l)%10]
 
 if [[ "$1" == "add" ]]; then
 	[[ $lastdesk -eq 0 ]] && exit
-	bspc monitor -a $[(lastdesk+1)%10]
-elif [[ "$1" == "remove" ]]; then
+	newDesk=$[(lastdesk+1)%10]
+	bspc monitor -a $newDesk
+	bspc config -d $newDesk $WINDOW_GAP
+elif [[ "$1" == "subtract" ]]; then
 	bspc monitor -r $lastdesk
 fi
 

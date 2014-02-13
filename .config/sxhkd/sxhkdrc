@@ -93,6 +93,12 @@ alt + ctrl + {1-9}
 alt + {_,shift + }{1-9,0}
     bspc {desktop -f,window -d} ^{1-9,10}
 
+#alt + {_,shift} + grave
+#	deskmod {add, subtract}
+
+@alt + {_,shift + } s
+	scrot {-t12,-s} -q100 "$HOME/pic/shots/%Y-%m-%d_$RANDOM.png"
+
 ~button1
     bspc pointer -g focus
 

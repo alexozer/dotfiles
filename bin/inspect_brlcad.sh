@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/sh
 
 dir=/tmp$(pwd)
 mkdir -p $dir
