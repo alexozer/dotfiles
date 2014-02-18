@@ -6,6 +6,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export GOPATH="$HOME/code/go"
 
 export BSPWM_SOCKET="/tmp/bspwm-socket"
+export PANEL_FIFO="/tmp/panel-fifo"
 export PANEL_HEIGHT=18
 export _JAVA_AWT_WM_NONREPARENTING=1
 
@@ -24,6 +25,9 @@ xset fp rehash
 
 # Keybindings
 sxhkd &
+
+# No keyboard backlight
+asus-kbd-backlight off &
 
 # Lock touchpad while typing
 syndaemon -i 0.4 -k -t -R &

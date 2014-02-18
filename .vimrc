@@ -81,6 +81,7 @@ set laststatus=2          " last window always has a statusline
 set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
 set ignorecase            " Make searches case-insensitive.
+set smartcase
 set ruler                 " Always show info along bottom.
 "set showmatch
 set showcmd               " display incomplete commands
@@ -136,6 +137,7 @@ set so=5
 set foldmethod=syntax
 set nofoldenable
 set foldnestmax=1
+nnoremap zo za
 
 set clipboard=unnamedplus
 
@@ -155,9 +157,8 @@ set clipboard=unnamedplus
 "let g:SuperTabClosePreviewOnPopupClose = 1
 
 " Easymotion
-let g:EasyMotion_leader_key = '<Space>'
-let g:EasyMotion_mapping_f = 'f'
-let g:EasyMotion_mapping_F = 'F'
+let g:EasyMotion_smartcase = 1
+nmap s <Plug>(easymotion-s)
 hi link EasyMotionShade Comment
 
 " Syntastic

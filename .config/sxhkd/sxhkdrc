@@ -2,36 +2,9 @@
 alt + q; {l,k}
 	 killall panel; {bspc quit,panel}
 
-# Raises volume
-#XF86AudioRaiseVolume
-    #amixer set Master 3%+
-
-# Lowers volume
-#XF86AudioLowerVolume
-    #amixer set Master 3%-
-
-# Mutes
-#XF86AudioMute
-    #amixer set Master toggle
-
-###############################
-#
-
 # Closes focused window
 alt + c
     bspc window --close
-
-# Flips leaves horizontally
-#alt + c
-    #bspc desktop -F horizontal
-
-# Flips leaves vertically
-#alt + v
-    #bspc desktop -F vertical
-
-# Trying to figure out what this does
-#alt + t
-    #bspc desktop -l next
 
 # Balances the tree
 alt + b
@@ -44,6 +17,10 @@ alt + {t,shift + f}
 # Toggles monocle mode
 alt + f
 	bspc desktop --layout next
+
+# Focus next/previous occupied desktop
+alt + {_,shift +} n
+	bspc desktop --focus {next,prev}.occupied
 
 # Toggles between last tag
 #alt + {grave,Tab}
@@ -69,6 +46,13 @@ alt + {comma,period}
 # Rotate the windows
 alt + shift + {comma,period}
 	bspc desktop --rotate {270,90}
+
+# Resize windows
+alt + {Right,Left}
+	bspc window -e right {+,-}100
+
+alt + {Down,Up}
+	bspc window -e down {+,-}100
 
 #alt + bracket{left,right}
     #bspc desktop -f {prev,next}
@@ -96,9 +80,6 @@ alt + {_,shift + }{1-9,0}
 #alt + {_,shift} + grave
 #	deskmod {add, subtract}
 
-@alt + {_,shift + } s
-	scrot {_,-s} -q75 "$HOME/pic/shots/%Y-%m-%d_$RANDOM.png"
-
 ~button1
     bspc pointer -g focus
 
@@ -122,8 +103,15 @@ alt + p
 # wm independent hotkeys
 #
 
+@alt + {_,shift + } s
+	scrot {_,-s} -q75 "$HOME/pic/shots/%Y-%m-%d_$RANDOM.png"
+
 alt + Return
 	urxvtc
+
+alt + F2
+	bspc rule -a urxvt floating=on center=on --one-shot;\
+	urxvt -e wifi
 
 alt + shift + w
 	chromium
@@ -137,3 +125,26 @@ alt + q; {s,r,p}
 # Reload sxhkd
 alt + shift + Escape
     pkill -USR1 -x sxhkd
+
+# Raises volume
+{alt + F12,XF86AudioRaiseVolume}
+    amixer set Master 3%+;\
+	echo "V" > "$PANEL_FIFO"
+
+# Lowers volume
+{alt + F11,XF86AudioLowerVolume}
+    amixer set Master 3%-;\
+	echo "V" > "$PANEL_FIFO"
+
+# Mutes
+{alt + F10,XF86AudioMute}
+    amixer set Master toggle;\
+	echo "V" > "$PANEL_FIFO"
+
+# Brightens keyboard backlight
+{alt + F4,XF86KbdBrightnessUp}
+	asus-kbd-backlight up
+
+# Dims keyboard backlight
+{alt + F3,XF86KbdBrightnessDown}
+	asus-kbd-backlight down
