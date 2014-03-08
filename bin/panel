@@ -53,9 +53,9 @@ while read -r line ; do
 			bat_status=${batStats[0]}
 			bat_charge=${batStats[1]}
 
-			if [ $bat_charge -ge 50 ]; then
+			if [ $bat_charge -ge 35 ]; then
 				charge_color=6
-			elif [ $bat_charge -ge 20 ]; then
+			elif [ $bat_charge -ge 15 ]; then
 				charge_color=1
 			else charge_color=8
 			fi

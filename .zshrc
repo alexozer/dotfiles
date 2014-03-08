@@ -78,11 +78,8 @@ conf() {
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs="ssh -p 26 oroide.com"
-alias wakeup="wol -i yogurt 00:02:b3:96:3a:89"
-alias netspace="lftp -u wei001 ftp.netspace.bucknell.edu"
-alias HUB='sudo mount -t cifs //bucknellhub.com/HUB /mnt/HUB -o user=hubguest'
-alias HUBDropbox='sudo mount -t cifs //bucknellhub.com/Dropbox /mnt/HUBDropbox -o user=hubguest'
+alias sshs="ssh -p 26 alex@oroide.com"
+alias sshm="sshfs -p 26 alex@oroide.com: ~/mnt/sirvo"
 
 # Programs
 alias installfont='sudo fc-cache -f -v'

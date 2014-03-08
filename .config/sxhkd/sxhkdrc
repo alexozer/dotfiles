@@ -10,6 +10,10 @@ alt + c
 alt + b
     bspc desktop --balance
 
+# Resets the window split ratios
+alt + e
+	bspc desktop --equalize
+
 # Toggles floating or fullscreen
 alt + {t,shift + f}
     bspc window --toggle {floating,fullscreen}
@@ -76,6 +80,9 @@ alt + ctrl + {1-9}
 
 alt + {_,shift + }{1-9,0}
     bspc {desktop -f,window -d} ^{1-9,10}
+
+alt + shift + {Left,Right}
+	bspc desktop --swap {prev,next}
 
 #alt + {_,shift} + grave
 #	deskmod {add, subtract}
