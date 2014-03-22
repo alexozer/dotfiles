@@ -40,6 +40,7 @@ bindkey "^j" history-beginning-search-backward
 bindkey "^k" history-beginning-search-forward
 
 alias exit='[ -z "$TMUX" ] && exit || tmux detach'
+alias logout='[ -z "$TMUX" ] && logout || tmux detach'
 
 #function vim() {
 	#if [ -n "$TMUX" ]; then
@@ -89,7 +90,7 @@ conf() {
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs="ssh -p 26 alex@oroide.com"
+alias sshs='ssh -p 26 alex@oroide.com -t "/home/alex/bin/tmx session"'
 alias sshm="sshfs -p 26 alex@oroide.com: ~/mnt/sirvo"
 
 # Programs
