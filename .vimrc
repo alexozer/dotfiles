@@ -39,6 +39,7 @@ autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 autocmd FileType text setlocal textwidth=78
 " Git commit messages, wrap to 72 characters and spellcheck
 autocmd Filetype gitcommit setlocal spell textwidth=72
+" Hide tmux status bar when entering vim
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -64,7 +65,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=16
+set t_Co=256
 syntax enable
 " A dark bg actually means same as termcolors
 set background=dark

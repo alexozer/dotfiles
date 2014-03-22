@@ -39,6 +39,17 @@ bindkey '^R' history-incremental-search-backward
 bindkey "^j" history-beginning-search-backward
 bindkey "^k" history-beginning-search-forward
 
+alias exit='[ -z "$TMUX" ] && exit || tmux detach'
+
+#function vim() {
+	#if [ -n "$TMUX" ]; then
+		#tmux setw status off
+		#/usr/bin/vim $*
+		#tmux setw status on
+	#else /usr/bin/vim
+	#fi
+#}
+
 alias svim='sudo vim' 
 
 #function open() { xdg-open $1 &> /dev/null &disown; }
