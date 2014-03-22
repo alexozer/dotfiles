@@ -34,7 +34,7 @@ if [[ -z "$TMUX" ]]; then
 	session_id="\\f5$base_session\\f2$(date +%Y%m%d%H%M%S)\\fr"
 	# Create a new session (without attaching it) and link to base session 
 	# to share windows
-	tmux new-session -t $base_session -s $session_id \; set-option set-titles-string "poops"
+	tmux new-session -t $base_session -s $session_id
 	# Attach to the new session
 	#tmux attach-session -t $session_id
 	# When we detach from it, kill the session
