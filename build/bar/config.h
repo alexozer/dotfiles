@@ -18,7 +18,7 @@
 #define BAR_OPACITY 1.0 /* 0 is invisible, 1 is opaque */
 /* Color palette */
 #define BACKGROUND      0x121212 // normal
-#define COLOR0          0xd7005f 
+#define COLOR0          0x121212 // for hiding stuff 
 #define COLOR1          0xefaf7f
 #define COLOR2          0x87afaf // "hi"
 #define COLOR3          0x5fafd7 // conditional
