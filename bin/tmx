@@ -18,7 +18,7 @@ base_session="$1"
 tmux_nb=$(tmux ls | grep "^$base_session" | wc -l)
 if [[ "$tmux_nb" == "0" ]]; then
     echo "Launching tmux base session $base_session ..."
-    tmux new-session -d -s $base_session \; set-option destroy-unattached off
+	tmux new-session -d -c "$PWD" -s $base_session \; set-option destroy-unattached off
 fi
 # Make sure we are not already in a tmux session
 if [[ -z "$TMUX" ]]; then

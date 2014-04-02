@@ -65,12 +65,26 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256
 syntax enable
 " A dark bg actually means same as termcolors
 set background=dark
-colorscheme vincent
+if (!has('gui_running'))
+    set t_Co=256
+	let g:hybrid_use_Xresources = 1
+endif
+colorscheme hybrid
 nnoremap <F5> :silent !solarize flip<CR>:redraw!<CR>
+
+let g:airline_powerline_fonts = 1
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Vim UI                                                                 "
@@ -96,7 +110,7 @@ set hidden				  " Okay to background buffers when modified
 " GVim-specific settings
 set guioptions+=PegitrL
 set guioptions-=mT
-set guifont=GohuFont\ 10
+set guifont=Terminess\ Powerline\ 14
 set guiheadroom=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

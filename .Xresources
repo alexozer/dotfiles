@@ -1,4 +1,4 @@
-#include "/home/alex/.colors/astromouse"
+#include "/home/alex/.colors/hybrid"
 
 ! #########################################
 URxvt.termName: rxvt-unicode-256color
@@ -53,10 +53,10 @@ URxvt*fading: 0
 !URxvt*italicFont: -*-tamsyn-medium-r-normal-*-*-87-*-*-*-*-*-*
 !URxvt*bolditalicFont: -*-tamsyn-bold-r-normal-*-*-87-*-*-*-*-*-*
 
-URxvt*font: -*-terminus-medium-r-normal-*-18-*-*-*-*-*-*-*
-URxvt*boldFont: -*-terminus-bold-r-normal-*-18-*-*-*-*-*-*-*
-URxvt*italicFont: -*-terminus-medium-r-normal-*-18-*-*-*-*-*-*-*
-URxvt*bolditalicFont: -*-terminus-bold-r-normal-*-18-*-*-*-*-*-*-*
+!URxvt*font: -*-terminus-medium-r-normal-*-18-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-terminus-bold-r-normal-*-18-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-terminus-medium-r-normal-*-18-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-terminus-bold-r-normal-*-18-*-*-*-*-*-*-*
 
 !URxvt*font: xft:inconsolata:size=11
 !URxvt*boldFont: xft:inconsolata:bold:size=11
@@ -72,7 +72,14 @@ URxvt*bolditalicFont: -*-terminus-bold-r-normal-*-18-*-*-*-*-*-*-*
 !URxvt*italicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 !URxvt*bolditalicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 
-!URxvt*font: xft:meslolgsdz:size=10 
+URxvt*font: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
+URxvt*boldFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
+URxvt*italicFont: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
+URxvt*bolditalicFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
+
+!URxvt*font: xft:Terminess Powerline:pixelsize=18:antialias=false:autohint=false
+!URxvt*boldFont: xft:Terminess Powerline:bold:pixelsize=18:antialias=false:autohint=false
+!URxvt*boldFont: xft:Terminess Powerline:style=bold:pixelsize=18:antialias=false:autohint=false
 
 !Xft.dpi:	96
 Xft.rgba:	rgb

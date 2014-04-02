@@ -90,7 +90,7 @@ conf() {
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs='ssh -p 26 alex@oroide.com -t "/home/alex/bin/tmx session"'
+alias sshs='ssh -p 26 alex@oroide.com -t "/home/alex/bin/tmx sirvo"'
 alias sshm="sshfs -p 26 alex@oroide.com: ~/mnt/sirvo"
 
 # Programs
@@ -103,7 +103,6 @@ alias bool='espresso -o eqntott'
 #alias compton='compton -cCGfF -o 0.38 -O 200 -I 200 -t 0.02 -l 0.02 -r 3.2 -D2 -m 0.88'
 alias alsamixer="alsamixer -g"
 alias equalizer="alsamixer -D equal"
-alias htop="htop -C"
 
 # Shortcuts
 #alias rm='rm -i'
