@@ -23,6 +23,7 @@ bspc config top_padding "$PANEL_HEIGHT"
 	bspc control --subscribe &
 	sleep 0.01 # Don't choke bar
 	echo "V"
+	sleep 0.01
 	battery -s -f 'B%s %i' &
 	sleep 0.01
 	xtitle -s -f 'T%s' &

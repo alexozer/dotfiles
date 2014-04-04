@@ -18,31 +18,6 @@ URxvt*intensityStyles: false
 URxvt*dynamicColors: on
 URxvt*fading: 0
 
-!URxvt*font: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*boldFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*italicFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*bolditalicFont: -*-uushi-*-*-*-*-*-*-*-*-*-*-*-*
-
-!URxvt*font: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*boldFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*italicFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*bolditalicFont: -*-lemon-*-*-*-*-*-*-*-*-*-*-*-*
-
-!URxvt*font: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*boldFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*italicFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*bolditalicFont: -*-suxus-*-*-*-*-*-*-*-*-*-*-*-*
-
-!URxvt*font: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*boldFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*italicFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*bolditalicFont: -*-limey-*-*-*-*-*-*-*-*-*-*-*-*
-
-!URxvt*font: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*boldFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*italicFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-!URxvt*bolditalicFont: -*-lime-*-*-*-*-*-*-*-*-*-*-*-*
-
 !URxvt*font: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
 !URxvt*boldFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
 !URxvt*italicFont: -*-cure-medium-*-*-*-*-*-*-*-*-*-*-*
@@ -58,9 +33,9 @@ URxvt*fading: 0
 !URxvt*italicFont: -*-terminus-medium-r-normal-*-18-*-*-*-*-*-*-*
 !URxvt*bolditalicFont: -*-terminus-bold-r-normal-*-18-*-*-*-*-*-*-*
 
-!URxvt*font: xft:inconsolata:size=11
-!URxvt*boldFont: xft:inconsolata:bold:size=11
-!URxvt*italicFont: xft:inconsolata:italic:size=11
+!URxvt*font: xft:inconsolata:size=12
+!URxvt*boldFont: xft:inconsolata:bold:size=12
+!URxvt*italicFont: xft:inconsolata:italic:size=12
 
 !URxvt*font: -*-gohufont-medium-r-normal-*-14-*-*-*-*-*-*-*
 !URxvt*boldfont: -*-gohufont-bold-r-normal-*-14-*-*-*-*-*-*-*
@@ -72,14 +47,15 @@ URxvt*fading: 0
 !URxvt*italicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 !URxvt*bolditalicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 
-URxvt*font: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
-URxvt*boldFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
-URxvt*italicFont: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
-URxvt*bolditalicFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
+URxvt*font: -*-terminesspowerline-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt*boldFont: -*-terminesspowerline-bold-*-*-*-14-*-*-*-*-*-*-*
+URxvt*italicFont: -*-terminesspowerline-medium-*-*-*-14-*-*-*-*-*-*-*
+URxvt*bolditalicFont: -*-terminesspowerline-bold-*-*-*-14-*-*-*-*-*-*-*
 
-!URxvt*font: xft:Terminess Powerline:pixelsize=18:antialias=false:autohint=false
-!URxvt*boldFont: xft:Terminess Powerline:bold:pixelsize=18:antialias=false:autohint=false
-!URxvt*boldFont: xft:Terminess Powerline:style=bold:pixelsize=18:antialias=false:autohint=false
+!URxvt*font: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
 
 !Xft.dpi:	96
 Xft.rgba:	rgb

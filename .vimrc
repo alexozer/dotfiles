@@ -50,16 +50,16 @@ set backspace=indent,eol,start
 " Also don't do it when the mark is in the first line, that is the default
 " position when opening a file.
 autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
+			\ if line("'\"") > 1 && line("'\"") <= line("$") |
+			\   exe "normal! g`\"" |
+			\ endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+				\ | wincmd p | diffthis
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,27 +69,32 @@ syntax enable
 " A dark bg actually means same as termcolors
 set background=dark
 if (!has('gui_running'))
-    set t_Co=256
+	set t_Co=256
 	let g:hybrid_use_Xresources = 1
 endif
 colorscheme hybrid
-nnoremap <F5> :silent !solarize flip<CR>:redraw!<CR>
+"nnoremap <F5> :silent !solarize flip<CR>:redraw!<CR>
 
 let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
 if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
+	set ttimeoutlen=10
+	augroup FastEscape
+		autocmd!
+		au InsertEnter * set timeoutlen=0
+		au InsertLeave * set timeoutlen=1000
+	augroup END
 endif
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Vim UI                                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set mouse=a
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+	set mouse=a
+endif
+
 set relativenumber        " show relative line numbers
 "set cul                   " highlight current line
 set laststatus=2          " last window always has a statusline
@@ -101,11 +106,6 @@ set ruler                 " Always show info along bottom.
 "set showmatch
 set showcmd               " display incomplete commands
 set hidden				  " Okay to background buffers when modified
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-"if has('mouse')
-  "set mouse=a
-"endif
 
 " GVim-specific settings
 set guioptions+=PegitrL
@@ -156,7 +156,6 @@ nnoremap zo za
 
 set clipboard=unnamedplus
 
-" Move by screen lines, not file lines
 "set ofu=syntaxcomplete#Complete
 "let g:EclimCompletionMethod = 'omnifunc'
 

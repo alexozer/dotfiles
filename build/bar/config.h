@@ -17,15 +17,11 @@
 /* Define the opacity of the bar (requires a compositor such as compton) */
 #define BAR_OPACITY 1.0 /* 0 is invisible, 1 is opaque */
 /* Color palette */
-#define BACKGROUND      0x121212 // normal
-#define COLOR0          0x121212 // for hiding stuff 
-#define COLOR1          0xefaf7f
-#define COLOR2          0x87afaf // "hi"
-#define COLOR3          0x5fafd7 // conditional
-#define COLOR4          0x0087af
-#define COLOR5          0xd7ffd7
-#define COLOR6          0x87af87
-#define COLOR7          0x875fff
-#define COLOR8          0xff5f87
-#define COLOR9          0x767676 // comment
-#define FOREGROUND      0xc6c6c6 // normal
+#define BACKGROUND 0x1d1f21
+#define FOREGROUND 0xc5c8c6
+#define COLOR0 0x282a2e
+#define COLOR8 0x373b41
+#define COLOR1 0xa54242
+#define COLOR9 0xcc6666
+#define COLOR2 0x8c9440
+#define COLOR3 0xde935f
