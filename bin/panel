@@ -124,6 +124,6 @@ while read -r line ; do
 	printf "%s\n" "$title_infos\
 		\c$wm_infos\
 		\r\f2⮃ $volume_infos \f2⮃ $network_infos \f2⮃ $battery_infos \f2⮃ $clock_infos"
-done < "$PANEL_FIFO" | bar
+done < "$PANEL_FIFO" | bar -f '-*-terminesspowerline-medium-r-normal-*-18-*-*-*-*-*-*-*' -u 2 -B '#1D1F21' -F '#C5C8C6'
 
 wait

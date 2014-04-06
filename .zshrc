@@ -42,22 +42,24 @@ bindkey "^k" history-beginning-search-forward
 alias exit='[ -z "$TMUX" ] && exit || tmux detach'
 alias logout='[ -z "$TMUX" ] && logout || tmux detach'
 
-#function vim() {
-#if [ -n "$TMUX" ]; then
-	#tmux setw status off
-	#/usr/bin/vim $*
-	#tmux setw status on
-#else /usr/bin/vim
-#fi
-#}
-
 function setwp() {
 if [[ -e $1 ]]; then
+	[[ -e $HOME/.wallpaper ]] && rm $HOME/.wallpaper
 	readlink -f $1 > $HOME/.wallpaper
 	feh --bg-fill $1
 else
 	echo "File not found."
 	return 1
+fi
+}
+
+function vim() {
+if [ -z "$TMUX" ]; then
+	/usr/bin/vim $*
+else
+	tmux setw status off > /dev/null
+	/usr/bin/vim $*
+	tmux setw status on > /dev/null
 fi
 }
 

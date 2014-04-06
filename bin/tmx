@@ -22,8 +22,8 @@ if [[ "$tmux_nb" == "0" ]]; then
 fi
 # Make sure we are not already in a tmux session
 if [[ -z "$TMUX" ]]; then
-	# Kill defunct sessions first
 	# No longer necessary as sessions are started with destroy-unattached on
+	# Kill defunct sessions first
 	#old_sessions=$(tmux ls 2>/dev/null | egrep "^[0-9]{14}.*[0-9]+\)$" | cut -f 1 -d:)
 	#for old_session_id in $old_sessions; do
 		#tmux kill-session -t $old_session_id
@@ -31,7 +31,8 @@ if [[ -z "$TMUX" ]]; then
 
 	echo "Launching copy of base session $base_session ..."
 	# Session is is date and time to prevent conflict
-	session_id="\\f4[\\f9$base_session\\f4]\\f0$(date +%Y%m%d%H%M%S)"
+	#session_id="\\f4[\\f9$base_session\\f4]\\f0$(date +%Y%m%d%H%M%S)"
+	session_id=$base_session
 	# Create a new session (without attaching it) and link to base session 
 	# to share windows
 	tmux new-session -t $base_session -s $session_id

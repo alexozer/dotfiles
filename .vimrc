@@ -39,7 +39,8 @@ autocmd FileType ruby setlocal sw=2 ts=2 sts=2
 autocmd FileType text setlocal textwidth=78
 " Git commit messages, wrap to 72 characters and spellcheck
 autocmd Filetype gitcommit setlocal spell textwidth=72
-" Hide tmux status bar when entering vim
+" Rename tmux tab to vim file
+"autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window " . expand("%:t")) 
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -76,7 +77,7 @@ colorscheme hybrid
 "nnoremap <F5> :silent !solarize flip<CR>:redraw!<CR>
 
 let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 if ! has('gui_running')
 	set ttimeoutlen=10
 	augroup FastEscape
@@ -86,6 +87,18 @@ if ! has('gui_running')
 	augroup END
 endif
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+if &term =~ '^xterm'
+  " solid underscore
+  let &t_SI .= "\<Esc>[4 q"
+  " solid block
+  let &t_EI .= "\<Esc>[2 q"
+  " 1 or 0 -> blinking block
+  " 3 -> blinking underscore
+  " Recent versions of xterm (282 or above) also support
+  " 5 -> blinking vertical bar
+  " 6 -> solid vertical bar
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Vim UI                                                                 "
@@ -112,6 +125,8 @@ set guioptions+=PegitrL
 set guioptions-=mT
 set guifont=Terminess\ Powerline\ 14
 set guiheadroom=0
+
+"noremap <F7> :silent !tmux set status<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 05. Text Formatting/Layout                                                 "
@@ -149,6 +164,9 @@ vnoremap ; :
 vnoremap : ;
 set so=5
 
+noremap <tab> :bnext<cr>
+noremap <backspace> :bprev<cr>
+
 set foldmethod=syntax
 set nofoldenable
 set foldnestmax=1
@@ -169,6 +187,8 @@ set clipboard=unnamedplus
 "let g:SuperTabLongestHighlight = 1
 "Does as it says...
 "let g:SuperTabClosePreviewOnPopupClose = 1
+"
+let g:ctrlp_show_hidden = 1
 
 " Easymotion
 let g:EasyMotion_smartcase = 1

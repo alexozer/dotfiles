@@ -47,15 +47,15 @@ URxvt*fading: 0
 !URxvt*italicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 !URxvt*bolditalicFont: -*-terminus-medium-r-normal-*-11-*-*-*-*-*-*-* 
 
-URxvt*font: -*-terminesspowerline-medium-*-*-*-14-*-*-*-*-*-*-*
-URxvt*boldFont: -*-terminesspowerline-bold-*-*-*-14-*-*-*-*-*-*-*
-URxvt*italicFont: -*-terminesspowerline-medium-*-*-*-14-*-*-*-*-*-*-*
-URxvt*bolditalicFont: -*-terminesspowerline-bold-*-*-*-14-*-*-*-*-*-*-*
+!URxvt*font: -*-terminesspowerline-medium-*-*-*-14-*-*-*-*-*-*-*
+!URxvt*boldFont: -*-terminesspowerline-bold-*-*-*-14-*-*-*-*-*-*-*
+!URxvt*italicFont: -*-terminesspowerline-medium-*-*-*-14-*-*-*-*-*-*-*
+!URxvt*bolditalicFont: -*-terminesspowerline-bold-*-*-*-14-*-*-*-*-*-*-*
 
-!URxvt*font: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
-!URxvt*boldFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
-!URxvt*italicFont: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
-!URxvt*bolditalicFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
+URxvt*font: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
+URxvt*boldFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
+URxvt*italicFont: -*-terminesspowerline-medium-*-*-*-18-*-*-*-*-*-*-*
+URxvt*bolditalicFont: -*-terminesspowerline-bold-*-*-*-18-*-*-*-*-*-*-*
 
 !Xft.dpi:	96
 Xft.rgba:	rgb

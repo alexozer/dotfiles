@@ -1,9 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/alex/.colors'
-let g:netrw_dirhist_2='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tmp/translation/translation'
-let g:netrw_dirhist_3='/home/alex/code/arduino'
-let g:netrw_dirhist_4='/home/alex/code/arduino/ledsign'
-let g:netrw_dirhist_5='/home/alex/code/arduino'
-let g:netrw_dirhist_6='/home/alex/code/arduino/ledsign'
-let g:netrw_dirhist_7='/home/alex/code/arduino'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/alex'
+let g:netrw_dirhist_2='/home'
+let g:netrw_dirhist_3='/home/alex'
+let g:netrw_dirhist_4='/home/alex/.config/termite'
