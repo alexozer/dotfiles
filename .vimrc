@@ -13,7 +13,7 @@
 " 01. General                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " get rid of Vi compatibility mode
-execute pathogen#infect()                                     
+execute pathogen#infect()
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -40,7 +40,7 @@ autocmd FileType text setlocal textwidth=78
 " Git commit messages, wrap to 72 characters and spellcheck
 autocmd Filetype gitcommit setlocal spell textwidth=72
 " Rename tmux tab to vim file
-"autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window " . expand("%:t")) 
+"autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window " . expand("%:t"))
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -87,18 +87,6 @@ if ! has('gui_running')
 	augroup END
 endif
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-
-if &term =~ '^xterm'
-  " solid underscore
-  let &t_SI .= "\<Esc>[4 q"
-  " solid block
-  let &t_EI .= "\<Esc>[2 q"
-  " 1 or 0 -> blinking block
-  " 3 -> blinking underscore
-  " Recent versions of xterm (282 or above) also support
-  " 5 -> blinking vertical bar
-  " 6 -> solid vertical bar
-endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 04. Vim UI                                                                 "
@@ -150,14 +138,14 @@ map Q gq
 noremap Y y$
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 06. Behavior                                                                  " 
+" 06. Behavior                                                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader = ","
 let maplocalleader = "\\"
 
-nnoremap H <c-d>
-nnoremap L <c-u>
+nnoremap H $
+nnoremap L 0
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
@@ -192,7 +180,7 @@ let g:ctrlp_show_hidden = 1
 
 " Easymotion
 let g:EasyMotion_smartcase = 1
-nmap s <Plug>(easymotion-s)
+nnoremap s <Plug>(easymotion-s)
 hi link EasyMotionShade Comment
 
 " Syntastic

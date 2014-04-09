@@ -32,7 +32,7 @@ if [[ -z "$TMUX" ]]; then
 	echo "Launching copy of base session $base_session ..."
 	# Session is is date and time to prevent conflict
 	#session_id="\\f4[\\f9$base_session\\f4]\\f0$(date +%Y%m%d%H%M%S)"
-	session_id=$base_session
+	session_id="$base_session$(date +%Y%m%d%H%M%S)"
 	# Create a new session (without attaching it) and link to base session 
 	# to share windows
 	tmux new-session -t $base_session -s $session_id

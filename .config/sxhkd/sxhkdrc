@@ -114,11 +114,11 @@ alt + p
 	scrot {_,-s} -q75 "$HOME/pic/shots/%Y-%m-%d_$RANDOM.png"
 
 alt + Return
-	urxvtc
+	termite
 
 alt + F2
-	bspc rule -a urxvt floating=on center=on --one-shot;\
-	urxvt -e wifi
+	bspc rule -a termite floating=on center=on --one-shot;\
+	termite -e wifi
 
 alt + shift + w
 	chromium

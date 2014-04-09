@@ -1,5 +1,22 @@
 #! /bin/sh
 
+# Hybrid theme
+foreground='#707880'
+background='#1D1F21'
+red='#A54242'
+lightred='CC6666'
+green='#8C9440'
+lightgreen='#B5BD68'
+orange='#DE935F'
+yellow='#F0C674'
+blue='#5F819D'
+lightblue='#81A2BE'
+purple='#85678F'
+lightpurple='#B294BB'
+indigo='#5E8D87'
+lightindigo='#8ABEB7'
+white='#C5C8C6'
+
 if [ $(pgrep -cx panel) -gt 1 ] ; then
     printf "%s\n" "The panel is already running." >&2
     exit 1
@@ -17,8 +34,6 @@ trap 'cleanup' INT TERM QUIT EXIT
 mkfifo "$PANEL_FIFO"
 bspc config top_padding "$PANEL_HEIGHT"
 
-#readonly colortest="\l\f00[]()#=\f11[]()#=\f22[]()#=\f33[]()#=\f44[]()#=\f55[]()#=\f66[]()#=\f77[]()#=\f88[]()#=\f99[]()#="
-
 {
 	bspc control --subscribe &
 	sleep 0.01 # Don't choke bar
@@ -30,22 +45,22 @@ bspc config top_padding "$PANEL_HEIGHT"
 	sleep 0.01
 	essid -s -w wlp2s0 -f 'N%s' &
 	sleep 0.01
-	clock -s -f 'C\f9%a %d \fr%-l:%M'
+	clock -s -f "C%{F-}%a %d %{F$white}%-l:%M"
 } > "$PANEL_FIFO" &
 
 while read -r line ; do
     case $line in
 		T*)
 			# title output
-			title_infos="\f4❭ \f9${line#?}"
+			title_infos="%{F-}${line#?}"
 			;;
 		V*)
 			# volume output
 			IFS='[]%' read -r -d'\0' -a volStats <<< "$(amixer get Master)"
 			if [[ "${volStats[6]}" == "on" ]]; then
-				volume_infos="\f4⮞ \f9${volStats[1]}"
+				volume_infos="%{F-}${volStats[1]}"
 			else
-				volume_infos="\f4⮝ \f9${volStats[1]}"
+				volume_infos="%{F-}${volStats[1]}"
 			fi
 			;;
 		B*)
@@ -62,16 +77,16 @@ while read -r line ; do
 			fi
 
 			if [ "$bat_status" == "Charging" ]; then
-				battery_infos="\f4⮒ \f9${bat_charge}+"
+				battery_infos="%{F$blue}⮒ %{F-}${bat_charge}+"
 			elif [ "$bat_status" == "Discharging" ]; then
-				battery_infos="\f4⮒ \f${charge_color}${bat_charge}-"
+				battery_infos="%{F$blue}${bat_charge}-"
 			else 
-				battery_infos="\f4⮎ \f9AC"
+				battery_infos="%{F$blue}⮎ %{F-}AC"
 			fi
 			;;
         C*)
             # clock output
-            clock_infos="\f4⭧ ${line#?}"
+            clock_infos="%{F$blue}⭧ ${line#?}"
             ;;
 		N*)
 			# network
@@ -81,14 +96,14 @@ while read -r line ; do
 				sigStrength=${wlInfo[20]}
 
 				if [[ $sigStrength -ge 65 ]]; then
-					network_infos="\f4‗▬▪▮ \f9${net_name}"
+					network_infos="%{F$blue}‗▬▪▮ %{F-}${net_name}"
 				elif [[ $sigStrength -ge 40 ]]; then
-					network_infos="\f4‗▬▪\f9▮ ${net_name}"
+					network_infos="%{F$blue}‗▬▪%{F-}▮ ${net_name}"
 				else
-					network_infos="\f4‗▬\f9▪▮ ${net_name}"
+					network_infos="%{F$blue}‗▬%{F-}▪▮ ${net_name}"
 				fi
 			else
-				network_infos="\f9‗▬▪▮ Not connected"
+				network_infos="%{F-}‗▬▪▮ Not connected"
 			fi
 			;;
         W*)
@@ -102,28 +117,26 @@ while read -r line ; do
                 case $item in
                     [OFU]*)
                         # active desktop
-                        wm_infos="$wm_infos\f2\u4 • \ur"
+                        wm_infos="$wm_infos%{F$white} • "
                         ;;
                     o*)
                         # inactive but occupied desktop
-                        wm_infos="$wm_infos\f2 • "
+                        wm_infos="$wm_infos%{F-} • "
                         ;;
                     f*)
                         # inactive desktop
-                        wm_infos="$wm_infos\f9 ○ "
+                        wm_infos="$wm_infos%{F-} ○ "
                         ;;
                     u*)
                         # urgent desktop
-                        wm_infos="$wm_infos\f8 • "
+                        wm_infos="$wm_infos%{F$red} • "
                         ;;
                 esac
                 shift
             done
             ;;
     esac
-	printf "%s\n" "$title_infos\
-		\c$wm_infos\
-		\r\f2⮃ $volume_infos \f2⮃ $network_infos \f2⮃ $battery_infos \f2⮃ $clock_infos"
-done < "$PANEL_FIFO" | bar -f '-*-terminesspowerline-medium-r-normal-*-18-*-*-*-*-*-*-*' -u 2 -B '#1D1F21' -F '#C5C8C6'
+	echo "%{l}$title_infos%{c}$wm_infos%{r}$volume_infos  $network_infos $battery_infos $clock_infos"
+done < "$PANEL_FIFO" | bar -f '-*-terminesspowerline-medium-r-normal-*-18-*-*-*-*-*-*-*' -u 0 -F $foreground -B $background 
 
 wait

@@ -9,7 +9,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Monospace 9
+font = Terminess Powerline 14
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
@@ -35,32 +35,32 @@ cursor_shape = block
 #modify_other_keys = false
 
 [colors]
-foreground = #dcdccc
-foreground_bold = #ffffff
+foreground = #C5C8C6
+foreground_bold = #C5C8C6
 #foreground_dim = #888888
-background = #3f3f3f
+background = #1D1F21
 #cursor = #dcdccc
 
 # if unset, will reverse foreground and background
-highlight = #2f2f2f
+#highlight = #2f2f2f
 
 # colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
+color0 = #282A2E
+color8 = #373B41
+color1 = #A54242
+color9 = #CC6666
+color2 = #8C9440
+color10 = #B5BD68
+color3 = #DE935F
+color11 = #F0C674
+color4 = #5F819D
+color12 = #81A2BE
+color5 = #85678F
+color13 = #B294BB
+color6 = #5E8D87
+color14 = #8ABEB7
+color7 = #707880
+color15 = #C5C8C6
 
 [hints]
 #font = Monospace 12
