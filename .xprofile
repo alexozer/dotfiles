@@ -2,8 +2,8 @@
 
 export EDITOR="vim"
 export BROWSER="chromium"
-export PATH=$PATH:$HOME/bin:$HOME/code/go/bin
 export GOPATH="$HOME/code/go"
+export PATH="$PATH:$HOME/bin:$GOPATH/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export BSPWM_SOCKET="/tmp/bspwm-socket"
@@ -19,7 +19,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-#I no longer use urxvt
+# I no longer use urxvt
 #xrdb $HOME/.Xresources
 
 xset +fp /usr/share/fonts/local
@@ -29,8 +29,9 @@ xset fp rehash
 
 # Keybindings
 sxhkd &
-# Make caps lock (control) escape when tapped and released
-xcape &
+xmodmap -e 'keycode 135 = Control_R' \
+	-e 'add Control = Control_R' \
+	-e 'keycode 105 = Menu'
 
 # No keyboard backlight
 asus-kbd-backlight off &

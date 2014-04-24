@@ -13,7 +13,6 @@
 " 01. General                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " get rid of Vi compatibility mode
-execute pathogen#infect()
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -66,16 +65,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax enable
-" A dark bg actually means same as termcolors
-set background=dark
-if (!has('gui_running'))
-	set t_Co=256
-	let g:hybrid_use_Xresources = 1
-endif
-colorscheme hybrid
-"nnoremap <F5> :silent !solarize flip<CR>:redraw!<CR>
-
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 if ! has('gui_running')
@@ -94,6 +83,10 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
 	set mouse=a
+	if &term =~ '^screen'
+		" tmux knows the extended mouse mode
+		set ttymouse=xterm2
+	endif
 endif
 
 set relativenumber        " show relative line numbers
@@ -120,9 +113,6 @@ set guiheadroom=0
 " 05. Text Formatting/Layout                                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"filetype off
-"filetype plugin indent off
-"set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on " filetype detection[ON] plugin[ON] indent[ON]
 set autoindent            " auto-indent
 set tabstop=4             " tab spacing
@@ -144,8 +134,12 @@ noremap Y y$
 let mapleader = ","
 let maplocalleader = "\\"
 
-nnoremap H $
-nnoremap L 0
+nnoremap H 0
+nnoremap L $
+" Training mappings
+nnoremap 0 <nop>
+nnoremap $ <nop>
+
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
@@ -155,50 +149,64 @@ set so=5
 noremap <tab> :bnext<cr>
 noremap <backspace> :bprev<cr>
 
+nnoremap gh <C-w>h
+nnoremap gl <C-w>l
+nnoremap gj <C-w>j
+nnoremap gk <C-w>k
+
+nnoremap gH <C-w>H
+nnoremap gL <C-w>L
+nnoremap gJ <C-w>J
+nnoremap gK <C-w>K
+
 set foldmethod=syntax
 set nofoldenable
-set foldnestmax=1
-nnoremap zo za
+"set foldlevelstart=0
+nnoremap <Space> za
+vnoremap <Space> za
+nnoremap zO zCzO
 
 set clipboard=unnamedplus
 
-"set ofu=syntaxcomplete#Complete
-"let g:EclimCompletionMethod = 'omnifunc'
-
-" Format go code before saving
-"autocmd FileType go autocmd BufWritePre <buffer> Fmt
-
-" Supertab settings, supertab + eclim == java win
-"  Choose the type of completion dynamically
-"let g:SuperTabDefaultCompletionType = "context"
-"  Auto-select the longest completion
-"let g:SuperTabLongestHighlight = 1
-"Does as it says...
-"let g:SuperTabClosePreviewOnPopupClose = 1
-"
-let g:ctrlp_show_hidden = 1
-
 " Easymotion
-let g:EasyMotion_smartcase = 1
-nnoremap s <Plug>(easymotion-s)
-hi link EasyMotionShade Comment
+"let g:EasyMotion_smartcase = 1
+"nnoremap s <Plug>(easymotion-s)
+"hi link EasyMotionShade Comment
 
 " Syntastic
 "let g:syntastic_mode_map = { 'mode': 'passive', }
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_balloons = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_highlighting = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_enable_highlighting = 1
 
-function! RunGo()
-	write
-	execute "!clear; go run " . bufname("%")
-	if v:shell_error
-		SyntasticCheck
-	else
-		SyntasticReset
-		Fmt
-	endif
-endfunction
+" Golang
+let g:gofmt_command = "goimports"
+au FileType go au BufWritePre <buffer> silent Fmt
+au FileType go nnoremap <silent> <leader>x :wa<cr>:GolangRun<cr>
 
-nnoremap <silent> <leader>r :call RunGo()<cr>
+" Plugins
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+let g:ctrlp_map = '<silent> <leader>e'
+Bundle 'scrooloose/syntastic'
+Bundle 'bling/vim-airline'
+Bundle 'benmills/vimux'
+nnoremap <silent> <leader>r :wall<cr>:VimuxRunLastCommand<cr>
+nnoremap <F5> :VimuxTogglePane<cr>
+autocmd VimLeave * VimuxCloseRunner
+Bundle 'benmills/vimux-golang'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'baskerville/vim-sxhkdrc'
+
+Bundle 'w0ng/vim-hybrid'
+syntax enable
+" A dark bg actually means same as termcolors
+set background=dark
+if (!has('gui_running'))
+	set t_Co=256
+	let g:hybrid_use_Xresources = 1
+endif
+colorscheme hybrid

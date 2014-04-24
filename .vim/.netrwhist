@@ -1,6 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/alex'
-let g:netrw_dirhist_2='/home'
-let g:netrw_dirhist_3='/home/alex'
-let g:netrw_dirhist_4='/home/alex/.config/termite'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tut02/fragPosition'
+let g:netrw_dirhist_2='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang'
+let g:netrw_dirhist_3='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tut02'
+let g:netrw_dirhist_4='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tut02/fragPosition'
+let g:netrw_dirhist_5='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tut02/vertexColors'
+let g:netrw_dirhist_6='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tut02'
+let g:netrw_dirhist_7='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang'
+let g:netrw_dirhist_8='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tut03'
+let g:netrw_dirhist_9='/home/alex/code/go/src/github.com/alexozer/opengl-samples-golang/tut03/cpuOffset'
