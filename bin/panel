@@ -52,7 +52,12 @@ while read -r line ; do
     case $line in
 		T*)
 			# title output
-			title_infos="%{F-}${line#?}"
+			title="${line#?}"
+			if [ -z "$title" ]; then
+				title_infos="%{F-}desktop"
+			else
+				title_infos="%{F-}${line#?}"
+			fi
 			;;
 		V*)
 			# volume output
@@ -77,16 +82,16 @@ while read -r line ; do
 			fi
 
 			if [ "$bat_status" == "Charging" ]; then
-				battery_infos="%{F$blue}⮒ %{F-}${bat_charge}+"
+				battery_infos="%{F$blue}%{F-}${bat_charge}+"
 			elif [ "$bat_status" == "Discharging" ]; then
 				battery_infos="%{F$blue}${bat_charge}-"
 			else 
-				battery_infos="%{F$blue}⮎ %{F-}AC"
+				battery_infos="%{F$blue}%{F-}AC"
 			fi
 			;;
         C*)
             # clock output
-            clock_infos="%{F$blue}⭧ ${line#?}"
+            clock_infos="%{F$blue}${line#?}"
             ;;
 		N*)
 			# network
@@ -136,7 +141,7 @@ while read -r line ; do
             done
             ;;
     esac
-	echo "%{l}$title_infos%{c}$wm_infos%{r}$volume_infos  $network_infos $battery_infos $clock_infos"
+	echo "%{l}$title_infos %{F-} %{c} %{F-} $wm_infos %{F-} %{r}$volume_infos %{F-} $network_infos %{F-} $battery_infos %{F-} $clock_infos"
 done < "$PANEL_FIFO" | bar -f '-*-terminesspowerline-medium-r-normal-*-18-*-*-*-*-*-*-*' -u 0 -F $foreground -B $background 
 
 wait

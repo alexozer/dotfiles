@@ -66,7 +66,7 @@ endif
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 if ! has('gui_running')
 	set ttimeoutlen=10
 	augroup FastEscape
@@ -135,10 +135,14 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 nnoremap H 0
+vnoremap H 0
 nnoremap L $
+vnoremap L $
 " Training mappings
 nnoremap 0 <nop>
+vnoremap 0 <nop>
 nnoremap $ <nop>
+vnoremap $ <nop>
 
 nnoremap ; :
 nnoremap : ;
@@ -189,7 +193,7 @@ au FileType go nnoremap <silent> <leader>x :wa<cr>:GolangRun<cr>
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 let g:ctrlp_map = '<silent> <leader>e'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
@@ -200,6 +204,17 @@ autocmd VimLeave * VimuxCloseRunner
 Bundle 'benmills/vimux-golang'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'baskerville/vim-sxhkdrc'
+Bundle 'nsf/gocode', {'rtp': 'vim/'}
+"Bundle 'Xuyuanp/git-nerdtree'
+Bundle 'scrooloose/nerdtree'
+nnoremap <F3> :NERDTreeToggle<cr>
+" YouCompleteMe installed with pacman
+set completeopt-=preview
+Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-bufferline'
+let g:bufferline_echo = 0
+let g:bufferline_show_bufnr = 0
+"let g:bufferline_rotate = 1
 
 Bundle 'w0ng/vim-hybrid'
 syntax enable
