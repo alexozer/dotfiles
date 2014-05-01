@@ -152,6 +152,8 @@ set so=5
 
 noremap <tab> :bnext<cr>
 noremap <backspace> :bprev<cr>
+noremap <silent> <leader>q :bd<cr>
+noremap <silent> <leader>Q :bd!<cr>
 
 nnoremap gh <C-w>h
 nnoremap gl <C-w>l
