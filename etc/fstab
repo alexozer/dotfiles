@@ -1,0 +1,16 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+# /dev/sda2
+UUID=3a236361-56c0-489b-b816-2aca3a080a12	/         	ext4      	rw,relatime,data=ordered,discard	0 1
+
+# /dev/sda1
+UUID=A35A-C452      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro	0 2
+
+# /dev/sda3
+UUID=a31bfb7a-35d9-46af-80e5-775081099dfc	/home     	ext4      	rw,relatime,data=ordered,discard	0 2
+
+# sirvo
+#alex@oroide.com:	/home/alex/mnt/phone  fuse.sshfs noauto,comment=systemd.automount,_netdev,user,idmap=user,transform_symlinks,IdentityFile=/home/alex/.ssh/id_rsa,Port=26,allow_other,reconnect,default_permissions,uid=1000,gid=100 0 0
+#alex@oroide.com:	/home/alex/mnt/sirvo  fuse.sshfs noauto,comment=systemd.automount,_netdev,user,idmap=user,transform_symlinks,IdentityFile=/root/.ssh/id_rsa,Port=26,allow_other,reconnect 0 0

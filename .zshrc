@@ -3,11 +3,11 @@ compinit
 promptinit
 colors
 
-source ~/.zsh-prompt.sh
+#source ~/.zsh-prompt.sh
 
-#PROMPT="
-#%{$fg[red]%} »  %{$reset_color%}"
-#RPROMPT="%B%{$fg[blue]%}%~%{$reset_color%}"
+PROMPT="
+%{$fg[red]%} »  %{$reset_color%}"
+RPROMPT="%B%{$fg[blue]%}%~%{$reset_color%}"
 
 [[ -t 1 ]] || return
 case $TERM in
