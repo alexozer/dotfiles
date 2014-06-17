@@ -3,3 +3,5 @@
 [user]
 	name = Alex Ozer
 	email = ***REMOVED***
+[push]
+	default = simple
