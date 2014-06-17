@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-My personal Linux dotfiles. They get symlinked to the home directory after running the dfm script.
+My personal Linux dotfiles. They get symlinked to the home directory after running the dfm script.
 =======
 # Dotfiles
 
