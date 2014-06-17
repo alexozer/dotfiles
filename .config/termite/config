@@ -1,30 +1,32 @@
 [options]
 resize_grip = false
-scroll_on_output = false
+scroll_on_output = true
 scroll_on_keystroke = true
 audible_bell = false
 visible_bell = false
-mouse_autohide = true
+mouse_autohide = false
 allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-#font = Terminess Powerline 8
-font = Terminess Powerline 12
-#font = Terminess Powerline 14
+font = Ubuntu Mono derivative Powerline 13
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
 #geometry = 640x480
 
+# 0.0: opaque, 1.0: transparent
+transparency = 0.0
+pseudo_transparency = false
+
 # "system", "on" or "off"
-cursor_blink = system
+cursor_blink = on
 
 # "block", "underline" or "ibeam"
 cursor_shape = block
 
 # $BROWSER is used by default
-#browser = firefox
+browser = dwb
 
 # word characters used for word selection
 # (default if unset: all graphic non-punctuation/space characters)
@@ -33,36 +35,33 @@ cursor_shape = block
 # set size hints for the window
 #size_hints = false
 
-# emit escape sequences for other keys modified by Control
-#modify_other_keys = false
-
 [colors]
-foreground = #C5C8C6
-foreground_bold = #C5C8C6
+foreground = #c5c8c6
+foreground_bold = #ffffff
 #foreground_dim = #888888
-background = #1D1F21
-#cursor = #dcdccc
+background = #262626
+cursor = #CC6666
 
 # if unset, will reverse foreground and background
-#highlight = #2f2f2f
+highlight = #373b41
 
 # colors from color0 to color254 can be set
-color0 = #282A2E
-color8 = #373B41
-color1 = #A54242
-color9 = #CC6666
-color2 = #8C9440
-color10 = #B5BD68
-color3 = #DE935F
-color11 = #F0C674
-color4 = #5F819D
-color12 = #81A2BE
-color5 = #85678F
-color13 = #B294BB
-color6 = #5E8D87
-color14 = #8ABEB7
-color7 = #707880
-color15 = #C5C8C6
+color0 = #262626
+color1 = #cc6666
+color2 = #b5bd68
+color3 = #f0c674
+color4 = #87afaf
+color5 = #b294bb
+color6 = #3e999f
+color7 = #969896
+color8 = #424242
+color9 = #cc6666
+color10 = #b5bd68
+color11 = #f0c674
+color12 = #87afaf
+color13 = #b294bb
+color14 = #3e999f
+color15 = #fafafa
 
 [hints]
 #font = Monospace 12
@@ -73,4 +72,4 @@ color15 = #C5C8C6
 #border_width = 0.5
 #roundness = 2.0
 
-# vim: ft=dosini cms=#%s
+# vim: ft=dosini

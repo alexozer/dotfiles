@@ -66,6 +66,7 @@ endif
 " 03. Theme/Colors                                                           "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
+let g:airline_theme="bubblegum"
 "let g:airline#extensions#tabline#enabled = 1
 if ! has('gui_running')
 	set ttimeoutlen=10
@@ -226,4 +227,7 @@ if (!has('gui_running'))
 	set t_Co=256
 	let g:hybrid_use_Xresources = 1
 endif
-colorscheme hybrid
+colorscheme tm-mod
+Bundle "sudar/vim-arduino-syntax"
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino

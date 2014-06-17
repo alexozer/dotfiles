@@ -3,8 +3,6 @@ compinit
 promptinit
 colors
 
-#source ~/.zsh-prompt.sh
-
 PROMPT="
 %{$fg[red]%} »  %{$reset_color%}"
 RPROMPT="%B%{$fg[blue]%}%~%{$reset_color%}"
@@ -65,7 +63,7 @@ else
 fi
 }
 
-alias svim='sudo vim' 
+alias svim='sudo -E vim' 
 
 #function open() { xdg-open $1 &> /dev/null &disown; }
 
@@ -87,6 +85,7 @@ conf() {
 		bspwm)		vim ~/.config/bspwm/bspwmrc ;;
 		keys)		vim ~/.config/sxhkd/sxhkdrc ;;
 		panel)		vim ~/bin/panel ;;
+		i3)			vim ~/.i3/config ;;
 		bar)		
 			cd ~/build/bar
 			vim config.h
@@ -104,7 +103,7 @@ conf() {
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs='ssh -p 26 alex@oroide.com -t "/home/alex/bin/tmx sirvo"'
+alias sshs='ssh -p 26 sirvo -t "/home/alex/bin/tmx sirvo"'
 alias sshm="sshfs -p 26 alex@oroide.com: ~/mnt/sirvo"
 
 # Programs

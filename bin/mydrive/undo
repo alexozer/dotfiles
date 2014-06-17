@@ -1,6 +1,0 @@
-#! /bin/sh
-rank=24
-tempfile='/dev/shm/temprankinfo'
-grep "FullLargeLeader" ranks.html | grep -A 2 ">$rank<" > $tempfile
-school=$(grep "lbName" $tempfile | cut -d\> -f3 | cut -d\< -f1)
-cat $tempfile
