@@ -72,8 +72,8 @@ if ! has('gui_running')
 	set ttimeoutlen=10
 	augroup FastEscape
 		autocmd!
-		au InsertEnter * set timeoutlen=0
-		au InsertLeave * set timeoutlen=1000
+		autocmd InsertEnter * set timeoutlen=0
+		autocmd InsertLeave * set timeoutlen=1000
 	augroup END
 endif
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
@@ -103,9 +103,12 @@ set showcmd               " display incomplete commands
 set hidden				  " Okay to background buffers when modified
 
 " GVim-specific settings
-set guioptions+=PegitrL
-set guioptions-=mT
-set guifont=Terminess\ Powerline\ 14
+set guioptions+=Pegit
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 set guiheadroom=0
 
 "noremap <F7> :silent !tmux set status<CR>
@@ -186,11 +189,12 @@ let g:syntastic_auto_jump = 1
 let g:syntastic_enable_balloons = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_enable_highlighting = 1
+let g:EclimCompletionMethod = 'omnifunc'
 
 " Golang
 let g:gofmt_command = "goimports"
-au FileType go au BufWritePre <buffer> silent Fmt
-au FileType go nnoremap <silent> <leader>x :wa<cr>:GolangRun<cr>
+autocmd FileType go autocmd BufWritePre <buffer> silent Fmt
+autocmd FileType go nnoremap <silent> <leader>x :wa<cr>:GolangRun<cr>
 
 " Plugins
 set rtp+=~/.vim/bundle/vundle/
@@ -219,6 +223,7 @@ let g:bufferline_echo = 0
 let g:bufferline_show_bufnr = 0
 "let g:bufferline_rotate = 1
 
+Bundle 'reedes/vim-colors-pencil'
 Bundle 'w0ng/vim-hybrid'
 syntax enable
 " A dark bg actually means same as termcolors
@@ -229,5 +234,7 @@ if (!has('gui_running'))
 endif
 colorscheme tm-mod
 Bundle "sudar/vim-arduino-syntax"
-au BufRead,BufNewFile *.pde set filetype=arduino
-au BufRead,BufNewFile *.ino set filetype=arduino
+autocmd BufRead,BufNewFile *.pde set filetype=arduino
+autocmd BufRead,BufNewFile *.ino set filetype=arduino
+
+Bundle 'altercation/vim-colors-solarized'

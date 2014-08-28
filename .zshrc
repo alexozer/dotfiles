@@ -100,11 +100,14 @@ conf() {
 # source custom colors:
 #eval $(dircolors -b ${HOME}/.dir_colors)
 
+alias adb="/opt/android-sdk/platform-tools/adb"
+
 alias dark="solarize dark"
 alias light="solarize light"
 alias flip="solarize flip"
-alias sshs='ssh -p 26 sirvo -t "/home/alex/bin/tmx sirvo"'
-alias sshm="sshfs -p 26 alex@oroide.com: ~/mnt/sirvo"
+alias sshs='ssh -p 26 oroide.com -t "/home/alex/bin/tmx sirvo"'
+alias sshp='ssh -p 26 spacepi'
+#alias sshm="sshfs -p 26 alex@oroide.com: ~/mnt/sirvo"
 
 # Programs
 alias installfont='sudo fc-cache -f -v'
@@ -158,3 +161,11 @@ function cdl () { cd "$@" && ls; }
 
 set -o noclobber
 set -o vi
+
+function schromium {
+    port=4711
+	ssh -TND $port -p 26 alex@oroide.com &
+	sleep 2
+    chromium --proxy-server="socks://localhost:$port" &
+    exit
+}

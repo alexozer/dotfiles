@@ -17,3 +17,9 @@ gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
 gtk-xft-rgba="rgb"
 include "/home/alex/.gtkrc-2.0.mine"
+
+# Make gvim borders match colorscheme
+style "vimfix" {
+  bg[NORMAL] = "#1D1F21" # this matches my gvim theme 'Normal' bg color.
+}
+widget "vim-main-window.*GtkForm" style "vimfix"
