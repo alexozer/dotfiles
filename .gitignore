@@ -1,3 +1,5 @@
 .vim/bundle
 .vim/tmp
 .vim/.tmp-backup_asd
+.vim/sessions
+.vim/.netrwhist

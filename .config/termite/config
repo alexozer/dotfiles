@@ -45,23 +45,48 @@ cursor = #CC6666
 # if unset, will reverse foreground and background
 highlight = #373b41
 
-# colors from color0 to color254 can be set
-color0 = #262626
-color1 = #cc6666
-color2 = #b5bd68
-color3 = #f0c674
-color4 = #87afaf
-color5 = #b294bb
-color6 = #3e999f
-color7 = #969896
+# -- Pencil -------------------------------------------------------- {{{
+#
+#   A color scheme inspired by iA Writer
+#   <https://github.com/reedes/vim-colors-pencil>
+#
+# }}}
+
+# -- Colors -------------------------------------------------------- {{{
+
+[colors]
+# Base
+background = #212121
+foreground = #d9d9d9
+cursorColor = #20bbfc
+# Black
+color0 = #212121
 color8 = #424242
-color9 = #cc6666
-color10 = #b5bd68
-color11 = #f0c674
-color12 = #87afaf
-color13 = #b294bb
-color14 = #3e999f
-color15 = #fafafa
+# Red
+color1 = #c30771
+color9 = #fb007a
+# Green
+color2 = #10a778
+color10 = #5fd7af
+# Yellow
+color3 = #a89c14
+color11 = #f3e430
+# Blue
+color4 = #008ec4
+color12 = #20bbfc
+# Magenta
+color5 = #523c79
+color13 = #6855de
+# Cyan
+color6 = #20a5ba
+color14 = #4fb8cc
+# White
+color7 = #d9d9d9
+color15 = #f1f1f1
+
+# }}}
+
+# vim:foldmethod=marker:filetype=dosini
 
 [hints]
 #font = Monospace 12
