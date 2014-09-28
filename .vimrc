@@ -31,7 +31,9 @@ set shiftwidth=4        " no seriously, four spaces per tab
 " }}}
 " UI {{{
 set relativenumber		" show line numbers relative to current
-set cursorline			" highlight current line
+if has('gui_running')
+	set cursorline			" highlight current line
+endif
 set wildmenu			" visual autocomplete for command menu
 set lazyredraw			" redraw only when we need to (not during macros)
 
