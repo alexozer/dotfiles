@@ -35,58 +35,38 @@ browser = chromium
 # set size hints for the window
 #size_hints = false
 
-[colors]
-foreground = #c5c8c6
-foreground_bold = #ffffff
-#foreground_dim = #888888
-background = #262626
-cursor = #CC6666
-
-# if unset, will reverse foreground and background
-highlight = #373b41
-
-# -- Pencil -------------------------------------------------------- {{{
-#
-#   A color scheme inspired by iA Writer
-#   <https://github.com/reedes/vim-colors-pencil>
-#
-# }}}
-
-# -- Colors -------------------------------------------------------- {{{
+# Gotham color scheme
 
 [colors]
-# Base
-background = #212121
-foreground = #d9d9d9
-cursorColor = #20bbfc
-# Black
-color0 = #212121
-color8 = #424242
-# Red
-color1 = #c30771
-color9 = #fb007a
-# Green
-color2 = #10a778
-color10 = #5fd7af
-# Yellow
-color3 = #a89c14
-color11 = #f3e430
-# Blue
-color4 = #008ec4
-color12 = #20bbfc
-# Magenta
-color5 = #523c79
-color13 = #6855de
-# Cyan
-color6 = #20a5ba
-color14 = #4fb8cc
-# White
-color7 = #d9d9d9
-color15 = #f1f1f1
 
-# }}}
+foreground      = #98d1ce
+foreground_bold = #98d1ce
+cursor          = #98d1ce
+background      = #0a0f14
 
-# vim:foldmethod=marker:filetype=dosini
+color0  = #0a0f14
+color8  = #10151b
+
+color1  = #c33027
+color9  = #d26939
+
+color2  = #26a98b
+color10 = #081f2d
+
+color3  = #edb54b
+color11 = #245361
+
+color4  = #195465
+color12 = #093748
+
+color5  = #4e5165
+color13 = #888ba5
+
+color6  = #33859d
+color14 = #599caa
+
+color7  = #98d1ce
+color15 = #d3ebe9
 
 [hints]
 #font = Monospace 12
@@ -97,4 +77,4 @@ color15 = #f1f1f1
 #border_width = 0.5
 #roundness = 2.0
 
-# vim: ft=dosini
+# vim:foldmethod=marker:filetype=dosini

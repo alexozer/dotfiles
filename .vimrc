@@ -1,31 +1,32 @@
 " Alex Ozer
 
 set nocompatible
-" Vundle {{{ 
-filetype off                  " required
+" Plug {{{ 
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'junegunn/vim-plug'
+Plug 'altercation/vim-colors-solarized'
+Plug 'whatyouhide/vim-gotham'
+Plug 'reedes/vim-colors-pencil'
+Plug 'vim-airline'
+Plug 'fatih/vim-go'
+Plug 'Valloric/YouCompleteMe'
+Plug 'kien/ctrlp.vim'
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'		" dependency of vim-session
+Plug 'bling/vim-bufferline'		" show buffer list in status bar
+Plug 'moll/vim-bbye'				" when buffer closed, don't close window
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+"Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'marijnh/tern_for_vim'
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'reedes/vim-colors-pencil'
-Plugin 'vim-airline'
-Plugin 'fatih/vim-go'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'kien/ctrlp.vim'
-Plugin 'xolox/vim-session'
-Plugin 'xolox/vim-misc'		" dependency of vim-session
-Plugin 'bling/vim-bufferline'		" show buffer list in status bar
-Plugin 'moll/vim-bbye'				" when buffer closed, don't close window
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-
-call vundle#end()
-filetype plugin indent on		" load filetype-specific files
+call plug#end()
 " }}}
 " Spaces {{{
+filetype plugin indent on
+
 set tabstop=4			" number of visual spaces per TAB
 set shiftwidth=4        " no seriously, four spaces per tab
 " }}}
@@ -37,13 +38,16 @@ endif
 set wildmenu			" visual autocomplete for command menu
 set lazyredraw			" redraw only when we need to (not during macros)
 
+autocmd ColorScheme * 
+			\ highlight VertSplit guibg=background |
+			\ highlight SignColumn guibg=background
+
 " gvim-specific options
 if has('gui_running')
 	autocmd GUIEnter * set vb t_vb= " turn off the ridiculous visual and audio bells
 	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
 	set guioptions=cMg " console dialogs, do not show menu and toolbar
 	set guiheadroom=0
-
 
 	colorscheme solarized
 	set bg=dark
@@ -65,9 +69,6 @@ set scrolloff=5			" leave lines visible at top and bottom of buffer
 set noshowmatch			" don't show matching brackets by flickering
 
 set fillchars=diff:⣿,vert:│
-autocmd ColorScheme * 
-			\ highlight VertSplit guibg=background |
-			\ highlight SignColumn guibg=background
 
 au VimResized * :wincmd =			" resize splits when window resized	
 " }}}
@@ -161,9 +162,9 @@ endif
 
 set laststatus=2		" show airline even when only one window is open
 set noshowmode			" hide the default mode text ( -- INSERT -- )
-let g:airline_left_sep  = ''
-let g:airline_right_sep = ''
-let g:airline#extensions#whitespace#enabled = 0
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#whitespace#enabled=0
 
 " vim-go
 let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
@@ -189,6 +190,7 @@ set shortmess+=c					" don't show completion status messages
 
 " ctrlp.vim
 nnoremap <S-Space> :CtrlP<cr>
+let g:ctrlp_follow_symlinks=1
 
 " vim-session
 let g:session_autoload="no" 		" don't autoload a session when Vim starts
@@ -200,6 +202,32 @@ let g:bufferline_show_bufnr = 0		" don't enumerate buffers
 
 " vim-bbye
 nnoremap <leader>q :Bdelete<cr>
-" }}}
+
+" ultisnips
+
+"" http://stackoverflow.com/a/18685821 
+"function! g:UltiSnips_Complete()
+    "call UltiSnips#ExpandSnippet()
+    "if g:ulti_expand_res == 0
+        "if pumvisible()
+            "return "\<C-n>"
+        "else
+            "call UltiSnips#JumpForwards()
+            "if g:ulti_jump_forwards_res == 0
+               "return "\<TAB>"
+            "endif
+        "endif
+    "endif
+    "return ""
+"endfunction
+
+"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsListSnippets="<c-e>"
+"" this mapping Enter key to <C-y> to chose the current highlight item 
+"" and close the selection list, same as other IDEs.
+"" CONFLICT with some plugins like tpope/Endwise
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"" }}}
 
 " vim:foldlevelstart=0:foldmethod=marker:foldlevel=0
