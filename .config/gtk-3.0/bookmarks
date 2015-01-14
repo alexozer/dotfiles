@@ -1,14 +1,10 @@
 file:///home/alex/drive/***REMOVED*** drive
-file:///home/alex/grive
 file:///home/alex/code
-file:///home/alex/log
 file:///home/alex/dl
 file:///home/alex/doc
 file:///home/alex/pic
 file:///home/alex/music
 file:///home/alex/vid
-smb://ivocsbs/program/ program@keystone
-sftp://alex@oroide.com:26/home/alex/public public
-smb://ivocsbs/company/ company@keystone
-sftp://alex@oroide.com:26/home/alex sirvus
+sftp://alex@alexozer.com:26/home/alex alexozer.com
+sftp://alex@alexozer.com:26/home/alex/public public
 sftp://alex@spacepi:26/home/alex spacepi

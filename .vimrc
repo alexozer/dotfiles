@@ -21,8 +21,20 @@ Plug 'scrooloose/syntastic'
 "Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'marijnh/tern_for_vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'tpope/vim-fugitive'
+Plug 'tikhomirov/vim-glsl'
+Plug 'carlson-erik/wolfpack'
 
 call plug#end()
+" }}}
+" Leader {{{
+let mapleader=","		" leader is comma
+
+" edit vimrc/zshrc and load vimrc bindings
+nnoremap <leader>ev :vsp $MYVIMRC<cr>		" vim
+nnoremap <leader>ez :vsp ~/.zshrc<cr>		" zsh
+nnoremap <leader>sv :source $MYVIMRC<cr>	" source vimrc
 " }}}
 " Spaces {{{
 filetype plugin indent on
@@ -50,11 +62,12 @@ if has('gui_running')
 	set guiheadroom=0
 
 	colorscheme solarized
-	set bg=dark
 else
 	colorscheme default
-	set bg=dark
 endif
+set bg=dark
+
+call togglebg#map("<F5>")
 
 syntax enable			" enable syntax processing
 
@@ -70,7 +83,65 @@ set noshowmatch			" don't show matching brackets by flickering
 
 set fillchars=diff:⣿,vert:│
 
-au VimResized * :wincmd =			" resize splits when window resized	
+nnoremap <silent> <leader>= :call NormalizeWidths()<cr>
+" Netrw {{{
+let g:netrw_list_hide='\(^\|\s\s\)\zs\.\S\+,^DS_Store$'
+let g:netrw_hide=1              " hide hidden files
+let g:netrw_dirhistmax=100      " keep more history
+let g:netrw_altfile=1           " last edited file '#'
+let g:netrw_liststyle=0         " thin
+let g:netrw_altv=1              " open files on right
+let g:netrw_preview=1           " open previews vertically
+let g:netrw_use_errorwindow=0   " suppress error window
+
+fun! VexToggle(dir)
+  if exists("t:vex_buf_nr")
+    call VexClose()
+  else
+    call VexOpen(a:dir)
+  endif
+endf
+
+fun! VexOpen(dir)
+  let g:netrw_browse_split=4    " open files in previous window
+  let g:netrw_banner=0          " no banner
+  let vex_width = 27
+
+  exe "Vexplore " . a:dir
+  let t:vex_buf_nr = bufnr("%")
+  wincmd H
+
+  call VexSize(vex_width)
+endf
+
+fun! VexClose()
+  let cur_win_nr = winnr()
+  let target_nr = ( cur_win_nr == 1 ? winnr("#") : cur_win_nr )
+
+  1wincmd w
+  close
+  unlet t:vex_buf_nr
+
+  exe (target_nr - 1) . "wincmd w"
+  call NormalizeWidths()
+endf
+
+fun! VexSize(vex_width)
+  exe "vertical resize" . a:vex_width
+  set winfixwidth
+  call NormalizeWidths()
+endf
+
+fun! NormalizeWidths()
+  let eadir_pref = &eadirection
+  set eadirection=hor
+  set equalalways! equalalways!
+  let &eadirection = eadir_pref
+endf
+
+noremap <silent> <leader><space> :call VexToggle(getcwd())<cr>
+noremap <silent> <leader>` :call VexToggle("")<cr>
+" }}}
 " }}}
 " Buffers, Splits, Tabs {{{
 " splits: use g prefix instead of <C-w>
@@ -88,7 +159,7 @@ nnoremap <silent> <tab> :bnext<cr>
 nnoremap <silent> <S-tab> :bprev<cr>
 
 " easier tab navigation
-nnoremap <silent> <backspace> :tabNext<cr>
+nnoremap <silent> <backspace> :tabnext<cr>
 nnoremap <silent> <S-backspace> :tabprevious<cr>
 
 set hidden		" okay to background modified buffers
@@ -114,14 +185,6 @@ nnoremap Y y$	" make Y behave like D and C, instead of like yy
 nnoremap H ^
 nnoremap L g_
 " }}}
-" Leader {{{
-let mapleader=","		" leader is comma
-
-" edit vimrc/zshrc and load vimrc bindings
-nnoremap <leader>ev :vsp $MYVIMRC<cr>		" vim
-nnoremap <leader>ez :vsp ~/.zshrc<cr>		" zsh
-nnoremap <leader>sv :source $MYVIMRC<cr>	" source vimrc
-" }}}
 " Backups {{{
 set backup							" enable backup
 set backupdir=~/.vim/tmp/backup// " backups
@@ -138,11 +201,12 @@ autocmd BufReadPost *
 			\   exe "normal! g`\"" |
 			\ endif
 
+autocmd FileType php setlocal makeprg=zca\ %<.php
+autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
 " }}}
 " Misc {{{ 
 " this just seems to work best
-set clipboard^=unnamed 
-set clipboard^=unnamedplus
+set clipboard=unnamedplus
 " }}}
 " Plugin Config {{{
 " Airline
@@ -191,43 +255,30 @@ set shortmess+=c					" don't show completion status messages
 " ctrlp.vim
 nnoremap <S-Space> :CtrlP<cr>
 let g:ctrlp_follow_symlinks=1
+let g:ctrlp_show_hidden=1
 
 " vim-session
 let g:session_autoload="no" 		" don't autoload a session when Vim starts
 let g:session_autosave="yes"		" auto-save session when Vim is closed
+
+nnoremap <silent> <leader>so :OpenSession<cr>
+nnoremap <silent> <leader>sO :OpenSession!<cr>
+nnoremap <silent> <leader>ss :SaveSession<cr>
+nnoremap <silent> <leader>sd :DeleteSession<cr>
 
 " vim-bufferline
 let g:bufferline_echo = 0			" don't print buffer command
 let g:bufferline_show_bufnr = 0		" don't enumerate buffers
 
 " vim-bbye
-nnoremap <leader>q :Bdelete<cr>
+nnoremap <silent> <leader>q :Bdelete<cr>
 
-" ultisnips
+" syntastic
+let g:syntastic_go_checkers=["go"]
 
-"" http://stackoverflow.com/a/18685821 
-"function! g:UltiSnips_Complete()
-    "call UltiSnips#ExpandSnippet()
-    "if g:ulti_expand_res == 0
-        "if pumvisible()
-            "return "\<C-n>"
-        "else
-            "call UltiSnips#JumpForwards()
-            "if g:ulti_jump_forwards_res == 0
-               "return "\<TAB>"
-            "endif
-        "endif
-    "endif
-    "return ""
-"endfunction
+" vim-javascript-syntax
+au FileType javascript call JavaScriptFold()
 
-"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-"let g:UltiSnipsJumpForwardTrigger="<tab>"
-"let g:UltiSnipsListSnippets="<c-e>"
-"" this mapping Enter key to <C-y> to chose the current highlight item 
-"" and close the selection list, same as other IDEs.
-"" CONFLICT with some plugins like tpope/Endwise
-"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-"" }}}
+" }}}
 
 " vim:foldlevelstart=0:foldmethod=marker:foldlevel=0
