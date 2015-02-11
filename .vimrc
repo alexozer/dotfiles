@@ -54,6 +54,8 @@ autocmd ColorScheme *
 			\ highlight VertSplit guibg=background |
 			\ highlight SignColumn guibg=background
 
+colorscheme solarized
+
 " gvim-specific options
 if has('gui_running')
 	autocmd GUIEnter * set vb t_vb= " turn off the ridiculous visual and audio bells
@@ -61,9 +63,9 @@ if has('gui_running')
 	set guioptions=cMg " console dialogs, do not show menu and toolbar
 	set guiheadroom=0
 
-	colorscheme solarized
 else
-	colorscheme default
+	colorscheme delek
+	set mouse=a
 endif
 set bg=dark
 
