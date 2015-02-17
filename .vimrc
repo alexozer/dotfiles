@@ -8,14 +8,14 @@ Plug 'junegunn/vim-plug'
 Plug 'altercation/vim-colors-solarized'
 Plug 'whatyouhide/vim-gotham'
 Plug 'reedes/vim-colors-pencil'
-Plug 'vim-airline'
+"Plug 'vim-airline'
 Plug 'fatih/vim-go'
 Plug 'Valloric/YouCompleteMe'
 Plug 'kien/ctrlp.vim'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'		" dependency of vim-session
-Plug 'bling/vim-bufferline'		" show buffer list in status bar
-Plug 'moll/vim-bbye'				" when buffer closed, don't close window
+"Plug 'bling/vim-bufferline'		" show buffer list in status bar
+"Plug 'moll/vim-bbye'				" when buffer closed, don't close window
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 "Plug 'SirVer/ultisnips'
@@ -25,6 +25,9 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'tpope/vim-fugitive'
 Plug 'tikhomirov/vim-glsl'
 Plug 'carlson-erik/wolfpack'
+Plug 'jdonaldson/vaxe'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 " }}}
@@ -67,7 +70,7 @@ else
 	colorscheme delek
 	set mouse=a
 endif
-set bg=dark
+set bg=light
 
 call togglebg#map("<F5>")
 
@@ -86,64 +89,6 @@ set noshowmatch			" don't show matching brackets by flickering
 set fillchars=diff:⣿,vert:│
 
 nnoremap <silent> <leader>= :call NormalizeWidths()<cr>
-" Netrw {{{
-let g:netrw_list_hide='\(^\|\s\s\)\zs\.\S\+,^DS_Store$'
-let g:netrw_hide=1              " hide hidden files
-let g:netrw_dirhistmax=100      " keep more history
-let g:netrw_altfile=1           " last edited file '#'
-let g:netrw_liststyle=0         " thin
-let g:netrw_altv=1              " open files on right
-let g:netrw_preview=1           " open previews vertically
-let g:netrw_use_errorwindow=0   " suppress error window
-
-fun! VexToggle(dir)
-  if exists("t:vex_buf_nr")
-    call VexClose()
-  else
-    call VexOpen(a:dir)
-  endif
-endf
-
-fun! VexOpen(dir)
-  let g:netrw_browse_split=4    " open files in previous window
-  let g:netrw_banner=0          " no banner
-  let vex_width = 27
-
-  exe "Vexplore " . a:dir
-  let t:vex_buf_nr = bufnr("%")
-  wincmd H
-
-  call VexSize(vex_width)
-endf
-
-fun! VexClose()
-  let cur_win_nr = winnr()
-  let target_nr = ( cur_win_nr == 1 ? winnr("#") : cur_win_nr )
-
-  1wincmd w
-  close
-  unlet t:vex_buf_nr
-
-  exe (target_nr - 1) . "wincmd w"
-  call NormalizeWidths()
-endf
-
-fun! VexSize(vex_width)
-  exe "vertical resize" . a:vex_width
-  set winfixwidth
-  call NormalizeWidths()
-endf
-
-fun! NormalizeWidths()
-  let eadir_pref = &eadirection
-  set eadirection=hor
-  set equalalways! equalalways!
-  let &eadirection = eadir_pref
-endf
-
-noremap <silent> <leader><space> :call VexToggle(getcwd())<cr>
-noremap <silent> <leader>` :call VexToggle("")<cr>
-" }}}
 " }}}
 " Buffers, Splits, Tabs {{{
 " splits: use g prefix instead of <C-w>
@@ -157,12 +102,12 @@ nnoremap gJ <C-w>J
 nnoremap gK <C-w>K
 
 " easier buffer navigation
-nnoremap <silent> <tab> :bnext<cr>
-nnoremap <silent> <S-tab> :bprev<cr>
+"nnoremap <silent> <tab> :bnext<cr>
+"nnoremap <silent> <S-tab> :bprev<cr>
 
 " easier tab navigation
-nnoremap <silent> <backspace> :tabnext<cr>
-nnoremap <silent> <S-backspace> :tabprevious<cr>
+"nnoremap <silent> <backspace> :tabnext<cr>
+"nnoremap <silent> <S-backspace> :tabprevious<cr>
 
 set hidden		" okay to background modified buffers
 " }}}
@@ -174,18 +119,16 @@ set smartcase			" override ignorecase if search includes capital letters
 set gdefault			" when using :s command, replace all instances on line by default
 " }}}
 " Folding {{{
-set foldenable			" enable folding
-set foldlevelstart=99	" open all folds on start
-set foldnestmax=1		" max nested folds
 nnoremap <space> za		" space open/closes folds
-set foldmethod=syntax	" fold based on syntax
 " }}}
 " Movement {{{ 
 nnoremap Y y$	" make Y behave like D and C, instead of like yy
 
 " easier than ^ and g_ and I never use the default behavior
 nnoremap H ^
+vnoremap H ^
 nnoremap L g_
+vnoremap L g_
 " }}}
 " Backups {{{
 set backup							" enable backup
@@ -212,25 +155,25 @@ set clipboard=unnamedplus
 " }}}
 " Plugin Config {{{
 " Airline
-if has('gui_running')
-	let g:airline_theme="solarized"
-else
-	let g:airline_theme="dark"
+"if has('gui_running')
+	"let g:airline_theme="solarized"
+"else
+	"let g:airline_theme="dark"
 
-	" reset status bar quickly
-	set ttimeoutlen=10
-	augroup FastEscape
-		autocmd!
-		autocmd InsertEnter * set timeoutlen=0
-		autocmd InsertLeave * set timeoutlen=1000
-	augroup END
-endif
+	"" reset status bar quickly
+	"set ttimeoutlen=10
+	"augroup FastEscape
+		"autocmd!
+		"autocmd InsertEnter * set timeoutlen=0
+		"autocmd InsertLeave * set timeoutlen=1000
+	"augroup END
+"endif
 
-set laststatus=2		" show airline even when only one window is open
-set noshowmode			" hide the default mode text ( -- INSERT -- )
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#whitespace#enabled=0
+"set laststatus=2		" show airline even when only one window is open
+"set noshowmode			" hide the default mode text ( -- INSERT -- )
+"let g:airline_left_sep=''
+"let g:airline_right_sep=''
+"let g:airline#extensions#whitespace#enabled=0
 
 " vim-go
 let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
@@ -255,7 +198,8 @@ set completeopt-=preview			" don't open a preview window
 set shortmess+=c					" don't show completion status messages
 
 " ctrlp.vim
-nnoremap <S-Space> :CtrlP<cr>
+let g:ctrlp_map = '<s-space>'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_follow_symlinks=1
 let g:ctrlp_show_hidden=1
 
@@ -269,11 +213,11 @@ nnoremap <silent> <leader>ss :SaveSession<cr>
 nnoremap <silent> <leader>sd :DeleteSession<cr>
 
 " vim-bufferline
-let g:bufferline_echo = 0			" don't print buffer command
-let g:bufferline_show_bufnr = 0		" don't enumerate buffers
+"let g:bufferline_echo = 0			" don't print buffer command
+"let g:bufferline_show_bufnr = 0		" don't enumerate buffers
 
 " vim-bbye
-nnoremap <silent> <leader>q :Bdelete<cr>
+"nnoremap <silent> <leader>q :Bdelete<cr>
 
 " syntastic
 let g:syntastic_go_checkers=["go"]
@@ -281,6 +225,40 @@ let g:syntastic_go_checkers=["go"]
 " vim-javascript-syntax
 au FileType javascript call JavaScriptFold()
 
+" tagbar
+nnoremap <silent> <leader>t :TagbarToggle<cr>
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
+" nerdtree
+" See http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/ 
+nnoremap <silent> <leader><space> :NERDTreeToggle<cr>
+let NERDTreeHijackNetrw=1
 " }}}
 
 " vim:foldlevelstart=0:foldmethod=marker:foldlevel=0
