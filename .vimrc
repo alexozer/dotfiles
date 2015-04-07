@@ -28,6 +28,9 @@ Plug 'carlson-erik/wolfpack'
 Plug 'jdonaldson/vaxe'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
+"Plug 'Raimondi/delimitMate'
+Plug 'fatih/molokai'
+Plug 'croaky/vim-colors-github'
 
 call plug#end()
 " }}}
@@ -47,6 +50,7 @@ set shiftwidth=4        " no seriously, four spaces per tab
 " }}}
 " UI {{{
 set relativenumber		" show line numbers relative to current
+set ruler " always show bottom bar
 if has('gui_running')
 	set cursorline			" highlight current line
 endif
@@ -70,7 +74,7 @@ else
 	colorscheme delek
 	set mouse=a
 endif
-set bg=light
+set bg=dark
 
 call togglebg#map("<F5>")
 
@@ -88,9 +92,12 @@ set noshowmatch			" don't show matching brackets by flickering
 
 set fillchars=diff:⣿,vert:│
 
-nnoremap <silent> <leader>= :call NormalizeWidths()<cr>
+set guitablabel=%t
 " }}}
 " Buffers, Splits, Tabs {{{
+"set splitbelow " Open horizontal splits below current split
+"set splitright " Open vertical splits to the right of current split
+
 " splits: use g prefix instead of <C-w>
 nnoremap gh <C-w>h
 nnoremap gl <C-w>l
@@ -101,13 +108,11 @@ nnoremap gL <C-w>L
 nnoremap gJ <C-w>J
 nnoremap gK <C-w>K
 
-" easier buffer navigation
-"nnoremap <silent> <tab> :bnext<cr>
-"nnoremap <silent> <S-tab> :bprev<cr>
-
-" easier tab navigation
-"nnoremap <silent> <backspace> :tabnext<cr>
-"nnoremap <silent> <S-backspace> :tabprevious<cr>
+" easier tab manipulation / navigation
+nnoremap <silent> <leader><tab> :tabnew<cr>
+nnoremap <silent> <leader><s-tab> :tabc<cr>
+nnoremap <silent> <tab> :tabn<cr>
+nnoremap <silent> <s-tab> :tabp<cr>
 
 set hidden		" okay to background modified buffers
 " }}}
@@ -187,7 +192,7 @@ au FileType go nnoremap <Leader>T <Plug>(go-def-tab)
 
 au FileType go nnoremap <Leader>i <Plug>(go-info)
 
-au FileType go nnoremap  <silent> <leader>r :wa<cr>:GoRun %<cr>
+au FileType go nnoremap  <silent> <leader>r :wa<cr>:GoRename<cr>
 au FileType go nnoremap  <silent> <leader>b :wa<cr>:GoBuild<cr>
 au FileType go nnoremap  <silent> <leader>t :wa<cr>:GoTest<cr>
 
@@ -226,7 +231,7 @@ let g:syntastic_go_checkers=["go"]
 au FileType javascript call JavaScriptFold()
 
 " tagbar
-nnoremap <silent> <leader>t :TagbarToggle<cr>
+nnoremap <f4> :TagbarToggle<cr>
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -257,8 +262,11 @@ let g:tagbar_type_go = {
 
 " nerdtree
 " See http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/ 
-nnoremap <silent> <leader><space> :NERDTreeToggle<cr>
+nnoremap <f3> :NERDTreeToggle<cr>
 let NERDTreeHijackNetrw=1
+
+" delimitMate
+"let delimitMate_expand_cr=1
 " }}}
 
 " vim:foldlevelstart=0:foldmethod=marker:foldlevel=0
