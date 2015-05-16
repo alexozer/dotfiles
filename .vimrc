@@ -31,6 +31,8 @@ Plug 'scrooloose/nerdtree'
 "Plug 'Raimondi/delimitMate'
 Plug 'fatih/molokai'
 Plug 'croaky/vim-colors-github'
+Plug 'mattn/webapi-vim' " dependency of gist-vim
+Plug 'mattn/gist-vim'
 
 call plug#end()
 " }}}

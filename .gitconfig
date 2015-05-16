@@ -5,3 +5,5 @@
 	email = ***REMOVED***
 [push]
 	default = simple
+[github]
+	user = alexozer
