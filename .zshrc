@@ -33,6 +33,10 @@ function chpwd() {
 # pacman shortcuts
 alias paci="sudo pacman -S"
 alias pacu="sudo pacman -Syu"
+alias pacs="sudo pacman -Ss"
+alias pacq="sudo pacman -Q"
+alias pacqs="sudo pacman -Qs"
+alias pacql="sudo pacman -Ql"
 alias pacr="sudo pacman -Rsc"
 
 # systemd shortcuts
