@@ -81,7 +81,7 @@ else
 	colorscheme delek
 	set mouse=a
 endif
-set bg=dark
+set bg=light
 
 call togglebg#map("<F5>")
 
@@ -162,6 +162,10 @@ autocmd BufReadPost *
 
 autocmd FileType php setlocal makeprg=zca\ %<.php
 autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
+
+autocmd FileType cpp setlocal makeprg=make\ -j5
+autocmd FileType cpp nnoremap <silent> <leader>b :wa<cr>:make!<cr>
+autocmd FileType cpp nnoremap <silent> <leader
 " }}}
 " Misc {{{ 
 " this just seems to work best
