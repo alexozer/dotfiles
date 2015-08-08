@@ -24,7 +24,7 @@ Plug 'xolox/vim-misc'		" dependency of vim-session
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 "Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 Plug 'marijnh/tern_for_vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'tpope/vim-fugitive'
@@ -38,16 +38,13 @@ Plug 'fatih/molokai'
 Plug 'croaky/vim-colors-github'
 Plug 'mattn/webapi-vim' " dependency of gist-vim
 Plug 'mattn/gist-vim'
+Plug 'tpope/vim-sleuth'
+Plug 'sudar/vim-arduino-syntax'
 
 call plug#end()
 " }}}
 " Leader {{{
 let mapleader=","		" leader is comma
-
-" edit vimrc/zshrc and load vimrc bindings
-nnoremap <leader>ev :vsp $MYVIMRC<cr>		" vim
-nnoremap <leader>ez :vsp ~/.zshrc<cr>		" zsh
-nnoremap <leader>sv :source $MYVIMRC<cr>	" source vimrc
 " }}}
 " Spaces {{{
 filetype plugin indent on
@@ -160,14 +157,16 @@ autocmd BufReadPost *
 			\   exe "normal! g`\"" |
 			\ endif
 
-autocmd FileType php setlocal makeprg=zca\ %<.php
-autocmd FileType php setlocal errorformat=%f(line\ %l):\ %m
-
-autocmd FileType cpp setlocal makeprg=make\ -j5
-autocmd FileType cpp nnoremap <silent> <leader>b :wa<cr>:make!<cr>
-autocmd FileType cpp nnoremap <silent> <leader
+autocmd FileType cpp,arduino setlocal makeprg=make\ -j5
+autocmd Filetype cpp,arduino nnoremap <silent> <leader>b :wa<cr>:make!<cr>
+autocmd Filetype cpp,arduino nnoremap <silent> <leader>r :wa<cr>:silent! make!<cr>:!./%:r<cr>
+autocmd Filetype cpp,arduino nnoremap <silent> <leader>u :wa<cr>:!make upload<cr>
 " }}}
 " Misc {{{ 
+" edit vimrc/zshrc and load vimrc bindings
+nnoremap <leader>ev :vsp $MYVIMRC<cr>		" vim
+nnoremap <leader>sv :source $MYVIMRC<cr>	" source vimrc
+
 " this just seems to work best
 set clipboard=unnamedplus
 " }}}
@@ -211,9 +210,17 @@ au FileType go nnoremap  <silent> <leader>t :wa<cr>:GoTest<cr>
 
 au FileType go nnoremap <Leader>d <Plug>(go-doc)
 
+" Ctrl-P
+" improve search performance
+let g:ctrlp_use_caching = 0
+set grepprg=ag\ --nogroup\ --nocolor
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
 " YouCompleteMe
 set completeopt-=preview			" don't open a preview window
-set shortmess+=c					" don't show completion status messages
+set shortmess+=c				" don't show completion status messages
+let g:ycm_extra_conf_globlist = ['~/code/*'] " load project-specific .ycm_extra_conf.py without asking
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py" " settings for C/C++
 
 " ctrlp.vim
 let g:ctrlp_map = '<s-space>'
@@ -228,7 +235,11 @@ let g:session_autosave="yes"		" auto-save session when Vim is closed
 nnoremap <silent> <leader>so :OpenSession<cr>
 nnoremap <silent> <leader>sO :OpenSession!<cr>
 nnoremap <silent> <leader>ss :SaveSession<cr>
+nnoremap <silent> <leader>sS :SaveSession!<cr>
 nnoremap <silent> <leader>sd :DeleteSession<cr>
+nnoremap <silent> <leader>sD :DeleteSession!<cr>
+nnoremap <silent> <leader>sr :RestartVim<cr>
+nnoremap <silent> <leader>sR :RestartVim!<cr>
 
 " vim-bufferline
 "let g:bufferline_echo = 0			" don't print buffer command

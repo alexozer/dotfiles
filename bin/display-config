@@ -6,6 +6,7 @@ function connect() {
 	xrandr --output DP1 --off
 	xrandr --output eDP1 --off
 	xrandr --output VGA1 --mode 1440x900 --pos 1920x90 --rotate normal
+	sh $HOME/.profile
 }
 
 function disconnect() {

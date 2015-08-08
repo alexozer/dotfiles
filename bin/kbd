@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [[ "$1" == "udev" ]]; then
+    sleep 1
+    DISPLAY=":0.0"
+    HOME=/home/alex
+    XAUTHORITY=$HOME/.Xauthority
+    export DISPLAY XAUTHORITY HOME
+
+    kbd_id=$(xinput -list | sed -e '1,/Virtual core keyboard/d' | grep 'USB Keyboard' | grep -oE 'id=([0-9])+' | grep -oE '[0-9]+')
+    if [[ "${kbd_id}" ]]; then
+        setxkbmap -device "${kbd_id}" -option caps:escape -option shift:both_capslock
+    fi
+
+else
+    setxkbmap -option caps:escape -option shift:both_capslock
+fi
