@@ -17,7 +17,7 @@ alias logout='[ -z "$TMUX" ] && logout || tmux detach'
 alias svim='sudo -E vim'
 
 # Use rsync in place of cp to show progress
-alias cp='rsync --progress'
+alias cp='pycp'
 
 # Use curl as wget
 function wget() {

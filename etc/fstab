@@ -1,13 +1,8 @@
-# 
-# /etc/fstab: static file system information
-#
-# <file system>	<dir>	<type>	<options>	<dump>	<pass>
 # /dev/sda2
-UUID=0377de7f-ab1f-4076-8b89-1ab46a0b4968	/         	ext4      	rw,relatime,data=ordered,discard	0 1
+UUID=0377de7f-ab1f-4076-8b89-1ab46a0b4968	/         	ext4      	rw,relatime,data=ordered	0 1
 
 # /dev/sda1
 UUID=D957-300C      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro	0 2
 
-# /dev/sda3
-UUID=05b1ed12-5ed3-4d67-b411-6fbe30978a4e	/home     	ext4      	rw,relatime,data=ordered,discard	0 2
-
+# box
+#https://dav.box.com/dav /home/alex/box davfs defaults,rw,user,noauto 0 0

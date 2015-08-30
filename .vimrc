@@ -138,8 +138,8 @@ nnoremap Y y$	" make Y behave like D and C, instead of like yy
 " easier than ^ and g_ and I never use the default behavior
 nnoremap H ^
 vnoremap H ^
-nnoremap L g_
-vnoremap L g_
+nnoremap L $
+vnoremap L $
 " }}}
 " Backups {{{
 set backup							" enable backup
