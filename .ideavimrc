@@ -4,6 +4,6 @@ nnoremap ,r :action Run<cr>
 nnoremap ,b :action ToggleLineBreakpoint<cr>
 
 nnoremap ,cc :action CommentByLineComment<cr>
-nnoremap ,cc :action CommentByLineComment<cr>
+vnoremap ,cc :action CommentByLineComment<cr>
 nnoremap ,cm :action CommentByBlockComment<cr>
-nnoremap ,cm :action CommentByBlockComment<cr>
+vnoremap ,cm :action CommentByBlockComment<cr>

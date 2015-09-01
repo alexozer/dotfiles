@@ -1,0 +1,7 @@
+#!/bin/bash
+
+xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal
+xrandr --output VGA1 --mode 1440x900 --pos 1920x90 --rotate normal
+xrandr --output VIRTUAL1 --off
+xrandr --output DP1 --off
+xrandr --output eDP1 --off
