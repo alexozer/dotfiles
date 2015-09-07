@@ -46,3 +46,6 @@ alias sres="sudo systemctl restart"
 alias sen="sudo systemctl enable"
 alias sdis="sudo systemctl disable"
 alias srel="sudo systemctl daemon-reload"
+
+# open current directory in file manager
+alias fm="exo-open --launch FileManager"
