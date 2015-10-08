@@ -41,6 +41,7 @@ Plug 'mattn/gist-vim'
 Plug 'tpope/vim-sleuth'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'jscappini/material.vim'
+Plug 'klen/python-mode'
 
 call plug#end()
 " }}}

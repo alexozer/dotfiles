@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DRIVE_DIR="$HOME/drive"
+PID_FILE="$DRIVE_DIR/.drivesync-pid"
+cd $DRIVE_DIR
+
+inotifywait -r -m -e close_write -e delete -e move @$DRIVE_DIR/.gd @$DRIVE_DIR/.driveignore @$DRIVE_DIR/.drivesync-pid "$DRIVE_DIR" |\
+	while read line; do
+		drive push -quiet
+	done

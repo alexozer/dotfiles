@@ -1,1 +1,0 @@
-KERNEL=="card0", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/alex/.Xauthority", RUN+="/home/alex/bin/display-config"

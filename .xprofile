@@ -1,15 +1,10 @@
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-export GOPATH="$HOME/code/go"
-export PATH="$PATH:$HOME/bin:$GOPATH/bin"
-export _JAVA_AWT_WM_NONREPARENTING=1
+GOPATH1="$HOME/build/go"
+GOPATH2="$HOME/code/auv/gocode"
+export GOPATH="$GOPATH1:$GOPATH2"
+export PATH="$PATH:$HOME/bin:$GOPATH1/bin:$GOPATH2/bin:$HOME/code/auv/link-stage"
+export PYTHONPATH="$HOME/code/auv"
+export DRIVE_DIR="$HOME/drive"
 
-if [ -n "$DESKTOP_SESSION" ]; then
-	eval $(gnome-keyring-daemon --start --components=ssh)
-	export SSH_AUTH_SOCK
-fi
-
-syndaemon -i 0.4 -k -t -R &
-nitrogen --restore &
-dex -a &
-twmnd &
-redshiftgui &
+syndaemon -i 0.2 -k -t -R &
+$HOME/bin/kbd &
+$HOME/bin/drivesync &

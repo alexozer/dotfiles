@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+	echo Specify a pdf file to crop
+	exit 1
+fi
+
+cd $(dirname "$1")
+filename=$(basename "$1")
+extension="${filename##*.}"
+firstpart="${filename%.*}"
+
+pdfcrop --margins "-100 0 0 -100" "$filename" "$firstpart-cropped.$extension"

@@ -54,15 +54,6 @@ xkb_symbols "basic" {
     key <AB10> {	[     slash,	question	]	};
 
     key <BKSL> {	[ backslash,         bar	]	};
-
-	//hjkl
-	//AltGr + hjkl
-	key <AC06> {        [         h, H, Left            ]       };
-	key <AC07> {        [         j, J, Down            ]       };
-	key <AC08> {        [         k, K, Up              ]       };
-	key <AC09> {        [         l, L, Right           ]       };
-	//Super_L -> Alt Gr
-	key <LWIN> { [ ISO_Level3_Shift ] };
 };
 
 partial alphanumeric_keys
