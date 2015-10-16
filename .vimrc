@@ -1,8 +1,6 @@
 " Alex Ozer
 
 set nocompatible
-let serverHost="sirvus"
-let currHost=hostname()
 
 " Plug {{{ 
 call plug#begin('~/.vim/plugged')
@@ -13,9 +11,7 @@ Plug 'whatyouhide/vim-gotham'
 Plug 'reedes/vim-colors-pencil'
 "Plug 'vim-airline'
 Plug 'fatih/vim-go'
-if currHost != serverHost
-	Plug 'Valloric/YouCompleteMe'
-endif
+Plug 'Valloric/YouCompleteMe'
 Plug 'kien/ctrlp.vim'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'		" dependency of vim-session
@@ -42,6 +38,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'jscappini/material.vim'
 Plug 'klen/python-mode'
+Plug 'baskerville/vim-sxhkdrc'
 
 call plug#end()
 " }}}
@@ -96,9 +93,7 @@ set scrolloff=5			" leave lines visible at top and bottom of buffer
 
 set noshowmatch			" don't show matching brackets by flickering
 
-if currHost != serverHost
-	set fillchars=diff:⣿,vert:│
-endif
+set fillchars=diff:⣿,vert:│
 
 set guitablabel=%t
 " }}}

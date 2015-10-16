@@ -1,0 +1,103 @@
+#
+# bspwm hotkeys
+#
+
+alt + q ; {l, s, p, r}
+	{bspc quit, systemctl suspend, poweroff, reboot}
+
+alt + c
+	bspc window --close
+
+alt + t
+	bspc desktop --layout next
+
+alt + b
+	bspc desktop --balance
+
+alt + equal
+	bspc desktop --equalize
+
+alt + {s,f}
+	bspc window --toggle {floating,fullscreen}
+
+#alt + {grave,Tab}
+	#bspc {window,desktop} --focus last
+
+#alt + apostrophe
+	#bspc window --swap last
+
+#alt + {o,i}
+	#bspc control --record-history off; \
+	#bspc window {older,newer} -f; \
+	#bspc control --record-history on
+
+#alt + y
+	#bspc window -w last.manual
+
+#alt + m
+	#bspc window -s biggest
+
+alt + {_,shift + }{h,j,k,l}
+	bspc window --{focus,swap} {left,down,up,right}
+
+#alt + {_,shift + }c
+	#bspc window -f {next,prev}
+
+alt + {_,shift + }r
+	bspc desktop --rotate {270,90}
+
+alt + {comma,period}
+	bspc desktop --circulate {backward,forward}
+
+alt + {n,i}
+	bspc desktop --focus {next,prev}
+
+alt + ctrl + {h,j,k,l}
+	bspc window --presel {left,down,up,right}
+
+#alt + ctrl + {_,shift + }space
+	#bspc {window -p cancel,desktop -c}
+
+alt + ctrl + space
+	bspc desktop --cancel-presel
+
+#alt + alt + {h,j,k,l}
+	#bspc window -e {left -10,down +10,up -10,right +10}
+
+#alt + alt + shift + {h,j,k,l}
+	#bspc window -e {right -10,up +10,down -10,left +10}
+
+#alt + ctrl + {1-9}
+	#bspc window --ratio 0.{1-9}
+
+alt + {_,shift + }{1-9,0}
+	bspc {desktop --focus,window --to-desktop} ^{1-9,10}
+
+~button1
+	bspc pointer --grab focus
+
+alt + button{1-3}
+	bspc pointer --grab {move,resize_side,resize_corner}
+
+alt + !button{1-3}
+	bspc pointer --track %i %i
+
+alt + @button{1-3}
+	bspc pointer --ungrab
+
+#
+# wm independent hotkeys
+#
+
+alt + Escape
+	xfce4-popup-whiskermenu
+
+alt + shift + Return
+	xfce4-terminal
+
+alt + g ; {w,e,v,x,s}
+	{chromium,thunar,gvim,xournal,xfce4-screenshooter}
+
+# make sxhkd reload its configuration files:
+alt + shift + Escape
+	pkill -USR1 -x sxhkd
