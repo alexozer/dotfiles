@@ -77,7 +77,7 @@ else
 	colorscheme delek
 	set mouse=a
 endif
-set bg=light
+set bg=dark
 
 call togglebg#map("<F5>")
 

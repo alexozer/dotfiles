@@ -1,4 +1,4 @@
-#
+
 # bspwm hotkeys
 #
 
@@ -17,7 +17,7 @@ alt + b
 alt + equal
 	bspc desktop --equalize
 
-alt + {s,f}
+alt + {d,f}
 	bspc window --toggle {floating,fullscreen}
 
 #alt + {grave,Tab}
@@ -97,6 +97,12 @@ alt + shift + Return
 
 alt + g ; {w,e,v,x,s}
 	{chromium,thunar,gvim,xournal,xfce4-screenshooter}
+
+alt + {Insert, Delete, BackSpace}
+	amixer set Master {2%+, 2%-, toggle}
+
+{XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
+	amixer set Master {2%+, 2%-, toggle}
 
 # make sxhkd reload its configuration files:
 alt + shift + Escape

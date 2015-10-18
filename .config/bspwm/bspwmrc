@@ -3,8 +3,8 @@
 # bspwm-specific autostart
 
 bspc config top_padding			30
-bspc config window_gap 			30
-bspc config border_width 4
+bspc config border_width 		4
+bspc config window_gap 			0
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 
@@ -28,3 +28,4 @@ redshift-gtk &
 xfce4-panel --disable-wm-check &
 
 thunar --daemon &
+chromium --no-startup-window
