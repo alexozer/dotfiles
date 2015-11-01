@@ -1,3 +1,0 @@
-#!/bin/bash
-fifopath=/tmp/kbdhotplugd.fifo
-[ -e "$fifopath" ] && echo "event" > "$fifopath"
