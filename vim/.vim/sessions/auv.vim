@@ -1,6 +1,6 @@
-" ~/.dotfiles/.vim/sessions/auv.vim:
+" ~/.dotfiles/vim/.vim/sessions/auv.vim:
 " Vim session script.
-" Created by session.vim 2.13 on 28 September 2015 at 12:06:00.
+" Created by session.vim 2.13.1 on 15 November 2015 at 22:28:58.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
@@ -24,7 +24,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +48 ~/.vimrc
+badd +71 ~/.vimrc
 argglobal
 silent! argdel *
 edit ~/.vimrc
@@ -37,8 +37,8 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 119) / 239)
-exe 'vert 2resize ' . ((&columns * 207 + 119) / 239)
+exe 'vert 1resize ' . ((&columns * 30 + 119) / 238)
+exe 'vert 2resize ' . ((&columns * 207 + 119) / 238)
 argglobal
 enew
 " file NERD_tree_1
@@ -67,8 +67,8 @@ normal! zt
 7
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 119) / 239)
-exe 'vert 2resize ' . ((&columns * 207 + 119) / 239)
+exe 'vert 1resize ' . ((&columns * 30 + 119) / 238)
+exe 'vert 2resize ' . ((&columns * 207 + 119) / 238)
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -97,7 +97,7 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 65|vert 1resize 31|2resize 65|vert 2resize 207|
+1resize 65|vert 1resize 30|2resize 65|vert 2resize 207|
 1wincmd w
 tabnext 1
 if exists('s:wipebuf')

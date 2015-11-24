@@ -17,10 +17,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-oceanicnext.dark.sh"
 bindkey -v
 bindkey -M vicmd v edit-command-line
 
-# tmux session handling
-alias exit='[ -z "$TMUX" ] && exit || tmux detach'
-alias logout='[ -z "$TMUX" ] && logout || tmux detach'
-
 # edit in vim as root
 alias svim='sudo -E vim'
 

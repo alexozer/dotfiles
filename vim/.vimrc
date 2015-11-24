@@ -173,11 +173,6 @@ set clipboard=unnamedplus
 " }}}
 " Plugin Config {{{
 " Airline
-"if has('gui_running')
-	"let g:airline_theme="solarized"
-"else
-	"let g:airline_theme="dark"
-
 	"" reset status bar quickly
 	"set ttimeoutlen=10
 	"augroup FastEscape
