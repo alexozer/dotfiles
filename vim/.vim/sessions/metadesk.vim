@@ -1,10 +1,10 @@
 " ~/.dotfiles/vim/.vim/sessions/metadesk.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 23 November 2015 at 00:21:49.
+" Created by session.vim 2.13.1 on 01 December 2015 at 12:34:09.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
-silent! set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+silent! set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -24,36 +24,34 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +27 server/fmt.go
-badd +62 server/desktop.go
-badd +62 client/client.go
-badd +53 server/wm.go
-badd +62 server/server.go
-badd +29 main.go
-badd +7 cmd-syntax
+badd +71 server/fmt.go
+badd +72 server/desktop.go
+badd +22 server/wm.go
+badd +72 server/server.go
 badd +1 wm.go
 badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/server/selector.go\'
-badd +62 server/selector.go
-badd +44 server/cmd.go
-badd +52 server/cmdline.go
+badd +63 server/selector.go
+badd +72 server/cmdline.go
+badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/todo\'
+badd +3 todo
+badd +76 ~/.vimrc
+badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/client/mdc.go\'
+badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/metadesk.go\'
+badd +1 metadesk.go
 argglobal
 silent! argdel *
-edit server/cmdline.go
+edit metadesk.go
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-2wincmd h
-wincmd w
+1wincmd h
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 119) / 238)
-exe 'vert 2resize ' . ((&columns * 103 + 119) / 238)
-exe 'vert 3resize ' . ((&columns * 102 + 119) / 238)
+exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 240 + 136) / 272)
 argglobal
 enew
 " file NERD_tree_1
@@ -65,6 +63,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
+lcd ~/code/go/src/github.com/alexozer/metadesk
 wincmd w
 argglobal
 setlocal fdm=manual
@@ -74,39 +73,19 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
-let s:l = 55 - ((54 * winheight(0) + 33) / 67)
+let s:l = 1 - ((0 * winheight(0) + 38) / 77)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-55
+1
 normal! 0
 lcd ~/code/go/src/github.com/alexozer/metadesk
 wincmd w
-argglobal
-edit ~/code/go/src/github.com/alexozer/metadesk/cmd-syntax
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 33) / 67)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-3
-normal! 014|
-lcd ~/code/go/src/github.com/alexozer/metadesk
-wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 119) / 238)
-exe 'vert 2resize ' . ((&columns * 103 + 119) / 238)
-exe 'vert 3resize ' . ((&columns * 102 + 119) / 238)
+exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 240 + 136) / 272)
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -135,7 +114,7 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 67|vert 1resize 31|2resize 67|vert 2resize 103|3resize 67|vert 3resize 102|
+1resize 77|vert 1resize 31|2resize 77|vert 2resize 240|
 2wincmd w
 tabnext 1
 if exists('s:wipebuf')

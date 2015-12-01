@@ -1,18 +1,18 @@
 " ~/.dotfiles/vim/.vim/sessions/auv.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 15 November 2015 at 22:28:58.
+" Created by session.vim 2.13.1 on 29 November 2015 at 18:13:35.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
-silent! set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+silent! set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
 if exists('g:did_indent_on') != 1 | filetype indent on | endif
-if &background != 'light'
-	set background=light
+if &background != 'dark'
+	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'solarized' | colorscheme solarized | endif
+if !exists('g:colors_name') || g:colors_name != 'PaperColor' | colorscheme PaperColor | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -24,21 +24,22 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +71 ~/.vimrc
+badd +141 ~/.vimrc
+badd +27 mission/missions/Bins.py
+badd +73 mission/missions/BuoyRam.py
+badd +0 mission/framework/auxiliary.py
 argglobal
 silent! argdel *
-edit ~/.vimrc
+edit mission/framework/auxiliary.py
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd w
-set nosplitbelow
-set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 30 + 119) / 238)
-exe 'vert 2resize ' . ((&columns * 207 + 119) / 238)
+exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 240 + 136) / 272)
 argglobal
 enew
 " file NERD_tree_1
@@ -52,23 +53,25 @@ setlocal fdn=20
 setlocal nofen
 wincmd w
 argglobal
-setlocal fdm=marker
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
-let s:l = 7 - ((6 * winheight(0) + 32) / 65)
+setlocal nofen
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 38) / 77)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-7
+1
 normal! 0
 wincmd w
-exe 'vert 1resize ' . ((&columns * 30 + 119) / 238)
-exe 'vert 2resize ' . ((&columns * 207 + 119) / 238)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 240 + 136) / 272)
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -97,8 +100,8 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
-1resize 65|vert 1resize 30|2resize 65|vert 2resize 207|
-1wincmd w
+1resize 77|vert 1resize 31|2resize 77|vert 2resize 240|
+2wincmd w
 tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))

@@ -73,7 +73,7 @@ colorscheme PaperColor
 " gvim-specific options
 if has('gui_running')
 	autocmd GUIEnter * set vb t_vb= " turn off the ridiculous visual and audio bells
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 	set guioptions=cMg " console dialogs, do not show menu and toolbar
 	set guiheadroom=0
 
@@ -121,6 +121,10 @@ nnoremap <silent> <leader><s-tab> :tabc<cr>
 nnoremap <silent> <tab> :tabn<cr>
 nnoremap <silent> <s-tab> :tabp<cr>
 
+" split below and right
+set splitbelow
+set splitright
+
 set hidden		" okay to background modified buffers
 " }}}
 " Searching {{{
@@ -131,6 +135,7 @@ set smartcase			" override ignorecase if search includes capital letters
 set gdefault			" when using :s command, replace all instances on line by default
 " }}}
 " Folding {{{
+set nofoldenable
 nnoremap <space> za		" space open/closes folds
 " }}}
 " Movement {{{ 
@@ -289,4 +294,4 @@ let NERDTreeHijackNetrw=1
 "let delimitMate_expand_cr=1
 " }}}
 
-" vim:foldlevelstart=0:foldmethod=marker:foldlevel=0
+" vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0
