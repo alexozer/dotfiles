@@ -119,6 +119,10 @@ nnoremap <silent> <leader><s-tab> :tabc<cr>
 nnoremap <silent> <tab> :tabn<cr>
 nnoremap <silent> <s-tab> :tabp<cr>
 
+" split below and right
+set splitbelow
+set splitright
+
 set hidden		" okay to background modified buffers
 " }}}
 " Searching {{{
@@ -129,6 +133,7 @@ set smartcase			" override ignorecase if search includes capital letters
 set gdefault			" when using :s command, replace all instances on line by default
 " }}}
 " Folding {{{
+set nofoldenable
 nnoremap <space> za		" space open/closes folds
 " }}}
 " Movement {{{ 
@@ -171,11 +176,6 @@ set clipboard=unnamedplus
 " }}}
 " Plugin Config {{{
 " Airline
-"if has('gui_running')
-	"let g:airline_theme="solarized"
-"else
-	"let g:airline_theme="dark"
-
 	"" reset status bar quickly
 	"set ttimeoutlen=10
 	"augroup FastEscape
@@ -292,4 +292,4 @@ let NERDTreeHijackNetrw=1
 "let delimitMate_expand_cr=1
 " }}}
 
-" vim:foldlevelstart=0:foldmethod=marker:foldlevel=0
+" vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0

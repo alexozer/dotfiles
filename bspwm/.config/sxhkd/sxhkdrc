@@ -8,8 +8,11 @@ alt + shift + q ; {l, s, p, r}
 alt + c
 	bspc window --close
 
-alt + t
-	bspc desktop --layout next
+#alt + t
+#	bspc desktop --layout next
+#
+#alt + {_,shift + }Tab
+#	bspc window --focus {next,prev}
 
 alt + b
 	bspc desktop --balance

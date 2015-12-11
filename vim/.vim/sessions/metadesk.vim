@@ -1,6 +1,10 @@
 " ~/.dotfiles/vim/.vim/sessions/metadesk.vim:
 " Vim session script.
+<<<<<<< HEAD
 " Created by session.vim 2.13.1 on 11 December 2015 at 11:07:59.
+=======
+" Created by session.vim 2.13.1 on 01 December 2015 at 12:34:09.
+>>>>>>> 7c0abcf461c90d5605b967d4d19fddb874e3196b
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
@@ -24,6 +28,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+<<<<<<< HEAD
 badd +25 client/client.go
 badd +62 server/server.go
 badd +1 main.go
@@ -39,22 +44,43 @@ badd +1 server/4913
 badd +207 server/cmdline.go
 badd +1 server/fmt.go
 badd +1 client/bar.sh
+=======
+badd +71 server/fmt.go
+badd +72 server/desktop.go
+badd +22 server/wm.go
+badd +72 server/server.go
+badd +1 wm.go
+badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/server/selector.go\'
+badd +63 server/selector.go
+badd +72 server/cmdline.go
+badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/todo\'
+badd +3 todo
+badd +76 ~/.vimrc
+badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/client/mdc.go\'
+badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/metadesk.go\'
+badd +1 metadesk.go
+>>>>>>> 7c0abcf461c90d5605b967d4d19fddb874e3196b
 argglobal
 silent! argdel *
-edit server/desktop.go
+edit metadesk.go
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
+<<<<<<< HEAD
 wincmd _ | wincmd |
 vsplit
 2wincmd h
 wincmd w
+=======
+1wincmd h
+>>>>>>> 7c0abcf461c90d5605b967d4d19fddb874e3196b
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
+<<<<<<< HEAD
 exe 'vert 2resize ' . ((&columns * 120 + 136) / 272)
 exe 'vert 3resize ' . ((&columns * 119 + 136) / 272)
 argglobal
@@ -69,7 +95,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 wincmd w
+=======
+exe 'vert 2resize ' . ((&columns * 240 + 136) / 272)
+>>>>>>> 7c0abcf461c90d5605b967d4d19fddb874e3196b
 argglobal
+enew
+" file NERD_tree_1
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -77,6 +108,7 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
+<<<<<<< HEAD
 setlocal fen
 silent! normal! zE
 let s:l = 92 - ((32 * winheight(0) + 38) / 77)
@@ -89,6 +121,12 @@ lcd ~/code/go/src/github.com/alexozer/metadesk
 wincmd w
 argglobal
 edit ~/code/go/src/github.com/alexozer/metadesk/server/cmdline.go
+=======
+setlocal nofen
+lcd ~/code/go/src/github.com/alexozer/metadesk
+wincmd w
+argglobal
+>>>>>>> 7c0abcf461c90d5605b967d4d19fddb874e3196b
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -96,7 +134,7 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
+setlocal nofen
 silent! normal! zE
 let s:l = 1 - ((0 * winheight(0) + 38) / 77)
 if s:l < 1 | let s:l = 1 | endif
@@ -108,8 +146,12 @@ lcd ~/code/go/src/github.com/alexozer/metadesk
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
+<<<<<<< HEAD
 exe 'vert 2resize ' . ((&columns * 120 + 136) / 272)
 exe 'vert 3resize ' . ((&columns * 119 + 136) / 272)
+=======
+exe 'vert 2resize ' . ((&columns * 240 + 136) / 272)
+>>>>>>> 7c0abcf461c90d5605b967d4d19fddb874e3196b
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -138,7 +180,11 @@ if !getbufvar(s:bufnr_save, '&modified')
   endif
 endif
 execute "cd" fnameescape(s:cwd_save)
+<<<<<<< HEAD
 1resize 77|vert 1resize 31|2resize 77|vert 2resize 120|3resize 77|vert 3resize 119|
+=======
+1resize 77|vert 1resize 31|2resize 77|vert 2resize 240|
+>>>>>>> 7c0abcf461c90d5605b967d4d19fddb874e3196b
 2wincmd w
 tabnext 1
 if exists('s:wipebuf')
