@@ -73,16 +73,14 @@ colorscheme PaperColor
 " gvim-specific options
 if has('gui_running')
 	autocmd GUIEnter * set vb t_vb= " turn off the ridiculous visual and audio bells
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 	set guioptions=cMg " console dialogs, do not show menu and toolbar
 	set guiheadroom=0
-
 else
-	colorscheme delek
 	set mouse=a
 endif
-set bg=dark
 
+set bg=dark
 call togglebg#map("<F5>")
 
 syntax enable			" enable syntax processing

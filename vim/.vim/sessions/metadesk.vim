@@ -1,10 +1,10 @@
-" ~/.dotfiles/.vim/sessions/metadesk.vim:
+" ~/.dotfiles/vim/.vim/sessions/metadesk.vim:
 " Vim session script.
-" Created by session.vim 2.13 on 24 October 2015 at 19:56:04.
+" Created by session.vim 2.13.1 on 11 December 2015 at 11:07:59.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
-silent! set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+silent! set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -12,7 +12,7 @@ if exists('g:did_indent_on') != 1 | filetype indent on | endif
 if &background != 'dark'
 	set background=dark
 endif
-if !exists('g:colors_name') || g:colors_name != 'solarized' | colorscheme solarized | endif
+if !exists('g:colors_name') || g:colors_name != 'PaperColor' | colorscheme PaperColor | endif
 call setqflist([])
 let SessionLoad = 1
 if &cp | set nocp | endif
@@ -24,30 +24,51 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +70 client/client.go
-badd +28 server/server.go
-badd +29 main.go
+badd +25 client/client.go
+badd +62 server/server.go
+badd +1 main.go
 badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/server/desktop.go\'
-badd +55 server/desktop.go
+badd +23 server/desktop.go
 badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/server/desktopmanager.go\'
 badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/server/wm.go\'
 badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/server/windowmanager.go\'
-badd +25 server/wm.go
-badd +71 ~/.vimrc
+badd +1 server/wm.go
+badd +76 ~/.vimrc
+badd +34 client/mdc.go
+badd +1 server/4913
+badd +207 server/cmdline.go
+badd +1 server/fmt.go
+badd +1 client/bar.sh
 argglobal
 silent! argdel *
 edit server/desktop.go
 set splitbelow splitright
 wincmd _ | wincmd |
-split
-1wincmd k
+vsplit
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 30 + 34) / 69)
-exe '2resize ' . ((&lines * 36 + 34) / 69)
+exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 120 + 136) / 272)
+exe 'vert 3resize ' . ((&columns * 119 + 136) / 272)
+argglobal
+enew
+" file NERD_tree_1
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+wincmd w
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -58,16 +79,16 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 22 - ((19 * winheight(0) + 15) / 30)
+let s:l = 92 - ((32 * winheight(0) + 38) / 77)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-22
+92
 normal! 0
 lcd ~/code/go/src/github.com/alexozer/metadesk
 wincmd w
 argglobal
-edit ~/code/go/src/github.com/alexozer/metadesk/server/wm.go
+edit ~/code/go/src/github.com/alexozer/metadesk/server/cmdline.go
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -77,16 +98,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 24 - ((23 * winheight(0) + 18) / 36)
+let s:l = 1 - ((0 * winheight(0) + 38) / 77)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-24
+1
 normal! 0
 lcd ~/code/go/src/github.com/alexozer/metadesk
 wincmd w
-exe '1resize ' . ((&lines * 30 + 34) / 69)
-exe '2resize ' . ((&lines * 36 + 34) / 69)
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
+exe 'vert 2resize ' . ((&columns * 120 + 136) / 272)
+exe 'vert 3resize ' . ((&columns * 119 + 136) / 272)
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -104,6 +127,19 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
+tabnext 1
+let s:bufnr_save = bufnr("%")
+let s:cwd_save = getcwd()
+NERDTree ~/code/go/src/github.com/alexozer/metadesk
+if !getbufvar(s:bufnr_save, '&modified')
+  let s:wipebuflines = getbufline(s:bufnr_save, 1, '$')
+  if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
+    silent execute 'bwipeout' s:bufnr_save
+  endif
+endif
+execute "cd" fnameescape(s:cwd_save)
+1resize 77|vert 1resize 31|2resize 77|vert 2resize 120|3resize 77|vert 3resize 119|
+2wincmd w
 tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
