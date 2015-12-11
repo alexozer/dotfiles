@@ -62,7 +62,3 @@ e() {
 	    ;;
     esac
 }
-
-# use sudo on last command
-alias pls=please
-alias please='sudo $(fc -ln -1)'

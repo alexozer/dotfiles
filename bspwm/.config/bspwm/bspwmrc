@@ -18,15 +18,13 @@ bspc monitor -d 1 2 3 4
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+compton --frame-opacity 0.5 &
+
 xfsettingsd &
 xfdesktop --disable-wm-check &
-compton --frame-opacity 0.5 &
+xfce4-panel --disable-wm-check &
 xfce4-notifyd &
 
-xfce4-power-manager &
-nm-applet &
-redshift-gtk &
-xfce4-panel --disable-wm-check &
-
+dex -a &
 thunar --daemon &
 chromium --no-startup-window &
