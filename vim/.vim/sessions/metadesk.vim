@@ -1,6 +1,6 @@
 " ~/.dotfiles/vim/.vim/sessions/metadesk.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 11 December 2015 at 14:16:12.
+" Created by session.vim 2.13.1 on 13 December 2015 at 21:04:38.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
@@ -36,7 +36,7 @@ badd +22 server/wm.go
 badd +76 ~/.vimrc
 badd +34 client/mdc.go
 badd +1 server/4913
-badd +1 server/cmdline.go
+badd +160 server/cmdline.go
 badd +71 server/fmt.go
 badd +1 client/bar.sh
 badd +1 wm.go
@@ -51,28 +51,10 @@ argglobal
 silent! argdel *
 edit server/cmdline.go
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 51) / 103)
-exe 'vert 2resize ' . ((&columns * 71 + 51) / 103)
-argglobal
-enew
-" file NERD_tree_1
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-wincmd w
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -83,16 +65,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 187 - ((39 * winheight(0) + 38) / 77)
+let s:l = 160 - ((12 * winheight(0) + 39) / 78)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-187
-normal! 0
-wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 51) / 103)
-exe 'vert 2resize ' . ((&columns * 71 + 51) / 103)
+160
+normal! 026|
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -110,19 +88,6 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 1
-let s:bufnr_save = bufnr("%")
-let s:cwd_save = getcwd()
-NERDTree ~/code/go/src/github.com/alexozer/metadesk
-if !getbufvar(s:bufnr_save, '&modified')
-  let s:wipebuflines = getbufline(s:bufnr_save, 1, '$')
-  if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
-    silent execute 'bwipeout' s:bufnr_save
-  endif
-endif
-execute "cd" fnameescape(s:cwd_save)
-1resize 77|vert 1resize 31|2resize 77|vert 2resize 71|
-2wincmd w
 tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))
