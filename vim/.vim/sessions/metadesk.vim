@@ -1,6 +1,6 @@
 " ~/.dotfiles/vim/.vim/sessions/metadesk.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 13 December 2015 at 21:04:38.
+" Created by session.vim 2.13.1 on 13 December 2015 at 21:06:48.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
@@ -47,9 +47,10 @@ badd +3 todo
 badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/client/mdc.go\'
 badd +1 \'/home/alex/code/go/src/github.com/alexozer/metadesk/metadesk.go\'
 badd +1 metadesk.go
+badd +0 ~/build/go/src/github.com/alexozer/metadesk/server/cmdline.go
 argglobal
 silent! argdel *
-edit server/cmdline.go
+edit ~/build/go/src/github.com/alexozer/metadesk/server/cmdline.go
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -65,12 +66,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 160 - ((12 * winheight(0) + 39) / 78)
+let s:l = 1 - ((0 * winheight(0) + 39) / 78)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-160
-normal! 026|
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
