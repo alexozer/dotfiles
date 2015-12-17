@@ -2,6 +2,8 @@
 
 # bspwm-specific autostart
 
+source "$HOME/.xprofile"
+
 bspc config top_padding			30
 bspc config border_width 		4
 bspc config window_gap 			0
@@ -14,17 +16,9 @@ bspc config focus_by_distance   true
 
 bspc config auto_cancel 		true
 
-bspc monitor -d 1 2 3 4
+bspc monitor -d root
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-compton --frame-opacity 0.5 &
-
-xfsettingsd &
-xfdesktop --disable-wm-check &
-xfce4-panel --disable-wm-check &
-xfce4-notifyd &
-
-dex -a &
-thunar --daemon &
-chromium --no-startup-window &
+metadesk -c "$HOME/.config/bspwm/metadesk.sh" &
+$HOME/.config/bspwm/startup.sh &

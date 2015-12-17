@@ -18,9 +18,9 @@ Plug 'fatih/vim-go'
 Plug 'Valloric/YouCompleteMe'
 Plug 'kien/ctrlp.vim'
 Plug 'xolox/vim-session'
-Plug 'xolox/vim-misc'		" dependency of vim-session
-"Plug 'bling/vim-bufferline'		" show buffer list in status bar
-"Plug 'moll/vim-bbye'				" when buffer closed, don't close window
+Plug 'xolox/vim-misc' " dependency of vim-session
+"Plug 'bling/vim-bufferline' " show buffer list in status bar
+"Plug 'moll/vim-bbye' " when buffer closed, don't close window
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 "Plug 'SirVer/ultisnips'
@@ -43,6 +43,8 @@ Plug 'sudar/vim-arduino-syntax'
 Plug 'jscappini/material.vim'
 Plug 'klen/python-mode'
 Plug 'baskerville/vim-sxhkdrc'
+Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular' " dependency of vim-markdown
 
 call plug#end()
 " }}}

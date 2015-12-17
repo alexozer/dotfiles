@@ -52,9 +52,6 @@ alt + {_,shift + }r
 alt + {comma,period}
 	bspc desktop --circulate {backward,forward}
 
-alt + {n,i}
-	bspc desktop --focus {next,prev}
-
 alt + ctrl + {h,j,k,l}
 	bspc window --presel {left,down,up,right}
 
@@ -72,9 +69,6 @@ alt + ctrl + space
 
 #alt + ctrl + {1-9}
 	#bspc window --ratio 0.{1-9}
-
-alt + {_,shift + }{1-9,0}
-	bspc {desktop --focus,window --to-desktop} ^{1-9,10}
 
 ~button1
 	bspc pointer --grab focus
@@ -108,3 +102,13 @@ alt + {Insert, Delete, BackSpace}
 # make sxhkd reload its configuration files:
 alt + shift + Escape
 	pkill -USR1 -x sxhkd
+
+#
+# metadesk bindings
+#
+
+alt + {n,i}
+	mdc focused -p -{n,N}
+
+alt + {1-9,0}
+	mdc root -c {0-8,9} -f

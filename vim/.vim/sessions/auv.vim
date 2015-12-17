@@ -1,6 +1,6 @@
 " ~/.dotfiles/vim/.vim/sessions/auv.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 29 November 2015 at 18:13:35.
+" Created by session.vim 2.13.1 on 17 December 2015 at 00:36:06.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
@@ -27,10 +27,10 @@ set shortmess=aoO
 badd +141 ~/.vimrc
 badd +27 mission/missions/Bins.py
 badd +73 mission/missions/BuoyRam.py
-badd +0 mission/framework/auxiliary.py
+badd +1 mission/framework/auxiliary.py
 argglobal
 silent! argdel *
-edit mission/framework/auxiliary.py
+edit mission/missions/BuoyRam.py
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -53,15 +53,14 @@ setlocal fdn=20
 setlocal nofen
 wincmd w
 argglobal
-setlocal fdm=manual
-setlocal fde=0
+setlocal fdm=expr
+setlocal fde=pymode#folding#expr(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-silent! normal! zE
 let s:l = 1 - ((0 * winheight(0) + 38) / 77)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
