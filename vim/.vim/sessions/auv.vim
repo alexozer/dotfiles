@@ -1,6 +1,6 @@
 " ~/.dotfiles/vim/.vim/sessions/auv.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 17 December 2015 at 00:36:06.
+" Created by session.vim 2.13.1 on 18 December 2015 at 14:32:34.
 " Open this file in Vim and run :source % to restore your session.
 
 set guioptions=cMg
@@ -26,11 +26,12 @@ endif
 set shortmess=aoO
 badd +141 ~/.vimrc
 badd +27 mission/missions/Bins.py
-badd +73 mission/missions/BuoyRam.py
+badd +1 mission/missions/BuoyRam.py
 badd +1 mission/framework/auxiliary.py
+badd +39 mission/framework/combinators.py
 argglobal
 silent! argdel *
-edit mission/missions/BuoyRam.py
+edit mission/framework/combinators.py
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -38,21 +39,26 @@ vsplit
 wincmd w
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 240 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 83 + 83) / 167)
+exe 'vert 2resize ' . ((&columns * 83 + 83) / 167)
 argglobal
-enew
-" file NERD_tree_1
-setlocal fdm=manual
-setlocal fde=0
+setlocal fdm=expr
+setlocal fde=pymode#folding#expr(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
+let s:l = 40 - ((39 * winheight(0) + 38) / 77)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+40
+normal! 0
 wincmd w
 argglobal
+edit mission/missions/BuoyRam.py
 setlocal fdm=expr
 setlocal fde=pymode#folding#expr(v:lnum)
 setlocal fmr={{{,}}}
@@ -68,9 +74,8 @@ normal! zt
 1
 normal! 0
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 136) / 272)
-exe 'vert 2resize ' . ((&columns * 240 + 136) / 272)
+exe 'vert 1resize ' . ((&columns * 83 + 83) / 167)
+exe 'vert 2resize ' . ((&columns * 83 + 83) / 167)
 tabnext 1
 if exists('s:wipebuf')
 "   silent exe 'bwipe ' . s:wipebuf
@@ -88,19 +93,6 @@ let &so = s:so_save | let &siso = s:siso_save
 " by :mksession out of the box).
 
 1wincmd w
-tabnext 1
-let s:bufnr_save = bufnr("%")
-let s:cwd_save = getcwd()
-NERDTree ~/code/auv
-if !getbufvar(s:bufnr_save, '&modified')
-  let s:wipebuflines = getbufline(s:bufnr_save, 1, '$')
-  if len(s:wipebuflines) <= 1 && empty(get(s:wipebuflines, 0, ''))
-    silent execute 'bwipeout' s:bufnr_save
-  endif
-endif
-execute "cd" fnameescape(s:cwd_save)
-1resize 77|vert 1resize 31|2resize 77|vert 2resize 240|
-2wincmd w
 tabnext 1
 if exists('s:wipebuf')
   if empty(bufname(s:wipebuf))

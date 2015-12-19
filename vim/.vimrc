@@ -58,6 +58,9 @@ set tabstop=4			" number of visual spaces per TAB
 set shiftwidth=4        " no seriously, four spaces per tab
 " }}}
 " UI {{{
+set timeoutlen=1000
+set ttimeoutlen=0
+
 set relativenumber		" show line numbers relative to current
 set ruler " always show bottom bar
 if has('gui_running')
@@ -65,6 +68,8 @@ if has('gui_running')
 endif
 set wildmenu			" visual autocomplete for command menu
 set lazyredraw			" redraw only when we need to (not during macros)
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 autocmd ColorScheme * 
 			\ highlight VertSplit guibg=background |
@@ -91,7 +96,7 @@ syntax enable			" enable syntax processing
 nnoremap ; :
 vnoremap ; :
 nnoremap : ;
-vnoremap ; :
+vnoremap : ;
 
 set scrolloff=5			" leave lines visible at top and bottom of buffer
 
@@ -173,8 +178,7 @@ autocmd Filetype cpp,arduino nnoremap <silent> <leader>u :wa<cr>:!make upload<cr
 nnoremap <leader>ev :vsp $MYVIMRC<cr>		" vim
 nnoremap <leader>sv :source $MYVIMRC<cr>	" source vimrc
 
-" this just seems to work best
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 " }}}
 " Plugin Config {{{
 " Airline

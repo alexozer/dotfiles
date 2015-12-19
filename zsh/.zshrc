@@ -9,10 +9,6 @@ plugins=(git command-not-found extract gitignore)
 
 source $ZSH/oh-my-zsh.sh
 
-# shell colorscheme
-BASE16_SHELL="$HOME/.config/base16-shell/base16-oceanicnext.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
-
 # vi-like bindings
 bindkey -v
 bindkey -M vicmd v edit-command-line
@@ -55,6 +51,9 @@ e() {
 	    ;;
 	vim)
 	    vim $HOME/.vimrc
+	    ;;
+	startup)
+	    vim $HOME/.config/bspwm/startup.sh
 	    ;;
 	*)
 	    echo "$1: invalid option"

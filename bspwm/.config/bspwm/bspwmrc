@@ -16,9 +16,8 @@ bspc config focus_by_distance   true
 
 bspc config auto_cancel 		true
 
-bspc monitor -d root
+bspc monitor -d 0 1 2 3 4 5 6 7
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-metadesk -c "$HOME/.config/bspwm/metadesk.sh" &
 $HOME/.config/bspwm/startup.sh &
