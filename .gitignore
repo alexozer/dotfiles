@@ -1,2 +1,2 @@
-/vim/\.vim/tmp/
-/vim/\.vim/plugged/
+/vim/.config/nvim/tmp/
+/vim/.config/nvim/plugged/
