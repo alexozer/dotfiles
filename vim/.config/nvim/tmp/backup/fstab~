@@ -1,0 +1,8 @@
+# /dev/sda2
+UUID=0377de7f-ab1f-4076-8b89-1ab46a0b4968	/         	ext4      	rw,relatime,data=ordered	0 1
+
+# /dev/sda1
+UUID=D957-300C      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro	0 2
+
+# backup
+/home/alex /home/alex/.backup/alex none bind

@@ -100,7 +100,7 @@ alt + Escape
 
 # compatible with intellij
 alt + Return
-	gnome-terminal
+	xfce4-terminal
 
 alt + w
 	chromium

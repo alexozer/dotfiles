@@ -1,0 +1,27 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   README.md
+#	new file:   bin/bin/color-spaces.pl
+#	modified:   bspwm/.config/bspwm/bspwmrc
+#	deleted:    bspwm/.config/bspwm/metadesk.sh
+#	modified:   bspwm/.config/sxhkd/sxhkdrc
+#	new file:   screenshot.png
+#	typechange: vim/.vim/autoload/plug.vim
+#	modified:   vim/.vim/plugged/vim-fugitive
+#	modified:   vim/.vim/plugged/vim-glsl
+#	modified:   vim/.vim/plugged/vim-go
+#	modified:   vim/.vim/plugged/vim-plug
+#	modified:   vim/.vim/sessions/auv.vim
+#	new file:   vim/.vim/sessions/auv.vim.lock
+#	modified:   vim/.vim/sessions/metadesk.vim
+#	modified:   vim/.vim/sessions/restart.vim
+#	modified:   vim/.vimrc
+#	deleted:    zsh/.config/base16-shell/base16-oceanicnext.dark.sh
+#	deleted:    zsh/.config/base16-shell/base16-oceanicnext.light.sh
+#	modified:   zsh/.zshrc
+#

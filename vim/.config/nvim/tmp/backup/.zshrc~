@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 bindkey -M vicmd v edit-command-line
 
-# if neovim is installed, use it
+# if neovim installed, use it
 if hash nvim 2>/dev/null; then
 	alias vim=nvim
 	export EDITOR=nvim

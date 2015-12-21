@@ -1,0 +1,5 @@
+#!/bin/bash
+bspc query -D | grep 'metadesk-desktop' |\
+	while read line; do
+		bspc desktop $line -r
+	done

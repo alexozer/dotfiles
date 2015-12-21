@@ -1,5 +1,5 @@
 [core]
-	editor = nvim
+	editor = vim
 [user]
 	name = Alex Ozer
 	email = ***REMOVED***
@@ -7,3 +7,7 @@
 	default = simple
 [github]
 	user = alexozer
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

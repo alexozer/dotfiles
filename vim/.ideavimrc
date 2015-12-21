@@ -1,4 +1,4 @@
-source ~/.vimrc
+source ~/.config/nvim/init.vim
 
 nnoremap ,r :action Run<cr>
 nnoremap ,b :action ToggleLineBreakpoint<cr>
