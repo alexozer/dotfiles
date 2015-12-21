@@ -1,4 +1,0 @@
-
-*.pdf filter=lfs diff=lfs merge=lfs -text
-alex/music/**/* filter=lfs diff=lfs merge=lfs -text
-alex/vid/**/* filter=lfs diff=lfs merge=lfs -text

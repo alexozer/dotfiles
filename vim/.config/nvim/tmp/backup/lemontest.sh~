@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo '%{A:area0:}Area 0    %{A}%{A:area1:}Area 1%{A}'
-echo '%{A:area0:}Area 0    %{A}'
-
-sleep 100
