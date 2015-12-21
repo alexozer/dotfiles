@@ -32,7 +32,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' } | Plug 'shougo/unite.vim'
 Plug 'bling/vim-airline'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 
-" Maybe wanted in the future
+" maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
 "Plug 'moll/vim-bbye' " when buffer closed, don't close window
 "Plug 'SirVer/ultisnips'
@@ -178,8 +178,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>	" source vimrc
 set clipboard=unnamedplus
 " }}}
 " Plugin Config {{{
-
-" vim-go
+" vim-go {{{
 let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
 let g:go_highlight_functions = 1
 let g:go_fmt_command = 'goimports'
@@ -196,14 +195,14 @@ au FileType go nnoremap  <silent> <leader>b :wa<cr>:GoBuild<cr>
 au FileType go nnoremap  <silent> <leader>t :wa<cr>:GoTest<cr>
 
 au FileType go nnoremap <Leader>d <Plug>(go-doc)
-
-" YouCompleteMe
+" }}}
+" YouCompleteMe {{{
 set completeopt-=preview			" don't open a preview window
 set shortmess+=c				" don't show completion status messages
 let g:ycm_extra_conf_globlist = ['~/code/*'] " load project-specific .ycm_extra_conf.py without asking
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py" " settings for C/C++
-
-" vim-session
+" }}}
+" vim-session {{{
 let g:session_autoload="no" 		" don't autoload a session when Vim starts
 let g:session_autosave="yes"		" auto-save session when Vim is closed
 
@@ -215,44 +214,14 @@ nnoremap <silent> <leader>sd :DeleteSession<cr>
 nnoremap <silent> <leader>sD :DeleteSession!<cr>
 nnoremap <silent> <leader>sr :RestartVim<cr>
 nnoremap <silent> <leader>sR :RestartVim!<cr>
-
-" vim-javascript-syntax
+" }}}
+" vim-javascript-syntax {{{
 au FileType javascript call JavaScriptFold()
-
-" tagbar
-nnoremap <f4> :TagbarToggle<cr>
-let g:tagbar_type_go = {
-			\ 'ctagstype' : 'go',
-			\ 'kinds'     : [
-			\ 'p:package',
-			\ 'i:imports:1',
-			\ 'c:constants',
-			\ 'v:variables',
-			\ 't:types',
-			\ 'n:interfaces',
-			\ 'w:fields',
-			\ 'e:embedded',
-			\ 'm:methods',
-			\ 'r:constructor',
-			\ 'f:functions'
-			\ ],
-			\ 'sro' : '.',
-			\ 'kind2scope' : {
-			\ 't' : 'ctype',
-			\ 'n' : 'ntype'
-			\ },
-			\ 'scope2kind' : {
-			\ 'ctype' : 't',
-			\ 'ntype' : 'n'
-			\ },
-			\ 'ctagsbin'  : 'gotags',
-			\ 'ctagsargs' : '-sort -silent'
-			\ }
-
-" nerdtree
+" }}}
+" nerdtree {{{
 nnoremap <f3> :NERDTreeToggle<cr>
-
-" airline
+" }}}
+" airline {{{
 " reset status bar quickly
 if !has('gui_running')
 	set ttimeoutlen=10
@@ -269,8 +238,8 @@ set noshowmode			" hide the default mode text ( -- INSERT -- )
 let g:airline#extensions#whitespace#enabled=0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
-
-" syntastic
+" }}}
+" syntastic {{{
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -279,27 +248,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" delimitMate
-"let delimitMate_expand_cr=1
-
-" vim-bufferline
-"let g:bufferline_echo = 0			" don't print buffer command
-"let g:bufferline_show_bufnr = 0		" don't enumerate buffers
-
-" vim-bbye
-"nnoremap <silent> <leader>q :Bdelete<cr>
-
-" lightline
-"let g:lightline = {
-"\ 'colorscheme': 'PaperColor',
-"\ 'active': {
-"\ 'left': [['paste'],
-"\ ['readonly', 'filename']]
-"\ }
-"\ }
-"set noshowmode
-"
+" }}}
 " }}}
 
 " vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0
