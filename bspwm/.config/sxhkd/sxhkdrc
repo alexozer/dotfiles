@@ -114,9 +114,6 @@ alt + x
 alt + s
 	xfce4-screenshooter
 
-alt + v
-	gvim
-
 # for external keyboard
 alt + {Insert, Delete, BackSpace}
 	amixer set Master {2%+, 2%-, toggle}

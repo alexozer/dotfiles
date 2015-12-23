@@ -1,6 +1,6 @@
-" ~/.dotfiles/vim/.vim/sessions/restart.vim:
+" ~/.dotfiles/vim/.config/nvim/sessions/restart.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 21 December 2015 at 12:24:36.
+" Created by session.vim 2.13.1 on 21 December 2015 at 15:55:07.
 " Open this file in Vim and run :source % to restore your session.
 
 if exists('g:syntax_on') != 1 | syntax on | endif
@@ -16,15 +16,13 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/dl/neovim-bug
+cd ~/
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1007 term://.//28374:/usr/bin/zsh
 argglobal
 silent! argdel *
-argadd test.h
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1

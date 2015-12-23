@@ -28,9 +28,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Shougo/vimproc.vim', { 'do': 'make' } | Plug 'shougo/unite.vim'
 Plug 'bling/vim-airline'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
+Plug 'junegunn/fzf.vim' | Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -65,24 +65,14 @@ set ruler " always show bottom bar
 set laststatus=2 " always show status bar
 set wildmenu			" visual autocomplete for command menu
 set lazyredraw			" redraw only when we need to (not during macros)
-
 set cursorline			" highlight current line
+set mouse=a
 
 "autocmd ColorScheme * 
 "\ highlight VertSplit guibg=background |
 "\ highlight SignColumn guibg=background
 
 colorscheme PaperColor
-
-" gvim-specific options
-if has('gui_running')
-	autocmd GUIEnter * set vb t_vb= " turn off the ridiculous visual and audio bells
-	set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
-	set guioptions=cMg " console dialogs, do not show menu and toolbar
-	set guiheadroom=0
-else
-	set mouse=a
-endif
 
 set bg=dark
 call togglebg#map("<F5>")
@@ -133,6 +123,7 @@ set hidden		" okay to background modified buffers
 set incsearch			" search as characters are entered
 set ignorecase			" case-insensitive
 set smartcase			" override ignorecase if search includes capital letters
+set nohlsearch
 
 set gdefault			" when using :s command, replace all instances on line by default
 " }}}
