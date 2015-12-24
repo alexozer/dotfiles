@@ -1,10 +1,8 @@
-" ~/.dotfiles/vim/.vim/sessions/auv.vim:
+" ~/.dotfiles/vim/.config/nvim/sessions/auv.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 20 December 2015 at 23:58:19.
+" Created by session.vim 2.13.1 on 22 December 2015 at 22:53:26.
 " Open this file in Vim and run :source % to restore your session.
 
-set guioptions=cMg
-silent! set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -13,9 +11,8 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'PaperColor' | colorscheme PaperColor | endif
-call setqflist([{'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'mission/framework/combinators.py', 'text': 'remote: Counting objects: 19, done.        '}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'mission/framework/combinators.py', 'text': 'remote: Total 19 (delta 13), reused 9 (delta 6)        '}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'mission/framework/combinators.py', 'text': 'From ssh://bitbucket.cuauv.org:7999/sof/software'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'mission/framework/combinators.py', 'text': '   1568697..3ebd73f  thrust_config_estimation -> origin/thrust_config_estimation'}, {'lnum': 0, 'col': 0, 'valid': 1, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': 'mission/framework/combinators.py', 'text': 'Already up-to-date.'}])
+call setqflist([{'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': '/home/alex/.vimrc', 'text': 'Already up-to-date.'}])
 let SessionLoad = 1
-if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -24,34 +21,35 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +4 ~/.vimrc
 badd +20 ~/code/go/src/github.com/alexozer/metadesk/LICENSE
 badd +1 mission/BinsTesting.py
 badd +23 mission/missions/BuoyRam.py
-badd +1 ~/.vimrc
 badd +33 mission/missions/line.py
+badd +13 mission/missions/polygon.py
 argglobal
 silent! argdel *
-edit ~/.vimrc
+edit mission/missions/polygon.py
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-setlocal fdm=marker
-setlocal fde=0
+setlocal fdm=expr
+setlocal fde=pymode#folding#expr(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
-setlocal fen
-let s:l = 4 - ((3 * winheight(0) + 38) / 77)
+setlocal nofen
+let s:l = 11 - ((10 * winheight(0) + 39) / 78)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 022|
+11
+normal! 05|
 tabnext 1
-if exists('s:wipebuf')
+if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
 "   silent exe 'bwipe ' . s:wipebuf
 endif
 " unlet! s:wipebuf
