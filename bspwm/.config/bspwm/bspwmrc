@@ -2,8 +2,6 @@
 
 # bspwm-specific autostart
 
-source "$HOME/.xprofile"
-
 bspc config top_padding			30
 bspc config border_width 		4
 bspc config window_gap 			0
