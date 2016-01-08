@@ -17,22 +17,27 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'marijnh/tern_for_vim'
 Plug 'baskerville/vim-sxhkdrc'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
-Plug 'klen/python-mode'
 Plug 'sudar/vim-arduino-syntax'
 
 " tools
+Plug 'scrooloose/syntastic'
+"Plug 'Shougo/deoplete.nvim' " for some reason, youcompleteme only works when
+"deoplete is installed, but disabled
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer --tern-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/vim-plug'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
-Plug 'junegunn/fzf.vim' | Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim' 
+Plug 'rust-lang/rust.vim'
+Plug 'kassio/neoterm'
 
 " maybe wanted in the future
+"Plug 'klen/python-mode'
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
 "Plug 'moll/vim-bbye' " when buffer closed, don't close window
 "Plug 'SirVer/ultisnips'
@@ -45,6 +50,7 @@ call plug#end()
 " }}}
 " Leader {{{
 let mapleader=","		" leader is comma
+let maplocalleader="\\"
 " }}}
 " Spaces {{{
 filetype plugin indent on
@@ -80,10 +86,8 @@ call togglebg#map("<F5>")
 syntax enable			" enable syntax processing
 
 " Use ; instead of : for Command-line-mode
-nnoremap ; :
-vnoremap ; :
-nnoremap : ;
-vnoremap : ;
+noremap ; :
+noremap ; :
 
 set scrolloff=5			" leave lines visible at top and bottom of buffer
 
@@ -107,11 +111,21 @@ nnoremap gL <C-w>L
 nnoremap gJ <C-w>J
 nnoremap gK <C-w>K
 
+noremap <c-left> :BspwmNavigateLeft<cr>
+noremap <c-down> :BspwmNavigateDown<cr>
+noremap <c-up> :BspwmNavigateUp<cr>
+noremap <c-right> :BspwmNavigateRight<cr>
+
 " easier tab manipulation / navigation
 nnoremap <silent> <leader><tab> :tabnew<cr>
 nnoremap <silent> <leader><s-tab> :tabc<cr>
 nnoremap <silent> <tab> :tabn<cr>
 nnoremap <silent> <s-tab> :tabp<cr>
+
+" easier to escape neovim terminal
+if has('nvim')
+	tnoremap <esc> <c-\><c-n>
+endif
 
 " split below and right
 set splitbelow
@@ -129,10 +143,11 @@ set gdefault			" when using :s command, replace all instances on line by default
 " }}}
 " Folding {{{
 set nofoldenable
-nnoremap <space> za		" space open/closes folds
+nnoremap <space> za
 " }}}
 " Movement {{{ 
-nnoremap Y y$	" make Y behave like D and C, instead of like yy
+" make Y behave like D and C, instead of like yy
+nnoremap Y y$	
 
 " easier than ^ and g_ and I never use the default behavior
 nnoremap H ^
@@ -142,29 +157,34 @@ vnoremap L $
 " }}}
 " Backups {{{
 set backup							" enable backup
-set backupdir=~/.vim/tmp/backup// " backups
-
 set undofile
-set undodir=~/.vim/tmp/undo//     " undo files
-
 set noswapfile				" disable swap files
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
 " }}}
 " Autocmd {{{ 
-" jump to last position in file on open
-autocmd BufReadPost *
-			\ if line("'\"") > 1 && line("'\"") <= line("$") |
-			\   exe "normal! g`\"" |
-			\ endif
 
-autocmd FileType cpp,arduino setlocal makeprg=make\ -j5
-autocmd Filetype cpp,arduino nnoremap <silent> <leader>b :wa<cr>:make!<cr>
-autocmd Filetype cpp,arduino nnoremap <silent> <leader>r :wa<cr>:silent! make!<cr>:!./%:r<cr>
-autocmd Filetype cpp,arduino nnoremap <silent> <leader>u :wa<cr>:!make upload<cr>
+" jump to last cursor position in file
+function! SetCursorPosition()
+  if &filetype !~ 'svn\|commit\c'
+    if line("'\"") > 0 && line("'\"") <= line("$") |
+      execute 'normal! g`"zvzz' |
+    endif
+  end
+endfunction
+autocmd BufReadPost * call SetCursorPosition()
+
+autocmd FileType arduino setlocal makeprg=make\ -j5
+autocmd Filetype arduino nnoremap <silent> <leader>b :wa<cr>:make!<cr>
+autocmd Filetype arduino nnoremap <silent> <leader>r :wa<cr>:silent! make!<cr>:!./%:r<cr>
+autocmd Filetype arduino nnoremap <silent> <leader>u :wa<cr>:!make upload<cr>
 " }}}
 " Misc {{{ 
-" edit vimrc/zshrc and load vimrc bindings
-nnoremap <leader>ev :e $MYVIMRC<cr>		" vim
-nnoremap <leader>sv :source $MYVIMRC<cr>	" source vimrc
+" edit/source vimrc
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 set clipboard=unnamedplus
 " }}}
@@ -192,6 +212,24 @@ set completeopt-=preview			" don't open a preview window
 set shortmess+=c				" don't show completion status messages
 let g:ycm_extra_conf_globlist = ['~/code/*'] " load project-specific .ycm_extra_conf.py without asking
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py" " settings for C/C++
+" }}}
+" deoplete {{{
+if has('nvim')
+	" general
+	let g:deoplete#enable_at_startup = 1
+	let g:deoplete#enable_smart_case = 1
+	" use tab to forward cycle
+	inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+	" use tab to backward cycle
+	inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+	autocmd VimEnter * DeopleteInitializePython " don't lag on first insert
+
+	" clang_complete
+	let g:clang_complete_auto = 0
+	let g:clang_auto_select = 0
+	let g:clang_default_keymappings = 0
+	"let g:clang_use_library = 1
+endif
 " }}}
 " vim-session {{{
 let g:session_autoload="no" 		" don't autoload a session when Vim starts
@@ -224,8 +262,8 @@ if !has('gui_running')
 endif
 
 set noshowmode			" hide the default mode text ( -- INSERT -- )
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled=0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
@@ -239,6 +277,9 @@ let g:airline_theme = 'bubblegum'
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+" }}}
+" python-mode {{{
+let g:pymode_lint_cwindow = 1
 " }}}
 " }}}
 

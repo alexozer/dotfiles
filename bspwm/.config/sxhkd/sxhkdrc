@@ -55,8 +55,8 @@ alt + y
 alt + m
 	bspc desktop -l next
 
-alt + {_,shift + }{h,j,k,l}
-	bspc window --{focus,swap} {left,down,up,right}
+alt + {_,shift +} {h,j,k,l}
+	bspc window {--focus,--swap} {left,down,up,right}
 
 alt + {_,shift + }Tab
 	bspc window -f {next,prev}
@@ -120,6 +120,8 @@ alt + {Insert, Delete, BackSpace}
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
+	amixer set Master {2%+, 2%-, toggle}
+alt + {Right, Left}
 	amixer set Master {2%+, 2%-, toggle}
 
 # make sxhkd reload its configuration files:

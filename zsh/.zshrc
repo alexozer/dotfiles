@@ -63,6 +63,9 @@ e() {
 	startup)
 	    vim $HOME/.config/bspwm/startup.sh
 	    ;;
+	env)
+		vim $HOME/.profile
+		;;
 	*)
 	    echo "$1: invalid option"
 	    return 1
