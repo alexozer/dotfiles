@@ -1,8 +1,9 @@
-" ~/.dotfiles/vim/.config/nvim/sessions/auv.vim:
+" ~/.dotfiles/vim/.config/nvim/sessions/serial.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 22 December 2015 at 22:53:26.
+" Created by session.vim 2.13.1 on 23 January 2016 at 20:05:24.
 " Open this file in Vim and run :source % to restore your session.
 
+let &makeprg = 'make'
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
@@ -11,43 +12,31 @@ if &background != 'dark'
 	set background=dark
 endif
 if !exists('g:colors_name') || g:colors_name != 'PaperColor' | colorscheme PaperColor | endif
-call setqflist([{'lnum': 0, 'col': 0, 'valid': 0, 'vcol': 0, 'nr': -1, 'type': '', 'pattern': '', 'filename': '/home/alex/.vimrc', 'text': 'Already up-to-date.'}])
+call setqflist([])
 let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/code/auv
+cd ~/code/auv/serial
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +4 ~/.vimrc
-badd +20 ~/code/go/src/github.com/alexozer/metadesk/LICENSE
-badd +1 mission/BinsTesting.py
-badd +23 mission/missions/BuoyRam.py
-badd +33 mission/missions/line.py
-badd +13 mission/missions/polygon.py
 argglobal
 silent! argdel *
-edit mission/missions/polygon.py
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-setlocal fdm=expr
-setlocal fde=pymode#folding#expr(v:lnum)
+enew
+setlocal fdm=manual
+setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 11 - ((10 * winheight(0) + 39) / 78)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-11
-normal! 05|
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
 "   silent exe 'bwipe ' . s:wipebuf

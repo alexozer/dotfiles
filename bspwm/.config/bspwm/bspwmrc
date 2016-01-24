@@ -6,8 +6,11 @@ bspc config top_padding			30
 bspc config border_width 		4
 bspc config window_gap 			0
 
+bspc config presel_feedback_color '#1B2B34' 
+
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
+bspc config single_monocle      true
 
 bspc config initial_polarity second_child
 bspc config split_ratio 0.6180339903912632

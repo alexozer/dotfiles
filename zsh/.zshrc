@@ -5,13 +5,9 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git command-not-found extract gitignore)
+plugins=(git command-not-found extract gitignore history-substring-search vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-
-# vi-like bindings
-bindkey -v
-bindkey -M vicmd v edit-command-line
 
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
@@ -66,6 +62,9 @@ e() {
 	env)
 		vim $HOME/.profile
 		;;
+	ssh)
+		vim $HOME/.ssh/config
+		;;
 	*)
 	    echo "$1: invalid option"
 	    return 1
@@ -76,3 +75,9 @@ e() {
 # fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# search command history
+bindkey -M vicmd "j" history-substring-search-down
+bindkey -M vicmd "k" history-substring-search-up
+setopt HIST_IGNORE_ALL_DUPS
+

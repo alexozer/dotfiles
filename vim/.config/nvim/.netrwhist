@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =48
+let g:netrw_dirhist_cnt =50
 let g:netrw_dirhist_1='/home/alex'
 let g:netrw_dirhist_2='/home'
 let g:netrw_dirhist_3='/home/alex'
@@ -48,3 +48,5 @@ let g:netrw_dirhist_45='/home/alex/code/go/src/github.com/alexozer/go-mesh/svx'
 let g:netrw_dirhist_46='/home/alex/code/go/src/github.com/alexozer/go-mesh'
 let g:netrw_dirhist_47='/home/alex/code/go/src/github.com/alexozer/verb'
 let g:netrw_dirhist_48='/home/alex/code/go/src/github.com/alexozer/verb/types'
+let g:netrw_dirhist_49='/home/alex/code/auv/.git'
+let g:netrw_dirhist_50='/home/alex/code/auv/serial/seriald'
