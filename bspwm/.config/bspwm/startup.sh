@@ -2,6 +2,7 @@
 
 # run gnome-terminal-server in dummy X server
 Xvfb :1 &
+sleep 0.1
 gnome-terminal --display :1 &
 
 compton --frame-opacity 0.5 &
