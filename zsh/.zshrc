@@ -72,12 +72,52 @@ e() {
     esac
 }
 
-# fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='ag -g ""'
-
 # search command history
 bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
 
+hw() {
+	hwCache="$HOME/.hw_cache"
+	baseCmd() {
+		gcalcli --calendar=Homework $@
+	}
+
+	syncHw() {
+		baseCmd calw 5 > "$hwCache"
+	}
+
+	if [ -z "$*" ]; then
+		[ ! -f "$hwCache" ] && syncHw
+		cat "$hwCache"
+		return
+	fi
+
+	firstArg="$1"
+	shift
+	case "$firstArg" in
+	add)
+		baseCmd quick "$*"
+		;;
+	rm)
+		baseCmd delete "$*"
+		;;
+	edit)
+		baseCmd edit "$*"
+		;;
+	sync)
+		echo -n "Syncing..."
+		syncHw
+		echo " done."
+		cat "$hwCache"
+		return
+		;;
+	*)
+		echo "Invalid command: $firstArg"
+		return
+		;;
+	esac
+
+	syncHw
+	cat "$hwCache"
+}

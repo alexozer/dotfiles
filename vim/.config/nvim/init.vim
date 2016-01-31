@@ -78,7 +78,7 @@ set mouse=a
 colorscheme PaperColor
 
 set bg=dark
-call togglebg#map("<F5>")
+call togglebg#map("<leader>5")
 
 syntax enable			" enable syntax processing
 
@@ -255,7 +255,7 @@ nnoremap <silent> <leader>sR :RestartVim!<cr>
 au FileType javascript call JavaScriptFold()
 " }}}
 " nerdtree {{{
-nnoremap <f3> :NERDTreeToggle<cr>
+nnoremap <leader>3 :NERDTreeToggle<cr>
 " }}}
 " airline {{{
 " reset status bar quickly
