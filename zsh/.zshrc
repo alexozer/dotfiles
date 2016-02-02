@@ -78,9 +78,9 @@ bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
 
 hw() {
-	hwCache="$HOME/.hw_cache"
+	hwCache="$HOME/.hw-cache"
 	baseCmd() {
-		gcalcli --calendar=Homework $@
+		gcalcli --calendar=Homework --color_date=white $@
 	}
 
 	syncHw() {
@@ -88,7 +88,17 @@ hw() {
 	}
 
 	if [ -z "$*" ]; then
-		[ ! -f "$hwCache" ] && syncHw
+		# make sure cache exists and is up-to-date
+		if [ ! -f "$hwCache" ]; then
+			syncHw
+		else
+			modDate="$(stat -c %y "$hwCache" | cut -d' ' -f1)"
+			currDate="$(date +%Y-%m-%d)"
+		 	if [ "$modDate" != "$currDate" ]; then
+				syncHw
+			fi
+		fi
+
 		cat "$hwCache"
 		return
 	fi

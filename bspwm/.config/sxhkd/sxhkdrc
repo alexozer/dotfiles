@@ -69,7 +69,6 @@ alt + shift + {n,i}
 alt + Escape
 	xfce4-popup-whiskermenu
 
-# compatible with intellij
 alt + Return
 	gnome-terminal
 
@@ -98,3 +97,7 @@ alt + {Right, Left}
 # make sxhkd reload its configuration files:
 alt + shift + Escape
 	pkill -USR1 -x sxhkd
+
+alt + o
+	bspc rule --add Gnome-terminal --one-shot state=floating &&\
+	gnome-terminal -x /usr/bin/zsh -ic 'exo-open $(ag --nocolor -g "" | fzf)'
