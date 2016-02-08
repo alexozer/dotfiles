@@ -100,4 +100,4 @@ alt + shift + Escape
 
 alt + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
-	gnome-terminal -x /usr/bin/zsh -ic 'exo-open $(ag --nocolor -g "" | fzf)'
+	gnome-terminal -x /usr/bin/bash -ic 'ag --nocolor -g "" | fzf --reverse | xargs exo-open'
