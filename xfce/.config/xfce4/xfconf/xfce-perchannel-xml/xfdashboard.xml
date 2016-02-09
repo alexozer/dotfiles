@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfdashboard" version="1.0">
+  <property name="favourites" type="array">
+    <value type="string" value="exo-file-manager.desktop"/>
+    <value type="string" value="exo-terminal-emulator.desktop"/>
+  </property>
+</channel>
