@@ -1,0 +1,3 @@
+#!/bin/bash
+
+BSPWM_SOCKET=/tmp/bspwm-matlab-socket exec /usr/bin/bspwm -c startup-bspwm-matlab

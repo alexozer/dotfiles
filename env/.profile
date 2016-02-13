@@ -16,3 +16,6 @@ export VISION_TEST_PATH="$HOME/vid/auv"
 export CSC_OPTIONS"=-L$CUAUV_SOFTWARE/link-stage -C -I$CUAUV_SOFTWARE -I$CUAUV_SOFTWARE"
 export CSC_OPTIONS="$CSC_OPTIONS -Wl,-rpath,${CUAUV_SOFTWARE}/link-stage"
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
+export _JAVA_AWT_WM_NONREPARENTING=1 # fix java guis
+export MATLAB_JAVA=/usr/lib/jvm/java-8-openjdk/jre

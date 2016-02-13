@@ -5,7 +5,9 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git command-not-found extract gitignore history-substring-search vi-mode)
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+plugins=(git extract gitignore history-substring-search vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,29 +43,29 @@ alias calc='python3 -ic "from math import *; import cmath"'
 e() {
     case "$1" in
 	keys)
-	    vim $HOME/.config/sxhkd/sxhkdrc
+	    $EDITOR $HOME/.config/sxhkd/sxhkdrc
 	    ;;
 	zsh)
-	    vim "$HOME/.zshrc"
+	    $EDITOR "$HOME/.zshrc"
 	    source "$HOME/.zshrc"
 	    ;;
 	zshenv)
-	    vim "$HOME/.zshenv"
+	    $EDITOR "$HOME/.zshenv"
 	    ;;
 	bspwm)
-	    vim $HOME/.config/bspwm/bspwmrc
+	    $EDITOR $HOME/.config/bspwm/bspwmrc
 	    ;;
 	vim)
-	    vim $HOME/.vimrc
+	    $EDITOR $HOME/.vimrc
 	    ;;
 	startup)
-	    vim $HOME/.config/bspwm/startup.sh
+	    $EDITOR $HOME/.config/bspwm/startup.sh
 	    ;;
 	env)
-		vim $HOME/.profile
+		$EDITOR $HOME/.profile
 		;;
 	ssh)
-		vim $HOME/.ssh/config
+		$EDITOR $HOME/.ssh/config
 		;;
 	*)
 	    echo "$1: invalid option"

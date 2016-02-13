@@ -31,4 +31,10 @@
       <property name="libinput_Tapping_Enabled" type="int" value="0"/>
     </property>
   </property>
+  <property name="Broadcom_Corp_Bluetooth_USB_Host_Controller" type="empty">
+    <property name="RightHanded" type="bool" value="true"/>
+    <property name="Threshold" type="int" value="1"/>
+    <property name="Acceleration" type="double" value="5.000000"/>
+    <property name="ReverseScrolling" type="bool" value="false"/>
+  </property>
 </channel>

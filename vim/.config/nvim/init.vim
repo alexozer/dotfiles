@@ -31,7 +31,7 @@ Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'kassio/neoterm'
@@ -146,6 +146,9 @@ nnoremap H ^
 vnoremap H ^
 nnoremap L $
 vnoremap L $
+" }}}
+" Editing {{{
+set nojoinspaces
 " }}}
 " Backups {{{
 set backup							" enable backup

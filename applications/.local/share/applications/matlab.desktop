@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Icon=matlab
+Name=MATLAB
+Comment=Start MATLAB - The Language of Technical Computing
+Exec=vncdesk 2
+Categories=Development;
+MimeType=text/x-matlab;

@@ -2,7 +2,7 @@
 
 # bspwm-specific autostart
 
-bspc config top_padding			30
+bspc config top_padding			44
 bspc config border_width 		4
 bspc config window_gap 			0
 
@@ -20,6 +20,6 @@ bspc config auto_cancel 		true
 
 bspc monitor -d 0 0 0 0 0 0 0 0
 
-export _JAVA_AWT_WM_NONREPARENTING=1 # fix java guis
+bspc rule --add MATLABInVncdesk state=locked
 
 $HOME/.config/bspwm/startup.sh &
