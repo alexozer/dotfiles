@@ -38,6 +38,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="thunar"/>
+        <value type="string" value="synapse"/>
         <value type="string" value="owncloud"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="kupfer.py"/>
