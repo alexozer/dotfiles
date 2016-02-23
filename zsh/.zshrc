@@ -7,7 +7,7 @@ COMPLETION_WAITING_DOTS="true"
 
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
-plugins=(git extract gitignore history-substring-search vi-mode)
+plugins=(git extract gitignore history-substring-search vi-mode last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,6 +38,9 @@ alias o='exo-open'
 
 # python console calculator
 alias calc='python3 -ic "from math import *; import cmath"'
+
+# matlab repl
+alias matlab='matlab -nodesktop -nosplash'
 
 # shortcuts to edit config files
 e() {
@@ -82,11 +85,11 @@ setopt HIST_IGNORE_ALL_DUPS
 hw() {
 	hwCache="$HOME/.hw-cache"
 	baseCmd() {
-		gcalcli --calendar=Homework --color_date=white $@
+		gcalcli --calendar 'Homework#blue' --calendar 'Weekly Homework#cyan' --calendar 'Tests#magenta' --color_date=white $@
 	}
 
 	syncHw() {
-		baseCmd calw 5 > "$hwCache"
+		baseCmd calw 4 > "$hwCache"
 	}
 
 	if [ -z "$*" ]; then
@@ -109,7 +112,7 @@ hw() {
 	shift
 	case "$firstArg" in
 	add)
-		baseCmd quick "$*"
+		gcalcli --calendar Homework quick "$*"
 		;;
 	rm)
 		baseCmd delete "$*"

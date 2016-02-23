@@ -23,8 +23,8 @@ alt + {1-9,0}
 alt + ctrl + shift + {n,i}
 	bspc desktop --bubble {next,prev} --focus
 
-alt + f
-	bspc node --state \~floating
+alt + {_,shift + }f
+	bspc node --state {\~floating,\~pseudo_tiled}
 
 alt + y
 	bspc node --to-node last.!automatic

@@ -1,8 +1,9 @@
 " ~/.dotfiles/vim/.config/nvim/sessions/restart.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 21 December 2015 at 15:55:07.
+" Created by session.vim 2.13.1 on 17 February 2016 at 13:20:34.
 " Open this file in Vim and run :source % to restore your session.
 
+let &makeprg = 'make'
 if exists('g:syntax_on') != 1 | syntax on | endif
 if exists('g:did_load_filetypes') != 1 | filetype on | endif
 if exists('g:did_load_ftplugin') != 1 | filetype plugin on | endif
