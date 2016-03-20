@@ -1,6 +1,6 @@
-" ~/.dotfiles/vim/.config/nvim/sessions/serial.vim:
+" ~/.dotfiles/vim/.config/nvim/sessions/seriald.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 19 February 2016 at 00:29:07.
+" Created by session.vim 2.13.1 on 19 March 2016 at 15:27:04.
 " Open this file in Vim and run :source % to restore your session.
 
 let &makeprg = 'make'
@@ -17,33 +17,43 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/code/auv/serial
+cd ~/code/auv/serial/seriald
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 libserial/DeviceInfo.cpp
-badd +13 libserial/DeviceCallbacks.h
-badd +174 libserial/Variable.h
-badd +12 libserial/util.h
-badd +1 libserial/DeviceInfo.h
-badd +1 libserial/SerialPortManager.h
-badd +129 ~/code/auv/usd/usd.cpp
-badd +1 ~/code/auv/usd/device.py
-badd +23 ~/code/auv/usd/device.cpp
-badd +1 ~/code/auv/usd/devices/devices.h
-badd +29 ~/code/auv/usd/devices/devices.cpp
-badd +13 ~/code/auv/healthdash/computer.h
-badd +9 seriald/main.cpp
-badd +1 ~/.dotfiles/vim/.config/nvim/init.vim
+badd +31 config.cpp
+badd +11 config.toml
+badd +16 config.h
+badd +23 shm_share.cpp
+badd +17 shm_share.h
+badd +46 device.h
+badd +26 configure.py
+badd +27 test/config.cpp
+badd +28 main.cpp
+badd +22 ~/code/auv/serial/libserial/Manager.cpp
+badd +48 ~/code/auv/serial/libserial/Manager.h
+badd +15 test/config.toml
+badd +1 \'/home/alex/code/auv/serial/seriald/devices.h\'
+badd +30 devices.h
+badd +1 \'/home/alex/code/auv/serial/seriald/devices.cpp\'
+badd +26 devices.cpp
+badd +35 device.cpp
+badd +1 devices.gpp
+badd +8 logger.h
+badd +1 logger.cpp
+badd +15 ~/.dotfiles/vim/.config/nvim/init.vim
+badd +63 device_list.cpp
+badd +26 device_list.h
 argglobal
 silent! argdel *
-edit ~/.dotfiles/vim/.config/nvim/init.vim
+argadd config.cpp
+edit device_list.h
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-setlocal fdm=marker
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -51,12 +61,13 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 296 - ((65 * winheight(0) + 37) / 75)
+silent! normal! zE
+let s:l = 18 - ((17 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-296
-normal! 032|
+18
+normal! 09|
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
 "   silent exe 'bwipe ' . s:wipebuf

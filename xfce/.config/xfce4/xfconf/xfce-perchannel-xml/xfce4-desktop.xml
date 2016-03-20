@@ -20,7 +20,7 @@
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal-nowatermark.jpg"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/to-the-vault.png"/>
         </property>
         <property name="workspace3" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -130,8 +130,8 @@
         </property>
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="6"/>
-          <property name="last-image" type="string" value="/home/alex/pic/bg/vapour.jpg"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/to-the-vault.png"/>
         </property>
         <property name="workspace3" type="empty">
           <property name="color-style" type="int" value="0"/>

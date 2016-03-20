@@ -19,6 +19,7 @@ Plug 'baskerville/vim-sxhkdrc'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'cespare/vim-toml'
+Plug 'lervag/vimtex'
 
 " tools
 Plug 'junegunn/vim-plug'
@@ -36,6 +37,8 @@ Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'kassio/neoterm'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 
 " maybe wanted in the future
 "Plug 'klen/python-mode'
@@ -58,6 +61,7 @@ filetype plugin indent on
 
 set tabstop=4			" number of visual spaces per TAB
 set shiftwidth=4        " no seriously, four spaces per tab
+set nojoinspaces
 " }}}
 " UI {{{
 if has('nvim')
@@ -124,6 +128,8 @@ set splitbelow
 set splitright
 
 set hidden		" okay to background modified buffers
+
+nnoremap <leader><leader> :e#<cr> " open last file
 " }}}
 " Searching {{{
 set incsearch			" search as characters are entered
@@ -146,9 +152,6 @@ nnoremap H ^
 vnoremap H ^
 nnoremap L $
 vnoremap L $
-" }}}
-" Editing {{{
-set nojoinspaces
 " }}}
 " Backups {{{
 set backup							" enable backup
@@ -183,6 +186,12 @@ augroup arduino
 	autocmd Filetype arduino nnoremap <silent> <leader>r :wa<cr>:silent! make!<cr>:!./%:r<cr>
 	autocmd Filetype arduino nnoremap <silent> <leader>u :wa<cr>:!make upload<cr>
 augroup END
+
+augroup latex
+	autocmd!
+	autocmd FileType tex setlocal nocursorline
+	autocmd FileType tex setlocal norelativenumber
+augroup END
 " }}}
 " Misc {{{ 
 " edit/source vimrc
@@ -200,18 +209,18 @@ let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
 let g:go_highlight_functions = 1
 let g:go_fmt_command = 'goimports'
 
-au FileType go nnoremap gd <Plug>(go-def)
-au FileType go nnoremap <Leader>s <Plug>(go-def-split)
-au FileType go nnoremap <Leader>v <Plug>(go-def-vertical)
-au FileType go nnoremap <Leader>T <Plug>(go-def-tab)
-
-au FileType go nnoremap <Leader>i <Plug>(go-info)
-
-au FileType go nnoremap  <silent> <leader>r :wa<cr>:GoRename<cr>
-au FileType go nnoremap  <silent> <leader>b :wa<cr>:GoBuild<cr>
-au FileType go nnoremap  <silent> <leader>t :wa<cr>:GoTest<cr>
-
-au FileType go nnoremap <Leader>d <Plug>(go-doc)
+augroup go
+	autocmd!
+	au FileType go nnoremap gd <Plug>(go-def)
+	au FileType go nnoremap <Leader>s <Plug>(go-def-split)
+	au FileType go nnoremap <Leader>v <Plug>(go-def-vertical)
+	au FileType go nnoremap <Leader>T <Plug>(go-def-tab)
+	au FileType go nnoremap <Leader>i <Plug>(go-info)
+	au FileType go nnoremap  <silent> <leader>r :wa<cr>:GoRename<cr>
+	au FileType go nnoremap  <silent> <leader>b :wa<cr>:GoBuild<cr>
+	au FileType go nnoremap  <silent> <leader>t :wa<cr>:GoTest<cr>
+	au FileType go nnoremap <Leader>d <Plug>(go-doc)
+augroup END
 " }}}
 " YouCompleteMe {{{
 set completeopt-=preview			" don't open a preview window
@@ -275,8 +284,8 @@ set noshowmode			" hide the default mode text ( -- INSERT -- )
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled=0
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_powerline_fonts=1
+let g:airline_theme='bubblegum'
 " }}}
 " syntastic {{{
 "set statusline+=%#warningmsg#
@@ -294,7 +303,6 @@ let g:pymode_lint_cwindow = 1
 " ctrlp {{{
 let g:ctrlp_map = '<leader><space>'
 let g:ctrlp_working_path_mode=''
-" }}}
 " }}}
 
 " vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0

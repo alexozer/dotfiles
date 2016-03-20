@@ -28,6 +28,7 @@
       <property name="output-name" type="string" value=""/>
       <property name="mode" type="uint" value="0"/>
       <property name="length-adjust" type="bool" value="true"/>
+      <property name="background-image" type="string" value="/home/alex/pic/bg/to-the-vault.png"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -38,7 +39,6 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="thunar"/>
-        <value type="string" value="synapse"/>
         <value type="string" value="owncloud"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="kupfer.py"/>
@@ -47,11 +47,12 @@
         <value type="string" value="rednotebook"/>
         <value type="string" value="guake"/>
         <value type="string" value="simplescreenrecorder"/>
+        <value type="string" value="synapse"/>
         <value type="string" value="orage"/>
-        <value type="string" value="task manager"/>
         <value type="string" value="syncthing-gtk"/>
         <value type="string" value="xfce terminal"/>
         <value type="string" value="chromium"/>
+        <value type="string" value="task manager"/>
         <value type="string" value="tomahawk"/>
         <value type="string" value="syncthing"/>
         <value type="string" value="déjà dup backup tool"/>

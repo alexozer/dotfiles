@@ -7,7 +7,7 @@ COMPLETION_WAITING_DOTS="true"
 
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
-plugins=(git extract gitignore history-substring-search vi-mode last-working-dir)
+plugins=(git extract gitignore history-substring-search vi-mode last-working-dir sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,6 +41,8 @@ alias calc='python3 -ic "from math import *; import cmath"'
 
 # matlab repl
 alias matlab='matlab -nodesktop -nosplash'
+
+alias build='ninja -C $CUAUV_SOFTWARE'
 
 # shortcuts to edit config files
 e() {
