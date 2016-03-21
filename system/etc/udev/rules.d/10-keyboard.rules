@@ -1,2 +1,0 @@
-ACTION=="add", ATTRS{idVendor}=="04d9", ATTRS{idProduct}=="0141", RUN+="/home/alex/bin/kbd_udev", OWNER="alex"
-ACTION=="add", ATTRS{idVendor}=="0853", ATTRS{idProduct}=="0134", RUN+="/home/alex/bin/kbd_udev", OWNER="alex"

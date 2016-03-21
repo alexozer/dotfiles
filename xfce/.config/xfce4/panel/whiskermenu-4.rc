@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=gnome-system-monitor.desktop,gparted.desktop,xfce-settings-manager.desktop,redshift-gtk.desktop,exo-file-manager.desktop,xterm.desktop,deja-dup-preferences.desktop,gnome-terminal.desktop,exo-terminal-emulator.desktop,gimp.desktop
+recent=gnome-system-monitor.desktop,playonlinux.desktop,redshift-gtk.desktop,evince.desktop,ca.desrt.dconf-editor.desktop,gparted.desktop,xfce-settings-manager.desktop,exo-file-manager.desktop,xterm.desktop,deja-dup-preferences.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false
