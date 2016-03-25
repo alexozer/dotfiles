@@ -304,5 +304,9 @@ let g:pymode_lint_cwindow = 1
 let g:ctrlp_map = '<leader><space>'
 let g:ctrlp_working_path_mode=''
 " }}}
+" vimtex {{{
+let g:tex_flavor='latex'
+let g:vimtex_latexmk_progname='nvr'
+" }}}
 
 " vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0
