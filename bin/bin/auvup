@@ -1,5 +1,4 @@
 #!/bin/bash
 
-ip link set enp0s20u2 up
-ip addr add 192.168.0.177/24 dev enp0s20u2
-
+ip link set enp0s20u1 up
+ip addr add 192.168.0.177/24 dev enp0s20u1

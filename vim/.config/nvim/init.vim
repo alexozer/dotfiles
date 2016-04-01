@@ -26,7 +26,7 @@ Plug 'junegunn/vim-plug'
 Plug 'scrooloose/syntastic'
 "Plug 'Shougo/deoplete.nvim' " for some reason, youcompleteme only works when
 "deoplete is installed, but disabled
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'scrooloose/nerdcommenter'

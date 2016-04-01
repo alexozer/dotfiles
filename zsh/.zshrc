@@ -13,11 +13,11 @@ source $ZSH/oh-my-zsh.sh
 
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
-	alias vim=nvim
 	export EDITOR=nvim
 else
 	export EDITOR=vim
 fi
+alias vim=$EDITOR
 
 # use sudo with vim
 alias svim="sudo -E $EDITOR"
