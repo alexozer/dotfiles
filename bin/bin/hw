@@ -22,7 +22,7 @@ if [ -z "$*" ]; then
 	fi
 
 	cat "$hwCache"
-	return
+	exit
 fi
 
 firstArg="$1"
@@ -42,7 +42,7 @@ case "$firstArg" in
 		syncHw
 		echo " done."
 		cat "$hwCache"
-		return
+		exit
 		;;
 	*)
 		echo "Invalid command: $firstArg"
