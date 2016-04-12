@@ -14,7 +14,7 @@ I use:
 - Arc Darker (gtk theme)
 - Whiskermenu (launcher)
 - Gnome terminal with zsh
-- Vim (editor)
+- Neovim (text editor)
 
 You can symlink these dotfiles to your home directory using GNU stow:
 ```bash
