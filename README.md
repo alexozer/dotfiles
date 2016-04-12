@@ -18,8 +18,8 @@ I use:
 
 You can symlink these dotfiles to your home directory using GNU stow:
 ```bash
-cd
-git clone https://github.com/alexozer/dotfiles.git .dotfiles
-cd .dotfiles
-stow [dir]
+$ cd
+$ git clone https://github.com/alexozer/dotfiles.git .dotfiles
+$ cd .dotfiles
+$ stow [dir]
 ```
