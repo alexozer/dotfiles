@@ -2,16 +2,24 @@
 
 This is where I share my dotfiles, with terrible commit messages that is.
 
-Current setup:
+Current screenshot:
 ![screenshot](screenshot.png)
 
-My setup uses:
-- Xfce for everything except the window manager and compositor
-- Bspwm
-- Compton
-- Whiskermenu
+I use:
+- Macbook Pro Retina 2015 (MF840LL/A)
+- Xfce (desktop environment minus window manager)
+- Bspwm (window manager)
+- Compton (transparency, shadows...)
+- Numix Circle (icon theme)
+- Arc Darker (gtk theme)
+- Whiskermenu (launcher)
+- Gnome terminal with zsh
+- Vim (editor)
 
-I use GNU stow to symlink my dotfiles to my home directory like this:
+You can symlink these dotfiles to your home directory using GNU stow:
 ```bash
-stow $DIR
+cd
+git clone https://github.com/alexozer/dotfiles.git .dotfiles
+cd .dotfiles
+stow [dir]
 ```
