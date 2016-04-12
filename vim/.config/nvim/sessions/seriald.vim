@@ -1,6 +1,6 @@
 " ~/.dotfiles/vim/.config/nvim/sessions/seriald.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 19 March 2016 at 15:27:04.
+" Created by session.vim 2.13.1 on 11 April 2016 at 19:15:22.
 " Open this file in Vim and run :source % to restore your session.
 
 let &makeprg = 'make'
@@ -22,9 +22,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +31 config.cpp
+badd +21 config.cpp
 badd +11 config.toml
-badd +16 config.h
+badd +21 config.h
 badd +23 shm_share.cpp
 badd +17 shm_share.h
 badd +46 device.h
@@ -43,12 +43,15 @@ badd +1 devices.gpp
 badd +8 logger.h
 badd +1 logger.cpp
 badd +15 ~/.dotfiles/vim/.config/nvim/init.vim
-badd +63 device_list.cpp
-badd +26 device_list.h
+badd +1 device_list.cpp
+badd +32 device_list.h
+badd +36 test/config/config.cpp
+badd +24 sub_status.h
+badd +23 sub_status.cpp
 argglobal
 silent! argdel *
 argadd config.cpp
-edit device_list.h
+edit device.cpp
 set splitbelow splitright
 wincmd t
 set winheight=1 winwidth=1
@@ -62,12 +65,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal nofen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 37) / 75)
+let s:l = 1 - ((0 * winheight(0) + 37) / 75)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 09|
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
 "   silent exe 'bwipe ' . s:wipebuf

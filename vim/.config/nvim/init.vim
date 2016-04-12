@@ -20,6 +20,7 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'cespare/vim-toml'
 Plug 'lervag/vimtex'
+Plug 'klen/python-mode'
 
 " tools
 Plug 'junegunn/vim-plug'
@@ -41,7 +42,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 
 " maybe wanted in the future
-"Plug 'klen/python-mode'
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
 "Plug 'moll/vim-bbye' " when buffer closed, don't close window
 "Plug 'SirVer/ultisnips'
@@ -298,7 +298,12 @@ let g:airline_theme='bubblegum'
 "let g:syntastic_check_on_wq = 0
 " }}}
 " python-mode {{{
-let g:pymode_lint_cwindow = 1
+let g:pymode_lint_cwindow=0
+let g:pymode_rope_completion=0
+augroup PyModeNoPep8
+	autocmd!
+	autocmd VimEnter * call remove(g:pymode_lint_checkers, index(g:pymode_lint_checkers, 'pep8'))
+augroup END
 " }}}
 " ctrlp {{{
 let g:ctrlp_map = '<leader><space>'

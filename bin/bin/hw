@@ -1,0 +1,54 @@
+#!/bin/bash
+
+hwCache="$HOME/.hw-cache"
+baseCmd() {
+	gcalcli --calendar 'Homework#blue' --calendar 'Weekly Homework#cyan' --calendar 'Tests#magenta' --color_date=white $@
+}
+
+syncHw() {
+	baseCmd calw 4 > "$hwCache"
+}
+
+if [ -z "$*" ]; then
+	# make sure cache exists and is up-to-date
+	if [ ! -f "$hwCache" ]; then
+		syncHw
+	else
+		modDate="$(stat -c %y "$hwCache" | cut -d' ' -f1)"
+		currDate="$(date +%Y-%m-%d)"
+		if [ "$modDate" != "$currDate" ]; then
+			syncHw
+		fi
+	fi
+
+	cat "$hwCache"
+	return
+fi
+
+firstArg="$1"
+shift
+case "$firstArg" in
+	add)
+		gcalcli --calendar Homework quick "$*"
+		;;
+	rm)
+		baseCmd delete "$*"
+		;;
+	edit)
+		baseCmd edit "$*"
+		;;
+	sync)
+		echo -n "Syncing..."
+		syncHw
+		echo " done."
+		cat "$hwCache"
+		return
+		;;
+	*)
+		echo "Invalid command: $firstArg"
+		return
+		;;
+esac
+
+syncHw
+cat "$hwCache"
