@@ -5,6 +5,7 @@ if !has('nvim')
 endif
 
 " Plug {{{ 
+if $HOST != 'polaris'
 call plug#begin('~/.vim/plugged')
 
 " colors
@@ -51,6 +52,7 @@ Plug 'tpope/vim-unimpaired'
 "Plug 'itchyny/lightline.vim'
 
 call plug#end()
+endif
 " }}}
 " Leader {{{
 let mapleader=","		" leader is comma
