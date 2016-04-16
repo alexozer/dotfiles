@@ -5,13 +5,13 @@ if !has('nvim')
 endif
 
 " Plug {{{ 
-if $HOST != 'polaris'
 call plug#begin('~/.vim/plugged')
 
 " colors
 Plug 'altercation/vim-colors-solarized'
 Plug 'NLKNguyen/papercolor-theme'
 
+if $HOST != 'polaris'
 " languages
 Plug 'fatih/vim-go'
 Plug 'jelera/vim-javascript-syntax'
@@ -206,6 +206,7 @@ set clipboard=unnamedplus
 "nnoremap <c-k> m`viwU``
 " }}}
 " Plugin Config {{{
+if $HOST != 'polaris'
 " vim-go {{{
 let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
 let g:go_highlight_functions = 1
@@ -314,6 +315,8 @@ let g:ctrlp_working_path_mode=''
 " vimtex {{{
 let g:tex_flavor='latex'
 let g:vimtex_latexmk_progname='nvr'
+" }}}
+endif
 " }}}
 
 " vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0
