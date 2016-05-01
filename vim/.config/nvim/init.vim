@@ -5,13 +5,13 @@ if !has('nvim')
 endif
 
 " Plug {{{ 
+if hostname() != 'polaris' && hostname() != 'loki'
 call plug#begin('~/.vim/plugged')
 
 " colors
 Plug 'altercation/vim-colors-solarized'
 Plug 'NLKNguyen/papercolor-theme'
 
-if $HOST != 'polaris'
 " languages
 Plug 'fatih/vim-go'
 Plug 'jelera/vim-javascript-syntax'
@@ -206,7 +206,7 @@ set clipboard=unnamedplus
 "nnoremap <c-k> m`viwU``
 " }}}
 " Plugin Config {{{
-if $HOST != 'polaris'
+if hostname() != 'polaris' && hostname() != 'loki'
 " vim-go {{{
 let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
 let g:go_highlight_functions = 1

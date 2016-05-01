@@ -10,6 +10,7 @@ export PATH="$PATH:$HOME/bin:$GOPATH1/bin:$GOPATH2/bin:$GOPATH3/bin:$HOME/code/a
 export PYTHONPATH="$HOME/code/auv:/usr/local/lib/python3.5/site-packages:/usr/local/lib/python2.7/site-packages"
 
 export CUAUV_SOFTWARE="$HOME/code/auv/"
+export CUAUV_VEHICLE="thor"
 export C_INCLUDE_PATH="$CUAUV_SOFTWARE"
 export CGO_LDFLAGS="-L${CUAUV_SOFTWARE}link-stage"
 export VISION_TEST_PATH="$HOME/vid/auv"
