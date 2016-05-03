@@ -26,9 +26,6 @@ Plug 'klen/python-mode'
 " tools
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/syntastic'
-"Plug 'Shougo/deoplete.nvim' " for some reason, youcompleteme only works when
-"deoplete is installed, but disabled
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'scrooloose/nerdcommenter'
@@ -50,6 +47,9 @@ Plug 'tpope/vim-unimpaired'
 "Plug 'Raimondi/delimitMate'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'itchyny/lightline.vim'
+"Plug 'Shougo/deoplete.nvim' " for some reason, youcompleteme only works when
+"deoplete is installed, but disabled
+"Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 
 call plug#end()
 endif
@@ -226,10 +226,10 @@ augroup go
 augroup END
 " }}}
 " YouCompleteMe {{{
-set completeopt-=preview			" don't open a preview window
-set shortmess+=c				" don't show completion status messages
-let g:ycm_extra_conf_globlist = ['~/code/*'] " load project-specific .ycm_extra_conf.py without asking
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py" " settings for C/C++
+"set completeopt-=preview			" don't open a preview window
+"set shortmess+=c				" don't show completion status messages
+"let g:ycm_extra_conf_globlist = ['~/code/*'] " load project-specific .ycm_extra_conf.py without asking
+"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py" " settings for C/C++
 " }}}
 " deoplete {{{
 "if has('nvim')

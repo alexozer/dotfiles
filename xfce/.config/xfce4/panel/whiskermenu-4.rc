@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=virtualbox.desktop,exo-mail-reader.desktop,xfce-ui-settings.desktop,exo-preferred-applications.desktop,transmission-gtk.desktop,uxterm.desktop,redshift-gtk.desktop,gimp.desktop,simplescreenrecorder.desktop,xfce4-screenshooter.desktop
+recent=xfce4-session-logout.desktop,redshift-gtk.desktop,gnome-system-monitor.desktop,virtualbox.desktop,exo-mail-reader.desktop,xfce-ui-settings.desktop,exo-preferred-applications.desktop,transmission-gtk.desktop,uxterm.desktop,gimp.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false
