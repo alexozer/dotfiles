@@ -47,18 +47,6 @@ alt + {comma,period}
 alt + ctrl + {h,j,k,l}
 	bspc node --presel-dir \~{west,south,north,east}
 
-~button1
-	bspc pointer --grab focus
-
-alt + button{1-3}
-	bspc pointer --grab {move,resize_side,resize_corner}
-
-alt + !button{1-3}
-	bspc pointer --track %i %i
-
-alt + @button{1-3}
-	bspc pointer --ungrab
-
 alt + shift + {n,i}
 	bspc node --to-desktop {next,prev} --focus
 

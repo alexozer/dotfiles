@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =57
+let g:netrw_dirhist_cnt =60
 let g:netrw_dirhist_1='/home/alex'
 let g:netrw_dirhist_2='/home'
 let g:netrw_dirhist_3='/home/alex'
@@ -57,3 +57,6 @@ let g:netrw_dirhist_54='/home/alex/code/auv/shm_tools'
 let g:netrw_dirhist_55='/home/alex/code/auv/sonard'
 let g:netrw_dirhist_56='/home/alex/code/auv/serial/seriald'
 let g:netrw_dirhist_57='/usr/local/bin'
+let g:netrw_dirhist_58='/home/alex/code/python/scbot'
+let g:netrw_dirhist_59='/home/alex/code/auv-anon/private/serial'
+let g:netrw_dirhist_60='/home/alex/code/auv-private/open-source'

@@ -9,8 +9,8 @@ if hostname() == 'tinfoil'
 call plug#begin('~/.vim/plugged')
 
 " colors
-Plug 'altercation/vim-colors-solarized'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
 " languages
 Plug 'fatih/vim-go'
@@ -26,14 +26,12 @@ Plug 'klen/python-mode'
 " tools
 Plug 'junegunn/vim-plug'
 Plug 'scrooloose/syntastic'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
-Plug 'rust-lang/rust.vim'
 Plug 'kassio/neoterm'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
@@ -50,6 +48,8 @@ Plug 'tpope/vim-unimpaired'
 "Plug 'Shougo/deoplete.nvim' " for some reason, youcompleteme only works when
 "deoplete is installed, but disabled
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"Plug 'rust-lang/rust.vim'
 
 call plug#end()
 endif

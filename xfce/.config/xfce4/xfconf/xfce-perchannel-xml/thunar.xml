@@ -13,10 +13,10 @@
   <property name="misc-single-click-timeout" type="uint" value="0"/>
   <property name="last-statusbar-visible" type="bool" value="true"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_NORMAL"/>
-  <property name="last-details-view-column-widths" type="string" value="50,166,50,50,807,50,50,96,285"/>
+  <property name="last-details-view-column-widths" type="string" value="50,164,50,50,807,50,50,96,285"/>
   <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
   <property name="misc-text-beside-icons" type="bool" value="true"/>
-  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_DATE_MODIFIED"/>
-  <property name="last-sort-order" type="string" value="GTK_SORT_DESCENDING"/>
+  <property name="last-sort-column" type="string" value="THUNAR_COLUMN_NAME"/>
+  <property name="last-sort-order" type="string" value="GTK_SORT_ASCENDING"/>
 </channel>
