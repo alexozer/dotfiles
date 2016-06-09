@@ -5,7 +5,6 @@ if !has('nvim')
 endif
 
 " Plug {{{ 
-if hostname() == 'tinfoil'
 call plug#begin('~/.vim/plugged')
 
 " colors
@@ -52,7 +51,6 @@ Plug 'tpope/vim-unimpaired'
 "Plug 'rust-lang/rust.vim'
 
 call plug#end()
-endif
 " }}}
 " Leader {{{
 let mapleader=","		" leader is comma
@@ -206,7 +204,6 @@ set clipboard=unnamedplus
 "nnoremap <c-k> m`viwU``
 " }}}
 " Plugin Config {{{
-if hostname() == 'tinfoil'
 " vim-go {{{
 let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
 let g:go_highlight_functions = 1
@@ -316,7 +313,6 @@ let g:ctrlp_working_path_mode=''
 let g:tex_flavor='latex'
 let g:vimtex_latexmk_progname='nvr'
 " }}}
-endif
 " }}}
 
 " vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0
