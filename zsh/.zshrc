@@ -42,7 +42,9 @@ alias calc='python3 -ic "from math import *; import cmath"'
 # matlab repl
 alias matlab='matlab -nodesktop -nosplash'
 
+# auv
 alias build='ninja -C $CUAUV_SOFTWARE'
+alias cs='cd $CUAUV_SOFTWARE'
 
 # shortcuts to edit config files
 e() {

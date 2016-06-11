@@ -1,0 +1,9 @@
+[Unit]
+Description=Don't wake up after the lid is closed
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'echo ARPT > /proc/acpi/wakeup'
+
+[Install]
+WantedBy=multi-user.target
