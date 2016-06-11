@@ -83,3 +83,11 @@ e() {
 bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
+
+ssh() {
+	if [[ "$1" == "thor" || "$1" == "loki" ]]; then
+		/usr/bin/ssh "$1" -t 'SSH_CONNECTION=tinfoil; zsh'
+	else
+		/usr/bin/ssh "$@"
+	fi
+}

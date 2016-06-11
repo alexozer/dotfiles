@@ -49,6 +49,14 @@ Plug 'tpope/vim-unimpaired'
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 "Plug 'rust-lang/rust.vim'
+"if has('nvim')
+	"function! DoRemote(arg)
+	  "UpdateRemotePlugins
+	"endfunction
+	"Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+"endif
+"Plug 'zchee/deoplete-jedi'
+"Plug 'zchee/deoplete-clang'
 
 call plug#end()
 " }}}
@@ -239,13 +247,19 @@ augroup END
 	"inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 	"augroup deoplete
 		"autocmd!
-		"autocmd VimEnter * DeopleteInitializePython " don't lag on first insert
+		"autocmd VimEnter * call deoplete#initialize() " don't lag on first insert
 	"augroup END
+	"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-	"" clang_complete
-	"let g:clang_complete_auto = 0
-	"let g:clang_auto_select = 0
-	"let g:clang_default_keymappings = 0
+	"" complete manually with tab
+	"let g:deoplete#disable_auto_complete = 1
+	"inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
+
+	""" clang_complete
+	""let g:clang_complete_auto = 0
+	""let g:clang_auto_select = 0
+	""let g:clang_default_keymappings = 0
+	
 	""let g:clang_use_library = 1
 "endif
 " }}}
