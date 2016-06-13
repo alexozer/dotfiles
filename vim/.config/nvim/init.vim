@@ -35,6 +35,14 @@ Plug 'kassio/neoterm'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
+if has('nvim')
+	function! DoRemote(arg)
+	  UpdateRemotePlugins
+	endfunction
+	Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+endif
+Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -49,14 +57,6 @@ Plug 'tpope/vim-unimpaired'
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 ""Plug 'rust-lang/rust.vim'
-"if has('nvim')
-	"function! DoRemote(arg)
-	  "UpdateRemotePlugins
-	"endfunction
-	"Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-"endif
-"Plug 'zchee/deoplete-jedi'
-"Plug 'zchee/deoplete-clang'
 
 call plug#end()
 " }}}
@@ -237,45 +237,45 @@ augroup END
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py" " settings for C/C++
 " }}}
 " deoplete {{{
-"if has('nvim')
+if has('nvim')
 	" general
-	"let g:deoplete#enable_at_startup = 1
-	"let g:deoplete#enable_camel_case = 1
+	let g:deoplete#enable_at_startup = 1
+	let g:deoplete#enable_smart_case = 1
+	let g:deoplete#disable_auto_complete = 1
+	call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
 
-	"" <Tab> completion:
-	"" 1. If popup menu is visible, select and insert next item
-	"" 2. Otherwise, if within a snippet, jump to next input
-	"" 3. Otherwise, if preceding chars are whitespace, insert tab char
-	"" 4. Otherwise, start manual autocomplete
-	"imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-		"\ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
-		"\ : (<SID>is_whitespace() ? "\<Tab>"
-		"\ : deoplete#mappings#manual_complete()))
+	" <Tab> completion:
+	" 1. If popup menu is visible, select and insert next item
+	" 2. Otherwise, if within a snippet, jump to next input
+	" 3. Otherwise, if preceding chars are whitespace, insert tab char
+	" 4. Otherwise, start manual autocomplete
+	imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
+		\ : (<SID>is_whitespace() ? "\<Tab>"
+		\ : deoplete#mappings#manual_complete())
 
-	"smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-		"\ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
-		"\ : (<SID>is_whitespace() ? "\<Tab>"
-		"\ : deoplete#mappings#manual_complete()))
+	smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
+		\ : (<SID>is_whitespace() ? "\<Tab>"
+		\ : deoplete#mappings#manual_complete())
 
-	"inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
+	inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
-	"function! s:is_whitespace() "{{{
-		"let col = col('.') - 1
-		"return ! col || getline('.')[col - 1] =~? '\s'
-	"endfunction "}}}
+	function! s:is_whitespace() "{{{
+		let col = col('.') - 1
+		return ! col || getline('.')[col - 1] =~? '\s'
+	endfunction "}}}
 
-	"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-	"augroup deoplete
-		"autocmd!
-		"autocmd VimEnter * call deoplete#initialize() " don't lag on first insert
-	"augroup END
+	autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+	augroup deoplete
+		autocmd!
+		autocmd VimEnter * call deoplete#initialize() " don't lag on first insert
+	augroup END
 
 	"" clang_complete
 	"let g:clang_complete_auto = 0
 	"let g:clang_auto_select = 0
 	"let g:clang_default_keymappings = 0
 	"let g:clang_use_library = 1
-"endif
+endif
 " }}}
 " vim-session {{{
 let g:session_autoload="no" 		" don't autoload a session when Vim starts

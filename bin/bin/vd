@@ -9,7 +9,5 @@ if [ -z "${1:-}" ]; then
 	exit
 fi
 
-while true; do
-	sudo reload-webcam-module
-	auv-visiond start "${1:-}"
-done
+sudo reload-webcam-module
+auv-visiond start "${1:-}"
