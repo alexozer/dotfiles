@@ -48,7 +48,7 @@ Plug 'tpope/vim-unimpaired'
 "deoplete is installed, but disabled
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-"Plug 'rust-lang/rust.vim'
+""Plug 'rust-lang/rust.vim'
 "if has('nvim')
 	"function! DoRemote(arg)
 	  "UpdateRemotePlugins
@@ -238,29 +238,43 @@ augroup END
 " }}}
 " deoplete {{{
 "if has('nvim')
-	"" general
+	" general
 	"let g:deoplete#enable_at_startup = 1
-	"let g:deoplete#enable_smart_case = 1
-	"" use tab to forward cycle
-	"inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-	"" use tab to backward cycle
-	"inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+	"let g:deoplete#enable_camel_case = 1
+
+	"" <Tab> completion:
+	"" 1. If popup menu is visible, select and insert next item
+	"" 2. Otherwise, if within a snippet, jump to next input
+	"" 3. Otherwise, if preceding chars are whitespace, insert tab char
+	"" 4. Otherwise, start manual autocomplete
+	"imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
+		"\ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
+		"\ : (<SID>is_whitespace() ? "\<Tab>"
+		"\ : deoplete#mappings#manual_complete()))
+
+	"smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
+		"\ : (neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
+		"\ : (<SID>is_whitespace() ? "\<Tab>"
+		"\ : deoplete#mappings#manual_complete()))
+
+	"inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
+
+	"function! s:is_whitespace() "{{{
+		"let col = col('.') - 1
+		"return ! col || getline('.')[col - 1] =~? '\s'
+	"endfunction "}}}
+
+	"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 	"augroup deoplete
 		"autocmd!
 		"autocmd VimEnter * call deoplete#initialize() " don't lag on first insert
 	"augroup END
-	"autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-	"" complete manually with tab
-	"let g:deoplete#disable_auto_complete = 1
-	"inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
-
-	""" clang_complete
-	""let g:clang_complete_auto = 0
-	""let g:clang_auto_select = 0
-	""let g:clang_default_keymappings = 0
-	
-	""let g:clang_use_library = 1
+	"" clang_complete
+	"let g:clang_complete_auto = 0
+	"let g:clang_auto_select = 0
+	"let g:clang_default_keymappings = 0
+	"let g:clang_use_library = 1
 "endif
 " }}}
 " vim-session {{{

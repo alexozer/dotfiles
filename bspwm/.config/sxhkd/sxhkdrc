@@ -9,6 +9,9 @@ alt + c
 	bspc node --close
 
 alt + equal
+	bspc node @/ --ratio 0.6180339903912632
+
+alt + minus
 	bspc node @/ --equalize
 
 alt + b

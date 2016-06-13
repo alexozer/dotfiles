@@ -1,0 +1,15 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+shopt -s dotglob nullglob
+
+if [ -z "${1:-}" ]; then
+	auv-visiond stop
+	auv-visiond cleanup
+	exit
+fi
+
+while true; do
+	sudo reload-webcam-module
+	auv-visiond start "${1:-}"
+done
