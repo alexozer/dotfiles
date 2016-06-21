@@ -1,0 +1,5 @@
+#!/bin/bash
+status_file=/proc/acpi/wakeup
+for device in $(cat "$status_file" | grep enabled | cut -f1); do
+	echo "$device" > "$status_file"
+done

@@ -264,7 +264,6 @@ if has('nvim')
 		return ! col || getline('.')[col - 1] =~? '\s'
 	endfunction "}}}
 
-	autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 	augroup deoplete
 		autocmd!
 		autocmd VimEnter * call deoplete#initialize() " don't lag on first insert

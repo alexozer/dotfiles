@@ -93,3 +93,12 @@ ssh() {
 		/usr/bin/ssh "$@"
 	fi
 }
+
+# cuauv aliases
+alias t="trogdor"
+alias c="auv-control-helm"
+alias s="auv-shm-editor"
+alias auv-mr="auv-mission-runner"
+alias auv-pt="auv-pooltest"
+alias shm="auv-shm-cli"
+

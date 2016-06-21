@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=xfce-display-settings.desktop,ipython.desktop,gnome-system-monitor.desktop,org.gnome.Cheese.desktop,exo-web-browser.desktop
+recent=gnome-system-monitor.desktop,org.gnome.Cheese.desktop,blender.desktop,exo-file-manager.desktop,xfce-display-settings.desktop,ipython.desktop,exo-web-browser.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false
