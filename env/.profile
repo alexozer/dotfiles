@@ -11,6 +11,7 @@ export PYTHONPATH="$HOME/code/auv"
 
 export CUAUV_SOFTWARE="$HOME/code/auv/"
 export CUAUV_VEHICLE="thor"
+export CUAUV_LOCALE="teagle"
 export CHICKEN_REPOSITORY="$CUAUV_SOFTWARE/link-stage/chicken"
 export C_INCLUDE_PATH="$CUAUV_SOFTWARE"
 export CGO_LDFLAGS="-L${CUAUV_SOFTWARE}link-stage"

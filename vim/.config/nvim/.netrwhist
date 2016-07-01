@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =64
+let g:netrw_dirhist_cnt =65
 let g:netrw_dirhist_1='/home/alex'
 let g:netrw_dirhist_2='/home'
 let g:netrw_dirhist_3='/home/alex'
@@ -64,3 +64,4 @@ let g:netrw_dirhist_61='/home/alex/code/auv/vision/configs/tests'
 let g:netrw_dirhist_62='/home/alex/code/auv/vision/modules'
 let g:netrw_dirhist_63='/home/alex/code/auv/control/bollard'
 let g:netrw_dirhist_64='/home/alex/.dotfiles/system/etc/udev/rules.d'
+let g:netrw_dirhist_65='/home/alex/code/auv/libshm/templates'

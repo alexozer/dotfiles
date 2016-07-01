@@ -3,6 +3,8 @@
 # bspwm-specific autostart
 
 bspc config click_to_focus		true
+bspc config pointer_modifier mod1
+
 bspc config top_padding			44
 bspc config border_width 		4
 bspc config window_gap 			0
@@ -15,9 +17,8 @@ bspc config gapless_monocle     true
 bspc config single_monocle      true
 
 bspc config initial_polarity second_child
-
-bspc config pointer_modifier mod1
-
 bspc monitor -d 0 0 0 0 0 0 0
+
+bspc rule -a Zathura state=tiled
 
 $HOME/.config/bspwm/startup.sh &
