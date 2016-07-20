@@ -31,7 +31,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
-Plug 'kassio/neoterm'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -89,7 +88,7 @@ set mouse=a
 
 colorscheme PaperColor
 
-set bg=dark
+set bg=light
 call togglebg#map("<leader>5")
 
 syntax enable			" enable syntax processing
@@ -275,6 +274,7 @@ if has('nvim')
 	"let g:clang_default_keymappings = 0
 	"let g:clang_use_library = 1
 endif
+
 " }}}
 " vim-session {{{
 let g:session_autoload="no" 		" don't autoload a session when Vim starts
@@ -312,7 +312,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled=0
 let g:airline_powerline_fonts=1
-let g:airline_theme='bubblegum'
+let g:airline_theme='base16'
 " }}}
 " syntastic {{{
 "set statusline+=%#warningmsg#

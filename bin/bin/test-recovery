@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+cd $CUAUV_SOFTWARE
+auv-simulate &
+auv-vision-gui &
+vision/modules/recovery.py downward &
+vision/modules/debug.py downward &
+auv-shm-cli vision_modules Recovery 1 &
+auv-shm-cli vision_modules Debug 1 &
+chromium 0.0.0.0:5000 &
