@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =77
+let g:netrw_dirhist_cnt =78
 let g:netrw_dirhist_1='/home/alex'
 let g:netrw_dirhist_2='/home'
 let g:netrw_dirhist_3='/home/alex'
@@ -77,3 +77,4 @@ let g:netrw_dirhist_74='/home/alex/code/auv/vision'
 let g:netrw_dirhist_75='/home/alex/code/auv/mission/framework'
 let g:netrw_dirhist_76='/home/alex/code/auv/mission/missions'
 let g:netrw_dirhist_77='/home/alex/code/auv/auv_math'
+let g:netrw_dirhist_78='/home/alex/code/auv/mission/constants'

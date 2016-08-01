@@ -17,7 +17,7 @@ bspc config gapless_monocle     true
 bspc config single_monocle      true
 
 bspc config initial_polarity second_child
-bspc monitor -d 0 0 0 0 0 0 0
+bspc monitor -d 0 0 0 0 0 0 0 0
 
 bspc rule -a Zathura state=tiled
 

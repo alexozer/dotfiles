@@ -61,6 +61,7 @@
         <value type="string" value="gpick"/>
         <value type="string" value="insync.py"/>
         <value type="string" value="fluxgui.py"/>
+        <value type="string" value="ueyecameramanager"/>
         <value type="string" value="clipgrab"/>
         <value type="string" value="slack"/>
         <value type="string" value="transmission"/>

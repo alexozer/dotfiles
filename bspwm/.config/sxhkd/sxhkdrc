@@ -1,5 +1,5 @@
 
-# bspwm hotkeys
+# bspwr hotkeys
 #
 
 alt + shift + q ; {l, s, p, r}
@@ -92,3 +92,9 @@ alt + shift + Escape
 alt + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
 	gnome-terminal -x /usr/bin/bash -ic 'ag --nocolor -g "" | fzf --reverse | xargs exo-open'
+
+alt + shift + comma
+	gnome-terminal -e 'ssh thor'
+
+alt + shift + period
+	gnome-terminal -e 'ssh loki'
