@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =80
+let g:netrw_dirhist_cnt =82
 let g:netrw_dirhist_1='/home/alex'
 let g:netrw_dirhist_2='/home'
 let g:netrw_dirhist_3='/home/alex'
@@ -80,3 +80,5 @@ let g:netrw_dirhist_77='/home/alex/code/auv/auv_math'
 let g:netrw_dirhist_78='/home/alex/code/auv/mission/constants'
 let g:netrw_dirhist_79='/home/alex/code/auv-open/.git'
 let g:netrw_dirhist_80='/home/alex/code/auv/peacock'
+let g:netrw_dirhist_81='/home/alex/code/arduino/jankcopter/lib/fmt'
+let g:netrw_dirhist_82='/home/alex/code/arduino/jankcopter/copter/lib/MPU-9250'

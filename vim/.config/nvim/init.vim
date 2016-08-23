@@ -24,10 +24,10 @@ Plug 'klen/python-mode'
 
 " tools
 Plug 'junegunn/vim-plug'
-Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'neomake/neomake'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
@@ -42,6 +42,7 @@ if has('nvim')
 endif
 Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-clang'
+Plug 'metakirby5/codi.vim'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -56,6 +57,8 @@ Plug 'zchee/deoplete-clang'
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 ""Plug 'rust-lang/rust.vim'
+"Plug 'arakashic/chromatica.nvim' # didn't like colors, flickers
+"Plug 'scrooloose/syntastic'
 
 call plug#end()
 " }}}
@@ -207,6 +210,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 set clipboard=unnamedplus
 
+" Make word before cursor upper-case
+inoremap <c-u> <esc>bgUwgi
+
 "inoremap <c-k> <esc>viwUea
 "nnoremap <c-k> m`viwU``
 " }}}
@@ -241,6 +247,7 @@ if has('nvim')
 	let g:deoplete#enable_at_startup = 1
 	let g:deoplete#enable_smart_case = 1
 	let g:deoplete#disable_auto_complete = 1
+	let g:deoplete#auto_complete_delay = 0
 	call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
 
 	" <Tab> completion:
@@ -316,15 +323,28 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='bubblegum'
 " }}}
 " syntastic {{{
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+""set statusline+=%#warningmsg#
+""set statusline+=%{SyntasticStatuslineFlag()}
+""set statusline+=%*
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+""let g:syntastic_always_populate_loc_list = 1
+""let g:syntastic_auto_loc_list = 1
+""let g:syntastic_check_on_open = 1
+""let g:syntastic_check_on_wq = 0
+"let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+"let g:syntastic_cpp_checkers = ['clang_check']
+" }}}
+" neomake {{{
+let g:neomake_cpp_enabled_makers = ['clang']
+let g:neomake_cpp_clangtidy_args = ['-extra-arg=-std=c++14', '-checks=\*']
+let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header', '-fsyntax-only']
+"let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
+let g:neomake_verbose = 0
+
+augroup Neomake
+	autocmd!
+	autocmd BufReadPost,BufWritePost * Neomake
+augroup END
 " }}}
 " python-mode {{{
 let g:pymode_lint_cwindow=0
