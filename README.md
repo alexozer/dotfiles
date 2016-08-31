@@ -12,6 +12,7 @@ I use:
 - Compton (transparency, shadows...)
 - Numix Circle (icon theme)
 - Arc Darker (gtk theme)
+- Human (cursor theme)
 - Whiskermenu (launcher)
 - Gnome terminal with zsh
 - Neovim (text editor)
