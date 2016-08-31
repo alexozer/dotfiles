@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=arduino.desktop,teensy-loader.desktop,xfce-settings-manager.desktop,xfce-display-settings.desktop,gimp.desktop,mpv.desktop,nm-connection-editor.desktop,org.gnome.Cheese.desktop,quadrapassel.desktop
+recent=org.gnome.baobab.desktop,xfce-ui-settings.desktop,org.gnome.Cheese.desktop,gimp.desktop,arduino.desktop,teensy-loader.desktop,xfce-settings-manager.desktop,xfce-display-settings.desktop,mpv.desktop,nm-connection-editor.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false

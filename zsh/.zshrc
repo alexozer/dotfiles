@@ -102,3 +102,5 @@ alias auv-mr="auv-mission-runner"
 alias auv-pt="auv-pooltest"
 alias shm="auv-shm-cli"
 
+# OPAM configuration
+. /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

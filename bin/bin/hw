@@ -1,27 +1,49 @@
 #!/bin/bash
+set -uo pipefail
+#IFS=$'\n\t'
+shopt -s dotglob nullglob
 
-hwCache="$HOME/.hw-cache"
-baseCmd() {
-	gcalcli --calendar 'Homework#blue' --calendar 'Weekly Homework#cyan' --calendar 'Tests#magenta' --color_date=white $@
+case "${1:-}" in
+	-e)
+		calendar="Events"
+		duplicate=1
+		baseCmd=showEvents
+		cache="$HOME/.hw-events-cache"
+		shift
+		;;
+	*)
+		calendar="Homework"
+		duplicate=0
+		baseCmd=showHw
+		cache="$HOME/.hw-cache"
+		;;
+esac
+
+showHw() {
+	gcalcli --color_date=white --calendar 'Homework#blue' --calendar 'Weekly Homework#cyan' --calendar 'Tests#magenta' "$@"
+}
+
+showEvents() {
+	gcalcli --color_date=white --calendar 'Events#green' "$@"
 }
 
 syncHw() {
-	baseCmd calw 4 > "$hwCache"
+	$baseCmd calw 4 > "$cache"
 }
 
 if [ -z "$*" ]; then
 	# make sure cache exists and is up-to-date
-	if [ ! -f "$hwCache" ]; then
+	if [ ! -f "$cache" ]; then
 		syncHw
 	else
-		modDate="$(stat -c %y "$hwCache" | cut -d' ' -f1)"
+		modDate="$(stat -c %y "$cache" | cut -d' ' -f1)"
 		currDate="$(date +%Y-%m-%d)"
 		if [ "$modDate" != "$currDate" ]; then
 			syncHw
 		fi
 	fi
 
-	cat "$hwCache"
+	cat "$cache"
 	exit
 fi
 
@@ -29,26 +51,26 @@ firstArg="$1"
 shift
 case "$firstArg" in
 	add)
-		gcalcli --calendar Homework quick "$*"
+		gcalcli --calendar "$calendar" quick "$*"
 		;;
 	rm)
-		baseCmd delete "$*"
+		$baseCmd delete "$*" 
 		;;
 	edit)
-		baseCmd edit "$*"
+		$baseCmd edit "$*"
 		;;
 	sync)
 		echo -n "Syncing..."
 		syncHw
 		echo " done."
-		cat "$hwCache"
+		cat "$cache"
 		exit
 		;;
 	*)
 		echo "Invalid command: $firstArg"
-		return
+		exit
 		;;
 esac
 
 syncHw
-cat "$hwCache"
+cat "$cache"
