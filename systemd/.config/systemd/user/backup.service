@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup to pi in dorm
+
+[Service]
+Type=simple
+ExecStart=/home/alex/bin/backup
+
+[Install]
+WantedBy=multi-user.target

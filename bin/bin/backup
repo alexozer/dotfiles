@@ -1,0 +1,22 @@
+#!/bin/bash
+set -uo pipefail
+#trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
+#IFS=$'\n\t'
+shopt -s dotglob nullglob
+
+export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
+backupDirs="code doc music pic vid"
+remoteDir="pi:/media/backup/tinfoil"
+
+doBackup() {
+	cd
+	bup index $backupDirs
+	bup save -r "$remoteDir" -n home $backupDirs
+}
+
+fail() {
+	ntfy -b pushbullet send 'backup failed!'
+}
+
+doBackup || fail

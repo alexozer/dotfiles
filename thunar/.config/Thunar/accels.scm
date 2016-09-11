@@ -42,6 +42,7 @@
 ; (gtk_accel_path "<Actions>/ThunarStandardView/invert-selection" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/make-link" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-as-icons" "<Primary>1")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/7f28e2d2f60e4725880dc72e8611b2ae" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/new-window" "<Primary>n")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/forward" "<Alt>Right")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/move-to-trash" "")
