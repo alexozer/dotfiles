@@ -24,7 +24,7 @@ showHw() {
 }
 
 showEvents() {
-	gcalcli --color_date=white --calendar 'Events#green' "$@"
+	gcalcli --color_date=white --calendar 'Events#green' --calendar 'CUAUV General Calendar#green' "$@"
 }
 
 syncHw() {

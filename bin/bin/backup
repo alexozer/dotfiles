@@ -6,10 +6,12 @@ shopt -s dotglob nullglob
 
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
+pingURL="alexozer.duckdns.org"
 backupDirs="code doc music pic vid"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() {
+	ping -W 2 -c 1 "$pingURL"
 	cd
 	bup index $backupDirs
 	bup save -r "$remoteDir" -n home $backupDirs
