@@ -11,9 +11,9 @@ backupDirs="code doc music pic vid"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() {
-	ping -W 2 -c 1 "$pingURL"
 	cd
 	bup index $backupDirs
+	ping -W 2 -c 1 "$pingURL"
 	bup save -r "$remoteDir" -n home $backupDirs
 }
 
