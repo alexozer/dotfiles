@@ -34,36 +34,37 @@
   <property name="plugins" type="empty">
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
-        <value type="string" value="thunar"/>
-        <value type="string" value="gtk-recordmydesktop"/>
-        <value type="string" value="owncloud"/>
-        <value type="string" value="redshift-gtk"/>
-        <value type="string" value="kupfer.py"/>
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="autokey-gtk"/>
-        <value type="string" value="rednotebook"/>
+        <value type="string" value="syncthing"/>
+        <value type="string" value="task manager"/>
+        <value type="string" value="fluxgui.py"/>
+        <value type="string" value="gpick"/>
+        <value type="string" value="transmission"/>
+        <value type="string" value="blueberry-tray.py"/>
         <value type="string" value="guake"/>
-        <value type="string" value="simplescreenrecorder"/>
-        <value type="string" value="synapse"/>
         <value type="string" value="orage"/>
+        <value type="string" value="xfce4-power-manager"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="franz"/>
+        <value type="string" value="owncloud"/>
+        <value type="string" value="insync.py"/>
+        <value type="string" value="tomahawk"/>
+        <value type="string" value="gtk-recordmydesktop"/>
         <value type="string" value="syncthing-gtk"/>
         <value type="string" value="xfce terminal"/>
-        <value type="string" value="chromium"/>
-        <value type="string" value="task manager"/>
-        <value type="string" value="tomahawk"/>
-        <value type="string" value="syncthing"/>
-        <value type="string" value="déjà dup backup tool"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="gpick"/>
-        <value type="string" value="insync.py"/>
-        <value type="string" value="fluxgui.py"/>
-        <value type="string" value="ueyecameramanager"/>
-        <value type="string" value="clipgrab"/>
-        <value type="string" value="slack"/>
-        <value type="string" value="transmission"/>
-        <value type="string" value="yad"/>
+        <value type="string" value="simplescreenrecorder"/>
         <value type="string" value="gpodder"/>
-        <value type="string" value="blueberry-tray.py"/>
+        <value type="string" value="redshift-gtk"/>
+        <value type="string" value="synapse"/>
+        <value type="string" value="clipgrab"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="chromium"/>
+        <value type="string" value="kupfer.py"/>
+        <value type="string" value="rednotebook"/>
+        <value type="string" value="autokey-gtk"/>
+        <value type="string" value="slack"/>
+        <value type="string" value="déjà dup backup tool"/>
+        <value type="string" value="ueyecameramanager"/>
+        <value type="string" value="yad"/>
       </property>
       <property name="names-hidden" type="array">
       </property>

@@ -12,15 +12,16 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
 " languages
-Plug 'fatih/vim-go'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'marijnh/tern_for_vim'
-Plug 'baskerville/vim-sxhkdrc'
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
-Plug 'sudar/vim-arduino-syntax'
-Plug 'cespare/vim-toml'
-Plug 'lervag/vimtex'
-Plug 'klen/python-mode'
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
+Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
+Plug 'baskerville/vim-sxhkdrc', {'for': 'sxhkdrc'}
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
+Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'klen/python-mode', {'for': 'python'}
+Plug 'the-lambda-church/merlin', {'for': 'ocaml', 'rtp': 'vim/merlin'}
 
 " tools
 Plug 'junegunn/vim-plug'
@@ -40,9 +41,10 @@ if has('nvim')
 	endfunction
 	Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 endif
-Plug 'zchee/deoplete-jedi'
-Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-jedi', {'for': 'python'}
+Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 Plug 'metakirby5/codi.vim'
+Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -58,7 +60,6 @@ Plug 'metakirby5/codi.vim'
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 ""Plug 'rust-lang/rust.vim'
 "Plug 'arakashic/chromatica.nvim' # didn't like colors, flickers
-"Plug 'scrooloose/syntastic'
 
 call plug#end()
 " }}}
@@ -90,8 +91,8 @@ set cursorline			" highlight current line
 set mouse=a
 
 colorscheme PaperColor
+set background=dark
 
-set bg=dark
 call togglebg#map("<leader>5")
 
 syntax enable			" enable syntax processing
@@ -327,11 +328,13 @@ let g:airline_theme='bubblegum'
 ""set statusline+=%{SyntasticStatuslineFlag()}
 ""set statusline+=%*
 
-""let g:syntastic_always_populate_loc_list = 1
-""let g:syntastic_auto_loc_list = 1
-""let g:syntastic_check_on_open = 1
-""let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 "let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+let g:syntastic_mode_map = {'active_filetypes': ['ocaml']}
+let g:syntastic_ocaml_checkers = ['merlin']
 "let g:syntastic_cpp_checkers = ['clang_check']
 " }}}
 " neomake {{{

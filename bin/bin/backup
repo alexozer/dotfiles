@@ -6,19 +6,17 @@ shopt -s dotglob nullglob
 
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
-pingURL="alexozer.duckdns.org"
 backupDirs="code doc music pic vid"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() {
 	cd
 	bup index $backupDirs
-	ping -W 2 -c 1 "$pingURL"
 	bup save -r "$remoteDir" -n home $backupDirs
 }
 
 fail() {
-	ntfy -b pushbullet send 'backup failed!'
+	ntfy -b pushbullet send $'Backup failed!\n'"$*"
 }
 
-doBackup || fail
+errors=$(doBackup 2>&1) || fail "$errors"
