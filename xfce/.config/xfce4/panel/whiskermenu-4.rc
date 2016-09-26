@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=mpv.desktop,spotify.desktop,virtualbox.desktop,org.gnome.Cheese.desktop,quartus.desktop,org.gnome.baobab.desktop,xfce-mouse-settings.desktop,xfce-ui-settings.desktop,xfce-settings-manager.desktop,htop.desktop
+recent=virtualbox.desktop,quartus.desktop,xfce-display-settings.desktop,mpv.desktop,spotify.desktop,org.gnome.Cheese.desktop,org.gnome.baobab.desktop,xfce-mouse-settings.desktop,xfce-ui-settings.desktop,xfce-settings-manager.desktop
 button-title=Applications
 button-icon=xfce4-whiskermenu
 button-single-row=false
