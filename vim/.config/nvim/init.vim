@@ -60,6 +60,7 @@ Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 ""Plug 'rust-lang/rust.vim'
 "Plug 'arakashic/chromatica.nvim' # didn't like colors, flickers
+"Plug 'dkarter/bullets.vim'
 
 call plug#end()
 " }}}
@@ -76,7 +77,7 @@ set nojoinspaces
 " }}}
 " UI {{{
 if has('nvim')
-	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+	set termguicolors
 endif
 
 set timeoutlen=1000
@@ -90,8 +91,8 @@ set lazyredraw			" redraw only when we need to (not during macros)
 set cursorline			" highlight current line
 set mouse=a
 
-colorscheme PaperColor
 set background=dark
+colorscheme PaperColor
 
 call togglebg#map("<leader>5")
 
@@ -202,6 +203,12 @@ augroup latex
 	autocmd!
 	autocmd FileType tex setlocal nocursorline
 	autocmd FileType tex setlocal norelativenumber
+augroup END
+
+augroup ocaml
+	autocmd!
+	autocmd FileType ocaml setlocal tabstop=2
+	autocmd FileType ocaml setlocal shiftwidth=2
 augroup END
 " }}}
 " Misc {{{ 

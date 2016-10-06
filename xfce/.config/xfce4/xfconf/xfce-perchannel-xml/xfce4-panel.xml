@@ -37,6 +37,7 @@
         <value type="string" value="syncthing"/>
         <value type="string" value="task manager"/>
         <value type="string" value="fluxgui.py"/>
+        <value type="string" value="blockify-ui"/>
         <value type="string" value="gpick"/>
         <value type="string" value="transmission"/>
         <value type="string" value="blueberry-tray.py"/>
