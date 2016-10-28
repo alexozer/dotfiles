@@ -8,7 +8,7 @@
     <property name="logind-handle-lid-switch" type="bool" value="false"/>
     <property name="lid-action-on-ac" type="uint" value="1"/>
     <property name="show-tray-icon" type="bool" value="true"/>
-    <property name="presentation-mode" type="bool" value="false"/>
+    <property name="presentation-mode" type="bool" value="true"/>
     <property name="inactivity-sleep-mode-on-battery" type="uint" value="1"/>
     <property name="inactivity-on-battery" type="uint" value="60"/>
     <property name="critical-power-action" type="uint" value="1"/>

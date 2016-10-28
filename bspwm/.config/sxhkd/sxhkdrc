@@ -20,8 +20,8 @@ alt + b
 alt + {n,i}
 	bspc desktop {next,prev} -f
 
-alt + {1-9,0}
-	bspc desktop ^{1-9,0} -f
+# alt + {1-9,0}
+# 	bspc desktop ^{1-9,0} -f
 
 alt + ctrl + shift + {n,i}
 	bspc desktop --bubble {next,prev} --focus
@@ -91,7 +91,7 @@ alt + shift + Escape
 
 alt + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
-	gnome-terminal -x /usr/bin/bash -ic 'ag --nocolor -g "" | fzf --reverse | xargs exo-open'
+	gnome-terminal -x /usr/bin/bash -ic 'ag --nocolor -g "" | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 
 alt + shift + comma
 	gnome-terminal -e 'ssh thor'
