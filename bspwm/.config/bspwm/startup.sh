@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# run gnome-terminal-server in dummy X server
-Xvfb :1 &
-sleep 0.1
-gnome-terminal --display :1 &
+# run hidden gnome-terminal instance to act as server
+bspc rule --add Gnome-terminal --one-shot state=floating hidden=on
+gnome-terminal &
 
 compton --frame-opacity 0.5 &
 
