@@ -4,4 +4,9 @@
   <property name="notify-location" type="uint" value="2"/>
   <property name="theme" type="string" value="Default"/>
   <property name="initial-opacity" type="double" value="1.000000"/>
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value="xfce4-power-manager"/>
+    </property>
+  </property>
 </channel>
