@@ -3,7 +3,7 @@
 This is where I share my dotfiles, with terrible commit messages that is.
 
 Current screenshots:
-![empty](screenshot.png)
+![empty](empty.png)
 ![fakebusy](fakebusy.png)
 
 I use:
