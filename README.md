@@ -2,8 +2,9 @@
 
 This is where I share my dotfiles, with terrible commit messages that is.
 
-Current screenshot:
-![screenshot](screenshot.png)
+Current screenshots:
+![empty](screenshot.png)
+![fakebusy](fakebusy.png)
 
 I use:
 - Macbook Pro Retina 2015 (MF840LL/A)

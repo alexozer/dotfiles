@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Vim Text Editor
+Name=Vim
 Comment=Edit text files
 Exec=nvim %F
 Terminal=true
