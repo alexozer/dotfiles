@@ -16,7 +16,7 @@ doBackup() {
 }
 
 fail() {
-	ntfy -b pushbullet send $'Backup failed!\n'"$*"
+	ntfy -b linux send $'Backup failed!\n'"$*"
 }
 
 errors=$(doBackup 2>&1) || fail "$errors"
