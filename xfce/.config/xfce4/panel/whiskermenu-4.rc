@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=xfce4-notifyd-config.desktop,spotify.desktop,dolphin-emu.desktop,jetbrains-idea.desktop,playonlinux.desktop,org.gnome.baobab.desktop,quadrapassel.desktop,gparted.desktop,org.gnome.Cheese.desktop,vim.desktop
+recent=arduino.desktop,gimp.desktop,teensy-loader.desktop,virtualbox.desktop,org.gnome.baobab.desktop,dolphin-emu.desktop,spotify.desktop,xfce4-notifyd-config.desktop,jetbrains-idea.desktop,playonlinux.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
