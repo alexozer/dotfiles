@@ -40,6 +40,7 @@ if has('nvim')
 	  UpdateRemotePlugins
 	endfunction
 	Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+	Plug 'zchee/deoplete-go', { 'do': 'make'}
 endif
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'zchee/deoplete-clang', {'for': 'cpp'}
@@ -54,8 +55,6 @@ Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 "Plug 'Raimondi/delimitMate'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'itchyny/lightline.vim'
-"Plug 'Shougo/deoplete.nvim' " for some reason, youcompleteme only works when
-"deoplete is installed, but disabled
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 ""Plug 'rust-lang/rust.vim'
@@ -227,7 +226,7 @@ inoremap <c-u> <esc>bgUwgi
 " Plugin Config {{{
 " vim-go {{{
 let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
-let g:go_highlight_functions = 1
+"let g:go_highlight_functions = 1
 let g:go_fmt_command = 'goimports'
 
 augroup go

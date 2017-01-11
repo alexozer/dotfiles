@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=arduino.desktop,gimp.desktop,teensy-loader.desktop,virtualbox.desktop,org.gnome.baobab.desktop,dolphin-emu.desktop,spotify.desktop,xfce4-notifyd-config.desktop,jetbrains-idea.desktop,playonlinux.desktop
+recent=xfce-ui-settings.desktop,xfce4-session-logout.desktop,exo-terminal-emulator.desktop,arduino.desktop,org.kde.kdenlive.desktop,gimp.desktop,pavucontrol.desktop,audacity.desktop,xfce-backdrop-settings.desktop,virtualbox.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
