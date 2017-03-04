@@ -13,6 +13,11 @@ doBackup() {
 	cd
 	bup index $backupDirs
 	bup save -r "$remoteDir" -n home $backupDirs
+
+	cd $HOME/.dotfiles
+	git add .
+	git commit -m "Update $(date +%D)"
+	git push
 }
 
 fail() {
