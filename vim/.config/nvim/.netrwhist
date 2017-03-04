@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =94
+let g:netrw_dirhist_cnt =99
 let g:netrw_dirhist_1='/home/alex'
 let g:netrw_dirhist_2='/home'
 let g:netrw_dirhist_3='/home/alex'
@@ -94,3 +94,8 @@ let g:netrw_dirhist_91='/home/alex/code/go/src/github.com/alexozer/jankcopter/ha
 let g:netrw_dirhist_92='/home/alex/code/go/src/github.com/alexozer/jankcopter/handheld/.pioenvs/nanoatmega328/src'
 let g:netrw_dirhist_93='/home/alex/code/go/src/github.com/alexozer/jankcopter/handheld'
 let g:netrw_dirhist_94='/home/alex/code/arduino/teensy-cpp11/.git/branches'
+let g:netrw_dirhist_95='/home/alex/code/go/src/github.com/alexozer/jankcopter/copter/src'
+let g:netrw_dirhist_96='/home/alex/code/arduino/transmitter/src'
+let g:netrw_dirhist_97='/home/alex/build/MPL3115A2/src'
+let g:netrw_dirhist_98='/home/alex/.config/ntfy'
+let g:netrw_dirhist_99='/home/alex/.cache/floobits/alexozer/flamingo'

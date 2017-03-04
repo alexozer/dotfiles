@@ -8,45 +8,46 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " colors
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
+"Plug 'NLKNguyen/papercolor-theme'
+"Plug 'frankier/neovim-colors-solarized-truecolor-only'
 
-" languages
-Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
-Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
-Plug 'baskerville/vim-sxhkdrc', {'for': 'sxhkdrc'}
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
-Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'lervag/vimtex', {'for': 'tex'}
-Plug 'klen/python-mode', {'for': 'python'}
-Plug 'the-lambda-church/merlin', {'for': 'ocaml', 'rtp': 'vim/merlin'}
+"" languages
+"Plug 'fatih/vim-go', {'for': 'go'}
+"Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
+"Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
+"Plug 'baskerville/vim-sxhkdrc', {'for': 'sxhkdrc'}
+"Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
+"Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
+"Plug 'cespare/vim-toml', {'for': 'toml'}
+"Plug 'lervag/vimtex', {'for': 'tex'}
+"Plug 'klen/python-mode', {'for': 'python'}
+"Plug 'the-lambda-church/merlin', {'for': 'ocaml', 'rtp': 'vim/merlin'}
 
-" tools
-Plug 'junegunn/vim-plug'
-Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
-Plug 'neomake/neomake'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-if has('nvim')
-	function! DoRemote(arg)
-	  UpdateRemotePlugins
-	endfunction
-	Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-	Plug 'zchee/deoplete-go', { 'do': 'make'}
-endif
-Plug 'zchee/deoplete-jedi', {'for': 'python'}
-Plug 'zchee/deoplete-clang', {'for': 'cpp'}
-Plug 'metakirby5/codi.vim'
-Plug 'scrooloose/syntastic', {'for': 'ocaml'}
+"" tools
+"Plug 'junegunn/vim-plug'
+"Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
+"Plug 'scrooloose/nerdcommenter'
+"Plug 'tpope/vim-fugitive'
+"Plug 'neomake/neomake'
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+"Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+"Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-unimpaired'
+"if has('nvim')
+	"function! DoRemote(arg)
+	  "UpdateRemotePlugins
+	"endfunction
+	"Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+	"Plug 'zchee/deoplete-go', { 'do': 'make'}
+"endif
+"Plug 'zchee/deoplete-jedi', {'for': 'python'}
+"Plug 'zchee/deoplete-clang', {'for': 'cpp'}
+"Plug 'metakirby5/codi.vim'
+"Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 
+Plug 'floobits/floobits-neovim'
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
 "Plug 'moll/vim-bbye' " when buffer closed, don't close window
@@ -58,7 +59,7 @@ Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 ""Plug 'rust-lang/rust.vim'
-"Plug 'arakashic/chromatica.nvim' # didn't like colors, flickers
+"Plug 'arakashic/chromatica.nvim' " didn't like colors, flickers
 "Plug 'dkarter/bullets.vim'
 
 call plug#end()
@@ -360,10 +361,10 @@ augroup END
 " python-mode {{{
 let g:pymode_lint_cwindow=0
 let g:pymode_rope_completion=0
-augroup PyModeNoPep8
-	autocmd!
-	autocmd VimEnter * call remove(g:pymode_lint_checkers, index(g:pymode_lint_checkers, 'pep8'))
-augroup END
+"augroup PyModeNoPep8
+	"autocmd!
+	"autocmd VimEnter * call remove(g:pymode_lint_checkers, index(g:pymode_lint_checkers, 'pep8'))
+"augroup END
 " }}}
 " ctrlp {{{
 let g:ctrlp_map = '<leader><space>'
