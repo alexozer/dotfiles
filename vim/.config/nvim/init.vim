@@ -36,11 +36,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 if has('nvim')
-   function! DoRemote(arg)
-	 UpdateRemotePlugins
-   endfunction
-   Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-   Plug 'zchee/deoplete-go', { 'do': 'make'}
+  function! DoRemote(arg)
+	UpdateRemotePlugins
+  endfunction
+  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+  Plug 'zchee/deoplete-go', { 'do': 'make'}
 endif
 Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'zchee/deoplete-clang', {'for': 'cpp'}
