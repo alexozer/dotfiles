@@ -22,6 +22,7 @@ Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'klen/python-mode', {'for': 'python'}
 Plug 'the-lambda-church/merlin', {'for': 'ocaml', 'rtp': 'vim/merlin'}
+Plug 'LnL7/vim-nix'
 
 " tools
 Plug 'junegunn/vim-plug'
@@ -46,7 +47,7 @@ Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/syntastic', {'for': 'ocaml'}
-"Plug ';floobits/floobits-neovim'
+Plug 'floobits/floobits-neovim'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
