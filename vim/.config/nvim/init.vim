@@ -46,7 +46,7 @@ Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/syntastic', {'for': 'ocaml'}
-Plug 'floobits/floobits-neovim'
+"Plug ';floobits/floobits-neovim'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
