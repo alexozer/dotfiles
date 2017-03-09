@@ -10,6 +10,7 @@ backupDirs="code doc music pic vid"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() (
+	set -e
 	cd
 	bup index $backupDirs
 	bup save -r "$remoteDir" -n home $backupDirs
