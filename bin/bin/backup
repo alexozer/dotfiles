@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -uo pipefail
 #trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 #IFS=$'\n\t'
 shopt -s dotglob nullglob
@@ -10,6 +10,8 @@ backupDirs="code doc music pic vid"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() {
+	set -uo pipefail
+
 	cd
 	bup index $backupDirs
 	bup save -r "$remoteDir" -n home $backupDirs
@@ -22,6 +24,7 @@ doBackup() {
 
 fail() {
 	ntfy -b linux -b simplepush send $'Backup failed!\n'"$*"
+	return 1
 }
 
 errors=$(doBackup 2>&1) || fail "$errors"
