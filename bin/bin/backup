@@ -9,21 +9,20 @@ export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 backupDirs="code doc music pic vid"
 remoteDir="pi:/media/backup/tinfoil"
 
-doBackup() (
-	set -e
+doBackup() {
 	cd
 	bup index $backupDirs
-	bup save -r "$remoteDir" -n home $backupDirs
+	bup save -r "$remoteDir" -n home $backupDirs || return 1
 
 	cd $HOME/.dotfiles
 	git add .
 	git commit -m "Update $(date +%D)"
 	git push
-)
+}
 
-fail() (
+fail() {
 	ntfy -b linux -b simplepush send $'Backup failed!\n'"$*"
 	return 1
-)
+}
 
 errors=$(doBackup 2>&1) || fail "$errors"

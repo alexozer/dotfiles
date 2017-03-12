@@ -11,6 +11,14 @@ plugins=(git extract gitignore history-substring-search vi-mode last-working-dir
 
 source $ZSH/oh-my-zsh.sh
 
+# NB: gnome-terminal reports xterm-256color which is technically incorrect and
+# behaves strangely with certain programs. Older versions of gnome-terminal set
+# COLORTERM. Newer versions set VTE_VERSION
+if [[ $VTE_VERSION -ge 3803 ]]; then
+    # gnome-256color is equivalent to vte-256color
+    export TERM=gnome-256color
+fi
+
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
 	export EDITOR=nvim

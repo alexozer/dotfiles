@@ -16,13 +16,13 @@ Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
 Plug 'baskerville/vim-sxhkdrc', {'for': 'sxhkdrc'}
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'klen/python-mode', {'for': 'python'}
 Plug 'the-lambda-church/merlin', {'for': 'ocaml', 'rtp': 'vim/merlin'}
 Plug 'LnL7/vim-nix'
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 
 " tools
 Plug 'junegunn/vim-plug'
@@ -48,6 +48,7 @@ Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 Plug 'floobits/floobits-neovim'
+Plug 'reedes/vim-pencil'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -62,6 +63,8 @@ Plug 'floobits/floobits-neovim'
 ""Plug 'rust-lang/rust.vim'
 "Plug 'arakashic/chromatica.nvim' " didn't like colors, flickers
 "Plug 'dkarter/bullets.vim'
+"Plug 'vim-pandoc/vim-pandoc'
+"Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 " }}}
@@ -160,11 +163,15 @@ nnoremap <space> za
 " make Y behave like D and C, instead of like yy
 nnoremap Y y$	
 
-" easier than ^ and g_ and I never use the default behavior
-nnoremap H ^
-vnoremap H ^
-nnoremap L $
-vnoremap L $
+" easier than ^ and $ and I never use the default behavior.
+" some plugins like to remap $ and 0 and I'd like to use their remappings,
+" so I use *map instead of *noremap
+nmap 0 ^
+vmap 0 ^
+nmap H 0
+vmap H 0
+nmap L $
+vmap L $
 " }}}
 " Backups {{{
 set backup							" enable backup
@@ -221,6 +228,10 @@ set clipboard=unnamedplus
 
 " Make word before cursor upper-case
 inoremap <c-u> <esc>bgUwgi
+
+" Control-Backspace deletes last work in insert mode
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
 
 "inoremap <c-k> <esc>viwUea
 "nnoremap <c-k> m`viwU``
@@ -374,6 +385,15 @@ let g:ctrlp_working_path_mode=''
 " vimtex {{{
 let g:tex_flavor='latex'
 let g:vimtex_latexmk_progname='nvr'
+" }}}
+" pencil {{{
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd,text, call pencil#init({'wrap': 'soft'})
+augroup END
+
+let g:pencil#autoformat = 1
+let g:pencil#conceallevel = 0
 " }}}
 " }}}
 
