@@ -14,7 +14,7 @@ doBackup() {
 	bup index $backupDirs
 	bup save -r "$remoteDir" -n home $backupDirs || return 1
 
-	cd $HOME/.dotfiles
+	cd "$HOME"/.dotfiles
 	git add .
 	git commit -m "Update $(date +%D)"
 	git push
