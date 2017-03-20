@@ -47,7 +47,6 @@ Plug 'zchee/deoplete-jedi', {'for': 'python'}
 Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/syntastic', {'for': 'ocaml'}
-Plug 'floobits/floobits-neovim'
 Plug 'reedes/vim-pencil'
 
 " maybe wanted in the future

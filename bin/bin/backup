@@ -10,14 +10,14 @@ backupDirs="code doc music pic vid"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() {
-	cd
-	bup index $backupDirs
-	bup save -r "$remoteDir" -n home $backupDirs || return 1
-
 	cd "$HOME"/.dotfiles
 	git add .
 	git commit -m "Update $(date +%D)"
 	git push
+
+	cd
+	bup index $backupDirs
+	bup save -r "$remoteDir" -n home $backupDirs || return 1
 }
 
 fail() {
