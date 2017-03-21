@@ -94,11 +94,18 @@ bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
 
-ssh() {
-	if [[ "$1" == "thor" || "$1" == "loki" ]]; then
-		/usr/bin/ssh "$1" -t 'SSH_CONNECTION=tinfoil; zsh'
+auv() {
+	if [[ -z "$1" ]]; then
+		echo "Usage: auv [start|stop]"
+	elif [[ "$1" = "start" ]]; then
+		xhost +
+		sudo systemctl start lxc@cuauv
+	elif [[ "$1" = "stop" ]]; then
+		xhost -
+		sudo systemctl stop lxc@cuauv
 	else
-		/usr/bin/ssh "$@"
+		echo "Invalid option"
+		return 1
 	fi
 }
 
