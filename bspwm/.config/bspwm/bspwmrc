@@ -21,4 +21,4 @@ bspc monitor -d 0 0 0 0 0 0 0 0
 
 bspc rule -a Zathura state=tiled
 
-$HOME/.config/bspwm/startup.sh &
+"$HOME"/.config/bspwm/startup.sh &
