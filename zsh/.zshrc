@@ -95,18 +95,27 @@ bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
 
 auv() {
-	if [[ -z "$1" ]]; then
-		echo "Usage: auv [start|stop]"
-	elif [[ "$1" = "start" ]]; then
-		xhost +
+	case "$1" in
+
+	start)
+		XAUTH_FILE="/var/lib/lxc/cuauv/rootfs/home/software/.Xauthority-host"
+		sudo rm "$XAUTH_FILE"
+		sudo touch "$XAUTH_FILE"
+		xauth extract - $DISPLAY | sudo xauth -f "$XAUTH_FILE" merge $HOME/.Xauthority
+		sudo chown --reference="$(dirname $XAUTH_FILE)" "$XAUTH_FILE"
+
 		sudo systemctl start lxc@cuauv
-	elif [[ "$1" = "stop" ]]; then
-		xhost -
+		;;
+
+	stop)
 		sudo systemctl stop lxc@cuauv
-	else
-		echo "Invalid option"
+		;;
+
+	*)
+		echo "Usage: auv [start|stop]"
 		return 1
-	fi
+		;;
+	esac
 }
 
 # cuauv aliases
