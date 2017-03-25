@@ -57,7 +57,6 @@
         <value type="string" value="gpodder"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="synapse"/>
-        <value type="string" value="clipgrab"/>
         <value type="string" value="idscameramanager"/>
         <value type="string" value="networkmanager applet"/>
         <value type="string" value="chromium"/>
@@ -65,6 +64,7 @@
         <value type="string" value="rednotebook"/>
         <value type="string" value="autokey-gtk"/>
         <value type="string" value="slack"/>
+        <value type="string" value="clipgrab"/>
         <value type="string" value="déjà dup backup tool"/>
         <value type="string" value="yad"/>
         <value type="string" value="ueyecameramanager"/>

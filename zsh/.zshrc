@@ -5,8 +5,6 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
-source /usr/share/doc/pkgfile/command-not-found.zsh
-
 plugins=(git extract gitignore history-substring-search vi-mode last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
