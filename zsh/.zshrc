@@ -48,10 +48,6 @@ alias calc='python3 -ic "from math import *; import cmath"'
 # matlab repl
 alias matlab='matlab -nodesktop -nosplash'
 
-# auv
-alias build='ninja -C $CUAUV_SOFTWARE'
-alias cs='cd $CUAUV_SOFTWARE'
-
 # shortcuts to edit config files
 e() {
     case "$1" in
@@ -115,14 +111,6 @@ auv() {
 		;;
 	esac
 }
-
-# cuauv aliases
-alias t="trogdor"
-alias c="auv-control-helm"
-alias s="auv-shm-editor"
-alias auv-mr="auv-mission-runner"
-alias auv-pt="auv-pooltest"
-alias shm="auv-shm-cli"
 
 # OPAM configuration
 . /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
