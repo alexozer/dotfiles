@@ -94,7 +94,7 @@ alt + o
 	gnome-terminal -x /usr/bin/bash -ic 'ag --nocolor -g "" | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 
 alt + shift + comma
-	gnome-terminal -e 'ssh thor'
+	gnome-terminal -e 'ssh artemis'
 
 alt + shift + period
-	gnome-terminal -e 'ssh loki'
+	gnome-terminal -e 'ssh apollo'
