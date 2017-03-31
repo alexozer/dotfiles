@@ -57,7 +57,7 @@ alt + shift + {n,i}
 # wm-independent hotkeys
 #
 
-alt + Escape
+alt + o
 	xfce4-popup-whiskermenu
 
 alt + Return
@@ -89,7 +89,7 @@ alt + {Right, Left}
 alt + shift + Escape
 	pkill -USR1 -x sxhkd
 
-alt + o
+alt + ctrl + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
 	gnome-terminal -x /usr/bin/bash -ic 'ag --nocolor -g "" | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 

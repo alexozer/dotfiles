@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=org.gnome.baobab.desktop,virtualbox.desktop,vim.desktop,xfce-ui-settings.desktop,exo-preferred-applications.desktop,spotify.desktop,panel-preferences.desktop,gimp.desktop,org.kde.kdenlive.desktop
+recent=gparted.desktop,org.gnome.baobab.desktop,virtualbox.desktop,vim.desktop,xfce-ui-settings.desktop,exo-preferred-applications.desktop,spotify.desktop,panel-preferences.desktop,gimp.desktop,org.kde.kdenlive.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false

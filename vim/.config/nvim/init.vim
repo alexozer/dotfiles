@@ -118,14 +118,10 @@ set guitablabel=%t
 "set splitright " Open vertical splits to the right of current split
 
 " splits: use g prefix instead of <C-w>
-nnoremap gh <C-w>h
-nnoremap gl <C-w>l
-nnoremap gj <C-w>j
-nnoremap gk <C-w>k
-nnoremap gH <C-w>H
-nnoremap gL <C-w>L
-nnoremap gJ <C-w>J
-nnoremap gK <C-w>K
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
 
 " easier tab manipulation / navigation
 nnoremap <silent> <leader><tab> :tabnew<cr>

@@ -5,7 +5,7 @@ ZSH_THEME="robbyrussell"
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git extract gitignore history-substring-search vi-mode last-working-dir)
+plugins=(git extract gitignore vi-mode last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,11 +82,6 @@ e() {
 	    ;;
     esac
 }
-
-# search command history
-bindkey -M vicmd "j" history-substring-search-down
-bindkey -M vicmd "k" history-substring-search-up
-setopt HIST_IGNORE_ALL_DUPS
 
 auv() {
 	case "$1" in
