@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/alex/floobits/alexozer/flamingo'
 let g:netrw_dirhist_2='/home/alex/.config/gtk-3.0'
 let g:netrw_dirhist_3='/home/alex/code/auv/flamingo/docs'
+let g:netrw_dirhist_4='/home/alex/.dotfiles/vim-merlin'
