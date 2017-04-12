@@ -20,7 +20,6 @@ Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'klen/python-mode', {'for': 'python'}
-Plug 'the-lambda-church/merlin', {'for': 'ocaml', 'rtp': 'vim/merlin'}
 Plug 'LnL7/vim-nix'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 
@@ -36,15 +35,12 @@ Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
-if has('nvim')
-  function! DoRemote(arg)
-	UpdateRemotePlugins
-  endfunction
-  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-  Plug 'zchee/deoplete-go', { 'do': 'make'}
-endif
-Plug 'zchee/deoplete-jedi', {'for': 'python'}
-Plug 'zchee/deoplete-clang', {'for': 'cpp'}
+"if has('nvim')
+	"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	"Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go'}
+	"Plug 'zchee/deoplete-jedi', {'for': 'python'}
+	"Plug 'zchee/deoplete-clang', {'for': 'cpp'}
+"endif
 Plug 'metakirby5/codi.vim'
 Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 Plug 'reedes/vim-pencil'
@@ -57,7 +53,7 @@ Plug 'reedes/vim-pencil'
 "Plug 'Raimondi/delimitMate'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'itchyny/lightline.vim'
-"Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 ""Plug 'rust-lang/rust.vim'
 "Plug 'arakashic/chromatica.nvim' " didn't like colors, flickers
@@ -118,10 +114,15 @@ set guitablabel=%t
 "set splitright " Open vertical splits to the right of current split
 
 " splits: use g prefix instead of <C-w>
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
+nnoremap gh <C-w>h
+nnoremap gl <C-w>l
+nnoremap gj <C-w>j
+nnoremap gk <C-w>k
+
+nnoremap gH <C-w>H
+nnoremap gL <C-w>L
+nnoremap gK <C-w>J
+nnoremap gK <C-w>K
 
 " easier tab manipulation / navigation
 nnoremap <silent> <leader><tab> :tabnew<cr>
@@ -212,6 +213,25 @@ augroup ocaml
 	autocmd!
 	autocmd FileType ocaml setlocal tabstop=2
 	autocmd FileType ocaml setlocal shiftwidth=2
+	
+	function! s:is_whitespace()
+		let col = col('.') - 1
+		return ! col || getline('.')[col - 1] =~? '\s'
+	endfunction
+
+	" Temporary <Tab> completion without deoplete:
+	" 1. If popup menu is visible, select and insert next item
+	" 2. Otherwise, if within a snippet, jump to next input
+	" 3. Otherwise, if preceding chars are whitespace, insert tab char
+	" 4. Otherwise, start manual autocomplete
+	autocmd FileType ocaml imap <buffer> <silent><expr><Tab> pumvisible() ? "\<C-n>"
+		\ : (<SID>is_whitespace() ? "\<Tab>"
+		\ : "\<c-x>\<c-o>")
+	autocmd FileType ocaml smap <buffer> <silent><expr><Tab> pumvisible() ? "\<C-n>"
+		\ : (<SID>is_whitespace() ? "\<Tab>"
+		\ : "\c<x>\<c-o>")
+	autocmd FileType ocaml inoremap <buffer> <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
+
 augroup END
 " }}}
 " Misc {{{ 
@@ -256,46 +276,50 @@ augroup END
 "let g:ycm_extra_conf_globlist = ['~/code/*'] " load project-specific .ycm_extra_conf.py without asking
 "let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py" " settings for C/C++
 " }}}
-" deoplete {{{
-if has('nvim')
-	" general
-	let g:deoplete#enable_at_startup = 1
-	let g:deoplete#enable_smart_case = 1
-	let g:deoplete#disable_auto_complete = 1
-	let g:deoplete#auto_complete_delay = 0
-	call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
+"deoplete {{{
+"if has('nvim')
+	"" general
+	"let g:deoplete#enable_at_startup = 1
+	"let g:deoplete#enable_smart_case = 1
+	"let g:deoplete#disable_auto_complete = 1
+	"let g:deoplete#auto_complete_delay = 0
+	"let g:deoplete#omni_patterns = {}
+	"let g:deoplete#omni_patterns.ocaml = '[.\w]+'
+	"call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
 
-	" <Tab> completion:
-	" 1. If popup menu is visible, select and insert next item
-	" 2. Otherwise, if within a snippet, jump to next input
-	" 3. Otherwise, if preceding chars are whitespace, insert tab char
-	" 4. Otherwise, start manual autocomplete
-	imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-		\ : (<SID>is_whitespace() ? "\<Tab>"
-		\ : deoplete#mappings#manual_complete())
+	"imap <silent><expr><Tab> deoplete#mappings#manual_complete()
 
-	smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-		\ : (<SID>is_whitespace() ? "\<Tab>"
-		\ : deoplete#mappings#manual_complete())
+	"" <Tab> completion:
+	"" 1. If popup menu is visible, select and insert next item
+	"" 2. Otherwise, if within a snippet, jump to next input
+	"" 3. Otherwise, if preceding chars are whitespace, insert tab char
+	"" 4. Otherwise, start manual autocomplete
+	"imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
+		"\ : (<SID>is_whitespace() ? "\<Tab>"
+		"\ : deoplete#mappings#manual_complete())
 
-	inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
+	"smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
+		"\ : (<SID>is_whitespace() ? "\<Tab>"
+		"\ : deoplete#mappings#manual_complete())
 
-	function! s:is_whitespace() "{{{
-		let col = col('.') - 1
-		return ! col || getline('.')[col - 1] =~? '\s'
-	endfunction "}}}
+	"inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
 
-	augroup deoplete
-		autocmd!
-		autocmd VimEnter * call deoplete#initialize() " don't lag on first insert
-	augroup END
+	"function! s:is_whitespace()
+		"let col = col('.') - 1
+		"return ! col || getline('.')[col - 1] =~? '\s'
+	"endfunction
 
-	"" clang_complete
-	"let g:clang_complete_auto = 0
-	"let g:clang_auto_select = 0
-	"let g:clang_default_keymappings = 0
-	"let g:clang_use_library = 1
-endif
+	"augroup deoplete
+		"autocmd!
+		"autocmd VimEnter * call deoplete#initialize() " don't lag on first insert
+	"augroup END
+
+	""" clang_complete
+	""let g:clang_complete_auto = 0
+	""let g:clang_auto_select = 0
+	""let g:clang_default_keymappings = 0
+	""let g:clang_use_library = 1
+"endif
 
 " }}}
 " vim-session {{{
@@ -347,9 +371,10 @@ let g:airline_theme='bubblegum'
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+"let g:syntastic_cpp_checkers = ['clang_check']
+"
 let g:syntastic_mode_map = {'active_filetypes': ['ocaml']}
 let g:syntastic_ocaml_checkers = ['merlin']
-"let g:syntastic_cpp_checkers = ['clang_check']
 " }}}
 " neomake {{{
 let g:neomake_cpp_enabled_makers = ['clang']
@@ -419,11 +444,10 @@ let s:opam_available_tools = split(system(join(s:opam_check_cmdline)))
 for tool in s:opam_packages
   " Respect package order (merlin should be after ocp-index)
   if count(s:opam_available_tools, tool) > 0
-	call s:opam_configuration[tool]()
+    call s:opam_configuration[tool]()
   endif
 endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
-" }}}
 " }}}
 
 " vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0
