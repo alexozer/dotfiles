@@ -86,7 +86,7 @@ endif
 set timeoutlen=1000
 set ttimeoutlen=0
 
-set relativenumber		" show line numbers relative to current
+"set relativenumber		" show line numbers relative to current
 set ruler " always show bottom bar
 set laststatus=2 " always show status bar
 set wildmenu			" visual autocomplete for command menu
@@ -125,7 +125,7 @@ nnoremap gk <C-w>k
 
 nnoremap gH <C-w>H
 nnoremap gL <C-w>L
-nnoremap gK <C-w>J
+nnoremap gJ <C-w>J
 nnoremap gK <C-w>K
 
 " easier tab manipulation / navigation
