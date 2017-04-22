@@ -11,3 +11,9 @@ export MATLAB_JAVA="/usr/lib/jvm/java-8-openjdk/jre"
 export QSYS_ROOTDIR="/home/alex/build/aur/tmp/yaourt-tmp-alex/aur-quartus-lite/pkg/quartus-lite//opt/altera/quartus/sopc_builder/bin"
 
 export ALTERAOCLSDKROOT="/home/alex/build/aur/tmp/yaourt-tmp-alex/aur-quartus-lite/pkg/quartus-lite//opt/altera/hld"
+
+if [[ "$IN_NIX_SHELL" == "" ]]; then
+  if [ -e "/etc/nix/nix-profile.sh" ]; then
+    . /etc/nix/nix-profile.sh
+  fi
+fi

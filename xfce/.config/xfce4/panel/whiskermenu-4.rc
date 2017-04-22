@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=gimp.desktop,virtualbox.desktop,jetbrains-idea.desktop,playonlinux.desktop,xfce-backdrop-settings.desktop,blender.desktop,xfce-settings-manager.desktop,xfce-session-settings.desktop,org.gnome.baobab.desktop,evince.desktop
+recent=virtualbox.desktop,gimp.desktop,jetbrains-idea.desktop,playonlinux.desktop,xfce-backdrop-settings.desktop,blender.desktop,xfce-settings-manager.desktop,xfce-session-settings.desktop,org.gnome.baobab.desktop,evince.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
