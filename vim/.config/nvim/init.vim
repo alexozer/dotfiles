@@ -19,7 +19,7 @@ Plug 'baskerville/vim-sxhkdrc', {'for': 'sxhkdrc'}
 Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'lervag/vimtex', {'for': 'tex'}
-Plug 'klen/python-mode', {'for': 'python'}
+"Plug 'klen/python-mode', {'for': 'python'}
 Plug 'LnL7/vim-nix'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 if $USER != 'root'
@@ -362,7 +362,8 @@ let g:syntastic_ocaml_checkers = ['merlin']
 let g:neomake_cpp_enabled_makers = ['clang']
 let g:neomake_cpp_clangtidy_args = ['-extra-arg=-std=c++14', '-checks=\*']
 let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header', '-fsyntax-only']
-let g:neomake_python_enabled_makers = ['pep8', 'frosted']
+"let g:neomake_python_enabled_makers = ['pep8', 'frosted']
+let g:neomake_python_enabled_makers = ['flake8']
 "let g:neomake_java_enabled_makers = ['javac']
 "let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
 let g:neomake_verbose = 0
