@@ -32,7 +32,6 @@ Plug 'junegunn/vim-plug'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'neomake/neomake'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
@@ -46,8 +45,8 @@ if has('nvim')
 	Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 endif
 Plug 'metakirby5/codi.vim'
-Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 Plug 'reedes/vim-pencil'
+Plug 'w0rp/ale'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -64,6 +63,8 @@ Plug 'reedes/vim-pencil'
 "Plug 'dkarter/bullets.vim'
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
+"Plug 'neomake/neomake' # Replaced with ALE
+"Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 
 call plug#end()
 " }}}
@@ -93,6 +94,9 @@ set wildmenu			" visual autocomplete for command menu
 set lazyredraw			" redraw only when we need to (not during macros)
 set cursorline			" highlight current line
 set mouse=a
+
+" Don't change cursor in insert mode (mutates global cursor state, doesn't blink)
+set guicursor= 
 
 set background=dark
 colorscheme PaperColor
@@ -355,23 +359,23 @@ let g:airline_theme='bubblegum'
 "let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "let g:syntastic_cpp_checkers = ['clang_check']
 "
-let g:syntastic_mode_map = {'active_filetypes': ['ocaml']}
-let g:syntastic_ocaml_checkers = ['merlin']
+"let g:syntastic_mode_map = {'active_filetypes': ['ocaml']}
+"let g:syntastic_ocaml_checkers = ['merlin']
 " }}}
 " neomake {{{
-let g:neomake_cpp_enabled_makers = ['clang']
-let g:neomake_cpp_clangtidy_args = ['-extra-arg=-std=c++14', '-checks=\*']
-let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header', '-fsyntax-only']
-"let g:neomake_python_enabled_makers = ['pep8', 'frosted']
-let g:neomake_python_enabled_makers = ['flake8']
-"let g:neomake_java_enabled_makers = ['javac']
-"let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
-let g:neomake_verbose = 0
+"let g:neomake_cpp_enabled_makers = ['clang']
+"let g:neomake_cpp_clangtidy_args = ['-extra-arg=-std=c++14', '-checks=\*']
+"let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header', '-fsyntax-only']
+""let g:neomake_python_enabled_makers = ['pep8', 'frosted']
+"let g:neomake_python_enabled_makers = ['flake8']
+""let g:neomake_java_enabled_makers = ['javac']
+""let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
+"let g:neomake_verbose = 0
 
-augroup Neomake
-	autocmd!
-	autocmd BufReadPost,BufWritePost * Neomake
-augroup END
+"augroup Neomake
+	"autocmd!
+	"autocmd BufReadPost,BufWritePost * Neomake
+"augroup END
 " }}}
 " python-mode {{{
 let g:pymode_lint_cwindow=0
@@ -397,6 +401,9 @@ augroup END
 
 let g:pencil#autoformat = 1
 let g:pencil#conceallevel = 0
+" }}}
+" ale {{{
+let g:ale_lint_on_text_changed="never"
 " }}}
 
 " vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0

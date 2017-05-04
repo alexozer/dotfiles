@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=virtualbox.desktop,xfce-backdrop-settings.desktop,org.gnome.FileRoller.desktop,org.gnome.baobab.desktop,gimp.desktop,xfce-ui-settings.desktop,xournal.desktop,spotify.desktop,visual-studio-code.desktop,gparted.desktop
+recent=gparted.desktop,org.gnome.baobab.desktop,visual-studio-code.desktop,xfce4-session-logout.desktop,xfce-display-settings.desktop,virtualbox.desktop,xfce-backdrop-settings.desktop,org.gnome.FileRoller.desktop,gimp.desktop,xfce-ui-settings.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
