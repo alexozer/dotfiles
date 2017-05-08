@@ -44,9 +44,6 @@ alt + {_,shift + }Tab
 alt + {_,shift + }r
 	bspc node @/ --rotate {270,90}
 
-alt + {comma,period}
-	bspc node @/ --circulate {backward,forward}
-
 alt + ctrl + {h,j,k,l}
 	bspc node --presel-dir \~{west,south,north,east}
 
@@ -93,8 +90,8 @@ alt + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
 	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 
-alt + shift + comma
-	gnome-terminal -e 'ssh artemis'
+alt + {comma,period}
+	gnome-terminal -e 'ssh {artemis,apollo}'
 
-alt + shift + period
-	gnome-terminal -e 'ssh apollo'
+alt + shift + {comma,period}
+	exo-open http://192.168.0.{93,91}:5000
