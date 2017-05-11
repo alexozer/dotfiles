@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=gimp.desktop,gpick.desktop,xfce-ui-settings.desktop,visual-studio-code.desktop,org.gnome.Terminal.desktop,exo-terminal-emulator.desktop,gparted.desktop,org.gnome.baobab.desktop,xfce4-session-logout.desktop,xfce-display-settings.desktop
+recent=gimp.desktop,org.gnome.Cheese.desktop,gpick.desktop,xfce-ui-settings.desktop,visual-studio-code.desktop,org.gnome.Terminal.desktop,exo-terminal-emulator.desktop,gparted.desktop,org.gnome.baobab.desktop,xfce4-session-logout.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
