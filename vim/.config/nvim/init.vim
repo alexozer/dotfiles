@@ -159,10 +159,6 @@ set nohlsearch
 
 set gdefault			" when using :s command, replace all instances on line by default
 " }}}
-" Folding {{{
-set nofoldenable
-nnoremap <space> za
-" }}}
 " Movement {{{ 
 " make Y behave like D and C, instead of like yy
 nnoremap Y y$	
