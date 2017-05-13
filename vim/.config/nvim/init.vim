@@ -401,5 +401,3 @@ let g:pencil#conceallevel = 0
 " ale {{{
 let g:ale_lint_on_text_changed="never"
 " }}}
-
-" vim:foldenable:foldlevelstart=0:foldmethod=marker:foldlevel=0
