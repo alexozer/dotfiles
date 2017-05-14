@@ -19,7 +19,7 @@ Plug 'baskerville/vim-sxhkdrc', {'for': 'sxhkdrc'}
 Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'lervag/vimtex', {'for': 'tex'}
-"Plug 'klen/python-mode', {'for': 'python'}
+Plug 'klen/python-mode', {'for': 'python'}
 Plug 'LnL7/vim-nix'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 if $USER != 'root'
