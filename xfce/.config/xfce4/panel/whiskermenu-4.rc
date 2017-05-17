@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=blender.desktop,jetbrains-idea.desktop,virtualbox.desktop,gimp.desktop,org.gnome.Cheese.desktop,gpick.desktop,xfce-ui-settings.desktop,org.gnome.Terminal.desktop,exo-terminal-emulator.desktop,gparted.desktop
+recent=virtualbox.desktop,blender.desktop,jetbrains-idea.desktop,gimp.desktop,org.gnome.Cheese.desktop,gpick.desktop,xfce-ui-settings.desktop,org.gnome.Terminal.desktop,exo-terminal-emulator.desktop,gparted.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
