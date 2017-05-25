@@ -47,6 +47,7 @@ endif
 Plug 'metakirby5/codi.vim'
 Plug 'reedes/vim-pencil'
 Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
