@@ -94,7 +94,10 @@ alt + t
 	gnome-terminal -- htop
 
 alt + {comma,period}
-	gnome-terminal -e 'ssh {artemis,apollo}'
+	gnome-terminal -e 'ssh {auv,artemis,apollo}'
+
+alt + shift + Return
+	gnome-terminal -e 'ssh auv'
 
 alt + shift + {comma,period}
 	exo-open http://192.168.0.{93,91}:5000
