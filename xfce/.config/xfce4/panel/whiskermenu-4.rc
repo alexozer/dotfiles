@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=org.gnome.Cheese.desktop,gimp.desktop,gparted.desktop,eog.desktop,blender.desktop,gpick.desktop,Thunar-bulk-rename.desktop,htop.desktop,xfce4-session-logout.desktop,exo-terminal-emulator.desktop
+recent=gimp.desktop,eog.desktop,org.gnome.Cheese.desktop,gparted.desktop,blender.desktop,gpick.desktop,Thunar-bulk-rename.desktop,htop.desktop,xfce4-session-logout.desktop,exo-terminal-emulator.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
