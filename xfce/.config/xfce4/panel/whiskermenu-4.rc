@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=fceux.desktop,nm-connection-editor.desktop,org.gnome.baobab.desktop,dolphin-emu.desktop,org.gnome.Cheese.desktop,gimp.desktop,eog.desktop,gparted.desktop,blender.desktop,gpick.desktop
+recent=fceux.desktop,org.gnome.Cheese.desktop,nm-connection-editor.desktop,org.gnome.baobab.desktop,dolphin-emu.desktop,gimp.desktop,eog.desktop,gparted.desktop,blender.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
