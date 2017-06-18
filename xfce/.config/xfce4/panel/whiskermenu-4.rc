@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=xfce-display-settings.desktop,org.gnome.Cheese.desktop,gimp.desktop,dolphin-emu.desktop,higan.desktop,nm-connection-editor.desktop,org.gnome.baobab.desktop,eog.desktop,gparted.desktop,blender.desktop
+recent=org.gnome.baobab.desktop,xfce-display-settings.desktop,org.gnome.Cheese.desktop,gimp.desktop,dolphin-emu.desktop,higan.desktop,nm-connection-editor.desktop,eog.desktop,gparted.desktop,blender.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
