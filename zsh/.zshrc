@@ -101,40 +101,40 @@ bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
 
-#auv() {
-	#case "$1" in
-
-	#start)
-		#XAUTH_FILE="/var/lib/lxc/cuauv/rootfs/home/software/.Xauthority-host"
-		#sudo rm "$XAUTH_FILE"
-		#sudo touch "$XAUTH_FILE"
-		#xauth extract - $DISPLAY | sudo xauth -f "$XAUTH_FILE" merge $HOME/.Xauthority
-		#sudo chown --reference="$(dirname $XAUTH_FILE)" "$XAUTH_FILE"
-
-		#sudo systemctl start lxc@cuauv
-		#;;
-
-	#stop)
-		#sudo systemctl stop lxc@cuauv
-		#;;
-
-	#*)
-		#echo "Usage: auv [start|stop]"
-		#return 1
-		#;;
-	#esac
-#}
-
-export CUAUV_SOFTWARE="$HOME/code/auv/"
 auv() {
-	nix-shell "${CUAUV_SOFTWARE}nixos/configs/shell.nix" \
-		--indirect \
-		--add-root ~/.gcroots/dep \
-		--show-trace \
-		--pure \
-		--cores 0 \
-		--run "export CUAUV_SOFTWARE=\"$CUAUV_SOFTWARE\"; ${CUAUV_SOFTWARE}nixos/init.sh $SHELL"
+	case "$1" in
+
+	start)
+		XAUTH_FILE="/var/lib/lxc/cuauv/rootfs/home/software/.Xauthority-host"
+		sudo rm "$XAUTH_FILE"
+		sudo touch "$XAUTH_FILE"
+		xauth extract - $DISPLAY | sudo xauth -f "$XAUTH_FILE" merge $HOME/.Xauthority
+		sudo chown --reference="$(dirname $XAUTH_FILE)" "$XAUTH_FILE"
+
+		sudo systemctl start lxc@cuauv
+		;;
+
+	stop)
+		sudo systemctl stop lxc@cuauv
+		;;
+
+	*)
+		echo "Usage: auv [start|stop]"
+		return 1
+		;;
+	esac
 }
+
+#export CUAUV_SOFTWARE="$HOME/code/auv/"
+#auv() {
+	#nix-shell "${CUAUV_SOFTWARE}nixos/configs/shell.nix" \
+		#--indirect \
+		#--add-root ~/.gcroots/dep \
+		#--show-trace \
+		#--pure \
+		#--cores 0 \
+		#--run "export CUAUV_SOFTWARE=\"$CUAUV_SOFTWARE\"; ${CUAUV_SOFTWARE}nixos/init.sh $SHELL"
+#}
 
 # OPAM configuration
 . /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
