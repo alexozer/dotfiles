@@ -138,3 +138,35 @@ auv() {
 
 # OPAM configuration
 . /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# AUV
+
+# Set envirnormental variables
+export CUAUV_SOFTWARE="$HOME/code/auv/"
+export CUAUV_LOG="/var/log/auv"
+export PYTHONPATH="$PYTHONPATH:$CUAUV_SOFTWARE"
+export CSC_OPTIONS="-L${CUAUV_SOFTWARE}link-stage -C -I${CUAUV_SOFTWARE} -I${CUAUV_SOFTWARE} -Wl,-rpath,${CUAUV_SOFTWARE}link-stage"
+export CHICKEN_REPOSITORY=${CUAUV_SOFTWARE}link-stage/chicken
+export GOPATH="${CUAUV_SOFTWARE}gocode"
+export PATH="$PATH:${CUAUV_SOFTWARE}link-stage:${CUAUV_SOFTWARE}gocode/bin"
+export CUAUV_CONTEXT="development"
+
+# Needed for building electrical on the sub
+export AUV_SERIAL_OVERRIDE="auv-serial"
+
+# Build the software repo
+alias build="ninja -C "$CUAUV_SOFTWARE" -k 1000"
+alias av="auv-visiond"
+
+# Ensure anv-env-set is sourced
+alias auv-env-set="source auv-env-set"
+
+# Useful short aliases
+alias t="trogdor"
+alias c="auv-control-helm"
+alias s="auv-shm-editor"
+alias auv-mr="auv-mission-runner"
+alias auv-pt="auv-pooltest"
+alias aslam="auv-aslam-cli"
+alias shm="auv-shm-cli"
+alias cs="cd $CUAUV_SOFTWARE"
