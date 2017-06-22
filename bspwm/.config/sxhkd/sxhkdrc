@@ -94,7 +94,7 @@ alt + t
 	gnome-terminal -- htop
 
 alt + {comma,period}
-	gnome-terminal -e 'ssh {auv,artemis,apollo}'
+	gnome-terminal -e 'ssh {artemis,apollo}'
 
 alt + shift + Return
 	gnome-terminal -e 'ssh auv'
