@@ -95,6 +95,7 @@ set wildmenu			" visual autocomplete for command menu
 set lazyredraw			" redraw only when we need to (not during macros)
 set cursorline			" highlight current line
 set mouse=a
+set nofoldenable
 
 " Don't change cursor in insert mode (mutates global cursor state, doesn't blink)
 set guicursor= 

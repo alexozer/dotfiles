@@ -150,6 +150,8 @@ export CHICKEN_REPOSITORY=${CUAUV_SOFTWARE}link-stage/chicken
 export GOPATH="${CUAUV_SOFTWARE}gocode"
 export PATH="$PATH:${CUAUV_SOFTWARE}link-stage:${CUAUV_SOFTWARE}gocode/bin"
 export CUAUV_CONTEXT="development"
+export CUAUV_LOCALE="teagle"
+export CUAUV_VEHICLE="artemis"
 
 # Needed for building electrical on the sub
 export AUV_SERIAL_OVERRIDE="auv-serial"

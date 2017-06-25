@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/alex/floobits/alexozer/flamingo'
 let g:netrw_dirhist_2='/home/alex/.config/gtk-3.0'
 let g:netrw_dirhist_3='/home/alex/code/auv/flamingo/docs'
 let g:netrw_dirhist_4='/home/alex/.dotfiles/vim-merlin'
 let g:netrw_dirhist_5='/home/alex'
 let g:netrw_dirhist_6='/home/alex/.nix-profile'
+let g:netrw_dirhist_7='/home/alex/code/auv/fishbowl'
