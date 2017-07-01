@@ -46,8 +46,8 @@ if has('nvim')
 endif
 Plug 'metakirby5/codi.vim'
 Plug 'reedes/vim-pencil'
-Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
+Plug 'neomake/neomake'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -64,8 +64,8 @@ Plug 'tpope/vim-surround'
 "Plug 'dkarter/bullets.vim'
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
-"Plug 'neomake/neomake' # Replaced with ALE
 "Plug 'scrooloose/syntastic', {'for': 'ocaml'}
+"Plug 'w0rp/ale'
 
 call plug#end()
 " }}}
@@ -360,30 +360,37 @@ let g:airline_theme='bubblegum'
 "let g:syntastic_mode_map = {'active_filetypes': ['ocaml']}
 "let g:syntastic_ocaml_checkers = ['merlin']
 " }}}
-" neomake {{{
+ "neomake {{{
 "let g:neomake_cpp_enabled_makers = ['clang']
 "let g:neomake_cpp_clangtidy_args = ['-extra-arg=-std=c++14', '-checks=\*']
 "let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header', '-fsyntax-only']
-""let g:neomake_python_enabled_makers = ['pep8', 'frosted']
-"let g:neomake_python_enabled_makers = ['flake8']
-""let g:neomake_java_enabled_makers = ['javac']
-""let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
-"let g:neomake_verbose = 0
+"let g:neomake_python_enabled_makers = ['pep8', 'frosted']
+let g:neomake_python_enabled_makers = ['pyflakes']
+"let g:neomake_java_enabled_makers = ['javac']
+"let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
+let g:neomake_verbose = 0
 
-"augroup Neomake
-	"autocmd!
-	"autocmd BufReadPost,BufWritePost * Neomake
-"augroup END
+augroup Neomake
+	autocmd!
+	autocmd BufReadPost,BufWritePost * Neomake
+augroup END
 " }}}
 " python-mode {{{
+let g:pymode_lint=0
 let g:pymode_lint_cwindow=0
-let g:pymode_rope_completion=0
+let g:pymode_rope=0
 "augroup PyModeNoPep8
 	"autocmd!
 	"autocmd VimEnter * call remove(g:pymode_lint_checkers, index(g:pymode_lint_checkers, 'pep8'))
 "augroup END
+let g:pymode_lint_checkers = ['flake8']
 " }}}
 " ctrlp {{{
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
 let g:ctrlp_map = '<leader><space>'
 let g:ctrlp_working_path_mode=''
 " }}}
@@ -402,4 +409,5 @@ let g:pencil#conceallevel = 0
 " }}}
 " ale {{{
 let g:ale_lint_on_text_changed="never"
+let g:ale_linters = { 'python': ['pylint'] }
 " }}}
