@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=simplescreenrecorder.desktop,mscore.desktop,gimp.desktop,visual-studio-code.desktop,htop.desktop,org.gnome.baobab.desktop,gpick.desktop,xournal.desktop,gparted.desktop,xfce-display-settings.desktop
+recent=visual-studio-code.desktop,simplescreenrecorder.desktop,mscore.desktop,gimp.desktop,htop.desktop,org.gnome.baobab.desktop,gpick.desktop,xournal.desktop,gparted.desktop,xfce-display-settings.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
@@ -19,8 +19,8 @@ display-recent-default=false
 position-search-alternate=true
 position-commands-alternate=false
 position-categories-alternate=false
-menu-width=532
-menu-height=701
+menu-width=512
+menu-height=712
 menu-opacity=100
 command-settings=xfce4-settings-manager
 show-command-settings=false
