@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=xfce-settings-manager.desktop,visual-studio-code.desktop,simplescreenrecorder.desktop,woeusbgui.desktop,gparted.desktop,bvnc.desktop,higan.desktop,xfce-backdrop-settings.desktop,xfce-ui-settings.desktop,exo-preferred-applications.desktop
+recent=visual-studio-code.desktop,xfce-settings-manager.desktop,simplescreenrecorder.desktop,woeusbgui.desktop,gparted.desktop,bvnc.desktop,higan.desktop,xfce-backdrop-settings.desktop,xfce-ui-settings.desktop,exo-preferred-applications.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
