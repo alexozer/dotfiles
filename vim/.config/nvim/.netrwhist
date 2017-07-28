@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =100
-let g:netrw_dirhist_cnt =12
+let g:netrw_dirhist_cnt =13
 let g:netrw_dirhist_1='/home/alex/floobits/alexozer/flamingo'
 let g:netrw_dirhist_2='/home/alex/.config/gtk-3.0'
 let g:netrw_dirhist_3='/home/alex/code/auv/flamingo/docs'
@@ -12,3 +12,4 @@ let g:netrw_dirhist_9='/home/alex/vid/auv'
 let g:netrw_dirhist_10='/home/alex/code/auv/mission/missions'
 let g:netrw_dirhist_11='/home/alex/code/auv/mission'
 let g:netrw_dirhist_12='/home/alex/code/auv/nixos/configs'
+let g:netrw_dirhist_13='/home/alex/code/auv/vision/modules'

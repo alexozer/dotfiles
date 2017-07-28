@@ -14,7 +14,7 @@
   <property name="last-statusbar-visible" type="bool" value="true"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_NORMAL"/>
   <property name="last-details-view-column-widths" type="string" value="50,1516,50,50,357,50,50,105,375"/>
-  <property name="last-location-bar" type="string" value="void"/>
+  <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
   <property name="last-side-pane" type="string" value="ThunarShortcutsPane"/>
   <property name="misc-text-beside-icons" type="bool" value="true"/>
   <property name="last-sort-column" type="string" value="THUNAR_COLUMN_DATE_MODIFIED"/>
