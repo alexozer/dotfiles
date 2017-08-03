@@ -3,7 +3,7 @@
 <channel name="xfce4-notifyd" version="1.0">
   <property name="notify-location" type="uint" value="2"/>
   <property name="theme" type="string" value="Default"/>
-  <property name="initial-opacity" type="double" value="1.000000"/>
+  <property name="initial-opacity" type="double" value="0.900000"/>
   <property name="applications" type="empty">
     <property name="known_applications" type="array">
       <value type="string" value="Electron"/>
@@ -16,9 +16,14 @@
       <value type="string" value="Spotify"/>
       <value type="string" value="Thunar"/>
       <value type="string" value="Transmission"/>
+      <value type="string" value="Xfce4-notifyd settings"/>
       <value type="string" value="xfce4-power-manager"/>
     </property>
   </property>
-  <property name="expire-timeout" type="int" value="60"/>
+  <property name="expire-timeout" type="int" value="10"/>
   <property name="do-not-disturb" type="bool" value="false"/>
+  <property name="log-level" type="uint" value="1"/>
+  <property name="log-level-apps" type="uint" value="0"/>
+  <property name="do-fadeout" type="bool" value="true"/>
+  <property name="notification-log" type="bool" value="true"/>
 </channel>
