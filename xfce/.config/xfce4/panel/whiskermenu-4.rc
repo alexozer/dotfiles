@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=org.gnome.baobab.desktop,xfce-backdrop-settings.desktop,visual-studio-code.desktop,exo-mail-reader.desktop,ipython.desktop,xfce4-notifyd-config.desktop,virtualbox.desktop,woeusbgui.desktop,gparted.desktop
+recent=visual-studio-code.desktop,gpick.desktop,org.gnome.baobab.desktop,xfce-backdrop-settings.desktop,exo-mail-reader.desktop,ipython.desktop,xfce4-notifyd-config.desktop,virtualbox.desktop,woeusbgui.desktop,gparted.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false

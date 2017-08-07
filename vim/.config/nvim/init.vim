@@ -47,7 +47,7 @@ endif
 Plug 'metakirby5/codi.vim'
 Plug 'reedes/vim-pencil'
 Plug 'tpope/vim-surround'
-Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -65,7 +65,7 @@ Plug 'neomake/neomake'
 "Plug 'vim-pandoc/vim-pandoc'
 "Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'scrooloose/syntastic', {'for': 'ocaml'}
-"Plug 'w0rp/ale'
+"Plug 'neomake/neomake'
 
 call plug#end()
 " }}}
@@ -360,21 +360,21 @@ let g:airline_theme='bubblegum'
 "let g:syntastic_mode_map = {'active_filetypes': ['ocaml']}
 "let g:syntastic_ocaml_checkers = ['merlin']
 " }}}
- "neomake {{{
-"let g:neomake_cpp_enabled_makers = ['clang']
-"let g:neomake_cpp_clangtidy_args = ['-extra-arg=-std=c++14', '-checks=\*']
-"let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header', '-fsyntax-only']
-"let g:neomake_python_enabled_makers = ['pep8', 'frosted']
-let g:neomake_python_enabled_makers = ['pyflakes']
-"let g:neomake_java_enabled_makers = ['javac']
-"let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
-let g:neomake_verbose = 0
+ ""neomake {{{
+""let g:neomake_cpp_enabled_makers = ['clang']
+""let g:neomake_cpp_clangtidy_args = ['-extra-arg=-std=c++14', '-checks=\*']
+""let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header', '-fsyntax-only']
+""let g:neomake_python_enabled_makers = ['pep8', 'frosted']
+"let g:neomake_python_enabled_makers = ['pyflakes']
+""let g:neomake_java_enabled_makers = ['javac']
+""let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
+"let g:neomake_verbose = 0
 
-augroup Neomake
-	autocmd!
-	autocmd BufReadPost,BufWritePost * Neomake
-augroup END
-" }}}
+"augroup Neomake
+	"autocmd!
+	"autocmd BufReadPost,BufWritePost * Neomake
+"augroup END
+"" }}}
 " python-mode {{{
 let g:pymode_lint=0
 let g:pymode_lint_cwindow=0
