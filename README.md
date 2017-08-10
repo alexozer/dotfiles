@@ -4,7 +4,7 @@ This is where I share my dotfiles, with terrible commit messages that is.
 
 Current screenshots:
 ![empty](empty.png)
-![notbusy](notbudy.png)
+![notbusy](notbusy.png)
 ![code](code.png)
 
 I use:
