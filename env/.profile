@@ -1,11 +1,11 @@
 # environment variables
 
 export PATH="$PATH:\
-	$HOME/bin:$GOPATH/bin:\
-	$HOME/code/auv/link-stage:\
-	$HOME/.gem/ruby/2.4.0/bin:\
-	$HOME/.cargo/bin:\
-	$HOME/.node_modules/bin"
+$HOME/bin:$GOPATH/bin:\
+$HOME/code/auv/link-stage:\
+$HOME/.gem/ruby/2.4.0/bin:\
+$HOME/.cargo/bin:\
+$HOME/.node_modules/bin"
 
 export GOPATH="$HOME/code/go"
 export NPM_PACKAGES="$HOME/.npm-packages"

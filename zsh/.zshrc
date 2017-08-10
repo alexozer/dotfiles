@@ -1,13 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color"
 
-ZSH_THEME=""
-PURE_GIT_PULL=0
-autoload -U promptinit; promptinit
-prompt pure
-
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
+ZSH_THEME="robbyrussell"
 
 plugins=(git extract gitignore history-substring-search vi-mode last-working-dir)
 
