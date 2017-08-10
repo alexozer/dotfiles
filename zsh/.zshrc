@@ -1,6 +1,10 @@
-export ZSH=/home/alex/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color"
-ZSH_THEME="robbyrussell"
+
+ZSH_THEME=""
+PURE_GIT_PULL=0
+autoload -U promptinit; promptinit
+prompt pure
 
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"

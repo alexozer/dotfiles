@@ -9,7 +9,8 @@ call plug#begin('~/.vim/plugged')
 
 " colors
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim'
 
 " languages
 Plug 'fatih/vim-go', {'for': 'go'}
@@ -101,9 +102,7 @@ set nofoldenable
 set guicursor= 
 
 set background=dark
-colorscheme PaperColor
-
-call togglebg#map("<leader>5")
+colorscheme dracula
 
 syntax enable			" enable syntax processing
 
@@ -343,7 +342,7 @@ let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled=0
 let g:airline_powerline_fonts=1
 "let g:airline_theme='base16'
-let g:airline_theme='bubblegum'
+let g:airline_theme='dracula'
 " }}}
 " syntastic {{{
 ""set statusline+=%#warningmsg#
