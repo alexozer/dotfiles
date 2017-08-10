@@ -4,7 +4,8 @@ This is where I share my dotfiles, with terrible commit messages that is.
 
 Current screenshots:
 ![empty](empty.png)
-![fakebusy](fakebusy.png)
+![notbusy](notbudy.png)
+![code](code.png)
 
 I use:
 - Macbook Pro Retina 2015 (MF840LL/A)
@@ -17,7 +18,9 @@ I use:
 - Whiskermenu (launcher)
 - Gnome Terminal
 - zsh (shell) with oh-my-zsh
--cu Neovim (text editor)
+- Visual Studio Code (code editor)
+- Neovim (general-purpose text editor)
+- Dracula (terminal + editor colorscheme)
 
 You can symlink these dotfiles to your home directory using GNU stow:
 ```bash
