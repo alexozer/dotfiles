@@ -2,7 +2,7 @@
 
 # bspwm-specific autostart
 
-bspc config click_to_focus		true
+bspc config click_to_focus any
 bspc config pointer_modifier mod1
 
 bspc config top_padding			44
