@@ -2,7 +2,7 @@
 # bspwr hotkeys
 #
 
-alt + shift + q ; {l, s, p, r}
+ninin2nininin23										<F25><F2>alt + shift + q ; {l, s, p, r}
 	{bspc quit, systemctl suspend, poweroff, reboot}
 
 alt + c
@@ -31,7 +31,7 @@ alt + {_,shift + }f
 
 alt + y
 	bspc node --to-node last.!automatic
-
+j
 alt + m
 	bspc desktop --layout next
 
