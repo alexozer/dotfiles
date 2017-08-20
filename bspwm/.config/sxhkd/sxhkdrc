@@ -101,3 +101,6 @@ alt + shift + Return
 
 alt + shift + {comma,period}
 	exo-open http://192.168.0.{93,91}:5000
+
+alt + shift + p
+	ntfy -b phone send "$(xsel -b)"

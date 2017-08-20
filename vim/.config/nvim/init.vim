@@ -49,7 +49,6 @@ Plug 'metakirby5/codi.vim'
 Plug 'reedes/vim-pencil'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
-Plug 'itchyny/calendar.vim'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
