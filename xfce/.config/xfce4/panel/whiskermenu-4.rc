@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=visual-studio-code.desktop,chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop,xfce4-notifyd-config.desktop,xfce4-session-logout.desktop,xfce-settings-manager.desktop,transmission-gtk.desktop,exo-file-manager.desktop,exo-terminal-emulator.desktop,bvnc.desktop,tor-browser-en.desktop
+recent=visual-studio-code.desktop,xfce-backdrop-settings.desktop,chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop,xfce4-notifyd-config.desktop,xfce4-session-logout.desktop,xfce-settings-manager.desktop,transmission-gtk.desktop,exo-file-manager.desktop,exo-terminal-emulator.desktop,bvnc.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false

@@ -1,8 +1,7 @@
 
-# bspwr hotkeys
-#
+# bspwm hotkeys
 
-ninin2nininin23										<F25><F2>alt + shift + q ; {l, s, p, r}
+alt + shift + q; {l, s, p, r}
 	{bspc quit, systemctl suspend, poweroff, reboot}
 
 alt + c
