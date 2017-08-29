@@ -1,7 +1,7 @@
 (condition-case nil
     (progn
-      (add-to-list 'default-frame-alist '(font . "Monaco"))
-      (set-face-attribute 'default nil :font "Monaco")
+      (add-to-list 'default-frame-alist '(font . "Ubuntu Mono Derivative Powerline"))
+      (set-face-attribute 'default nil :font "Ubuntu Mono Derivative Powerline")
       (set-face-attribute 'default (selected-frame) :height 110))
   (error nil))
 
