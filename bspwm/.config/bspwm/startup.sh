@@ -14,3 +14,4 @@ xfce4-notifyd &
 dex -a &
 thunar --daemon &
 chromium --no-startup-window &
+emacs --daemon

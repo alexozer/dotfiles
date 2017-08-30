@@ -30,7 +30,7 @@ alt + {_,shift + }f
 
 alt + y
 	bspc node --to-node last.!automatic
-j
+
 alt + m
 	bspc desktop --layout next
 
@@ -103,3 +103,6 @@ alt + shift + {comma,period}
 
 alt + shift + p
 	ntfy -b phone send "$(xsel -b)"
+
+alt + z
+	emacsclient -c

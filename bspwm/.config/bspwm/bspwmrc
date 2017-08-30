@@ -20,6 +20,7 @@ bspc config initial_polarity second_child
 bspc monitor -d 0 0 0 0 0 0 0 0
 
 bspc rule -a Zathura state=tiled
+bspc rule -a Emacs state=tiled
 bspc rule -a Polybar border=off
 
 "$HOME"/.config/bspwm/startup.sh &

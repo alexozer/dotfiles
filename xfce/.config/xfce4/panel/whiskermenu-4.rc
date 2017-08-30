@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=firefox.desktop,emacs.desktop,gparted.desktop,org.gnome.FileRoller.desktop,exo-terminal-emulator.desktop,visual-studio-code.desktop,xfce-display-settings.desktop,chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop,xfce-ui-settings.desktop,xfce-backdrop-settings.desktop
+recent=exo-terminal-emulator.desktop,visual-studio-code.desktop,emacs.desktop,firefox.desktop,gparted.desktop,org.gnome.FileRoller.desktop,xfce-display-settings.desktop,chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop,xfce-ui-settings.desktop,xfce-backdrop-settings.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
