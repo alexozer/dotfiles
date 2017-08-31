@@ -31,8 +31,8 @@ endif
 " tools
 Plug 'junegunn/vim-plug'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
-Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
@@ -60,7 +60,7 @@ Plug 'w0rp/ale'
 "Plug 'itchyny/lightline.vim'
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-""Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
 "Plug 'arakashic/chromatica.nvim' " didn't like colors, flickers
 "Plug 'dkarter/bullets.vim'
 "Plug 'vim-pandoc/vim-pandoc'
@@ -71,7 +71,7 @@ Plug 'w0rp/ale'
 call plug#end()
 " }}}
 " Leader {{{
-let mapleader=","		" leader is comma
+let mapleader=" "
 let maplocalleader="\\"
 " }}}
 " Spaces {{{
