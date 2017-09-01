@@ -71,7 +71,7 @@ Plug 'w0rp/ale'
 call plug#end()
 " }}}
 " Leader {{{
-let mapleader=" "
+let mapleader=","
 let maplocalleader="\\"
 " }}}
 " Spaces {{{
