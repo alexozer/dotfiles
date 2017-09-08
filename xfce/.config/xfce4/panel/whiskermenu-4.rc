@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=exo-web-browser.desktop,visual-studio-code.desktop,org.kde.kdenlive.desktop,org.gnome.baobab.desktop,chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop,zathura.desktop,exo-terminal-emulator.desktop,firefox.desktop,gparted.desktop,org.gnome.FileRoller.desktop
+recent=playonlinux.desktop,tor-browser-en.desktop,org.gnome.Cheese.desktop,xfce-ui-settings.desktop,gimp.desktop,exo-web-browser.desktop,visual-studio-code.desktop,org.kde.kdenlive.desktop,org.gnome.baobab.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=false
