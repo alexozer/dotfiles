@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+bspc rule --add Gnome-terminal --one-shot state=floating &&\
+gnome-terminal -x /usr/bin/bash -ic "$*"

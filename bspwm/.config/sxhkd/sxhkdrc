@@ -54,7 +54,7 @@ alt + shift + {n,i}
 #
 
 alt + Escape
-	xfce4-popup-whiskermenu
+	rofi -show drun
 
 alt + Return
 	gnome-terminal
@@ -104,5 +104,11 @@ alt + shift + {comma,period}
 alt + shift + p
 	ntfy -b phone send "$(xsel -b)"
 
-alt + z
-	emacsclient -c
+alt + g; t
+	notify-send -t 1 "$(date +'%I:%M %p')"
+
+alt + g; n
+	term nmtui connect
+
+alt + g; b
+	notify-send -t 1 $(upower -e)

@@ -5,7 +5,8 @@
 bspc config click_to_focus any
 bspc config pointer_modifier mod1
 
-bspc config top_padding			44
+# bspc config top_padding			44
+bspc config top_padding			0
 bspc config border_width 		4
 bspc config window_gap 			0
 
