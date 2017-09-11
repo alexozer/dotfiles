@@ -85,10 +85,6 @@ alt + {Right, Left}
 alt + shift + Escape
 	pkill -USR1 -x sxhkd
 
-alt + o
-	bspc rule --add Gnome-terminal --one-shot state=floating &&\
-	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
-
 alt + t
 	gnome-terminal -- htop
 
@@ -104,11 +100,7 @@ alt + shift + {comma,period}
 alt + shift + p
 	ntfy -b phone send "$(xsel -b)"
 
-alt + g; t
-	notify-send -t 1 "$(date +'%I:%M %p')"
+# Utilities to replace panel
 
-alt + g; n
-	term nmtui connect
-
-alt + g; b
-	notify-send -t 1 $(upower -e)
+alt + g; {t, n, b, v}
+	util {time, network, battery, volume}
