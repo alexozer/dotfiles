@@ -8,9 +8,9 @@ compton --backend glx --frame-opacity 0.5 &
 
 xfsettingsd &
 xfdesktop --disable-wm-check &
-# xfce4-panel --disable-wm-check &
 xfce4-notifyd &
 
+util notify_mute &
 dex -a &
 thunar --daemon &
 chromium --no-startup-window &

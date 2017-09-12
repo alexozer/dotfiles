@@ -9,26 +9,52 @@ notify() {
 	notify-send -t 1 "$@"
 }
 
-case "$1" in
-	network)
-		term nmtui connect
-		;;
-	time)
-		notify "Time: $(date +'%I:%M %p')"
-		;;
-	battery)
-		notify "Battery: $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage/ {print $2}')"
-		;;
-	volume)
-		if [[ "$(pamixer --get-mute)" == "true" ]]; then
-			vol="<muted>"
-		else
-			vol="$(pamixer --get-volume)%"
-		fi
-		notify "Volume: $vol"
-		;;
-	*)
-		echo "Invalid option"
-		exit 1
-		;;
-esac
+get_mute() {
+	pamixer --get-mute
+}
+
+util_func() {
+	case "$1" in
+		network)
+			term nmtui connect
+			;;
+
+		time)
+			notify "Time: $(date +'%-I:%M %p')"
+			;;
+
+		battery)
+			notify "Battery: $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage/ {print $2}')"
+			;;
+		volume)
+			if [[ "$(get_mute)" == "true" ]]; then
+				vol="<muted>"
+			else
+				vol="$(pamixer --get-volume)%"
+			fi
+			notify "Volume: $vol"
+			;;
+		date)
+			term "cal -3; read -rn1"
+			;;
+		notify_mute)
+			last_mute="$(get_mute)"
+			pactl subscribe |\
+				while read -r line; do
+					if [[ "$line" == *"on sink #0"* ]]; then
+						mute="$(get_mute)"
+						if [[ "$mute" != "$last_mute" ]]; then
+							last_mute="$mute"
+							util_func volume
+						fi
+					fi
+				done
+			;;
+		*)
+			echo "Invalid option"
+			exit 1
+			;;
+	esac
+}
+
+util_func "$@"
