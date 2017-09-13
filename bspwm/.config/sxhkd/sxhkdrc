@@ -102,7 +102,7 @@ alt + shift + p
 
 # Utilities to replace panel
 
-alt + g; {t, n, b, v, d}
+super + {t, n, b, v, d}
 	util {time, network, battery, volume, date}
 
 alt + o
