@@ -115,7 +115,7 @@ label-disconnected =   disconnected
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 98
+full-at = 96
 time-format = %-H hr %-M min
 
 ; format-charging = <ramp-capacity> <label-charging>

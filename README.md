@@ -3,24 +3,25 @@
 This is where I share my dotfiles, with terrible commit messages that is.
 
 Current screenshots:
-![empty](empty.png)
-![notbusy](notbusy.png)
-![code](code.png)
+![rofi](rofi.png)
+![vscode](vscode.png)
+![full](full.png)
 
 I use:
 - Macbook Pro Retina 2015 (MF840LL/A)
-- Xfce (desktop environment minus window manager)
 - Bspwm (window manager)
+- Xfce (desktop environment minus window manager)
 - Compton (transparency, shadows...)
-- Numix Circle (icon theme)
-- Arc Darker (gtk theme)
-- Human (cursor theme)
-- Whiskermenu (launcher)
+- rofi (launcher)
+- polybar (panel)
 - Gnome Terminal
 - zsh (shell) with oh-my-zsh
 - Visual Studio Code (code editor)
 - Neovim (general-purpose text editor)
-- Dracula (terminal + editor colorscheme)
+- Dracula (terminal, vim, vscode, rofi, and polybar colorscheme)
+- Arc Darker (gtk theme)
+- Numix Circle (icon theme)
+- Human (cursor theme)
 
 You can symlink these dotfiles to your home directory using GNU stow:
 ```bash

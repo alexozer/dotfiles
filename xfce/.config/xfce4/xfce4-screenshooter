@@ -1,8 +1,8 @@
-delay=5
-region=3
+delay=3
+region=1
 action=1
 show_mouse=0
-screenshot_dir=file:/home/alex/dl
+screenshot_dir=file:/home/alex/pic/rice-sep14-2017
 app=eog
 last_user=
 
