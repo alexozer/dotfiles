@@ -9,6 +9,7 @@ compton --backend glx --frame-opacity 0.5 &
 xfsettingsd &
 xfdesktop --disable-wm-check &
 xfce4-notifyd &
+polybar top --reload &
 
 dex -a &
 thunar --daemon &

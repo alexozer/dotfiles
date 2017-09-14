@@ -38,7 +38,7 @@ alt + {_,shift +} {h,j,k,l}
 	bspc node {--focus,--swap} {west,south,north,east}
 
 alt + {_,shift + }Tab
-	bspc node --focus {next,prev}
+	bspc node --focus {next.local,prev.local}
 
 alt + {_,shift + }r
 	bspc node @/ --rotate {270,90}

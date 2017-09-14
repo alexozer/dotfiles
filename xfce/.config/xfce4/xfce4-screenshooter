@@ -1,6 +1,6 @@
 delay=5
-region=2
-action=5
+region=3
+action=1
 show_mouse=0
 screenshot_dir=file:/home/alex/dl
 app=eog
