@@ -102,9 +102,6 @@ alt + shift + p
 
 # Utilities to replace panel
 
-super + {t, n, b, v, d}
-	util {time, network, battery, volume, date}
-
 alt + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
 	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'

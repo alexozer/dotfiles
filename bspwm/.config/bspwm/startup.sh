@@ -10,7 +10,6 @@ xfsettingsd &
 xfdesktop --disable-wm-check &
 xfce4-notifyd &
 
-util notify_mute &
 dex -a &
 thunar --daemon &
 chromium --no-startup-window &
