@@ -22,6 +22,7 @@ I use:
 - Arc Darker (gtk theme)
 - Numix Circle (icon theme)
 - Human (cursor theme)
+- Ubuntu Mono derivative Powerline (monospace font)
 
 You can symlink these dotfiles to your home directory using GNU stow:
 ```bash
