@@ -53,7 +53,8 @@ date = "  %-I:%M   "
 
 [module/bspwm]
 type = internal/bspwm
-enable-click = true
+enable-click = false
+enable-scroll = false
 
 format = <label-mode> <label-state>
 label-monocle = 
