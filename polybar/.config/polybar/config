@@ -87,6 +87,7 @@ format-muted-foreground = ${colors.comment}
 
 bar-volume-width = 10
 bar-volume-gradient = false
+;bar-volume-indicator = |
 bar-volume-indicator = |
 bar-volume-fill = ─
 bar-volume-empty = ${module/volume.bar-volume-fill}
@@ -115,7 +116,7 @@ label-disconnected =   disconnected
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 96
+full-at = 95
 time-format = %-H hr %-M min
 
 ; format-charging = <ramp-capacity> <label-charging>
