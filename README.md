@@ -9,6 +9,7 @@ Current screenshots:
 
 I use:
 - Macbook Pro Retina 2015 (MF840LL/A)
+- Arch Linux
 - Bspwm (window manager)
 - Xfce (desktop environment minus window manager)
 - Compton (transparency, shadows...)
