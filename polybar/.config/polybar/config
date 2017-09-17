@@ -22,7 +22,8 @@ offset-y = 0
 module-margin-left = 0
 module-margin-right = 6
 
-background = #0000
+; Transparent dracula background
+background = #7F282a36
 foreground = ${colors.comment}
 line-size = 3
 line-color = ${colors.purple}
