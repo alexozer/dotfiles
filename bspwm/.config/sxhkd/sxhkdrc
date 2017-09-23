@@ -2,7 +2,7 @@
 # bspwm hotkeys
 
 alt + shift + q; {l, s, p, r}
-	{bspc quit, systemctl suspend, poweroff, reboot}
+	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot}
 
 alt + c
 	bspc node --close
