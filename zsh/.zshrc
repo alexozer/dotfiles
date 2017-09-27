@@ -44,7 +44,7 @@ alias o='exo-open'
 
 # Codi
 # Usage: codi [filetype] [filename]
-codi() {
+calc() {
   local syntax="${1:-python}"
   shift
   echo 'from math import *\nimport cmath\n\n' |\
@@ -96,34 +96,15 @@ e() {
     esac
 }
 
+denter() {
+	docker exec -t -i $(docker ps -aqf "name=$1") bash -l
+}
+
+
 # search command history
 bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
-
-auv() {
-	case "$1" in
-
-	start)
-		XAUTH_FILE="/var/lib/lxc/cuauv/rootfs/home/software/.Xauthority-host"
-		sudo rm "$XAUTH_FILE"
-		sudo touch "$XAUTH_FILE"
-		xauth extract - $DISPLAY | sudo xauth -f "$XAUTH_FILE" merge $HOME/.Xauthority
-		sudo chown --reference="$(dirname $XAUTH_FILE)" "$XAUTH_FILE"
-
-		sudo systemctl start lxc@cuauv
-		;;
-
-	stop)
-		sudo systemctl stop lxc@cuauv
-		;;
-
-	*)
-		echo "Usage: auv [start|stop]"
-		return 1
-		;;
-	esac
-}
 
 #export CUAUV_SOFTWARE="$HOME/code/auv/"
 #auv() {
@@ -138,37 +119,3 @@ auv() {
 
 # OPAM configuration
 . /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# AUV
-
-# Set envirnormental variables
-export CUAUV_SOFTWARE="$HOME/code/auv/"
-export CUAUV_LOG="/var/log/auv"
-export PYTHONPATH="$PYTHONPATH:$CUAUV_SOFTWARE"
-export CSC_OPTIONS="-L${CUAUV_SOFTWARE}link-stage -C -I${CUAUV_SOFTWARE} -I${CUAUV_SOFTWARE} -Wl,-rpath,${CUAUV_SOFTWARE}link-stage"
-export CHICKEN_REPOSITORY=${CUAUV_SOFTWARE}link-stage/chicken
-export GOPATH="${CUAUV_SOFTWARE}gocode"
-export PATH="$PATH:${CUAUV_SOFTWARE}link-stage:${CUAUV_SOFTWARE}gocode/bin"
-export CUAUV_CONTEXT="development"
-export CUAUV_LOCALE="transdec"
-export CUAUV_VEHICLE="artemis"
-
-# Needed for building electrical on the sub
-export AUV_SERIAL_OVERRIDE="auv-serial"
-
-# Build the software repo
-alias build="ninja -C "$CUAUV_SOFTWARE" -k 1000"
-alias av="auv-visiond"
-
-# Ensure anv-env-set is sourced
-alias auv-env-set="source auv-env-set"
-
-# Useful short aliases
-alias t="trogdor"
-alias c="auv-control-helm"
-alias s="auv-shm-editor"
-alias auv-mr="auv-mission-runner"
-alias auv-pt="auv-pooltest"
-alias aslam="auv-aslam-cli"
-alias shm="auv-shm-cli"
-alias cs="cd $CUAUV_SOFTWARE"
