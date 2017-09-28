@@ -71,7 +71,7 @@ label-occupied-foreground = ${colors.foreground}
 label-occupied-padding = 2
 
 label-urgent = %index%!
-label-urgent-background = ${colors.orange}
+label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 
 label-empty = %index%
@@ -131,6 +131,7 @@ label-discharging = %percentage%%  %time%
 label-full =   %percentage%%
 
 ramp-capacity-0 = " "
+ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1 = " "
 ramp-capacity-2 = " "
 ramp-capacity-3 = " "
