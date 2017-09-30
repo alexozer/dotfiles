@@ -106,16 +106,8 @@ bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
 
-#export CUAUV_SOFTWARE="$HOME/code/auv/"
-#auv() {
-	#nix-shell "${CUAUV_SOFTWARE}nixos/configs/shell.nix" \
-		#--indirect \
-		#--add-root ~/.gcroots/dep \
-		#--show-trace \
-		#--pure \
-		#--cores 0 \
-		#--run "export CUAUV_SOFTWARE=\"$CUAUV_SOFTWARE\"; ${CUAUV_SOFTWARE}nixos/init.sh $SHELL"
-#}
+export CUAUV_SOFTWARE="$HOME/code/auv/"
+alias cs='cd $CUAUV_SOFTWARE'
 
 # OPAM configuration
 . /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
