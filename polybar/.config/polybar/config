@@ -38,6 +38,7 @@ tray-position = right
 tray-maxsize = 24
 tray-transparent = true
 
+modules-left = music
 modules-right = bspwm xbacklight volume battery wlan date time
 
 [global/wm]
@@ -136,5 +137,15 @@ ramp-capacity-1 = " "
 ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
+
+[module/music]
+type = custom/script
+interval = 2
+
+label = %output:0:45:...%
+exec = ~/.config/polybar/mpris.sh
+click-left = playerctl previous
+click-middle = playerctl play-pause
+click-right = playerctl next
 
 ; vim:ft=dosini
