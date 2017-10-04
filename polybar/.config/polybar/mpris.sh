@@ -9,11 +9,8 @@ if [[ $? -eq 0 ]]; then
     metadata="$(playerctl metadata artist) - $(playerctl metadata title)"
 fi
 
-# Foreground color formatting tags are optional
-if [[ $player_status = "Playing" ]]; then
-    echo "%{F#D08770}$icon $metadata"       # Orange when playing
-elif [[ $player_status = "Paused" ]]; then
-    echo "%{F#65737E}$icon $metadata"       # Greyed out info when paused
+if [[ "$player_status" = "Playing" ]] || [[ "$player_status" = "Paused" ]]; then
+    echo "$icon  $metadata"
 else
-    echo "%{F#65737E}$icon"                 # Greyed out icon when stopped
+    echo "$icon"
 fi

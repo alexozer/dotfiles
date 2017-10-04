@@ -75,8 +75,9 @@ alt + {Insert, Delete, BackSpace}
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
 	amixer set Master {2%+, 2%-, toggle}
-alt + {Right, Left}
-	amixer set Master {2%+, 2%-, toggle}
+
+{XF86AudioPrev, XF86AudioPlay, XF86AudioNext}
+	playerctl {previous, play-pause, next}
 
 # make sxhkd reload its configuration files:
 alt + shift + Escape

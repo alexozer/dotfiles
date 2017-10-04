@@ -144,8 +144,5 @@ interval = 2
 
 label = %output:0:45:...%
 exec = ~/.config/polybar/mpris.sh
-click-left = playerctl previous
-click-middle = playerctl play-pause
-click-right = playerctl next
 
 ; vim:ft=dosini
