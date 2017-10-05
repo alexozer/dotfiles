@@ -1,0 +1,9 @@
+[Unit]
+Description=Prevent false-positive resume from suspend
+
+[Service]
+ExecStart=/usr/local/bin/suspend-fix.sh
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
