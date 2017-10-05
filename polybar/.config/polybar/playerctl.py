@@ -1,31 +1,65 @@
 #!/usr/bin/env python3
 
 from gi.repository import Playerctl, GLib
+import time
+import sys
 
-player = Playerctl.Player(player_name='spotify')
+MUSIC_ICON = ''
+PAUSE_ICON = ''
 
-def on_metadata(player, e):
-    if 'xesam:artist' in e.keys() and 'xesam:title' in e.keys():
-        print('Now playing:')
-        print('{artist} - {title}'.format(artist=e['xesam:artist'][0], title=e['xesam:title']))
+class PlayerStatus:
+    def __init__(self):
+        self._player = None
+        self._icon = PAUSE_ICON
 
-def on_play(player):
-    print('Playing at volume {}'.format(player.props.volume))
+        self._last_artist = None
+        self._last_title = None
 
-def on_pause(player):
-    print('Paused the song: {}'.format(player.get_title()))
+    def show(self):
+        self._init_player()
 
-player.on('play', on_play)
-player.on('pause', on_pause)
-player.on('metadata', on_metadata)
+        # Wait for events
+        main = GLib.MainLoop()
+        main.run()
 
-# start playing some music
-player.play()
+    def _init_player(self):
+        while True:
+            try:
+                self._player = Playerctl.Player()
+                self._player.on('metadata', self._on_metadata)
+                self._player.on('play', self._on_play)
+                self._player.on('pause', self._on_pause)
+                self._player.on('exit', self._on_exit)
+                break
 
-if player.get_artist() == 'Lana Del Rey':
-    # I meant some good music!
-    player.next()
+            except:
+                self._print_flush()
+                time.sleep(2)
 
-# wait for events
-main = GLib.MainLoop()
-main.run()
+    def _on_metadata(self, player, e):
+        if 'xesam:artist' in e.keys() and 'xesam:title' in e.keys():
+            self._artist, self._title = ', '.join(e['xesam:artist']), e['xesam:title']
+            self._print_song
+
+    def _on_play(self, player):
+        self._icon = MUSIC_ICON
+        self._print_song()
+
+    def _on_pause(self, player):
+        self._icon = PAUSE_ICON
+        self._print_song()
+
+    def _on_exit(self, player):
+        self._init_player()
+
+    def _print_song(self):
+        self._print_flush('{}  {} - {}'.format(self._icon, self._artist, self._title))
+
+    """
+    Seems to assure print() actually prints when no terminal is connected
+    """
+    def _print_flush(self, *args, **kwargs):
+        print(*args, **kwargs)
+        sys.stdout.flush()
+
+PlayerStatus().show()

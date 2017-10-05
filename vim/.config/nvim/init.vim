@@ -20,7 +20,6 @@ Plug 'baskerville/vim-sxhkdrc', {'for': 'sxhkdrc'}
 Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'lervag/vimtex', {'for': 'tex'}
-Plug 'klen/python-mode', {'for': 'python'}
 Plug 'LnL7/vim-nix'
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
 if $USER != 'root'
@@ -67,6 +66,7 @@ Plug 'w0rp/ale'
 "	Plug 'zchee/deoplete-jedi', {'for': 'python'}
 "	Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 "endif
+"Plug 'klen/python-mode', {'for': 'python'}
 
 call plug#end()
 " }}}
@@ -375,14 +375,14 @@ let g:airline_theme='dracula'
 "augroup END
 "" }}}
 " python-mode {{{
-let g:pymode_lint=0
-let g:pymode_lint_cwindow=0
-let g:pymode_rope=0
+" let g:pymode_lint=0
+" let g:pymode_lint_cwindow=0
+" let g:pymode_rope=0
 "augroup PyModeNoPep8
 	"autocmd!
 	"autocmd VimEnter * call remove(g:pymode_lint_checkers, index(g:pymode_lint_checkers, 'pep8'))
-"augroup END
-let g:pymode_lint_checkers = ['flake8']
+" "augroup END
+" let g:pymode_lint_checkers = ['flake8']
 " }}}
 " ctrlp {{{
 if executable('rg')
