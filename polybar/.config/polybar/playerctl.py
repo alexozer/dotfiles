@@ -7,6 +7,7 @@ import sys
 MUSIC_ICON = ''
 PAUSE_ICON = ''
 
+
 class PlayerStatus:
     def __init__(self):
         self._player = None
@@ -38,7 +39,8 @@ class PlayerStatus:
 
     def _on_metadata(self, player, e):
         if 'xesam:artist' in e.keys() and 'xesam:title' in e.keys():
-            self._artist, self._title = ', '.join(e['xesam:artist']), e['xesam:title']
+            self._artist = ', '.join(e['xesam:artist'])
+            self._title = e['xesam:title']
             self._print_song
 
     def _on_play(self, player):
@@ -53,13 +55,16 @@ class PlayerStatus:
         self._init_player()
 
     def _print_song(self):
-        self._print_flush('{}  {} - {}'.format(self._icon, self._artist, self._title))
+        self._print_flush(
+            '{}  {} - {}'.format(self._icon, self._artist, self._title))
 
     """
     Seems to assure print() actually prints when no terminal is connected
     """
+
     def _print_flush(self, *args, **kwargs):
         print(*args, **kwargs)
         sys.stdout.flush()
+
 
 PlayerStatus().show()
