@@ -39,7 +39,7 @@ class PlayerStatus:
 
     def _on_metadata(self, player, e):
         if 'xesam:artist' in e.keys() and 'xesam:title' in e.keys():
-            self._artist = ', '.join(e['xesam:artist'])
+            self._artist = e['xesam:artist'][0]
             self._title = e['xesam:title']
             self._print_song
 

@@ -1,8 +1,8 @@
 
 # bspwm hotkeys
 
-alt + shift + q; {l, s, p, r}
-	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot}
+alt + shift + q; {l, s, p, r, x}
+	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot, i3lock-fancy}
 
 alt + c
 	bspc node --close
@@ -67,10 +67,6 @@ alt + e
 
 alt + s
 	xfce4-screenshooter
-
-# for external keyboard
-alt + {Insert, Delete, BackSpace}
-	amixer set Master {2%+, 2%-, toggle}
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
