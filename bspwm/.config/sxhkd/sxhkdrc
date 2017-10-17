@@ -2,7 +2,7 @@
 # bspwm hotkeys
 
 alt + shift + q; {l, s, p, r, x}
-	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot, i3lock-fancy}
+	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot, i3lock-fancy -p}
 
 alt + c
 	bspc node --close
@@ -54,7 +54,7 @@ alt + shift + {n,i}
 #
 
 alt + Escape
-	rofi -show drun
+	xfce4-popup-whiskermenu
 
 alt + Return
 	gnome-terminal
