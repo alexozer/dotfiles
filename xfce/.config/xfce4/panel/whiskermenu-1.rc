@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=spotify.desktop,visual-studio-code.desktop,dolphin-emu.desktop,pavucontrol.desktop,simplescreenrecorder.desktop,xfce-settings-manager.desktop,bvnc.desktop,gparted.desktop,mscore.desktop,tor-browser-en.desktop
+recent=spotify.desktop,chrome-bikioccmkafdpakkkcpdbppfkghcmihk-Default.desktop,dolphin-emu.desktop,exo-terminal-emulator.desktop,org.gnome.Terminal.desktop,visual-studio-code.desktop,pavucontrol.desktop,simplescreenrecorder.desktop,xfce-settings-manager.desktop,bvnc.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
