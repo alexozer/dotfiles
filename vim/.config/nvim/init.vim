@@ -10,28 +10,13 @@ call plug#begin('~/.vim/plugged')
 " colors
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'dracula/vim'
-
-" languages
-Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
-Plug 'marijnh/tern_for_vim', {'for': 'javascript'}
-Plug 'baskerville/vim-sxhkdrc', {'for': 'sxhkdrc'}
-Plug 'sudar/vim-arduino-syntax', {'for': 'arduino'}
-Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'lervag/vimtex', {'for': 'tex'}
-Plug 'LnL7/vim-nix'
-Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-if $USER != 'root'
-	let g:opamshare = substitute(system("opam config var share"),'\n$','','''') . "/merlin/vim"
-	Plug g:opamshare
-endif
 
 " tools
 Plug 'junegunn/vim-plug'
+Plug 'sheerun/vim-polyglot'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
@@ -238,73 +223,6 @@ noremap! <C-h> <C-w>
 "nnoremap <c-k> m`viwU``
 " }}}
 " Plugin Config {{{
-" vim-go {{{
-let g:go_fmt_fail_silently = 1		" don't give an error if formatting fails
-"let g:go_highlight_functions = 1
-let g:go_fmt_command = 'goimports'
-
-augroup go
-	autocmd!
-	au FileType go nnoremap gd <Plug>(go-def)
-	au FileType go nnoremap <Leader>s <Plug>(go-def-split)
-	au FileType go nnoremap <Leader>v <Plug>(go-def-vertical)
-	au FileType go nnoremap <Leader>T <Plug>(go-def-tab)
-	au FileType go nnoremap <Leader>i <Plug>(go-info)
-	au FileType go nnoremap  <silent> <leader>r :wa<cr>:GoRename<cr>
-	au FileType go nnoremap  <silent> <leader>b :wa<cr>:GoBuild<cr>
-	au FileType go nnoremap  <silent> <leader>t :wa<cr>:GoTest<cr>
-	au FileType go nnoremap <Leader>d <Plug>(go-doc)
-augroup END
-" }}}
-" YouCompleteMe {{{
-"set completeopt-=preview			" don't open a preview window
-"set shortmess+=c				" don't show completion status messages
-"let g:ycm_extra_conf_globlist = ['~/code/*'] " load project-specific .ycm_extra_conf.py without asking
-"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py" " settings for C/C++
-" }}}
-"deoplete {{{
-" if has('nvim')
-" 	let g:deoplete#enable_at_startup = 1
-" 	let g:deoplete#omni#input_patterns = {}
-" 	let g:deoplete#omni#input_patterns.ocaml = '[.\w]+'
-" 	let g:deoplete#enable_smart_case = 1
-" 	let g:deoplete#disable_auto_complete = 1
-" 	let g:deoplete#auto_complete_delay = 0
-" 	call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
-
-" 	" <Tab> completion:
-" 	" 1. If popup menu is visible, select and insert next item
-" 	" 2. Otherwise, if within a snippet, jump to next input
-" 	" 3. Otherwise, if preceding chars are whitespace, insert tab char
-" 	" 4. Otherwise, start manual autocomplete
-" 	imap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-" 		\ : (<SID>is_whitespace() ? "\<Tab>"
-" 		\ : deoplete#mappings#manual_complete())
-
-" 	smap <silent><expr><Tab> pumvisible() ? "\<C-n>"
-" 		\ : (<SID>is_whitespace() ? "\<Tab>"
-" 		\ : deoplete#mappings#manual_complete())
-
-" 	inoremap <expr><S-Tab>  pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" 	function! s:is_whitespace()
-" 		let col = col('.') - 1
-" 		return ! col || getline('.')[col - 1] =~? '\s'
-" 	endfunction
-
-" 	augroup deoplete
-" 		autocmd!
-" 		autocmd VimEnter * call deoplete#initialize() " don't lag on first insert
-" 	augroup END
-
-" 	"" clang_complete
-" 	"let g:clang_complete_auto = 0
-" 	"let g:clang_auto_select = 0
-" 	"let g:clang_default_keymappings = 0
-" 	"let g:clang_use_library = 1
-" endif
-
-" }}}
 " vim-session {{{
 let g:session_autoload="no" 		" don't autoload a session when Vim starts
 let g:session_autosave="yes"		" auto-save session when Vim is closed
@@ -318,9 +236,6 @@ nnoremap <silent> <leader>sd :DeleteSession<cr>
 nnoremap <silent> <leader>sD :DeleteSession!<cr>
 nnoremap <silent> <leader>sr :RestartVim<cr>
 nnoremap <silent> <leader>sR :RestartVim!<cr>
-" }}}
-" vim-javascript-syntax {{{
-au FileType javascript call JavaScriptFold()
 " }}}
 " nerdtree {{{
 nnoremap <leader>3 :NERDTreeToggle<cr>
@@ -340,7 +255,7 @@ set noshowmode			" hide the default mode text ( -- INSERT -- )
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#whitespace#enabled=0
-let g:airline_powerline_fonts=1
+" let g:airline_powerline_fonts=1
 "let g:airline_theme='base16'
 let g:airline_theme='dracula'
 " }}}
@@ -408,5 +323,5 @@ let g:pencil#conceallevel = 0
 " }}}
 " ale {{{
 let g:ale_lint_on_text_changed="never"
-let g:ale_linters = { 'python': ['pylint'] }
+" let g:ale_linters = { 'python': ['pylint'] }
 " }}}

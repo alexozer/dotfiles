@@ -15,7 +15,7 @@ export MATLAB_JAVA="/usr/lib/jvm/java-8-openjdk/jre"
 
 export QSYS_ROOTDIR="/home/alex/build/aur/tmp/yaourt-tmp-alex/aur-quartus-lite/pkg/quartus-lite//opt/altera/quartus/sopc_builder/bin"
 
-export ALTERAOCLSDKROOT="/home/alex/build/aur/tmp/yaourt-tmp-alex/aur-quartus-lite/pkg/quartus-lite//opt/altera/hld"
+export ALTERAOCLSDKROOT="/opt/altera/hld"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH
