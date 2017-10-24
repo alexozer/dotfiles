@@ -13,7 +13,7 @@ I use:
 - Bspwm (window manager)
 - Xfce (desktop environment minus window manager)
 - Compton (transparency, shadows...)
-- rofi (launcher)
+- Whiskermenu (launcher)
 - polybar (panel)
 - Gnome Terminal
 - zsh (shell) with oh-my-zsh
