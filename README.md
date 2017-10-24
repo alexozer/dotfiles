@@ -3,7 +3,7 @@
 This is where I share my dotfiles, with terrible commit messages that is.
 
 Current screenshots:
-![rofi](rofi.png)
+![launcher](launcher.png)
 ![vscode](vscode.png)
 ![full](full.png)
 
