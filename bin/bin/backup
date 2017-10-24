@@ -15,9 +15,9 @@ doBackup() {
 	git commit -m "Update $(date +%D)"
 	git push
 
-	cd
-	bup index $backupDirs
-	bup save -r "$remoteDir" -n home $backupDirs || return 1
+	# cd
+	# bup index $backupDirs
+	# bup save -r "$remoteDir" -n home $backupDirs || return 1
 }
 
 fail() {
