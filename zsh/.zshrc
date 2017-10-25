@@ -96,11 +96,6 @@ e() {
     esac
 }
 
-denter() {
-	docker exec -t -i $(docker ps -aqf "name=$1") bash -l
-}
-
-
 # search command history
 bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
