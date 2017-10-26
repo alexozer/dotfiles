@@ -204,6 +204,11 @@ augroup ocaml
 	autocmd FileType ocaml setlocal tabstop=2
 	autocmd FileType ocaml setlocal shiftwidth=2
 augroup END
+
+augroup verilog
+	autocmd!
+	autocmd FileType verilog setlocal shiftwidth=2
+augroup END
 " }}}
 " Misc {{{ 
 " edit/source vimrc
