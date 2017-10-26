@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=spotify.desktop,visual-studio-code.desktop,screenkey.desktop,bvnc.desktop,org.gnome.baobab.desktop,nvim.desktop,eog.desktop,xfce-ui-settings.desktop,exo-preferred-applications.desktop,pavucontrol.desktop
+recent=visual-studio-code.desktop,spotify.desktop,screenkey.desktop,bvnc.desktop,org.gnome.baobab.desktop,nvim.desktop,eog.desktop,xfce-ui-settings.desktop,exo-preferred-applications.desktop,pavucontrol.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
