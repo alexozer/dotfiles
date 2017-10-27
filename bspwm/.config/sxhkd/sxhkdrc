@@ -1,8 +1,8 @@
 
 # bspwm hotkeys
 
-alt + shift + q; {l, s, p, r, x}
-	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot, i3lock-fancy -p}
+alt + shift + q; {l, s, p, r}
+	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot}
 
 alt + c
 	bspc node --close
@@ -74,6 +74,9 @@ alt + s
 
 {XF86AudioPrev, XF86AudioPlay, XF86AudioNext}
 	playerctl {previous, play-pause, next}
+
+XF86LaunchB
+	i3lock-fancy -p
 
 # make sxhkd reload its configuration files:
 alt + shift + Escape
