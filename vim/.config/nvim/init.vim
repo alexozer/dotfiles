@@ -18,7 +18,6 @@ Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
@@ -27,6 +26,7 @@ Plug 'metakirby5/codi.vim'
 Plug 'reedes/vim-pencil'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -35,7 +35,6 @@ Plug 'w0rp/ale'
 "Plug 'honza/vim-snippets'
 "Plug 'Raimondi/delimitMate'
 "Plug 'terryma/vim-multiple-cursors'
-"Plug 'itchyny/lightline.vim'
 "Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer --gocode-completer' }
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 "Plug 'rust-lang/rust.vim'
@@ -52,6 +51,7 @@ Plug 'w0rp/ale'
 "	Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 "endif
 "Plug 'klen/python-mode', {'for': 'python'}
+"Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 " }}}
@@ -226,85 +226,13 @@ noremap! <C-h> <C-w>
 
 "inoremap <c-k> <esc>viwUea
 "nnoremap <c-k> m`viwU``
-" }}}
-" Plugin Config {{{
-" vim-session {{{
-let g:session_autoload="no" 		" don't autoload a session when Vim starts
-let g:session_autosave="yes"		" auto-save session when Vim is closed
-let g:session_persist_globals = ['&makeprg']
 
-nnoremap <silent> <leader>so :OpenSession<cr>
-nnoremap <silent> <leader>sO :OpenSession!<cr>
-nnoremap <silent> <leader>ss :SaveSession<cr>
-nnoremap <silent> <leader>sS :SaveSession!<cr>
-nnoremap <silent> <leader>sd :DeleteSession<cr>
-nnoremap <silent> <leader>sD :DeleteSession!<cr>
-nnoremap <silent> <leader>sr :RestartVim<cr>
-nnoremap <silent> <leader>sR :RestartVim!<cr>
-" }}}
-" nerdtree {{{
+" Plugin Config
+
+" nerdtree
 nnoremap <leader>3 :NERDTreeToggle<cr>
-" }}}
-" airline {{{
-" reset status bar quickly
-if !has('gui_running')
-	set ttimeoutlen=10
-	augroup FastEscape
-		autocmd!
-		autocmd InsertEnter * set timeoutlen=0
-		autocmd InsertLeave * set timeoutlen=1000
-	augroup END
-endif
 
-set noshowmode			" hide the default mode text ( -- INSERT -- )
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#whitespace#enabled=0
-" let g:airline_powerline_fonts=1
-"let g:airline_theme='base16'
-let g:airline_theme='dracula'
-" }}}
-" syntastic {{{
-""set statusline+=%#warningmsg#
-""set statusline+=%{SyntasticStatuslineFlag()}
-""set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
-"let g:syntastic_cpp_checkers = ['clang_check']
-"
-"let g:syntastic_mode_map = {'active_filetypes': ['ocaml']}
-"let g:syntastic_ocaml_checkers = ['merlin']
-" }}}
- ""neomake {{{
-""let g:neomake_cpp_enabled_makers = ['clang']
-""let g:neomake_cpp_clangtidy_args = ['-extra-arg=-std=c++14', '-checks=\*']
-""let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header', '-fsyntax-only']
-""let g:neomake_python_enabled_makers = ['pep8', 'frosted']
-"let g:neomake_python_enabled_makers = ['pyflakes']
-""let g:neomake_java_enabled_makers = ['javac']
-""let g:neomake_cpp_clang_args = ['-std=c++14', '-Wextra', '-Wall', '-Wno-pragma-once-outside-header']
-"let g:neomake_verbose = 0
-
-"augroup Neomake
-	"autocmd!
-	"autocmd BufReadPost,BufWritePost * Neomake
-"augroup END
-"" }}}
-" python-mode {{{
-" let g:pymode_lint=0
-" let g:pymode_lint_cwindow=0
-" let g:pymode_rope=0
-"augroup PyModeNoPep8
-	"autocmd!
-	"autocmd VimEnter * call remove(g:pymode_lint_checkers, index(g:pymode_lint_checkers, 'pep8'))
-" "augroup END
-" let g:pymode_lint_checkers = ['flake8']
-" }}}
-" ctrlp {{{
+" ctrlp
 if executable('rg')
   set grepprg=rg\ --color=never
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
@@ -312,12 +240,12 @@ if executable('rg')
 endif
 let g:ctrlp_map = '<leader><space>'
 let g:ctrlp_working_path_mode=''
-" }}}
-" vimtex {{{
+
+" vimtex
 let g:tex_flavor='latex'
 let g:vimtex_latexmk_progname='nvr'
-" }}}
-" pencil {{{
+
+" pencil
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd,text,tex call pencil#init({'wrap': 'soft'})
@@ -325,8 +253,11 @@ augroup END
 
 let g:pencil#autoformat = 1
 let g:pencil#conceallevel = 0
-" }}}
-" ale {{{
+
+" ale
 let g:ale_lint_on_text_changed="never"
 " let g:ale_linters = { 'python': ['pylint'] }
-" }}}
+
+" lightline
+let g:lightline = { 'colorscheme': 'Dracula' }
+set noshowmode
