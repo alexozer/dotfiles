@@ -4,7 +4,7 @@ if !has('nvim')
 	set nocompatible
 endif
 
-" Plug {{{ 
+" Plug
 call plug#begin('~/.vim/plugged')
 
 " colors
@@ -54,19 +54,19 @@ Plug 'itchyny/lightline.vim'
 "Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
-" }}}
-" Leader {{{
+
+" Leader
 let mapleader=","
 let maplocalleader="\\"
-" }}}
-" Spaces {{{
+
+" Spaces
 filetype plugin indent on
 
 set tabstop=4			" number of visual spaces per TAB
 set shiftwidth=4        " no seriously, four spaces per tab
 set nojoinspaces
-" }}}
-" UI {{{
+
+" UI
 if has('nvim')
 	set termguicolors
 endif
@@ -136,16 +136,16 @@ set splitright
 set hidden		" okay to background modified buffers
 
 nnoremap <leader><leader> :e#<cr> " open last file
-" }}}
-" Searching {{{
+
+" Searching
 set incsearch			" search as characters are entered
 set ignorecase			" case-insensitive
 set smartcase			" override ignorecase if search includes capital letters
 set nohlsearch
 
 set gdefault			" when using :s command, replace all instances on line by default
-" }}}
-" Movement {{{ 
+
+" Movement
 " make Y behave like D and C, instead of like yy
 nnoremap Y y$	
 
@@ -158,8 +158,8 @@ nmap H 0
 vmap H 0
 nmap L $
 vmap L $
-" }}}
-" Backups {{{
+
+" Backups
 set backup							" enable backup
 set undofile
 set noswapfile				" disable swap files
@@ -167,8 +167,8 @@ set noswapfile				" disable swap files
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
-" }}}
-" Autocmd {{{ 
+
+" Autocmd
 
 " jump to last cursor position in file
 function! SetCursorPosition()
@@ -209,8 +209,8 @@ augroup verilog
 	autocmd!
 	autocmd FileType verilog setlocal shiftwidth=2
 augroup END
-" }}}
-" Misc {{{ 
+
+" Misc
 " edit/source vimrc
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
