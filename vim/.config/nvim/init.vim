@@ -102,8 +102,8 @@ set noshowmatch			" don't show matching brackets by flickering
 set fillchars=diff:⣿,vert:│
 
 set guitablabel=%t
-" }}}
-" Buffers, Splits, Tabs {{{
+
+" Buffers, Splits, Tabs
 "set splitbelow " Open horizontal splits below current split
 "set splitright " Open vertical splits to the right of current split
 
