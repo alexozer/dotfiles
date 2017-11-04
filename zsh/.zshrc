@@ -108,4 +108,4 @@ alias cs='cd $CUAUV_SOFTWARE'
 alias quartus="LD_LIBRARY_PATH=$HOME/build/altera/15.0/lib32 /home/alex/build/altera/15.0/quartus/bin/quartus --64bit& disown"
 
 # OPAM configuration
-. /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
