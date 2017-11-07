@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 " colors
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'yuttie/hydrangea-vim'
 
 " tools
 Plug 'junegunn/vim-plug'
@@ -87,7 +88,7 @@ set nofoldenable
 set guicursor= 
 
 set background=dark
-colorscheme dracula
+colorscheme hydrangea
 
 syntax enable			" enable syntax processing
 
@@ -259,5 +260,13 @@ let g:ale_lint_on_text_changed="never"
 " let g:ale_linters = { 'python': ['pylint'] }
 
 " lightline
-let g:lightline = { 'colorscheme': 'Dracula' }
+" let g:lightline = { 'colorscheme': 'Dracula' }
+let g:lightline = {
+      \ 'colorscheme': 'hydrangea',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator':    { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
+      \ }
 set noshowmode
