@@ -1,5 +1,3 @@
-# Alex Ozer's Dotfiles
-
 This is where I share my dotfiles, with terrible commit messages that is.
 
 Current screenshots:
@@ -19,11 +17,12 @@ I use:
 - zsh (shell) with oh-my-zsh
 - Visual Studio Code (code editor)
 - Neovim (general-purpose text editor)
-- Dracula (terminal, vim, vscode, rofi, and polybar colorscheme)
+- Dracula (terminal, vim, vscode, and polybar colorscheme)
 - Arc Darker (gtk theme)
 - Numix Circle (icon theme)
 - Human (cursor theme)
 - Ubuntu Mono derivative Powerline (monospace font)
+- Fira Code (VSCode font)
 
 You can symlink these dotfiles to your home directory using GNU stow:
 ```bash
