@@ -108,3 +108,7 @@ alt + shift + p
 alt + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
 	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
+
+alt + u; space
+	echo '​' | xsel -ib
+

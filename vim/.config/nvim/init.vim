@@ -88,7 +88,7 @@ set nofoldenable
 set guicursor= 
 
 set background=dark
-colorscheme hydrangea
+colorscheme dracula
 
 syntax enable			" enable syntax processing
 
@@ -262,11 +262,9 @@ let g:ale_lint_on_text_changed="never"
 " lightline
 " let g:lightline = { 'colorscheme': 'Dracula' }
 let g:lightline = {
-      \ 'colorscheme': 'hydrangea',
+      \ 'colorscheme': 'Dracula',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },
-      \ 'separator':    { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
       \ }
 set noshowmode
