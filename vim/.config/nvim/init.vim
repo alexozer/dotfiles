@@ -185,15 +185,6 @@ augroup restore_cursor
 	autocmd BufReadPost * call SetCursorPosition()
 augroup END
 
-augroup arduino
-	autocmd!
-	autocmd FileType arduino setlocal makeprg=make\ -j5
-	autocmd Filetype arduino nnoremap <silent><leader>r :make!<cr>
-	autocmd Filetype arduino nnoremap <silent> <leader>b :wa<cr>:make!<cr>
-	autocmd Filetype arduino nnoremap <silent> <leader>r :wa<cr>:silent! make!<cr>:!./%:r<cr>
-	autocmd Filetype arduino nnoremap <silent> <leader>u :wa<cr>:!make upload<cr>
-augroup END
-
 augroup latex
 	autocmd!
 	autocmd FileType tex setlocal nocursorline
@@ -241,10 +232,6 @@ if executable('rg')
 endif
 let g:ctrlp_map = '<leader><space>'
 let g:ctrlp_working_path_mode=''
-
-" vimtex
-let g:tex_flavor='latex'
-let g:vimtex_latexmk_progname='nvr'
 
 " pencil
 augroup pencil
