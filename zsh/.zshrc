@@ -46,7 +46,6 @@ alias o='exo-open'
 # Usage: codi [filetype] [filename]
 calc() {
 	local syntax="${1:-python}"
-	shift
 	echo 'from math import *\nimport cmath\n\n' |\
 		vim - -c \
 		"let g:startify_disable_at_vimenter = 1 |\
