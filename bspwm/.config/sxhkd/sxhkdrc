@@ -68,6 +68,9 @@ alt + Return
 alt + w
 	chromium
 
+alt + v
+	code -n
+
 alt + e
 	thunar
 
@@ -102,8 +105,6 @@ alt + shift + {comma,period}
 
 alt + shift + p
 	ntfy -b phone send "$(xsel -b)"
-
-# Utilities to replace panel
 
 alt + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
