@@ -10,13 +10,16 @@ backupDirs="code doc pic"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() {
+	echo -n "Pushing dotfiles... "
 	pushd .
 	cd "$HOME"/.dotfiles
 	git add .
 	git commit -m "Update $(date +%D)"
 	git push
 	popd
+	echo "done."
 
+	echo "Backing up filesystem"
 	for dir in $backupDirs; do
 		rclone sync "$HOME"/"$dir" box:"$dir" -v
 	done
