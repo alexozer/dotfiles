@@ -6,18 +6,20 @@ shopt -s dotglob nullglob
 
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
-backupDirs="code doc music pic vid"
+backupDirs="code doc pic"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() {
+	pushd .
 	cd "$HOME"/.dotfiles
 	git add .
 	git commit -m "Update $(date +%D)"
 	git push
+	popd
 
-	# cd
-	# bup index $backupDirs
-	# bup save -r "$remoteDir" -n home $backupDirs || return 1
+	for dir in $backupDirs; do
+		rclone sync "$HOME"/"$dir" box:"$dir" -v
+	done
 }
 
 fail() {
