@@ -10,6 +10,7 @@ backupDirs="code doc pic"
 remoteDir="pi:/media/backup/tinfoil"
 
 doBackup() {
+	echo poop
 	echo -n "Pushing dotfiles... "
 	pushd .
 	cd "$HOME"/.dotfiles
@@ -30,5 +31,4 @@ fail() {
 	return 1
 }
 
-echo poop
 errors=$(doBackup 2>&1) || fail "$errors"
