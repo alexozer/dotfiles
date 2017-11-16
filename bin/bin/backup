@@ -16,7 +16,7 @@ doBackup() {
 	git push
 
 	for dir in $backupDirs; do
-		rclone sync "$HOME"/"$dir" box:"$dir" -v
+		rclone sync "$HOME"/"$dir" box:"$dir"
 	done
 }
 
