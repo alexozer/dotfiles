@@ -1,3 +1,7 @@
+# Unix Dotfiles
+
+> Alex Ozer
+
 This is where I share my dotfiles, with terrible commit messages that is.
 
 Current screenshots:
