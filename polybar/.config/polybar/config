@@ -37,6 +37,7 @@ wm-name = bspwm
 tray-position = right
 tray-maxsize = 24
 tray-transparent = true
+tray-background = #00000000
 
 modules-right = music bspwm xbacklight volume battery wlan date time
 

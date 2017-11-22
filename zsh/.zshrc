@@ -89,6 +89,9 @@ e() {
 	ssh)
 		$EDITOR $HOME/.ssh/config
 		;;
+	bar)
+		$EDITOR $HOME/.config/polybar/config
+		;;
 	*)
 	    echo "$1: invalid option"
 	    return 1
