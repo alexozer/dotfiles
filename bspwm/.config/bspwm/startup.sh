@@ -4,7 +4,7 @@
 bspc rule --add Gnome-terminal --one-shot state=floating hidden=on
 gnome-terminal &
 
-compton --backend glx --frame-opacity 0.5 &
+compton &
 
 xfsettingsd &
 xfdesktop --disable-wm-check &

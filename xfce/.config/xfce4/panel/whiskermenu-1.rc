@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=spotify.desktop,xfce-backdrop-settings.desktop,xournal.desktop,org.gnome.baobab.desktop,xfce-display-settings.desktop,visual-studio-code.desktop,mscore.desktop,evince.desktop,Alacritty.desktop
+recent=gpick.desktop,spotify.desktop,xfce-backdrop-settings.desktop,xournal.desktop,org.gnome.baobab.desktop,xfce-display-settings.desktop,visual-studio-code.desktop,mscore.desktop,evince.desktop,Alacritty.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
