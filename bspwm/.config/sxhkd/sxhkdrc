@@ -68,6 +68,9 @@ alt + Return
 alt + w
 	chromium
 
+alt + shift + w
+	chromium --incognito
+
 alt + v
 	code -n
 
