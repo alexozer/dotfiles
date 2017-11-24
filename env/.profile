@@ -7,7 +7,7 @@ $HOME/.gem/ruby/2.4.0/bin:\
 $HOME/.cargo/bin:\
 $HOME/.node_modules/bin"
 
-export GOPATH="$HOME/code/go"
+export GOPATH="$HOME/build/go:$HOME/code/go"
 export NPM_PACKAGES="$HOME/.npm-packages"
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix java guis
