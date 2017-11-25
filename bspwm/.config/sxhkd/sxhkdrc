@@ -88,7 +88,7 @@ alt + s
 	playerctl {previous, play-pause, next}
 
 XF86LaunchB
-	i3lock-fancy -p
+	i3lock -i pic/bg/dragon-lockscreen.png
 
 # make sxhkd reload its configuration files:
 alt + shift + Escape

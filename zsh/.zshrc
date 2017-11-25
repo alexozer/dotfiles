@@ -1,13 +1,23 @@
-export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color"
 
 HYPHEN_INSENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
-ZSH_THEME="robbyrussell"
 
-plugins=(git extract gitignore history-substring-search vi-mode last-working-dir)
+source /usr/share/zsh/share/antigen.zsh
 
-source $ZSH/oh-my-zsh.sh
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle pip
+antigen bundle command-not-found
+antigen bundle extract
+antigen bundle gitignore
+antigen bundle history-substring-search
+antigen bundle vi-mode
+antigen bundle last-working-dir
+antigen theme robbyrussell
+
+antigen apply
 
 # NB: gnome-terminal reports xterm-256color which is technically incorrect and
 # behaves strangely with certain programs. Older versions of gnome-terminal set
@@ -28,19 +38,12 @@ alias vim=$EDITOR
 # use sudo with vim
 alias svim="sudo -E $EDITOR"
 
-# use curl as wget
-wget() {
-	curl -L "$1" -o "$(basename $1)"
-}
-
-# auto ls
-chpwd() {
-    emulate -L zsh
-    ls
-}
-
 # open file with default program
 alias o='exo-open'
+
+chpwd() {
+	ls --color=always
+}
 
 # Codi
 # Usage: codi [filetype] [filename]

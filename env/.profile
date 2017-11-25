@@ -5,7 +5,7 @@ $HOME/bin:$GOPATH/bin:\
 $HOME/code/auv/link-stage:\
 $HOME/.gem/ruby/2.4.0/bin:\
 $HOME/.cargo/bin:\
-$HOME/.node_modules/bin"
+$HOME/.npm-packages/bin"
 
 export GOPATH="$HOME/build/go:$HOME/code/go"
 export NPM_PACKAGES="$HOME/.npm-packages"
