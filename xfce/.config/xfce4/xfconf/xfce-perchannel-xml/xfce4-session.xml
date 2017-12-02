@@ -6,6 +6,7 @@
     <property name="SessionName" type="string" value="Default"/>
     <property name="SaveOnExit" type="bool" value="false"/>
     <property name="AutoSave" type="bool" value="false"/>
+    <property name="LockCommand" type="string" value="i3lock -i /home/alex/pic/bg/dragon-lockscreen.png"/>
   </property>
   <property name="sessions" type="empty">
     <property name="Failsafe" type="empty">
