@@ -39,19 +39,19 @@ tray-maxsize = 24
 tray-transparent = true
 tray-background = #00000000
 
-modules-right = music bspwm xbacklight volume battery wlan date time
+modules-right = bspwm xbacklight volume battery wlan date time
 
 [global/wm]
 margin-stop = ${bar/top.height}
 
 [module/date]
 type = internal/date
-date =   %A %-d
+date =   %A %d
 
 [module/time]
 type = internal/date
 ; The right separator doesn't seem to apply to the panel, so add it in the date format
-date = "  %-I:%M   "
+date = "  %I:%M   "
 
 [module/bspwm]
 type = internal/bspwm
@@ -138,10 +138,10 @@ ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
 
-[module/music]
-type = custom/script
-exec = ~/.config/polybar/playerctl.py
-
-tail = true
+; [module/music]
+; type = custom/script
+; exec = ~/.config/polybar/playerctl.py
+;
+; tail = true
 
 ; vim:ft=dosini
