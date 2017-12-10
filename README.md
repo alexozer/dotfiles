@@ -23,7 +23,7 @@ I use:
 - Neovim (general-purpose text editor)
 - Dracula (terminal, vim, vscode, and polybar colorscheme)
 - Arc Darker (gtk theme)
-- Numix Circle (icon theme)
+- Papirus (icon theme)
 - Human (cursor theme)
 - Ubuntu Mono derivative Powerline (monospace font)
 - Fira Code (VSCode font)
