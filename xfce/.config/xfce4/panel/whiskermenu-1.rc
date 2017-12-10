@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=xfce-ui-settings.desktop,gimp.desktop,eog.desktop,org.gnome.baobab.desktop,xfce-display-settings.desktop,firefox.desktop,htop.desktop,xfce4-power-manager-settings.desktop,visual-studio-code.desktop,gparted.desktop
+recent=gimp.desktop,xfce-ui-settings.desktop,eog.desktop,org.gnome.baobab.desktop,xfce-display-settings.desktop,firefox.desktop,htop.desktop,xfce4-power-manager-settings.desktop,visual-studio-code.desktop,gparted.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
