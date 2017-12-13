@@ -5,8 +5,14 @@ shopt -s dotglob nullglob
 export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 
 backupDirs="code doc pic"
+tetherSSID="Alex's iPhone"
 
 doBackup() {
+	if [[ "$(iwgetid --raw)" = "$tetherSSID" ]]; then
+		echo "Connected to $tetherSSID, not backing up"
+		return 1
+	fi
+
 	cd "$HOME"/.dotfiles
 	git add .
 	git commit -m "Update $(date +%D)"
