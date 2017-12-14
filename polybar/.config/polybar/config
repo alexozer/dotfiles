@@ -39,7 +39,7 @@ tray-maxsize = 24
 tray-transparent = true
 tray-background = #00000000
 
-modules-right = bspwm xbacklight volume battery wlan date time
+modules-right = music bspwm xbacklight volume battery wlan date time
 
 [global/wm]
 margin-stop = ${bar/top.height}
@@ -138,10 +138,10 @@ ramp-capacity-2 = " "
 ramp-capacity-3 = " "
 ramp-capacity-4 = " "
 
-; [module/music]
-; type = custom/script
-; exec = ~/.config/polybar/playerctl.py
-;
-; tail = true
+[module/music]
+type = custom/script
+exec = ~/.config/polybar/playerctl.py
+
+tail = true
 
 ; vim:ft=dosini
