@@ -88,7 +88,7 @@ alt + s
 	playerctl {previous, play-pause, next}
 
 XF86LaunchB
-	lock.sh -l
+	betterlockscreen -l
 
 # make sxhkd reload its configuration files:
 alt + shift + Escape
