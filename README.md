@@ -14,18 +14,18 @@ I use:
 - Arch Linux
 - Bspwm (window manager)
 - Xfce (desktop environment minus window manager)
-- Compton (transparency, shadows...)
+- Compton (transparency, shadows, ...)
 - Whiskermenu (launcher)
-- polybar (panel)
+- Polybar (panel)
 - Gnome Terminal
-- zsh (shell) with oh-my-zsh
+- Zsh (shell) with antigen
 - Visual Studio Code (code editor)
 - Neovim (general-purpose text editor)
 - Dracula (terminal, vim, vscode, and polybar colorscheme)
-- Arc Darker (gtk theme)
+- Arc Darker (GTK theme)
 - Papirus (icon theme)
 - Human (cursor theme)
-- Ubuntu Mono derivative Powerline (monospace font)
+- Ubuntu Mono derivative Powerline (terminal font)
 - Fira Code (VSCode font)
 
 You can symlink these dotfiles to your home directory using GNU stow:
