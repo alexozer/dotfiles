@@ -30,9 +30,10 @@ fi
 export KEYTIMEOUT=1 # Don't pause much when entering normal mode
 
 # Customize prompt
-export MNML_PROMPT=(mnml_ssh mnml_pyenv mnml_status mnml_keymap 'mnml_cwd 2 0' mnml_git)
+export MNML_PROMPT=(mnml_ssh mnml_pyenv mnml_status 'mnml_cwd 2 0' mnml_git mnml_keymap)
 export MNML_RPROMPT=()
 export MNML_MAGICENTER=()
+export MNML_INFOLN=(mnml_err mnml_jobs mnml_uhp)
 
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
