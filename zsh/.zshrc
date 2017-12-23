@@ -15,7 +15,7 @@ antigen bundle gitignore
 antigen bundle history-substring-search
 antigen bundle vi-mode
 antigen bundle last-working-dir
-antigen theme robbyrussell
+antigen theme subnixr/minimal
 
 antigen apply
 
@@ -26,6 +26,13 @@ if [[ $VTE_VERSION -ge 3803 ]]; then
     # gnome-256color is equivalent to vte-256color
     export TERM=gnome-256color
 fi
+
+export KEYTIMEOUT=1 # Don't pause much when entering normal mode
+
+# Customize prompt
+export MNML_PROMPT=(mnml_ssh mnml_pyenv mnml_status mnml_keymap 'mnml_cwd 2 0' mnml_git)
+export MNML_RPROMPT=()
+export MNML_MAGICENTER=()
 
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
