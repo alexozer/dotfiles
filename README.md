@@ -18,7 +18,7 @@ I use:
 - Whiskermenu (launcher)
 - Polybar (panel)
 - Gnome Terminal
-- Zsh (shell) with antigen
+- Zsh (shell) with Antigen
 - Visual Studio Code (code editor)
 - Neovim (general-purpose text editor)
 - Dracula (terminal, vim, vscode, and polybar colorscheme)
