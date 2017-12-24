@@ -15,7 +15,7 @@ antigen bundle gitignore
 antigen bundle history-substring-search
 antigen bundle vi-mode
 antigen bundle last-working-dir
-antigen theme subnixr/minimal
+antigen theme /home/alex/code/sh/minimal
 
 antigen apply
 
@@ -49,13 +49,13 @@ alias svim="sudo -E $EDITOR"
 # open file with default program
 alias o='exo-open'
 
-chpwd() {
+function chpwd {
 	ls --color=always
 }
 
 # Codi
 # Usage: codi [filetype] [filename]
-calc() {
+function calc {
 	local syntax="${1:-python}"
 	echo 'from math import *\nimport cmath\n\n' |\
 		vim - -c \
@@ -73,7 +73,7 @@ calc() {
 alias matlab='matlab -nodesktop -nosplash'
 
 # shortcuts to edit config files
-e() {
+function e {
     case "$1" in
 	keys)
 	    $EDITOR $HOME/.config/sxhkd/sxhkdrc
