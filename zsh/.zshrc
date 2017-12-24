@@ -30,10 +30,19 @@ fi
 export KEYTIMEOUT=1 # Don't pause much when entering normal mode
 
 # Customize prompt
+
+# Make most of prompt on left side
 export MNML_PROMPT=(mnml_ssh mnml_pyenv mnml_status 'mnml_cwd 2 0' mnml_git mnml_keymap)
 export MNML_RPROMPT=()
 export MNML_MAGICENTER=()
 export MNML_INFOLN=(mnml_err mnml_jobs mnml_uhp)
+
+# Bold colors
+export MNML_OK_COLOR='2;1'
+export MNML_ERR_COLOR='1;1'
+export MNML_CWD_COLOR='4;1'
+export MNML_GIT_CLEAN_COLOR='1;1'
+export MNML_GIT_DIRTY_COLOR='1;1'
 
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
