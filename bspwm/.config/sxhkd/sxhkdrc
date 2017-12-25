@@ -77,8 +77,8 @@ alt + v
 alt + e
 	thunar
 
-alt + s
-	xfce4-screenshooter
+alt + s; {r,f,w}
+	xfce4-screenshooter --{region,fullscreen,window} --imgur
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}

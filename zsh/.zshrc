@@ -15,7 +15,7 @@ antigen bundle gitignore
 antigen bundle history-substring-search
 antigen bundle vi-mode
 antigen bundle last-working-dir
-antigen theme /home/alex/code/sh/minimal
+antigen theme robbyrussell
 
 antigen apply
 
