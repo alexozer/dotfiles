@@ -119,14 +119,14 @@ function e {
     esac
 }
 
-function streaming() {
+function stream() {
      INRES="1920x1080" # input resolution
      OUTRES="1920x1080" # output resolution
      FPS="15" # target FPS
-     GOP="30" # i-frame interval, should be double of FPS, 
+	 GOP=$(($FPS * 2)) # i-frame interval, should be double of FPS, 
      GOPMIN="15" # min i-frame interval, should be equal to fps, 
      THREADS="2" # max 6
-     CBR="1000k" # constant bitrate (should be between 1000k - 3000k)
+     CBR="2000k" # constant bitrate (should be between 1000k - 3000k)
      QUALITY="ultrafast"  # one of the many FFMPEG preset
      AUDIO_RATE="44100"
      STREAM_KEY="$1" # use the terminal command Streaming streamkeyhere to stream your video to twitch or justin
