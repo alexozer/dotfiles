@@ -46,7 +46,7 @@ margin-stop = ${bar/top.height}
 
 [module/date]
 type = internal/date
-date =   %A %d
+date =   %a %d
 
 [module/time]
 type = internal/date

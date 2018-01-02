@@ -116,3 +116,5 @@ alt + o
 alt + u; space
 	echo '​' | xsel -ib
 
+alt + p
+	CM_LAUNCHER='rofi-dmenu' clipmenu -i

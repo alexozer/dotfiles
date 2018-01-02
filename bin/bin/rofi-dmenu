@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# SHIM for programs calling dmenu
+rofi -dmenu
