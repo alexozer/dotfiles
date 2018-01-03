@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+fswebcam --no-banner --resolution 1280x720 --png 9 --save "$HOME/pic/selfsniper/webcam-$(date '+%a_%b_%d_%Y_%I:%M:%S_%p').png"
+
+# vim:ft=sh

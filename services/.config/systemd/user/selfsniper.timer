@@ -1,0 +1,10 @@
+[Unit]
+Description=Run selfsniper
+
+[Timer]
+OnCalendar=0/3:0:0
+Persistent=true
+RandomizedDelaySec=10000
+
+[Install]
+WantedBy=timers.target

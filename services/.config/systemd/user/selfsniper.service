@@ -3,7 +3,7 @@ Description=Backup
 
 [Service]
 Type=simple
-ExecStart=/home/alex/bin/backup
+ExecStart=/home/alex/bin/selfsniper
 
 [Install]
 WantedBy=multi-user.target
