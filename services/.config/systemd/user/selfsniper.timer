@@ -1,10 +1,24 @@
 [Unit]
-Description=Run selfsniper
+Description=Timer for Baz Cleanup
 
 [Timer]
-OnCalendar=0/3:0:0
-Persistent=true
-RandomizedDelaySec=10000
+# Define target unit (in case the name part is the same, can be omitted)
+Unit=selfsniper.service
+
+## Activate target unit based on monotonic timers 
+
+# Time to wait after booting before we run first time
+#OnBootSec=10min
+
+# Time between running each consecutive time
+#OnUnitActiveSec=30min
+
+## or ..
+## Activate target based on wallclock time (calendar event)
+
+# Define a calendar event (see `man systemd.time`)
+OnCalendar=*-*-* 0/3:27:00
+RandomizedDelaySec=1000
 
 [Install]
-WantedBy=timers.target
+WantedBy=multi-user.target

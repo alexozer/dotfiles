@@ -1,9 +1,7 @@
 [Unit]
-Description=Backup
+Description=Self Sniper
 
 [Service]
 Type=simple
 ExecStart=/home/alex/bin/selfsniper
-
-[Install]
-WantedBy=multi-user.target
+StandardError=journal
