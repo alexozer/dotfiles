@@ -17,7 +17,7 @@ Unit=selfsniper.service
 ## Activate target based on wallclock time (calendar event)
 
 # Define a calendar event (see `man systemd.time`)
-OnCalendar=*-*-* 0/3:27:00
+OnCalendar=*-*-* 0/2:27:00
 RandomizedDelaySec=1000
 
 [Install]
