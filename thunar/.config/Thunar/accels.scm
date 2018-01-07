@@ -16,7 +16,6 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/zoom-out" "<Primary>minus")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/paste" "<Primary>v")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/open-with-menu" "")
-; (gtk_accel_path "<Actions>/ThunarBookmarks/e9192eb1c208afac9f329bd4d1bff43c" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/help-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/file-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/open-with-other-in-menu" "")
