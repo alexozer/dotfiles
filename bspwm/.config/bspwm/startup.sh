@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sxhkd &
+
 # run hidden gnome-terminal instance to act as server
 bspc rule --add Gnome-terminal --one-shot state=floating hidden=on
 gnome-terminal &
