@@ -165,9 +165,9 @@ set backup							" enable backup
 set undofile
 set noswapfile				" disable swap files
 
-set undodir=~/.cache/vim/undo//     " undo files
-set backupdir=~/.cache/vim/backup// " backups
-set directory=~/.cache/vim/swap//   " swap files
+set undodir=~/.config/nvim/tmp/undo//     " undo files
+set backupdir=~/.config/nvim/tmp/backup// " backups
+set directory=~/.config/nvim/tmp/swap//   " swap files
 
 " Autocmd
 

@@ -1,3 +1,4 @@
 /vim/.config/nvim/plugged/
 /vim/.config/nvim/.netrwhist
+/vim/.config/nvim/tmp/
 .mypy_cache/
