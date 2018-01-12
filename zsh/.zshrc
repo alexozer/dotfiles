@@ -138,6 +138,22 @@ function stream() {
        -bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
  }
 
+# Move contents of directory into current directory and delete original directory
+function undir() {
+	if [[ -z "$1" ]]; then
+		echo "Usage: $0 [dir]"
+		return 1
+	fi
+
+	if [[ ! -d "$1" ]]; then
+		echo "Directory '$1' not found"
+		return 1
+	fi
+
+	mv "$1"/*(D) .
+	rm -rf "$1"
+}
+
 # search command history
 bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
