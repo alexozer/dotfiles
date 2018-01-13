@@ -9,6 +9,7 @@
       <value type="string" value="Electron"/>
       <value type="string" value="Firefox"/>
       <value type="string" value="Firefox Developer Edition"/>
+      <value type="string" value="gopass"/>
       <value type="string" value="HandBrake"/>
       <value type="string" value="Kdenlive"/>
       <value type="string" value="nm-applet"/>
