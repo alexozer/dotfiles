@@ -39,7 +39,7 @@ tray-maxsize = 24
 tray-transparent = true
 tray-background = #00000000
 
-modules-right = music bspwm xbacklight volume battery wlan date time
+modules-right = music bspwm xbacklight volume battery wlan weather date time
 
 [global/wm]
 margin-stop = ${bar/top.height}
@@ -143,5 +143,13 @@ type = custom/script
 exec = ~/.config/polybar/playerctl.py
 
 tail = true
+
+[module/weather]
+type = custom/script
+interval = 300
+format = <label>
+format-prefix = "  "
+; format-prefix-foreground = ${colors.foreground}
+exec = ~/.config/polybar/weather.sh
 
 ; vim:ft=dosini

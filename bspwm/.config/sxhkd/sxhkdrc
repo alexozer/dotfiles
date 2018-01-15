@@ -1,5 +1,6 @@
-
-# bspwm hotkeys
+#
+# bspwm keybindings
+#
 
 alt + shift + q; {l, s, p, r}
 	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot}
@@ -56,7 +57,7 @@ alt + shift + {0-9}
 	bspc node --to-desktop ^{0-9} --focus
 
 #
-# wm-independent hotkeys
+# wm-independent keybindings
 #
 
 alt + Escape
