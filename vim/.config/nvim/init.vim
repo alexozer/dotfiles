@@ -128,6 +128,8 @@ nnoremap <silent> <s-tab> :tabp<cr>
 " easier to escape neovim terminal
 if has('nvim')
 	tnoremap <esc> <c-\><c-n>
+else
+	set termguicolors " Enable true color
 endif
 
 " split below and right

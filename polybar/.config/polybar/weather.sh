@@ -2,18 +2,28 @@
 
 . ~/.config/polybar/secrets.sh
 
-CITY="5122432" # Ithaca
-# CITY="5211420" # Sellersville
-# CITY="5505321" # Hawthorne
+# Config
 UNITS="imperial"
-SYMBOL="°F"
+SYMBOL="°"
+# End config
 
-url="http://api.openweathermap.org/data/2.5/weather?APPID=$OPENWEATHERMAP_KEY&id=$CITY&units=$UNITS"
+LOC_URL='https://location.services.mozilla.com/v1/geolocate?key=geoclue'
+
+if ! location_json="$(curl -sf "$LOC_URL")"; then
+	exit
+fi
+
+lat="$(echo "$location_json" | jq '.location.lat')"
+lon="$(echo "$location_json" | jq '.location.lng')"
+
+weather_url="http://api.openweathermap.org/data/2.5/weather?appid=$OPENWEATHERMAP_KEY&lat=$lat&lon=$lon&units=$UNITS"
 
 # Don't update output if weather fetch fails
-if weather="$(curl -sf "$url")"; then
-	weather_desc=$(echo "$weather" | jq -r ".weather[].description")
-	weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
-
-	echo "$weather_desc", "$weather_temp$SYMBOL"
+if ! weather="$(curl -sf "$weather_url")"; then
+	exit
 fi
+
+weather_desc=$(echo "$weather" | jq -r ".weather[].description")
+weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
+
+echo "$weather_desc", "$weather_temp$SYMBOL"
