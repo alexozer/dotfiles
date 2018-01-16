@@ -34,6 +34,7 @@ font-1 = fontawesome:pixelsize=16;2
 
 wm-name = BSPWM
 
+
 tray-position = right
 tray-maxsize = 24
 tray-transparent = true

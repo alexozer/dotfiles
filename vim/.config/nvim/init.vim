@@ -53,6 +53,7 @@ Plug 'itchyny/lightline.vim'
 "endif
 "Plug 'klen/python-mode', {'for': 'python'}
 "Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+"Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
