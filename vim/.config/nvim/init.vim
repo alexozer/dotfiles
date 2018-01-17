@@ -15,11 +15,9 @@ Plug 'yuttie/hydrangea-vim'
 " tools
 Plug 'junegunn/vim-plug'
 Plug 'sheerun/vim-polyglot'
-Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -54,6 +52,8 @@ Plug 'itchyny/lightline.vim'
 "Plug 'klen/python-mode', {'for': 'python'}
 "Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 "Plug 'airblade/vim-gitgutter'
+"Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
+"Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 
 call plug#end()
 
@@ -69,10 +69,7 @@ set shiftwidth=4        " no seriously, four spaces per tab
 set nojoinspaces
 
 " UI
-if has('nvim')
-	set termguicolors
-endif
-
+set termguicolors
 set timeoutlen=1000
 set ttimeoutlen=0
 
@@ -84,9 +81,6 @@ set lazyredraw			" redraw only when we need to (not during macros)
 set cursorline			" highlight current line
 set mouse=a
 set nofoldenable
-
-" Don't change cursor in insert mode (mutates global cursor state, doesn't blink)
-set guicursor= 
 
 set background=dark
 colorscheme dracula
@@ -129,8 +123,6 @@ nnoremap <silent> <s-tab> :tabp<cr>
 " easier to escape neovim terminal
 if has('nvim')
 	tnoremap <esc> <c-\><c-n>
-else
-	set termguicolors " Enable true color
 endif
 
 " split below and right

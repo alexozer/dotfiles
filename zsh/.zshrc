@@ -19,16 +19,6 @@ bindkey -M vicmd "j" history-substring-search-down
 bindkey -M vicmd "k" history-substring-search-up
 setopt HIST_IGNORE_ALL_DUPS
 
-# # NB: gnome-terminal reports xterm-256color which is technically incorrect and
-# # behaves strangely with certain programs. Older versions of gnome-terminal set
-# # COLORTERM. Newer versions set VTE_VERSION
-# if [[ $VTE_VERSION -ge 3803 ]]; then
-#     # gnome-256color is equivalent to vte-256color
-#     export TERM="gnome-256color"
-# else
-# 	export TERM="xterm-256color"
-# fi
-
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
 	export EDITOR=nvim
