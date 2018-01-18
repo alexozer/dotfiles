@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=org.gnome.Weather.Application.desktop,spotify.desktop,nvim.desktop,exo-mail-reader.desktop,exo-terminal-emulator.desktop,org.gnome.Terminal.desktop,dolphin-emu.desktop,xfce4-mime-settings.desktop,ca.desrt.dconf-editor.desktop
+recent=spotify.desktop,visual-studio-code.desktop,org.gnome.Weather.Application.desktop,nvim.desktop,exo-mail-reader.desktop,exo-terminal-emulator.desktop,org.gnome.Terminal.desktop,dolphin-emu.desktop,xfce4-mime-settings.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false

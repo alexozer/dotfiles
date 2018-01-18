@@ -1,7 +1,0 @@
-[Unit]
-Description=Self Sniper
-
-[Service]
-Type=simple
-ExecStart=/home/alex/bin/selfsniper
-StandardError=journal

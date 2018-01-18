@@ -1,9 +1,0 @@
-[Unit]
-Description=Backup
-
-[Service]
-Type=simple
-ExecStart=/home/alex/bin/backup
-
-[Install]
-WantedBy=multi-user.target
