@@ -23,7 +23,8 @@ if ! weather="$(curl -sf "$weather_url")"; then
 	exit
 fi
 
-weather_desc=$(echo "$weather" | jq -r '[.weather[].description] | join(", ")')
-weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
+weather_desc="$(echo "$weather" | jq -r '.weather[0].description')"
+weather_desc="${weather_desc^}" # Capitalize
+weather_temp="$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)"
 
-echo "$weather_desc", "$weather_temp$SYMBOL"
+echo "$weather_desc $weather_temp$SYMBOL"
