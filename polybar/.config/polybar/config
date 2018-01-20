@@ -141,7 +141,7 @@ ramp-capacity-4 = " "
 
 [module/music]
 type = custom/script
-exec = ~/.config/polybar/playerctl.py
+exec = ~/.config/polybar/mpris.py
 
 tail = true
 

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
-from gi.repository import Playerctl, GLib
 import time
 import sys
+
+import gi
+gi.require_version('Playerctl', '1.0')
+from gi.repository import Playerctl, GLib
 
 MUSIC_ICON = ''
 PAUSE_ICON = ''
@@ -15,6 +18,8 @@ class PlayerStatus:
 
         self._last_artist = None
         self._last_title = None
+
+        self._last_status = ''
 
     def show(self):
         self._init_player()
@@ -34,14 +39,14 @@ class PlayerStatus:
                 break
 
             except:
-                self._print_flush()
+                self._print_flush('')
                 time.sleep(2)
 
     def _on_metadata(self, player, e):
         if 'xesam:artist' in e.keys() and 'xesam:title' in e.keys():
             self._artist = e['xesam:artist'][0]
             self._title = e['xesam:title']
-            self._print_song
+            self._print_song()
 
     def _on_play(self, player):
         self._icon = MUSIC_ICON
@@ -62,9 +67,10 @@ class PlayerStatus:
     Seems to assure print() actually prints when no terminal is connected
     """
 
-    def _print_flush(self, *args, **kwargs):
-        print(*args, **kwargs)
-        sys.stdout.flush()
-
+    def _print_flush(self, status, **kwargs):
+        if status != self._last_status:
+            print(status, **kwargs)
+            sys.stdout.flush()
+            self._last_status = status
 
 PlayerStatus().show()
