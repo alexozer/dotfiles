@@ -2,8 +2,6 @@
 set -uo pipefail
 shopt -s dotglob nullglob
 
-export SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-
 backupDirs="code doc pic"
 tetherSSID="Alex's iPhone"
 
