@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+curl https://olkb.com/planck/ | rg '[Pp]lanck [Ll]ight' && ntfy -b phone send 'Planck Light is available on OLKB!'

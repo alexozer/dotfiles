@@ -107,7 +107,7 @@ alt + shift + Return
 alt + shift + {comma,period}
 	exo-open http://192.168.0.{93,91}:5000
 
-alt + shift + p
+alt + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
 
 alt + o
@@ -115,10 +115,10 @@ alt + o
 	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 
 alt + u; space
-	echo '​' | xsel -ib
+	sleep 0.05 && xdotool type "​"
 
 alt + p
 	CM_LAUNCHER='rofi-dmenu' clipmenu -i
 
-alt + ctrl + p
+alt + shift + p
 	gopass ls --flat | rofi-dmenu | xargs --no-run-if-empty gopass show -f | head -n 1 | tr -d '\n' | xdotool type --delay 0 --clearmodifiers --file -

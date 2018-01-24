@@ -1,15 +1,19 @@
 # environment variables
 
+export GOPATH1="$HOME/build/go"
+export GOPATH2="$HOME/code/go"
+export GOPATH="$GOPATH1:$GOPATH2"
+export NPM_PACKAGES="$HOME/.npm-packages"
+
 export PATH="$PATH:\
-$HOME/bin:$GOPATH/bin:\
+$HOME/bin:\
+$GOPATH1/bin:\
+$GOPATH2/bin:\
 $HOME/code/auv/link-stage:\
 $HOME/.gem/ruby/2.4.0/bin:\
 $HOME/.cargo/bin:\
 $HOME/.npm-packages/bin:\
 $HOME/.local/bin"
-
-export GOPATH="$HOME/build/go:$HOME/code/go"
-export NPM_PACKAGES="$HOME/.npm-packages"
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix java guis
 export MATLAB_JAVA="/usr/lib/jvm/java-8-openjdk/jre"

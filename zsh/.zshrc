@@ -10,7 +10,7 @@ antigen bundle gitignore
 antigen bundle history-substring-search
 antigen bundle vi-mode
 antigen bundle last-working-dir
-antigen theme robbyrussell
+antigen theme geometry-zsh/geometry
 
 antigen apply
 
