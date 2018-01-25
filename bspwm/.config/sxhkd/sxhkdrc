@@ -115,7 +115,7 @@ alt + o
 	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 
 alt + u; space
-	sleep 0.05 && xdotool type "​"
+	echo -n "​" | xsel -ib
 
 alt + p
 	CM_LAUNCHER='rofi-dmenu' clipmenu -i
