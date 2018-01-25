@@ -1,14 +1,4 @@
-#!/bin/bash
-
-LANG=en_US.UTF-8
-USER=alex
-PWD=/home/alex
-HOME=/home/alex
-SHELL=/bin/sh
-SHLVL=1
-LOGNAME=alex
-PATH=/usr/bin:/bin
-_=/usr/bin/env
+#!/usr/bin/env bash
 
 set -uo pipefail
 shopt -s dotglob nullglob
