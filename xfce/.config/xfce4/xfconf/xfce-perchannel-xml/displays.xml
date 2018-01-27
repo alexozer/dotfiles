@@ -3,7 +3,7 @@
 <channel name="displays" version="1.0">
   <property name="Default" type="empty">
     <property name="eDP1" type="string" value="1. Apple 13&quot;">
-      <property name="Active" type="bool" value="true"/>
+      <property name="Active" type="bool" value="false"/>
       <property name="Resolution" type="string" value="2560x1600"/>
       <property name="RefreshRate" type="double" value="59.971589"/>
       <property name="Rotation" type="int" value="0"/>
@@ -38,7 +38,7 @@
         <property name="Y" type="int" value="78"/>
       </property>
     </property>
-    <property name="HDMI2" type="string" value="2. VIZIO, Inc 72&quot;">
+    <property name="HDMI2" type="string" value="2. HPN 24&quot;">
       <property name="Active" type="bool" value="true"/>
       <property name="Resolution" type="string" value="1920x1080"/>
       <property name="RefreshRate" type="double" value="60.000000"/>
