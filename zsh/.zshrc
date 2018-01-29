@@ -110,6 +110,3 @@ function undir() {
 	mv "$1"/*(D) .
 	rm -rf "$1"
 }
-
-# OPAM configuration
-. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

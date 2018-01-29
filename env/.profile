@@ -25,3 +25,6 @@ export ALTERAOCLSDKROOT="/opt/altera/hld"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+# OPAM configuration
+. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
