@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sleep $((RANDOM % 3600))
+
 dir=~/pic/selfsniper/webcam-$(date '+%a_%b_%d_%Y')
 image=$dir/$(date '+%a_%b_%d_%Y_%I:%M:%S_%p').png
 
