@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=spotify.desktop,xfce-display-settings.desktop,org.gnome.Cheese.desktop,gimp.desktop,visual-studio-code.desktop,xfce4-power-manager-settings.desktop,simplescreenrecorder.desktop,org.gnome.Weather.Application.desktop,pavucontrol.desktop
+recent=spotify.desktop,simplescreenrecorder.desktop,xfce-display-settings.desktop,org.gnome.Cheese.desktop,gimp.desktop,visual-studio-code.desktop,xfce4-power-manager-settings.desktop,org.gnome.Weather.Application.desktop,pavucontrol.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false

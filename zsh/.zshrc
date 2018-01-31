@@ -10,7 +10,6 @@ antigen bundle gitignore
 antigen bundle history-substring-search
 antigen bundle vi-mode
 antigen bundle last-working-dir
-antigen theme geometry-zsh/geometry
 
 antigen apply
 
@@ -35,7 +34,8 @@ alias vim=$EDITOR # Vim always points to whichever vim version is installed
 alias svim="sudo -E $EDITOR" # Use sudo with vim
 alias o='exo-open' # Open file with default program
 alias matlab='matlab -nodesktop -nosplash' # Matlab repl
-alias cs='cd $CUAUV_SOFTWARE'
+alias cs="cd $CUAUV_SOFTWARE"
+alias a="xhost + > /dev/null && ${CUAUV_SOFTWARE}docker-helper.sh ssh"
 
 # Auto ls
 function chpwd {

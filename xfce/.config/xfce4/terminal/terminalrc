@@ -30,4 +30,5 @@ ColorForeground=#dcdcdc
 ColorBackground=#2c2c2c
 ColorCursor=#dcdcdc
 ScrollingOnOutput=FALSE
+BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 
