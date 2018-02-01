@@ -5,7 +5,11 @@ if !has('nvim')
 endif
 
 " Plug
-call plug#begin('~/.vim/plugged')
+if has('nvim')
+	call plug#begin('~/.local/share/nvim/plugged')
+else
+	call plug#begin('~/.vim/plugged')
+endif
 
 " colors
 Plug 'NLKNguyen/papercolor-theme'
@@ -26,6 +30,7 @@ Plug 'reedes/vim-pencil'
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-sleuth'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar

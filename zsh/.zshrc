@@ -107,6 +107,13 @@ function undir() {
 		return 1
 	fi
 
-	mv "$1"/*(D) .
+	tmpRoot=~/.cache/undir
+	mkdir -p "$tmpRoot"
+	tmpDir="$(mktemp -d -p "$tmpRoot")"
+
+	mv "$1"/*(D) "$tmpDir"
 	rm -rf "$1"
+	mv -i "$tmpDir"/*(D) .
+
+	rm -rf "$tmpDir"
 }
