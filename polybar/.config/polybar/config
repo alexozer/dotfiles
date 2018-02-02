@@ -82,11 +82,11 @@ label-empty-padding = 2
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume>  <bar-volume>
-label-volume = 
+format-volume = <label-volume>
+label-volume =   %percentage%%
 
-format-muted = <label-muted>  <bar-volume>
-label-muted = 
+format-muted = <label-muted>
+label-muted =   %percentage%%
 format-muted-foreground = ${colors.comment}
 
 bar-volume-width = 10
@@ -99,8 +99,8 @@ bar-volume-empty = ${module/volume.bar-volume-fill}
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label>  <bar>
-label = 
+format = <label>
+label =   %percentage%%
 
 bar-width = 10
 bar-indicator = |
