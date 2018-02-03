@@ -83,7 +83,7 @@ alt + s; {r,f,w}
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
-	amixer set Master {2%+, 2%-, toggle}
+	pamixer {--increase 2,--decrease 2,--toggle-mute}
 
 {XF86AudioPrev, XF86AudioPlay, XF86AudioNext}
 	playerctl {previous, play-pause, next}

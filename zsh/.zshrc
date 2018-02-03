@@ -11,6 +11,8 @@ antigen bundle history-substring-search
 antigen bundle vi-mode
 antigen bundle last-working-dir
 
+antigen theme robbyrussell
+
 antigen apply
 
 # Search command history
