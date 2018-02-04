@@ -114,8 +114,8 @@ alt + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
 	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 
-alt + u; space
-	echo -n "​" | xsel -ib
+alt + u
+	dex ~/.local/share/applications/spotify.desktop
 
 alt + p
 	CM_LAUNCHER='rofi-dmenu' clipmenu -i
