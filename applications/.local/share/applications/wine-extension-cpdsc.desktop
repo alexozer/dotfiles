@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=µVision IDE
+MimeType=application/x-wine-extension-cpdsc;
+Exec=env WINEPREFIX="/home/alex/.wine" wine start /ProgIDOpen CPDSCFILE %f
+NoDisplay=true
+StartupNotify=true
+Icon=CA3C_UV4.0

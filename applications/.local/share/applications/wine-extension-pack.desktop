@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Pack Unzip
+MimeType=application/x-java-pack200;
+Exec=env WINEPREFIX="/home/alex/.wine" wine start /ProgIDOpen PACKFILE %f
+NoDisplay=true
+StartupNotify=true
+Icon=1BA5_PackUnzip.0
