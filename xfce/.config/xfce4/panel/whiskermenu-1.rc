@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=com.teamviewer.TeamViewer.desktop,spotify.desktop,wine-Programs-Keil uVision5.desktop,xfce-ui-settings.desktop,arduino.desktop,xfce-settings-manager.desktop,xfce-backdrop-settings.desktop,org.gnome.Cheese.desktop,org.gnome.Terminal.desktop,simplescreenrecorder.desktop
+recent=gimp.desktop,spotify.desktop,com.teamviewer.TeamViewer.desktop,wine-Programs-Keil uVision5.desktop,xfce-ui-settings.desktop,arduino.desktop,xfce-settings-manager.desktop,xfce-backdrop-settings.desktop,org.gnome.Cheese.desktop,org.gnome.Terminal.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
