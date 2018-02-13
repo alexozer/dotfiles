@@ -15,8 +15,10 @@ endif
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yuttie/hydrangea-vim'
+Plug 'liuchengxu/space-vim-dark'
 
 " tools
+
 Plug 'junegunn/vim-plug'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
@@ -89,6 +91,7 @@ set nofoldenable
 
 set background=dark
 colorscheme dracula
+hi Comment cterm=italic
 
 syntax enable			" enable syntax processing
 
@@ -247,7 +250,6 @@ let g:ale_lint_on_text_changed="never"
 " let g:ale_linters = { 'python': ['pylint'] }
 
 " lightline
-" let g:lightline = { 'colorscheme': 'Dracula' }
 let g:lightline = {
       \ 'colorscheme': 'Dracula',
       \ 'component': {

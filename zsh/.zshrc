@@ -10,6 +10,7 @@ antigen bundle gitignore
 antigen bundle history-substring-search
 antigen bundle vi-mode
 antigen bundle last-working-dir
+antigen bundle mfaerevaag/wd
 
 antigen theme robbyrussell
 
@@ -133,4 +134,7 @@ function redir() {
 
     mv ./*(D) "$tmpDir"
     mv "$tmpDir" "$1"
+}
+wd() {
+  . /home/alex/bin/wd/wd.sh
 }
