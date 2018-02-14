@@ -10,7 +10,6 @@ antigen bundle gitignore
 antigen bundle history-substring-search
 antigen bundle vi-mode
 antigen bundle last-working-dir
-antigen bundle mfaerevaag/wd
 
 antigen apply
 
@@ -36,6 +35,7 @@ alias svim="sudo -E $EDITOR" # Use sudo with vim
 alias o='exo-open' # Open file with default program
 alias matlab='matlab -nodesktop -nosplash' # Matlab repl
 alias a="xhost + > /dev/null && ${CUAUV_SOFTWARE}docker-helper.sh ssh"
+alias cs="cd $CUAUV_SOFTWARE"
 
 # Auto ls
 function chpwd {
@@ -50,6 +50,7 @@ function e {
 	    ;;
 	zsh)
 	    $EDITOR "$HOME/.zshrc"
+	    source "$HOME/.zshrc"
 	    ;;
 	zshenv)
 	    $EDITOR "$HOME/.zshenv"
