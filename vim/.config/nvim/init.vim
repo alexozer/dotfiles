@@ -257,3 +257,5 @@ let g:lightline = {
       \ },
       \ }
 set noshowmode
+
+" vim:tabstop=2
