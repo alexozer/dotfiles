@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=µVision IDE
-MimeType=application/x-wine-extension-uvmpw;
-Exec=env WINEPREFIX="/home/alex/.wine" wine start /ProgIDOpen UVMPWFILE %f
-NoDisplay=true
-StartupNotify=true
-Icon=1825_UV4.0

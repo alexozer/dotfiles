@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Keil uVision5
-Exec=env WINEPREFIX="/home/alex/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/alex/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/Keil\\ uVision5.LNK
-Type=Application
-StartupNotify=true
-Comment=Keil uVision5
-Path=/home/alex/.wine/dosdevices/c:/Keil_v5
-Icon=1825_UV4.0
-StartupWMClass=uv4.exe
