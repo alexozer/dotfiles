@@ -91,7 +91,6 @@ set nofoldenable
 
 set background=dark
 colorscheme dracula
-hi Comment cterm=italic
 
 syntax enable			" enable syntax processing
 
