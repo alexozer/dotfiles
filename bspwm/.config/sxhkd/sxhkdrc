@@ -85,6 +85,9 @@ alt + s; {r,f,w}
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
 	pamixer {--increase 2,--decrease 2,--toggle-mute}
 
+alt + XF86AudioMute
+	pamixer --mute
+
 {XF86AudioPrev, XF86AudioPlay, XF86AudioNext}
 	playerctl {previous, play-pause, next}
 
