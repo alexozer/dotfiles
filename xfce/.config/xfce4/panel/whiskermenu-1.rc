@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=mpv.desktop,gparted.desktop,virtualbox.desktop,dolphin-emu.desktop,exo-file-manager.desktop,xfce-backdrop-settings.desktop,transmission-gtk.desktop,spotify.desktop,org.gnome.Weather.Application.desktop,org.gnome.baobab.desktop
+recent=dolphin-emu.desktop,gimp.desktop,eog.desktop,virtualbox.desktop,spotify.desktop,shotcut.desktop,mpv.desktop,gparted.desktop,exo-file-manager.desktop,xfce-backdrop-settings.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
