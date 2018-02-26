@@ -18,7 +18,6 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'liuchengxu/space-vim-dark'
 
 " tools
-
 Plug 'junegunn/vim-plug'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
@@ -91,6 +90,7 @@ set nofoldenable
 
 set background=dark
 colorscheme dracula
+hi Comment cterm=italic
 
 syntax enable			" enable syntax processing
 
@@ -107,8 +107,8 @@ set fillchars=diff:⣿,vert:│
 set guitablabel=%t
 
 " Buffers, Splits, Tabs
-"set splitbelow " Open horizontal splits below current split
-"set splitright " Open vertical splits to the right of current split
+set splitbelow " Open horizontal splits below current split
+set splitright " Open vertical splits to the right of current split
 
 " splits: use g prefix instead of <C-w>
 nnoremap gh <C-w>h
