@@ -18,10 +18,12 @@ alt + b
 	bspc node @/ --balance
 
 alt + {n,i}
-	bspc desktop {next,prev} -f
+	bspc desktop {next,prev} --focus
 
-alt + {1-9,0}
-	bspc desktop ^{1-9,0} -f
+# Unfortunately the multiple binding thing doesn't work in this case
+
+alt + 1
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^1)" ]; then bspc desktop ^1 --focus; else bspc desktop last --focus; fi
 
 alt + ctrl + shift + {n,i}
 	bspc desktop --bubble {next,prev} --focus

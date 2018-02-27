@@ -20,6 +20,9 @@ doBackup() {
 	for dir in $backupDirs; do
 		rclone sync "$HOME"/"$dir" box:"$dir" --skip-links
 	done
+
+	# Also update vim plugins because why not
+	nvim +PlugUpgrade +PlugInstall +PlugUpdate +UpdateRemotePlugins +qa
 }
 
 fail() {
