@@ -20,16 +20,45 @@ alt + b
 alt + {n,i}
 	bspc desktop {next,prev} --focus
 
-# Unfortunately the multiple binding thing doesn't work in this case
+# Unfortunately the multiple binding thing doesn't seem to work in these cases
+
+# Change desktop
 
 alt + 1
 	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^1)" ]; then bspc desktop ^1 --focus; else bspc desktop last --focus; fi
 
-alt + ctrl + shift + {n,i}
-	bspc desktop --bubble {next,prev} --focus
+alt + 2
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^2)" ]; then bspc desktop ^2 --focus; else bspc desktop last --focus; fi
+
+alt + 3
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^3)" ]; then bspc desktop ^3 --focus; else bspc desktop last --focus; fi
+
+alt + 4
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^4)" ]; then bspc desktop ^4 --focus; else bspc desktop last --focus; fi
+
+alt + 5
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^5)" ]; then bspc desktop ^5 --focus; else bspc desktop last --focus; fi
+
+alt + 6
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^6)" ]; then bspc desktop ^6 --focus; else bspc desktop last --focus; fi
+
+alt + 7
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^3)" ]; then bspc desktop ^7 --focus; else bspc desktop last --focus; fi
+
+alt + 8
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^8)" ]; then bspc desktop ^8 --focus; else bspc desktop last --focus; fi
+
+alt + shift + {0-9}
+	bspc node --to-desktop ^{0-9} --focus
 
 alt + ctrl + shift + {0-9}
 	bspc desktop --swap ^{0-9} --focus
+
+alt + ctrl + shift + {n,i}
+	bspc desktop --bubble {next,prev} --focus
+
+alt + shift + {n,i}
+	bspc node --to-desktop {next,prev} --focus
 
 alt + {_,shift + }f
 	bspc node --state {\~floating,\~pseudo_tiled}
@@ -51,12 +80,6 @@ alt + {_,shift + }r
 
 alt + ctrl + {h,j,k,l}
 	bspc node --presel-dir \~{west,south,north,east}
-
-alt + shift + {n,i}
-	bspc node --to-desktop {next,prev} --focus
-
-alt + shift + {0-9}
-	bspc node --to-desktop ^{0-9} --focus
 
 #
 # wm-independent keybindings

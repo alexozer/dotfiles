@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=spotify.desktop,dolphin-emu.desktop,gimp.desktop,eog.desktop,virtualbox.desktop,shotcut.desktop,mpv.desktop,gparted.desktop,exo-file-manager.desktop
+recent=gpick.desktop,dolphin-emu.desktop,spotify.desktop,gimp.desktop,eog.desktop,virtualbox.desktop,shotcut.desktop,mpv.desktop,gparted.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
