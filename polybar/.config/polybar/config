@@ -62,21 +62,21 @@ enable-scroll = false
 format = <label-mode> <label-state>
 label-monocle = 
 
-label-focused = %index%
+label-focused = %name%
 label-focused-foreground = ${colors.foreground}
 label-focused-underline = ${colors.purple}
 label-focused-background = ${colors.selection}
 label-focused-padding = 2
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-foreground = ${colors.foreground}
 label-occupied-padding = 2
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.orange}
 label-urgent-padding = 2
 
-label-empty = %index%
+label-empty = %name%
 label-empty-padding = 2
 
 [module/volume]

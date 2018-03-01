@@ -132,6 +132,8 @@ function redir() {
     mv ./*(D) "$tmpDir"
     mv "$tmpDir" "$1"
 }
-wd() {
-  . /home/alex/bin/wd/wd.sh
+
+# Fork
+function f() {
+  "$@" & disown
 }

@@ -2,115 +2,98 @@
 # bspwm keybindings
 #
 
-alt + shift + q; {l, s, p, r}
+super + shift + q; {l, s, p, r}
 	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot}
 
-alt + c
+super + c
 	bspc node --close
 
-alt + equal
+super + equal
 	bspc node @/ --ratio 0.6180339903912632
 
-alt + minus
+super + minus
 	bspc node @/ --equalize
 
-alt + b
+super + b
 	bspc node @/ --balance
 
-alt + {n,i}
+super + {n,i}
 	bspc desktop {next,prev} --focus
 
-# Unfortunately the multiple binding thing doesn't seem to work in these cases
+# Toggle between previous desktop if target desktop number is current desktop
+super + {1-9,0}
+	target={1-9,10}; \
+	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^$target)" ]; then; \
+		bspc desktop ^$target --focus; \
+	else; \
+		bspc desktop last --focus; \
+	fi
 
-# Change desktop
+super + shift + {1-9,0}
+	bspc node --to-desktop ^{1-9,10} --focus
 
-alt + 1
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^1)" ]; then bspc desktop ^1 --focus; else bspc desktop last --focus; fi
-
-alt + 2
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^2)" ]; then bspc desktop ^2 --focus; else bspc desktop last --focus; fi
-
-alt + 3
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^3)" ]; then bspc desktop ^3 --focus; else bspc desktop last --focus; fi
-
-alt + 4
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^4)" ]; then bspc desktop ^4 --focus; else bspc desktop last --focus; fi
-
-alt + 5
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^5)" ]; then bspc desktop ^5 --focus; else bspc desktop last --focus; fi
-
-alt + 6
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^6)" ]; then bspc desktop ^6 --focus; else bspc desktop last --focus; fi
-
-alt + 7
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^3)" ]; then bspc desktop ^7 --focus; else bspc desktop last --focus; fi
-
-alt + 8
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^8)" ]; then bspc desktop ^8 --focus; else bspc desktop last --focus; fi
-
-alt + shift + {0-9}
-	bspc node --to-desktop ^{0-9} --focus
-
-alt + ctrl + shift + {0-9}
-	bspc desktop --swap ^{0-9} --focus
-
-alt + ctrl + shift + {n,i}
-	bspc desktop --bubble {next,prev} --focus
-
-alt + shift + {n,i}
+super + shift + {n,i}
 	bspc node --to-desktop {next,prev} --focus
 
-alt + {_,shift + }f
+super + ctrl + shift + {1-9,0}
+	bspc desktop --swap ^{1-9,10} --focus; \
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+super + ctrl + shift + {n,i}
+	bspc desktop --swap {next,prev} --focus; \
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+super + {_,shift + }f
 	bspc node --state {\~floating,\~pseudo_tiled}
 
-alt + y
+super + y
 	bspc node --to-node last.!automatic
 
-alt + m
+super + m
 	bspc desktop --layout next
 
-alt + {_,shift +} {h,j,k,l}
+super + {_,shift +} {h,j,k,l}
 	bspc node {--focus,--swap} {west,south,north,east}
 
-alt + {_,shift + }Tab
+super + {_,shift + }Tab
 	bspc node --focus {next.local,prev.local}
 
-alt + {_,shift + }r
+super + {_,shift + }r
 	bspc node @/ --rotate {270,90}
 
-alt + ctrl + {h,j,k,l}
+super + ctrl + {h,j,k,l}
 	bspc node --presel-dir \~{west,south,north,east}
 
 #
 # wm-independent keybindings
 #
 
-alt + Escape
+super + Escape
 	xfce4-popup-whiskermenu
 
-alt + Return
+super + Return
 	gnome-terminal
 
-alt + w
+super + w
 	chromium
 
-alt + shift + w
+super + shift + w
 	chromium --incognito
 
-alt + v
+super + v
 	code -n
 
-alt + e
+super + e
 	thunar
 
-alt + s; {r,f,w}
+super + s; {r,f,w}
 	xfce4-screenshooter --{region,fullscreen,window} --imgur
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
 	pamixer {--increase 2,--decrease 2,--toggle-mute}
 
-alt + XF86AudioMute
+super + XF86AudioMute
 	pamixer --mute
 
 {XF86AudioPrev, XF86AudioPlay, XF86AudioNext}
@@ -120,33 +103,33 @@ XF86LaunchB
 	betterlockscreen -l
 
 # make sxhkd reload its configuration files:
-alt + shift + Escape
+super + shift + Escape
 	pkill -USR1 -x sxhkd
 
-alt + t
+super + t
 	gnome-terminal -- htop
 
-alt + {comma,period}
+super + {comma,period}
 	gnome-terminal -e 'ssh {artemis,apollo}'
 
-alt + shift + Return
+super + shift + Return
 	gnome-terminal -e 'ssh auv'
 
-alt + shift + {comma,period}
+super + shift + {comma,period}
 	exo-open http://192.168.0.{93,91}:5000
 
-alt + ctrl + p
+super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
 
-alt + o
+super + o
 	bspc rule --add Gnome-terminal --one-shot state=floating &&\
 	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 
-alt + u
+super + u
 	dex ~/.local/share/applications/spotify.desktop
 
-# alt + p
+# super + p
 # 	CM_LAUNCHER='rofi-dmenu' clipmenu -i
 
-alt + shift + p
+super + shift + p
 	gopass ls --flat | rofi-dmenu | xargs --no-run-if-empty gopass show -f | head -n 1 | tr -d '\n' | xdotool type --delay 0 --clearmodifiers --file -
