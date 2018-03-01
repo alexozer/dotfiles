@@ -128,8 +128,8 @@ super + o
 super + u
 	dex ~/.local/share/applications/spotify.desktop
 
-# super + p
-# 	CM_LAUNCHER='rofi-dmenu' clipmenu -i
+super + p
+	CM_LAUNCHER='rofi-dmenu' clipmenu -i
 
 super + shift + p
 	gopass ls --flat | rofi-dmenu | xargs --no-run-if-empty gopass show -f | head -n 1 | tr -d '\n' | xdotool type --delay 0 --clearmodifiers --file -

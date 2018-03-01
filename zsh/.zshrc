@@ -137,3 +137,10 @@ function redir() {
 function f() {
   "$@" & disown
 }
+
+# Store a system configuration file in dotfiles
+function syskeep() {
+  d=~/.dotfiles/system$(dirname "$1")
+  mkdir -p "$d"
+  cp "$1" "$d"/
+}
