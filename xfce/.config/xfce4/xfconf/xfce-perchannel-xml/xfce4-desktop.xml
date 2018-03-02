@@ -225,6 +225,11 @@
           <property name="image-style" type="int" value="3"/>
           <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
         </property>
+        <property name="workspace10" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
+        </property>
       </property>
       <property name="xinerama-stretch" type="bool" value="false"/>
       <property name="monitoreDP1" type="empty">

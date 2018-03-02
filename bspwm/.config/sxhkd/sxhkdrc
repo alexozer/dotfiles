@@ -86,8 +86,8 @@ super + v
 super + e
 	thunar
 
-super + s; {r,f,w}
-	xfce4-screenshooter --{region,fullscreen,window} --imgur
+super + {s,S}; {r,f,w}
+	xfce4-screenshooter --{imgur,clipboard} --{region,fullscreen,window}
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
@@ -126,7 +126,7 @@ super + o
 	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
 
 super + u
-	dex ~/.local/share/applications/spotify.desktop
+	spotify --force-device-scale-factor=1.4
 
 super + p
 	CM_LAUNCHER='rofi-dmenu' clipmenu -i
