@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+geometry=${2:-80x24}
+
+bspc rule --add Gnome-terminal --one-shot state=floating
+gnome-terminal --geometry $geometry -- /usr/bin/bash -ic "$1"

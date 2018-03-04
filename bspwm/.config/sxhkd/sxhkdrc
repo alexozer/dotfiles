@@ -122,14 +122,21 @@ super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
 
 super + o
-	bspc rule --add Gnome-terminal --one-shot state=floating &&\
-	gnome-terminal -x /usr/bin/bash -ic 'rg --color never --files | fzf --reverse | xargs echo -n | xargs -0 exo-open'
+	gnome-terminal-popup 'rg --color never --files |\
+	fzf-dmenu | xargs echo -n | xargs -0 exo-open'
+
+super + O
+	gnome-terminal-popup bookmarks 160x24
 
 super + u
 	spotify --force-device-scale-factor=1.4
 
 super + p
-	CM_LAUNCHER='rofi-dmenu' clipmenu -i
+	gnome-terminal-popup "CM_LAUNCHER='fzf-dmenu' clipmenu -i"
 
+# Password manager
 super + shift + p
-	gopass ls --flat | rofi-dmenu | xargs --no-run-if-empty gopass show -f | head -n 1 | tr -d '\n' | xdotool type --delay 0 --clearmodifiers --file -
+	gnome-terminal-popup "gopass ls --flat |\
+	fzf-dmenu | tee >(xargs --no-run-if-empty gopass show -f |\
+	head -n 1 | tr -d '\n' |\
+	xdotool type --delay 0 --clearmodifiers --file -)"
