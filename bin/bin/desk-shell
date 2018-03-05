@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Fake shell to spawn desktop entry produced by j4-dmenu-desktop
+if [ "$2" = "fzf-dmenu" ]; then $2; else $2 & disown; fi

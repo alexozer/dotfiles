@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Launch a tab in a focused web browser
-
-xdotool keyup Return
-xdotool key --delay 0 --clearmodifiers 'ctrl+t'
-xdotool type --delay 0 --clearmodifiers "$1"
-xdotool key --delay 0 'Return'

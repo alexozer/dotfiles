@@ -80,8 +80,6 @@ set timeoutlen=1000
 set ttimeoutlen=0
 
 "set relativenumber		" show line numbers relative to current
-set ruler " always show bottom bar
-set laststatus=2 " always show status bar
 set wildmenu			" visual autocomplete for command menu
 set lazyredraw			" redraw only when we need to (not during macros)
 set cursorline			" highlight current line
@@ -102,13 +100,7 @@ set scrolloff=5			" leave lines visible at top and bottom of buffer
 
 set noshowmatch			" don't show matching brackets by flickering
 
-set fillchars=diff:⣿,vert:│
-
 set guitablabel=%t
-
-" Buffers, Splits, Tabs
-set splitbelow " Open horizontal splits below current split
-set splitright " Open vertical splits to the right of current split
 
 " splits: use g prefix instead of <C-w>
 nnoremap gh <C-w>h
@@ -132,17 +124,16 @@ if has('nvim')
 	tnoremap <esc> <c-\><c-n>
 endif
 
-" split below and right
-set splitbelow
-set splitright
-
-set hidden		" okay to background modified buffers
+" Buffers, Splits, Tabs
+set splitbelow " Open horizontal splits below current split
+set splitright " Open vertical splits to the right of current split
+set hidden		 " okay to background modified buffers
 
 nnoremap <leader><leader> :e#<cr> " open last file
 
 " Searching
 set incsearch			" search as characters are entered
-set ignorecase			" case-insensitive
+set ignorecase		" case-insensitive
 set smartcase			" override ignorecase if search includes capital letters
 set nohlsearch
 
@@ -190,7 +181,6 @@ augroup END
 augroup latex
 	autocmd!
 	autocmd FileType tex setlocal nocursorline
-	autocmd FileType tex setlocal norelativenumber
 augroup END
 
 augroup ocaml
@@ -218,9 +208,6 @@ inoremap <c-u> <esc>bgUwgi
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
-"inoremap <c-k> <esc>viwUea
-"nnoremap <c-k> m`viwU``
-
 " Plugin Config
 
 " nerdtree
@@ -246,7 +233,6 @@ let g:pencil#conceallevel = 0
 
 " ale
 let g:ale_lint_on_text_changed="never"
-" let g:ale_linters = { 'python': ['pylint'] }
 
 " lightline
 let g:lightline = {

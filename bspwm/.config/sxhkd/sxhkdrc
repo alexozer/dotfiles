@@ -122,11 +122,11 @@ super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
 
 super + o
-	gnome-terminal-popup 'rg --color never --files |\
-	fzf-dmenu | xargs echo -n | xargs -0 exo-open'
+	gnome-terminal-popup bookmarks 160x24
 
 super + O
-	gnome-terminal-popup bookmarks 160x24
+	gnome-terminal-popup 'rg --color never --files |\
+	fzf-dmenu | xargs echo -n | xargs -0 exo-open'
 
 super + u
 	spotify --force-device-scale-factor=1.4

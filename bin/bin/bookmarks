@@ -10,7 +10,7 @@
 /usr/bin/ruby -x "$0" |
   fzf-tmux --reverse -u 30% --ansi --no-hscroll --tiebreak=begin |
   awk 'BEGIN { FS = "\t" } { print $2 }' |
-  xargs --no-run-if-empty lnch launch-tab
+  xargs --no-run-if-empty lnch chromium
 
 exit $?
 
