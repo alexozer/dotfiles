@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=gpick.desktop,xfce-display-settings.desktop,spotify.desktop,dolphin-emu.desktop,transmission-gtk.desktop,redshift-gtk.desktop,virtualbox.desktop,simplescreenrecorder.desktop,visual-studio-code.desktop,cups.desktop
+recent=xfce-display-settings.desktop,dolphin-emu.desktop,gpick.desktop,spotify.desktop,transmission-gtk.desktop,redshift-gtk.desktop,virtualbox.desktop,simplescreenrecorder.desktop,visual-studio-code.desktop,cups.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false

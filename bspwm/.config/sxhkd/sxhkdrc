@@ -122,7 +122,7 @@ super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
 
 super + o
-	gnome-terminal-popup bookmarks 160x24
+	gnome-terminal-popup browser-bookmarks 160x24
 
 super + O
 	gnome-terminal-popup 'rg --color never --files |\
