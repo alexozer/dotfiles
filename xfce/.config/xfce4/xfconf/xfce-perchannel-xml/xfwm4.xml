@@ -73,7 +73,7 @@
     <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
     <property name="workspace_names" type="array">
-      <value type="string" value="0"/>
+      <value type="string" value="1"/>
       <value type="string" value="2"/>
       <value type="string" value="3"/>
       <value type="string" value="4"/>

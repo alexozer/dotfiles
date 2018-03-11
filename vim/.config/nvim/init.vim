@@ -60,6 +60,7 @@ Plug 'tpope/vim-sleuth'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
+"Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
