@@ -154,15 +154,6 @@ vmap H 0
 nmap L $
 vmap L $
 
-" Backups
-set backup							" enable backup
-set undofile
-set noswapfile				" disable swap files
-
-set undodir=~/.config/nvim/tmp/undo//     " undo files
-set backupdir=~/.config/nvim/tmp/backup// " backups
-set directory=~/.config/nvim/tmp/swap//   " swap files
-
 " Autocmd
 
 " jump to last cursor position in file
