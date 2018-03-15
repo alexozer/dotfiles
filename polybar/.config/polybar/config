@@ -30,7 +30,8 @@ line-color = ${colors.purple}
 border-size = 0
 
 font-0 = NotoSans-Regular:size=14;2
-font-1 = "Ionicons:pixelsize=20;4"
+font-1 = "Ionicons:pixelsize=19;4"
+font-2 = "Material Icons:pixelsize=19;6"
 wm-name = BSPWM
 
 
@@ -99,7 +100,7 @@ bar-volume-empty = ${module/volume.bar-volume-fill}
 type = internal/xbacklight
 
 format = <label>
-label = "  %percentage%%"
+label = " %percentage%%"
 
 bar-width = 10
 bar-indicator = |
@@ -127,9 +128,9 @@ time-format = %-H hr %-M min
 ;format-full = <ramp-capacity> <label-full>
 format-charging = <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
-label-charging =   %percentage%%  %time%
+label-charging =  %percentage%%  %time%
 label-discharging = %percentage%%  %time%
-label-full =   %percentage%%
+label-full =  %percentage%%
 
 ramp-capacity-0 = " "
 ramp-capacity-0-foreground = ${colors.red}
