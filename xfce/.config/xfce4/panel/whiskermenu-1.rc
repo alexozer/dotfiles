@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=obs.desktop,dolphin-emu.desktop,xfce-display-settings.desktop,virtualbox.desktop,visual-studio-code.desktop,xfce4-notifyd-config.desktop,org.gnome.Cheese.desktop,mnemosyne.desktop,gpick.desktop,spotify.desktop
+recent=obs.desktop,virtualbox.desktop,xfce-display-settings.desktop,dolphin-emu.desktop,visual-studio-code.desktop,xfce4-notifyd-config.desktop,org.gnome.Cheese.desktop,mnemosyne.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
@@ -19,8 +19,8 @@ display-recent-default=false
 position-search-alternate=true
 position-commands-alternate=false
 position-categories-alternate=false
-menu-width=500
-menu-height=512
+menu-width=521
+menu-height=721
 menu-opacity=100
 command-settings=xfce4-settings-manager
 show-command-settings=false
