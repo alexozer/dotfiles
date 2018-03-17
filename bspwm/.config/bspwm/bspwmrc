@@ -24,5 +24,6 @@ bspc rule -a Emacs state=tiled
 bspc rule -a Polybar border=off
 bspc rule -a "Org.gnome.Weather.Application" state=floating
 bspc rule -a "Gpick" state=floating
+bspc rule -a "GLava" state=floating layer=below sticky=true locked=true border=off rectangle=2560x1600+0+0
 
 "$HOME"/.config/bspwm/startup.sh &

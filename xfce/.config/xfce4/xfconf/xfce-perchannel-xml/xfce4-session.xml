@@ -31,6 +31,6 @@
     <property name="LaunchGNOME" type="bool" value="true"/>
   </property>
   <property name="shutdown" type="empty">
-    <property name="LockScreen" type="bool" value="true"/>
+    <property name="LockScreen" type="bool" value="false"/>
   </property>
 </channel>
