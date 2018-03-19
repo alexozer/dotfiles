@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=firefox.desktop,tor-browser-en.desktop,gimp.desktop,dolphin-emu.desktop,xfce-display-settings.desktop,xfce-session-settings.desktop,obs.desktop,virtualbox.desktop,visual-studio-code.desktop,xfce4-notifyd-config.desktop
+recent=dolphin-emu.desktop,Alacritty.desktop,tor-browser-en.desktop,gimp.desktop,xfce-display-settings.desktop,xfce-session-settings.desktop,obs.desktop,virtualbox.desktop,visual-studio-code.desktop,xfce4-notifyd-config.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
