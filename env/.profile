@@ -22,6 +22,8 @@ export QSYS_ROOTDIR="/home/alex/build/aur/tmp/yaourt-tmp-alex/aur-quartus-lite/p
 
 export ALTERAOCLSDKROOT="/opt/altera/hld"
 
+export MOZ_USE_XINPUT2=1 # Smooth scrolling in Firefox
+
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
