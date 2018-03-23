@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=dolphin-emu.desktop,sqlitebrowser.desktop,electron.desktop,dynalist.desktop,org.gnome.Weather.Application.desktop,simplescreenrecorder.desktop,signal.desktop,org.gnome.Cheese.desktop,Alacritty.desktop
+recent=dolphin-emu.desktop,firefox-developer-edition.desktop,simplescreenrecorder.desktop,xfce-backdrop-settings.desktop,gimp.desktop,Alacritty.desktop,anki.desktop,org.gnome.Cheese.desktop,sqlitebrowser.desktop,electron.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false

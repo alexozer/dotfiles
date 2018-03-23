@@ -58,7 +58,7 @@ Plug 'tpope/vim-sleuth'
 "Plug 'klen/python-mode', {'for': 'python'}
 "Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 "Plug 'airblade/vim-gitgutter'
-"Plug 'xolox/vim-misc' | Plug 'xolox/vim-session'
+"Plug 'xolox/vim-misc' | Pl?g 'xolox/vim-session'
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 "Plug 'vimwiki/vimwiki'
 
@@ -146,13 +146,17 @@ nnoremap Y y$
 
 " easier than ^ and $ and I never use the default behavior.
 " some plugins like to remap $ and 0 and I'd like to use their remappings,
-" so I use *map instead of *noremap
+" so I use ?map instead of ?noremap
 nmap 0 ^
 vmap 0 ^
 nmap H 0
 vmap H 0
 nmap L $
 vmap L $
+
+set undofile " Enable persistent undo
+set undodir=~/.vim/tmp/undo//     " undo files
+set directory=~/.vim/tmp/swap//   " swap files
 
 " Autocmd
 
