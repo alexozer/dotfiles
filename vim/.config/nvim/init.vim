@@ -60,6 +60,7 @@ Plug 'tpope/vim-sleuth'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'xolox/vim-misc' | Pl?g 'xolox/vim-session'
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
+"Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -155,7 +156,6 @@ vmap L $
 
 set undofile " Enable persistent undo
 set undodir=~/.vim/tmp/undo//     " undo files
-set directory=~/.vim/tmp/swap//   " swap files
 
 " Autocmd
 
