@@ -32,6 +32,7 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sleuth'
+Plug 'junegunn/goyo.vim'
 
 " maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -154,6 +155,7 @@ vmap H 0
 nmap L $
 vmap L $
 
+set noswapfile
 set undofile " Enable persistent undo
 set undodir=~/.vim/tmp/undo//     " undo files
 
