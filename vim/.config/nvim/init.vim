@@ -61,7 +61,7 @@ Plug 'junegunn/goyo.vim'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'xolox/vim-misc' | Pl?g 'xolox/vim-session'
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
-"Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
