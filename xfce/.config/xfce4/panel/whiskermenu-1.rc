@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=pavucontrol.desktop,dolphin-emu.desktop,visual-studio-code.desktop,org.gnome.Weather.Application.desktop,anki.desktop,org.gnome.Cheese.desktop,signal.desktop,xfce-ui-settings.desktop,spotify.desktop
+recent=dolphin-emu.desktop,pavucontrol.desktop,visual-studio-code.desktop,org.gnome.Weather.Application.desktop,anki.desktop,org.gnome.Cheese.desktop,signal.desktop,xfce-ui-settings.desktop,spotify.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
