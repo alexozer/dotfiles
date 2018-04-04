@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=gparted.desktop,virtualbox.desktop,gimp.desktop,gpick.desktop,dolphin-emu.desktop,eog.desktop,firefox-developer-edition.desktop,visual-studio-code.desktop,org.gnome.baobab.desktop,pavucontrol.desktop
+recent=gimp.desktop,gparted.desktop,virtualbox.desktop,gpick.desktop,dolphin-emu.desktop,eog.desktop,firefox-developer-edition.desktop,visual-studio-code.desktop,org.gnome.baobab.desktop,pavucontrol.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
