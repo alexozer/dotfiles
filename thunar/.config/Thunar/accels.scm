@@ -70,6 +70,7 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-trash" "")
 ; (gtk_accel_path "<Actions>/ThunarActions/uca-action-1446414360287819-1" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/b5eea5de705b6febf16e8d825786ffda" "")
+; (gtk_accel_path "<Actions>/ThunarActions/Tdp::share" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-descending" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/properties" "<Alt>Return")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-type" "")
