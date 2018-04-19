@@ -3,3 +3,6 @@
 /vim/.config/nvim/tmp/
 .mypy_cache/
 /polybar/.config/polybar/secrets.sh
+
+/urlwatch/
+/isync/
