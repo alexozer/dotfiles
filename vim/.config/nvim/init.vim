@@ -148,12 +148,9 @@ nnoremap Y y$
 " easier than ^ and $ and I never use the default behavior.
 " some plugins like to remap $ and 0 and I'd like to use their remappings,
 " so I use ?map instead of ?noremap
-nmap 0 ^
-vmap 0 ^
-nmap H 0
-vmap H 0
-nmap L $
-vmap L $
+map 0 ^
+map H 0
+map L $
 
 set noswapfile
 set undofile " Enable persistent undo
