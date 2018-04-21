@@ -98,7 +98,7 @@ syntax enable			" enable syntax processing
 noremap ; :
 noremap : ;
 
-set scrolloff=5			" leave lines visible at top and bottom of buffer
+set scrolloff=4			" leave lines visible at top and bottom of buffer
 
 set noshowmatch			" don't show matching brackets by flickering
 
