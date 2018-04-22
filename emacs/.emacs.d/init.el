@@ -40,6 +40,7 @@
 (setq backup-by-copying t
       backup-directory-alist '(("." . "~/.cache/emacs/backup"))
       auto-save-file-name-transforms `((".*" "~/.cache/emacs/backup/" t))
+      vc-follow-symlinks nil ;; Edit symlinks at their loc, not the path they point to
       inhibit-splash-screen t
       visible-bell nil)
 
@@ -95,9 +96,9 @@
   (evil-global-set-key 'motion "," leader-map)
   (define-key leader-map "i" (lambda () (interactive) (find-file user-init-file)))
   (define-key leader-map "l" (lambda () (interactive) (find-file "~/doc/sync/org/life.org")))
+  (define-key leader-map "r" 'elfeed)
   )
   
-
 (use-package god-mode)
 (use-package evil-god-state :diminish 'god-local-mode)
 
@@ -125,6 +126,12 @@
 (use-package olivetti
   :init (setq-default olivetti-body-width 100))
 
+(use-package elfeed)
+(use-package elfeed-org
+  :init (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
+  :config (elfeed-org)
+  )
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -135,7 +142,7 @@
    '("086970da368bb95e42fd4ddac3149e84ce5f165e90dfc6ce6baceae30cf581ef" "444238426b59b360fb74f46b521933f126778777c68c67841c31e0a68b0cc920" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default))
  '(menu-bar-mode nil)
  '(package-selected-packages
-   '(tao-theme evil-god-state evil-escape evil-org spacemacs-theme evil vlf swiper ivy which-key use-package))
+   '(elfeed-org elfeed tao-theme evil-god-state evil-escape evil-org spacemacs-theme evil vlf swiper ivy which-key use-package))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
