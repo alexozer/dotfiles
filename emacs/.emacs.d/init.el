@@ -89,13 +89,30 @@
   (evil-global-set-key 'motion ";" 'evil-ex)
   (evil-global-set-key 'motion "H" 'evil-first-non-blank)
   (evil-global-set-key 'motion "L" 'evil-end-of-line)
-  (evil-define-key 'motion global-map (kbd "SPC") 'evil-execute-in-god-state)
+  (evil-define-key 'normal global-map (kbd "SPC") 'evil-execute-in-god-state)
   (evil-define-key 'god global-map [escape] 'evil-god-state-bail)
+
+  (defun ozer/open-init-file ()
+    (interactive)
+    (find-file user-init-file))
+
+  (defun ozer/open-life.org ()
+    (interactive)
+    (find-file "~/doc/sync/org/life.org"))
+
+  (defun ozer/write-mode ()
+    (interactive)
+
+    (defun set-state (state)
+      (olivetti-mode state) (variable-pitch-mode state))
+
+    (if (and olivetti-mode buffer-face-mode) (set-state -1) (set-state 1)))
 
   (defvar leader-map (make-sparse-keymap) "Keymap for comma leader key shortcuts")
   (evil-global-set-key 'motion "," leader-map)
-  (define-key leader-map "i" (lambda () (interactive) (find-file user-init-file)))
-  (define-key leader-map "l" (lambda () (interactive) (find-file "~/doc/sync/org/life.org")))
+  (define-key leader-map "i" 'ozer/open-init-file)
+  (define-key leader-map "l" 'ozer/open-life.org)
+  (define-key leader-map "w" 'ozer/write-mode)
   (define-key leader-map "r" 'elfeed)
   )
   
@@ -114,7 +131,7 @@
   )
 
 (use-package evil-org
-  :after org
+ :after org
   :hook ((org-mode . evil-org-mode)
          (evil-org-mode
           . (lambda () (evil-org-set-key-theme '(textobjects insert navigation additional todo)))))
