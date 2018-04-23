@@ -37,7 +37,6 @@ Keep backups in =~/.emacs.d/backups= instead of next to original files.
  backup-by-copying t
  backup-directory-alist '(("." . "~/.emacs.d/backups"))
  auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t))
- vc-follow-symlinks nil ;; Edit symlinks at their loc, not the path they point to
  version-control t
  delete-old-versions t)
 #+END_SRC
@@ -158,8 +157,10 @@ Prevent evil-collection from stealing SPC from evil-god-state.
 #+END_SRC
 
 *** Leader Bindings
-   
+    
 Named functions for bindings.
+
+**** Edit files
 
 #+BEGIN_SRC emacs-lisp
   (defun ozer/open-init-file ()
@@ -169,7 +170,11 @@ Named functions for bindings.
   (defun ozer/open-life.org ()
     (interactive)
     (find-file "~/doc/sync/org/life.org"))
+#+END_SRC
 
+**** Writing mode
+    
+#+BEGIN_SRC 
   (defun ozer/write-mode ()
     (interactive)
 
@@ -179,7 +184,7 @@ Named functions for bindings.
     (if (and olivetti-mode buffer-face-mode) (set-state -1) (set-state 1)))
 #+END_SRC
 
-Create the bindings.
+**** Create the bindings
 
 #+BEGIN_SRC emacs-lisp
   (general-def 

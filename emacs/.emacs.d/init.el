@@ -18,6 +18,7 @@
   (use-package org :ensure org-plus-contrib)
 
   ;; Tangle configuration
+  (setq vc-follow-symlinks nil) ;; Don't warn about my symlinked dotfiles
   (org-babel-load-file (expand-file-name "dotemacs.org" user-emacs-directory))
   (garbage-collect))
 (custom-set-variables
