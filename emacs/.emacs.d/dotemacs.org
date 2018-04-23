@@ -1,0 +1,288 @@
+#+TITLE: Emacs Config
+#+AUTHOR: Alex Ozer
+
+* Bootstrap
+
+** TODO Reindent properly
+** Clean Up UI
+
+I don't want to see much visual clutter and want to use the keyboard for most things.
+
+#+BEGIN_SRC emacs-lisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(toggle-scroll-bar -1)
+(setq use-dialog-box nil)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq 
+  help-window-select t ;; Focus help buffers so I can close them with q
+  inhibit-splash-screen t
+  visible-bell nil)
+#+END_SRC
+
+** Basic General Config
+
+Two-space indents.
+
+#+BEGIN_SRC emacs-lisp
+(setq-default 
+indent-tabs-mode nil
+tab-width 2)
+#+END_SRC
+
+Keep backups in =~/.emacs.d/backups= instead of next to original files.
+
+#+BEGIN_SRC emacs-lisp
+(setq
+ backup-by-copying t
+ backup-directory-alist '(("." . "~/.emacs.d/backups"))
+ auto-save-file-name-transforms `((".*" "~/.emacs.d/backups/" t))
+ vc-follow-symlinks nil ;; Edit symlinks at their loc, not the path they point to
+ version-control t
+ delete-old-versions t)
+#+END_SRC
+
+Restore the cursor position, just like the vim macro a lot of people have.
+
+#+BEGIN_SRC emacs-lisp
+(save-place-mode) ;; Restore cursor position in file on open
+#+END_SRC
+
+Garbage collect on lost focus to help prevent it from happening live.
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'focus-out-hook #'garbage-collect)
+#+END_SRC
+
+** Scrolling
+
+A vague attempt at better scrolling behavior
+
+#+BEGIN_SRC emacs-lisp
+(setq
+  scroll-conservatively 1000 ;; Only 'jump' when moving this far
+  scroll-margin 4 ;; Scroll N lines to screen edge
+  scroll-step 1 ;; Keyboard scroll one line at a time
+  mouse-wheel-progressive-speed nil ;; Don't accelerate scrolling
+
+  redisplay-dont-pause t ;; Don't pause display on input
+
+  ;; Always redraw immediately when scrolling,
+  ;; More responsive and doesn't hang!
+  fast-but-imprecise-scrolling nil
+  jit-lock-defer-time 0)
+#+END_SRC
+
+** Custom
+
+The weird "other" way to set options in Emacs. Tell emacs to work with a separate file since our config does not live inside init.el anymore.
+
+#+BEGIN_SRC emacs-lisp
+(setq-default custom-file (expand-file-name "custom.el" user-emacs-directory))
+(when (file-exists-p custom-file)
+  (load custom-file))
+#+END_SRC
+
+* Keybindings
+** Evil
+  
+#+BEGIN_SRC emacs-lisp
+(use-package evil
+  :init
+  (setq evil-want-Y-yank-to-eol t)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (setq evil-ex-substitute-global t)
+  (setq evil-want-integration nil) ;; For evil-collection
+  (setq evil-insert-state-message nil)
+  (setq evil-visual-state-message nil)
+
+  :config (evil-mode))
+#+END_SRC
+
+Extra evil bindings for various modes.
+
+#+BEGIN_SRC emacs-lisp
+(use-package evil-collection
+  :after evil
+  :custom (evil-collection-setup-minibuffer t)
+  :config
+  (evil-collection-init))
+#+END_SRC
+
+** God Mode
+  
+Use space instead of control for normal Emacs bindings.
+
+#+BEGIN_SRC emacs-lisp
+(use-package god-mode)
+(use-package evil-god-state :diminish 'god-local-mode)
+#+END_SRC
+
+** General Keybindings
+
+*** Vim Key Remappings
+   
+#+BEGIN_SRC emacs-lisp
+(use-package general
+  :config
+
+  (general-def 'motion
+               ":" 'evil-repeat-find-char
+               ";" 'evil-ex
+               "j" 'evil-next-visual-line          
+               "k" 'evil-previous-visual-line
+               "H" 'evil-first-non-blank
+               "L" 'evil-end-of-line)
+#+END_SRC
+
+*** Calling God Mode
+
+Prevent evil-collection from stealing SPC from evil-god-state.
+
+#+BEGIN_SRC emacs-lisp
+(general-override-mode)
+(setq general-override-states '(insert
+                                emacs
+                                hybrid
+                                normal
+                                visual
+                                motion
+                                operator
+                                replace))
+(general-def 
+            :states '(normal visual motion)
+            :keymaps 'override
+            "SPC" 'evil-execute-in-god-state)
+(general-def [escape] 'keyboard-escape-quit)
+#+END_SRC
+
+*** Leader Bindings
+   
+Named functions for bindings.
+
+#+BEGIN_SRC emacs-lisp
+  (defun ozer/open-init-file ()
+    (interactive)
+    (find-file (expand-file-name "dotemacs.org" user-emacs-directory)))
+
+  (defun ozer/open-life.org ()
+    (interactive)
+    (find-file "~/doc/sync/org/life.org"))
+
+  (defun ozer/write-mode ()
+    (interactive)
+
+    (defun set-state (state)
+      (olivetti-mode state) (variable-pitch-mode state))
+
+    (if (and olivetti-mode buffer-face-mode) (set-state -1) (set-state 1)))
+#+END_SRC
+
+Create the bindings.
+
+#+BEGIN_SRC emacs-lisp
+  (general-def 
+    :states '(normal visual) ;; With motion state there appears to be a conflict with ","
+    :prefix ","
+    "i" 'ozer/open-init-file
+    "l" 'ozer/open-life.org
+    "w" 'ozer/write-mode
+    "r" 'elfeed))
+#+END_SRC
+
+* Theme
+
+#+BEGIN_SRC emacs-lisp
+(use-package spacemacs-common
+  :ensure spacemacs-theme
+  :config
+  (load-theme 'spacemacs-light t))
+#+END_SRC
+
+* Comments
+
+The only programming package, I promise.
+
+#+BEGIN_SRC emacs-lisp
+(use-package evil-commentary
+:config (evil-commentary-mode))
+#+END_SRC
+
+* Ivy
+
+#+BEGIN_SRC emacs-lisp
+(use-package ivy
+  :init
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "")
+  (setq ivy-use-selectable-prompt t)
+
+  :config 
+(ivy-mode))
+
+(use-package counsel
+  :config (counsel-mode))
+#+END_SRC
+
+* Which-Key
+
+#+BEGIN_SRC emacs-lisp
+  (use-package which-key
+    :init
+    (setq which-key-idle-delay 0.4) ;; Same small delay as Spacemacs
+
+    :config
+    (which-key-mode)
+    (which-key-enable-god-mode-support)
+    )
+#+END_SRC
+
+* Org
+
+** Core
+
+#+BEGIN_SRC emacs-lisp
+(use-package org
+  :hook (org-mode . org-indent-mode)
+  :config
+  (setq org-log-done 'time))
+#+END_SRC
+
+** Evil Org Bindings
+   
+#+BEGIN_SRC emacs-lisp
+(use-package evil-org
+  :after org
+  :hook ((org-mode . evil-org-mode)
+         (evil-org-mode . (lambda () (evil-org-set-key-theme '(textobjects
+                                                               insert
+                                                               navigation
+                                                               additional
+                                                               todo)))))
+
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+#+END_SRC
+
+** Oviletti
+
+For a nice writing environment.
+
+#+BEGIN_SRC emacs-lisp
+(use-package olivetti
+  :init (setq-default olivetti-body-width 100))
+#+END_SRC
+
+* Elfeed
+
+#+BEGIN_SRC emacs-lisp
+(use-package elfeed)
+
+(use-package elfeed-org
+  :init (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org"))
+  :config (elfeed-org)
+  )
+#+END_SRC
+
