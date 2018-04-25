@@ -148,9 +148,3 @@ super + x
 
 super + {bracketleft,bracketright}
 	xrandr --output eDP1 --mode {800x600,2560x1600}
-
-super + space; c
-	chromium --app=https://calendar.google.com/calendar/r/custom/4/w
-
-super + space; t
-	chromium --app=https://todoist.com/app\#project%2F2178312784

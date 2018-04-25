@@ -471,8 +471,14 @@ before packages are loaded."
 
     (if (and olivetti-mode buffer-face-mode) (set-state -1) (set-state 1)))
 
+  (defun ozer/open-life.org ()
+    (interactive)
+    (find-file "~/doc/sync/org/life.org"))
+
   ;; Replace Spacemacs's centered buffer mode with this
   (spacemacs/set-leader-keys "wc" 'ozer/write-mode)
+
+  (spacemacs/set-leader-keys "gl" 'ozer/open-life.org)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
