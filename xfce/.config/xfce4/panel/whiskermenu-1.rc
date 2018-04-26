@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=emacs.desktop,visual-studio-code.desktop,xfce-mouse-settings.desktop,org.gnome.Cheese.desktop,spotify.desktop,exo-mail-reader.desktop,gpick.desktop,electron.desktop,xfce-backdrop-settings.desktop
+recent=emacs.desktop,org.gnome.Cheese.desktop,xfce4-mime-settings.desktop,nvim.desktop,visual-studio-code.desktop,xfce-mouse-settings.desktop,spotify.desktop,exo-mail-reader.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
@@ -19,8 +19,8 @@ display-recent-default=false
 position-search-alternate=true
 position-commands-alternate=false
 position-categories-alternate=false
-menu-width=2560
-menu-height=1572
+menu-width=970
+menu-height=778
 menu-opacity=100
 command-settings=xfce4-settings-manager
 show-command-settings=false

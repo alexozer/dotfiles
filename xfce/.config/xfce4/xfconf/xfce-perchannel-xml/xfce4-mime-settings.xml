@@ -2,8 +2,8 @@
 
 <channel name="xfce4-mime-settings" version="1.0">
   <property name="last" type="empty">
-    <property name="window-width" type="int" value="2560"/>
-    <property name="window-height" type="int" value="1572"/>
+    <property name="window-width" type="int" value="1272"/>
+    <property name="window-height" type="int" value="1564"/>
     <property name="mime-width" type="int" value="300"/>
     <property name="status-width" type="int" value="75"/>
     <property name="default-width" type="int" value="2154"/>

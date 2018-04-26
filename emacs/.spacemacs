@@ -168,8 +168,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-light
-                         spacemacs-dark)
+   dotspacemacs-themes '(spacemacs-dark
+                         spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `vim-powerline' and `vanilla'. The first three
@@ -437,17 +437,19 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq-default use-dialog-box nil) ;; Use keyboard instead of dialog box for questions
-  (setq-default vc-follow-symlinks nil)
+  (setq-default
+   use-dialog-box nil ;; Use keyboard instead of dialog box for questions
+   vc-follow-symlinks nil
 
-  (setq-default evil-vsplit-window-right t)
-  (setq-default evil-split-window-below t)
-  (setq-default evil-insert-state-message nil) ;; Don't show "-- INSERT --" below modeline
-  (setq-default evil-visual-state-message nil) ;; Don't show "-- VISUAL --" below modeline
+   evil-vsplit-window-right t
+   evil-split-window-below t
+   evil-insert-state-message nil ;; Don't show "-- INSERT --" below modeline
+   evil-visual-state-message nil ;; Don't show "-- VISUAL --" below modeline
 
-  (setq-default org-want-todo-bindings t)
+   org-want-todo-bindings t
 
-  (setq-default olivetti-body-width 100)
+   olivetti-body-width 100
+   create-lockfiles nil)
   )
 
 (defun dotspacemacs/user-config ()
