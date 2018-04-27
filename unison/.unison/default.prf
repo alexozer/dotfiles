@@ -1,5 +1,6 @@
 
 # Unison preferences file
+perms = 0
 log = false
 backupcurrent = Name *
-merge = Name * -> orgoogle/merge.sh CURRENT1 CURRENT2 NEW CURRENTARCHOPT
+merge = Name * -> orgoogle-merge CURRENT1 CURRENT2 NEW CURRENTARCHOPT

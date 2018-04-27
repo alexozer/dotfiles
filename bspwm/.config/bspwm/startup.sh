@@ -18,3 +18,5 @@ dex -a &
 thunar --daemon &
 chromium --no-startup-window &
 CM_SELECTIONS="clipboard" clipmenud &
+
+orgoogle ~/doc/sync &

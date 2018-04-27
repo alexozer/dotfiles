@@ -111,9 +111,6 @@ super + shift + Escape
 super + t
 	gnome-terminal -- htop
 
-super + {comma,period}
-	gnome-terminal -e 'ssh {artemis,apollo}'
-
 super + shift + Return
 	gnome-terminal -e 'ssh auv'
 
@@ -148,3 +145,6 @@ super + x
 
 super + {bracketleft,bracketright}
 	xrandr --output eDP1 --mode {800x600,2560x1600}
+
+super + comma
+	tdrop emacs
