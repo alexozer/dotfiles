@@ -1,13 +1,7 @@
-# Unix Dotfiles
+# Alex Ozer's Unix Dotfiles
 
-> Alex Ozer
-
-This is where I share my dotfiles, with terrible commit messages that is.
-
-Current screenshots:
-![launcher](launcher.png)
-![vscode](vscode.png)
-![full](full.png)
+These are automatically pushed nightly, and manually by me on occasion with an
+equally undescriptive commit message. Enjoy!
 
 I use:
 - Macbook Pro Retina 2015 (MF840LL/A)
@@ -37,3 +31,8 @@ $ git clone https://github.com/alexozer/dotfiles.git .dotfiles
 $ cd .dotfiles
 $ stow vim zsh bspwm # ...
 ```
+
+Screenshots:
+![launcher](launcher.png)
+![vscode](vscode.png)
+![full](full.png)
