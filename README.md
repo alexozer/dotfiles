@@ -3,7 +3,10 @@
 These are automatically pushed nightly, and manually by me on occasion with an
 equally undescriptive commit message. Enjoy!
 
+## My Setup
+
 I use:
+
 - Macbook Pro Retina 2015 (MF840LL/A)
 - Arch Linux
 - Bspwm (window manager)
@@ -24,7 +27,10 @@ I use:
 - Ubuntu Mono derivative Powerline (terminal font)
 - Fira Code (VSCode font)
 
+## Install
+
 You can symlink these dotfiles to your home directory using GNU stow:
+
 ```bash
 $ cd
 $ git clone https://github.com/alexozer/dotfiles.git .dotfiles
@@ -32,7 +38,8 @@ $ cd .dotfiles
 $ stow vim zsh bspwm # ...
 ```
 
-Screenshots:
+## Screenshots
+
 ![launcher](launcher.png)
 ![vscode](vscode.png)
 ![full](full.png)
