@@ -112,7 +112,7 @@ super + t
 	gnome-terminal -- htop
 
 super + shift + Return
-	gnome-terminal -e 'ssh auv'
+	tdrop -a gnome-terminal
 
 super + shift + {comma,period}
 	exo-open http://192.168.0.{93,91}:5000
