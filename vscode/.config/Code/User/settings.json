@@ -3,7 +3,6 @@
   // "editor.fontFamily": "Ubuntu Mono derivative Powerline",
   "editor.fontFamily": "Fira Code Retina",
   "editor.fontSize": 13,
-  "editor.lineHeight": 18,
   "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": false,
@@ -17,38 +16,20 @@
   "window.zoomLevel": 0,
   "vim.otherModesKeyBindingsNonRecursive": [
     {
-      "before": [
-        ";"
-      ],
-      "after": [
-        ":"
-      ]
+      "before": [";"],
+      "after": [":"]
     },
     {
-      "before": [
-        ":"
-      ],
-      "after": [
-        ";"
-      ]
+      "before": [":"],
+      "after": [";"]
     },
     {
-      "before": [
-        "H"
-      ],
-      "after": [
-        "g",
-        "^"
-      ]
+      "before": ["H"],
+      "after": ["g", "^"]
     },
     {
-      "before": [
-        "L"
-      ],
-      "after": [
-        "g",
-        "$"
-      ]
+      "before": ["L"],
+      "after": ["g", "$"]
     }
   ],
   "C_Cpp.intelliSenseEngine": "Default",
