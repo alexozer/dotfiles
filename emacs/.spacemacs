@@ -454,6 +454,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
    undo-tree-auto-save-history t
    undo-tree-history-directory-alist '(("." . "~/.emacs.d/history"))
+
+   org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "NOPE"))
    )
   )
 
@@ -504,6 +506,15 @@ before packages are loaded."
     "gw" 'ozer/write-mode
     "gl" 'ozer/open-life.org)
 
+  ;; Reload TODO statistics upon load (Orgzly may have modified them)
+  ;; See https://stackoverflow.com/questions/6138029/how-to-add-a-hook-to-only-run-in-a-particular-mode
+  ;; for adding a hook native to a major mode
+  ;; (add-hook 'org-mode-hook
+  ;;           (lambda () (add-hook
+  ;;                       'after-revert-hook
+  ;;                       (lambda () (org-update-statistics-cookies t))
+  ;;                       nil
+  ;;                       'make-it-local)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

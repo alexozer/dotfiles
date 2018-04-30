@@ -11,6 +11,7 @@
       <value type="string" value="Electron"/>
       <value type="string" value="Firefox"/>
       <value type="string" value="Firefox Developer Edition"/>
+      <value type="string" value="google-chrome"/>
       <value type="string" value="gopass"/>
       <value type="string" value="HandBrake"/>
       <value type="string" value="Kdenlive"/>
