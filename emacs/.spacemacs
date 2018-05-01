@@ -455,7 +455,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
    undo-tree-auto-save-history t
    undo-tree-history-directory-alist '(("." . "~/.emacs.d/history"))
 
-   org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "NOPE"))
+   org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "CANCELED"))
    )
   )
 
