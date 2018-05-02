@@ -455,7 +455,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
    undo-tree-auto-save-history t
    undo-tree-history-directory-alist '(("." . "~/.emacs.d/history"))
 
-   org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "CANCELED"))
+   org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)"))
    )
   )
 
@@ -504,7 +504,8 @@ before packages are loaded."
 
   (spacemacs/set-leader-keys
     "gw" 'ozer/write-mode
-    "gl" 'ozer/open-life.org)
+    "gl" 'ozer/open-life.org
+    "gi" 'org-set-visibility-according-to-property)
 
   ;; Reload TODO statistics upon load (Orgzly may have modified them)
   ;; See https://stackoverflow.com/questions/6138029/how-to-add-a-hook-to-only-run-in-a-particular-mode

@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=xfce-display-settings.desktop,google-chrome.desktop,pavucontrol.desktop,simplescreenrecorder.desktop,screenkey.desktop,xfce-ui-settings.desktop,firefox-developer-edition.desktop,tor-browser-en.desktop,xfce-settings-manager.desktop,emacs.desktop
+recent=everdo.desktop,xfce-display-settings.desktop,pavucontrol.desktop,simplescreenrecorder.desktop,screenkey.desktop,xfce-ui-settings.desktop,tor-browser-en.desktop,xfce-settings-manager.desktop,emacs.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
