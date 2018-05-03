@@ -1,4 +1,5 @@
 {
+  "editor.wordWrapColumn": 100,
   // "editor.fontFamily": "Iosevka Medium",
   // "editor.fontFamily": "Ubuntu Mono derivative Powerline",
   "editor.fontFamily": "Fira Code Retina",
@@ -9,27 +10,44 @@
   "editor.renderWhitespace": "none",
   "editor.tabCompletion": true,
   "keyboard.dispatch": "keyCode",
-  "vim.enableNeovim": true,
   "vim.leader": "<space>",
   "vim.useCtrlKeys": true,
   "window.menuBarVisibility": "hidden",
   "window.zoomLevel": 0,
   "vim.otherModesKeyBindingsNonRecursive": [
     {
-      "before": [";"],
-      "after": [":"]
+      "before": [
+        ";"
+      ],
+      "after": [
+        ":"
+      ]
     },
     {
-      "before": [":"],
-      "after": [";"]
+      "before": [
+        ":"
+      ],
+      "after": [
+        ";"
+      ]
     },
     {
-      "before": ["H"],
-      "after": ["g", "^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "g",
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["g", "$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "g",
+        "$"
+      ]
     }
   ],
   "C_Cpp.intelliSenseEngine": "Default",
@@ -86,5 +104,7 @@
   "vim.foldfix": false,
   "workbench.colorTheme": "Dracula",
   "search.smartCase": true,
-  "latex-workshop.view.pdf.viewer": "tab"
+  "latex-workshop.view.pdf.viewer": "tab",
+  "python.formatting.autopep8Args": [],
+  "[python]": {},
 }
