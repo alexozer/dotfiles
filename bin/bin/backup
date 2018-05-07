@@ -32,7 +32,7 @@ doBackup() {
 }
 
 fail() {
-	ntfy -b linux -b phone send $'Backup failed!\n'"$*"
+	email-me "Backup failed!" "$*"
 	return 1
 }
 

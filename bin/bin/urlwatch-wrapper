@@ -3,5 +3,5 @@
 # Enable access to keyring so email works
 out="$(urlwatch)"
 if [[ -n "$out" ]]; then
-	printf "Subject: urlwatch changes\\n%s" "$out" | msmtp "$(gopass show emailaddress)"
+	email-me "urlwatch changes" "$out"
 fi
