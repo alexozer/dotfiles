@@ -32,7 +32,7 @@ doBackup() {
 }
 
 fail() {
-	email-me "Backup failed!" "$*"
+	notify-me "Backup failed!" "$*"
 	return 1
 }
 

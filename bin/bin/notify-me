@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
 printf "Subject: %s\\n%s" "$1" "$2" | msmtp "$(gopass show emailaddress)"
+notify-send "$1" "$(echo "$2" | head)"

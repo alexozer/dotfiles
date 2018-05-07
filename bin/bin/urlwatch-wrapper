@@ -3,5 +3,5 @@
 # Enable access to keyring so email works
 out="$(urlwatch)"
 if [[ -n "$out" ]]; then
-	email-me "urlwatch changes" "$out"
+	notify-me "urlwatch changes" "$out"
 fi
