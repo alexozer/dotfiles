@@ -456,6 +456,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
    undo-tree-history-directory-alist '(("." . "~/.emacs.d/history"))
 
    org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)"))
+   org-archive-location "~/doc/sync/org/archive.org::datetree/"
    )
   )
 
@@ -516,6 +517,11 @@ before packages are loaded."
   ;;                       (lambda () (org-update-statistics-cookies t))
   ;;                       nil
   ;;                       'make-it-local)))
+
+  ;; Immediately archive closed items, I really don't want to see them
+  (add-hook 'org-after-todo-state-change-hook
+            (lambda ()
+              (when (org-entry-is-done-p) (org-archive-subtree-default))))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

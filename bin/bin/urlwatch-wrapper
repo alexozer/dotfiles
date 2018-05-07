@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Enable access to keyring so email works
+out="$(urlwatch)"
+if [[ -n "$out" ]]; then
+	printf "Subject: urlwatch changes\\n%s" "$out" | msmtp "$(gopass show emailaddress)"
+fi

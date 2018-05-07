@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-# Enable access to keyring so email works
-source ~/.zshenv 
-urlwatch
