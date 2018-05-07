@@ -56,6 +56,7 @@ This function should only modify configuration layer settings."
      ;; version-control
 
      (elfeed :variables rmh-elfeed-org-files (list "~/.emacs.d/private/elfeed.org"))
+     slack
      )
 
    ;; List of additional packages that will be installed without being
@@ -522,6 +523,14 @@ before packages are loaded."
   (add-hook 'org-after-todo-state-change-hook
             (lambda ()
               (when (org-entry-is-done-p) (org-archive-subtree-default))))
+
+  (slack-register-team
+   :name "CUAUV"
+   :default t
+   :client-id "aso26@cornell.edu"
+   :client-secret (shell-command-to-string "gopass show slackcuauv")
+   :token "token"
+   :subscribed-channels '(general slackbot software))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -536,8 +545,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol t)
  '(package-selected-packages
-   '(csv-mode flyspell-correct-helm flyspell-correct auto-dictionary writeroom-mode visual-fill-column ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org symon string-inflection spaceline-all-the-icons all-the-icons memoize spaceline restart-emacs request rainbow-delimiters persp-mode pcre2el password-generator paradox spinner overseer org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-brain open-junk-file olivetti neotree nameless move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet powerline popwin elfeed editorconfig dumb-jump f dash s define-word counsel-projectile projectile counsel swiper ivy pkg-info epl column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup which-key use-package org-plus-contrib hydra font-lock+ exec-path-from-shell evil goto-chg undo-tree diminish bind-map bind-key async)))
+   '(circe oauth2 websocket emojify ht emoji-cheat-sheet-plus csv-mode flyspell-correct-helm flyspell-correct auto-dictionary writeroom-mode visual-fill-column ws-butler winum volatile-highlights vi-tilde-fringe uuidgen toc-org symon string-inflection spaceline-all-the-icons all-the-icons memoize spaceline restart-emacs request rainbow-delimiters persp-mode pcre2el password-generator paradox spinner overseer org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-brain open-junk-file olivetti neotree nameless move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet powerline popwin elfeed editorconfig dumb-jump f dash s define-word counsel-projectile projectile counsel swiper ivy pkg-info epl column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup which-key use-package org-plus-contrib hydra font-lock+ exec-path-from-shell evil goto-chg undo-tree diminish bind-map bind-key async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=unison.desktop,org.gnome.Cheese.desktop,emacs.desktop,xfce-display-settings.desktop,pavucontrol.desktop,simplescreenrecorder.desktop,screenkey.desktop,xfce-ui-settings.desktop,tor-browser-en.desktop,xfce-settings-manager.desktop
+recent=xfce-display-settings.desktop,unison.desktop,org.gnome.Cheese.desktop,emacs.desktop,pavucontrol.desktop,simplescreenrecorder.desktop,screenkey.desktop,xfce-ui-settings.desktop,tor-browser-en.desktop,xfce-settings-manager.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
@@ -19,8 +19,8 @@ display-recent-default=false
 position-search-alternate=true
 position-commands-alternate=false
 position-categories-alternate=false
-menu-width=2560
-menu-height=1572
+menu-width=1272
+menu-height=1564
 menu-opacity=100
 command-settings=xfce4-settings-manager
 show-command-settings=false
