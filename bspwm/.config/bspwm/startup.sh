@@ -16,5 +16,4 @@ xfce4-panel --disable-wm-check &
 
 dex -a &
 thunar --daemon &
-chromium --no-startup-window &
 CM_SELECTIONS="clipboard" clipmenud &

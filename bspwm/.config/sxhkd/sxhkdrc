@@ -75,10 +75,10 @@ super + Return
 	gnome-terminal
 
 super + w
-	chromium
+	firefox-developer-edition
 
 super + shift + w
-	chromium --incognito
+	firefox-developer-edition --private-window
 
 super + v
 	code -n
@@ -121,7 +121,9 @@ super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
 
 super + o
-	gnome-terminal-popup browser-bookmarks 160x24
+	gnome-terminal-popup "fzf-tmux --reverse -u 30% --ansi --no-hscroll --tiebreak=begin |\
+	awk 'BEGIN { FS = "\t" } { print $2 }' |\
+	xargs --no-run-if-empty firefox-developer-edition"
 
 super + O
 	gnome-terminal-popup 'rg --color never --files |\
@@ -146,5 +148,5 @@ super + x
 super + {bracketleft,bracketright}
 	xrandr --output eDP1 --mode {800x600,2560x1600}
 
-super + comma
-	tdrop emacs
+super + shift + b
+	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24

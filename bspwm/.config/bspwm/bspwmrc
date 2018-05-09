@@ -21,6 +21,7 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 bspc rule -a Zathura state=tiled
 bspc rule -a Emacs state=tiled
+bspc rule -a "Firefox Developer Edition" state=tiled
 bspc rule -a Polybar border=off
 bspc rule -a "Org.gnome.Weather.Application" state=floating
 bspc rule -a "Gpick" state=floating
