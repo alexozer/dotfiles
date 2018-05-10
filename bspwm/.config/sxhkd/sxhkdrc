@@ -111,19 +111,11 @@ super + shift + Escape
 super + t
 	gnome-terminal -- htop
 
-super + shift + Return
-	tdrop -a gnome-terminal
-
 super + shift + {comma,period}
 	exo-open http://192.168.0.{93,91}:5000
 
 super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
-
-super + o
-	gnome-terminal-popup "fzf-tmux --reverse -u 30% --ansi --no-hscroll --tiebreak=begin |\
-	awk 'BEGIN { FS = "\t" } { print $2 }' |\
-	xargs --no-run-if-empty firefox-developer-edition"
 
 super + O
 	gnome-terminal-popup 'rg --color never --files |\
