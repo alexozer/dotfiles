@@ -117,6 +117,9 @@ super + shift + {comma,period}
 super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
 
+super + o
+	gnome-terminal-popup browser-bookmarks
+
 super + O
 	gnome-terminal-popup 'rg --color never --files |\
 	fzf-dmenu | xargs echo -n | xargs -0 exo-open'
