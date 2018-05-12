@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=chromium.desktop,xfce4-notifyd-config.desktop,xfce-session-settings.desktop,org.gnome.Cheese.desktop,emacs.desktop,pavucontrol.desktop,nvim.desktop,org.gnome.Weather.Application.desktop,firefox-developer-edition.desktop,redshift-gtk.desktop
+recent=chromium.desktop,xfce4-notifyd-config.desktop,xfce-session-settings.desktop,org.gnome.Cheese.desktop,emacs.desktop,pavucontrol.desktop,nvim.desktop,org.gnome.Weather.Application.desktop,firefox-developer-edition.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
