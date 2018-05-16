@@ -107,8 +107,10 @@
   "latex-workshop.view.pdf.viewer": "tab",
   "python.formatting.autopep8Args": [],
   "[python]": {},
-  "[cpp]": {
-    
-  },
+  "[cpp]": {},
   "C_Cpp.default.cppStandard": "c++17",
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  }
 }
