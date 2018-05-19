@@ -158,6 +158,9 @@ set undodir=~/.vim/tmp/undo//     " undo files
 
 " Autocmd
 
+" Bug workaround, see https://github.com/neovim/neovim/pull/7985#issuecomment-390101083
+autocmd VimResized * redraw!
+
 " jump to last cursor position in file
 function! SetCursorPosition()
   if &filetype !~ 'svn\|commit\c'
