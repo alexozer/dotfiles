@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# shellcheck source=/home/alex/.config/polybar/secrets.sh
 . ~/.config/polybar/secrets.sh
 
 # Config

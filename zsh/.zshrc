@@ -43,6 +43,11 @@ function chpwd {
     ls --color=always
 }
 
+# Copying to clipboard didn't seem to be working
+function gist {
+  /usr/bin/gist -p | tee >(xsel -b)
+}
+
 # Shortcuts to edit config files
 function e {
     case "$1" in

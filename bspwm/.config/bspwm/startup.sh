@@ -12,7 +12,6 @@ xfsettingsd &
 xfdesktop --disable-wm-check &
 xfce4-notifyd &
 polybar top --reload &
-xfce4-panel --disable-wm-check &
 
 dex -a &
 thunar --daemon &

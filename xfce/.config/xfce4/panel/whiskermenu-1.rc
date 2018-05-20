@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=chromium.desktop,gpick.desktop,xfce-settings-manager.desktop,meshlab.desktop,m64py.desktop,org.gnome.Cheese.desktop,xfce4-notifyd-config.desktop,xfce-session-settings.desktop,pavucontrol.desktop,nvim.desktop
+recent=xfce-backdrop-settings.desktop,xfce-ui-settings.desktop,chromium.desktop,gpick.desktop,xfce-settings-manager.desktop,meshlab.desktop,m64py.desktop,org.gnome.Cheese.desktop,xfce4-notifyd-config.desktop,xfce-session-settings.desktop
 button-title=\ \ 
 button-icon=distributor-logo-archlinux
 button-single-row=false
@@ -19,8 +19,8 @@ display-recent-default=false
 position-search-alternate=true
 position-commands-alternate=false
 position-categories-alternate=false
-menu-width=2560
-menu-height=1572
+menu-width=1272
+menu-height=1564
 menu-opacity=100
 command-settings=xfce4-settings-manager
 show-command-settings=false

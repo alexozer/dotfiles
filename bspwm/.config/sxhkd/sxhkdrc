@@ -69,7 +69,7 @@ super + ctrl + {h,j,k,l}
 #
 
 super + Escape
-	xfce4-popup-whiskermenu
+	rofi -show drun -show-icons
 
 super + Return
 	gnome-terminal
@@ -86,8 +86,8 @@ super + v
 super + e
 	thunar
 
-super + s; {r,f,w}
-	maim {-s,-i root,-i $(xdotool getactivewindow)} /tmp/screenshot.png && ;\
+super + {s, S}; {r,f,w}
+	maim {,-d 2} {-s,-i root,-i $(xdotool getactivewindow)} /tmp/screenshot.png && ;\
 	imgur.sh /tmp/screenshot.png | head -n1 | ;\
 	tee >(xargs notify-send 'Screenshot captured') >(xsel -ib)
 
