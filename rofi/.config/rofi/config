@@ -16,7 +16,7 @@ rofi.separator-style:                solid
 
 rofi.sort: true
 rofi.matching: fuzzy
-rofi.font: Ubuntu Mono derivative Powerline 16
+rofi.font: Ubuntu Mono derivative Powerline 17
 rofi.modi: drun
 rofi.hide-scrollbar: true
 rofi.levenshtein-sort: false
