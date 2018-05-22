@@ -4,4 +4,4 @@ pw_name="$(gopass ls --flat | fzf-dmenu)"
 [ -z "$pw_name" ] && exit
 
 pw="$(gopass show -f "$pw_name" | head -n 1 | tr -d '\n')"
-lnch type-this "${1:-0}" "$pw"
+lnch type-this "${1:-0.05}" "$pw"
