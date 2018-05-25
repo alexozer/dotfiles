@@ -63,3 +63,7 @@ export FZF_DEFAULT_OPTS="
 }
 
 _gen_fzf_default_opts
+
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi
