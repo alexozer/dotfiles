@@ -68,7 +68,7 @@ super + ctrl + {h,j,k,l}
 # wm-independent keybindings
 #
 
-super + Escape
+super + space
 	rofi -show drun -show-icons
 
 super + Return
@@ -105,7 +105,7 @@ XF86LaunchB
 	betterlockscreen -l
 
 # make sxhkd reload its configuration files:
-super + shift + Escape
+super + shift + escape
 	pkill -USR1 -x sxhkd
 
 super + t
