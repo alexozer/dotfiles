@@ -1,7 +1,7 @@
 # Alex Ozer's Unix Dotfiles
 
-These are automatically pushed nightly, and manually by me on occasion with an
-equally undescriptive commit message. Enjoy!
+These are automatically pushed nightly, and manually by me on occasion with
+a commit message equally lacking in description. Enjoy!
 
 ## My Setup
 

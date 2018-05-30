@@ -1,4 +1,8 @@
-source /usr/share/zsh/share/antigen.zsh
+if [[ "$(hostname)" == "tinfoil" ]]; then
+  source /usr/share/zsh/share/antigen.zsh
+else
+  source ~/build/antigen.zsh
+fi
 
 antigen use oh-my-zsh
 
