@@ -142,7 +142,7 @@ super + x
 	gnome-terminal-popup fkill 160x24
 
 super + {bracketleft,bracketright}
-	xrandr --output eDP1 --mode {800x600,2560x1600}
+	xrandr --output eDP1 --mode {1280x800,2560x1600}
 
 super + shift + b
 	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
