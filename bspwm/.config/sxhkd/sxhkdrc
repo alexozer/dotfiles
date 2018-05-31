@@ -18,7 +18,7 @@ super + b
 	bspc node @/ --balance
 
 super + {n,i}
-	bspc desktop {next,prev} --focus
+	bspc desktop primary:focused#{next,prev}.local --focus
 
 # Toggle between previous desktop if target desktop number is current desktop
 super + {1-9,0}
@@ -33,14 +33,14 @@ super + shift + {1-9,0}
 	bspc node --to-desktop ^{1-9,10} --focus
 
 super + shift + {n,i}
-	bspc node --to-desktop {next,prev} --focus
+	bspc node --to-desktop primary:focused#{next,prev}.local --focus
 
 super + ctrl + shift + {1-9,0}
 	bspc desktop --swap ^{1-9,10} --focus; \
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 super + ctrl + shift + {n,i}
-	bspc desktop --swap {next,prev} --focus; \
+	bspc desktop --swap primary:focused#{next,prev}.local --focus; \
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 super + {_,shift + }f
@@ -52,8 +52,11 @@ super + y
 super + m
 	bspc desktop --layout next
 
-super + {_,shift +} {h,j,k,l}
-	bspc node {--focus,--swap} {west,south,north,east}
+super + {h,j,k,l}
+	bspc node --focus {west,south,north,east}
+
+super + shift + {h,j,k,l}
+	bspc node --swap {west,south,north,east} --focus
 
 super + {_,shift + }Tab
 	bspc node --focus {next.local,prev.local}
@@ -63,6 +66,12 @@ super + {_,shift + }r
 
 super + ctrl + {h,j,k,l}
 	bspc node --presel-dir \~{west,south,north,east}
+
+super + {comma,period}
+	bspc monitor --focus {west,east}
+
+super + shift + {comma,period}
+	bspc node --to-monitor {west,east} --follow
 
 #
 # wm-independent keybindings
@@ -105,14 +114,11 @@ XF86LaunchB
 	betterlockscreen -l
 
 # make sxhkd reload its configuration files:
-super + shift + escape
+super + shift + Escape
 	pkill -USR1 -x sxhkd
 
 super + t
 	gnome-terminal -- htop
-
-super + shift + {comma,period}
-	exo-open http://192.168.0.{93,91}:5000
 
 super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
@@ -142,7 +148,7 @@ super + x
 	gnome-terminal-popup fkill 160x24
 
 super + {bracketleft,bracketright}
-	xrandr --output eDP1 --mode {1280x800,2560x1600}
+	xrandr --output primary --mode {1280x800,2560x1600}
 
 super + shift + b
 	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
