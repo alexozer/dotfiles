@@ -92,6 +92,9 @@ super + shift + w
 super + v
 	code -n
 
+super + shift + v
+	clion
+
 super + e
 	thunar
 
