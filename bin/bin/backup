@@ -20,10 +20,10 @@ doBackup() {
 	git push
 
 	# Record installed packages
-	pacman -Qqen > ~/doc/personal/pkgs-native-explicit.txt
-	pacman -Qqem > ~/doc/personal/pkgs-foreign-explicit.txt
-	pacman -Qqn > ~/doc/personal/pkgs-native-all.txt
-	pacman -Qqm > ~/doc/personal/pkgs-foreign-all.txt
+	pacman -Qqen > ~/doc/personal/arch/pkgs-native-explicit.txt
+	pacman -Qqem > ~/doc/personal/arch/pkgs-foreign-explicit.txt
+	pacman -Qqn > ~/doc/personal/arch/pkgs-native-all.txt
+	pacman -Qqm > ~/doc/personal/arch/pkgs-foreign-all.txt
 
 	# Backup files
 	for dir in $backupDirs; do

@@ -154,3 +154,6 @@ function syskeep() {
   mkdir -p "$d"
   cp "$1" "$d"/
 }
+
+# OPAM configuration
+. /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

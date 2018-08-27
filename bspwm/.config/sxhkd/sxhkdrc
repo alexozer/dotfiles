@@ -89,11 +89,8 @@ super + w
 super + shift + w
 	firefox-developer-edition --private-window
 
-super + v
-	code -n
-
-super + shift + v
-	clion
+super + v; {c, p, v}
+	{clion, pycharm, code -n}
 
 super + e
 	thunar

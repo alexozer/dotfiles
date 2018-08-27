@@ -14,7 +14,7 @@
   "vim.useCtrlKeys": true,
   "window.menuBarVisibility": "hidden",
   "window.zoomLevel": 0,
-  "vim.otherModesKeyBindingsNonRecursive": [
+  "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [";"],
       "after": [":"]

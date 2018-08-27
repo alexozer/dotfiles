@@ -24,7 +24,8 @@ module-margin-left = 0
 module-margin-right = 6
 
 ; Transparent dracula background
-background = #7F282a36
+; background = #7F282a36
+background = #FF282a36
 foreground = ${colors.comment}
 line-size = 3
 line-color = ${colors.purple}
@@ -39,7 +40,7 @@ wm-name = BSPWM
 tray-position = right
 tray-maxsize = 24
 tray-transparent = true
-tray-background = #00000000
+tray-background = ${colors.background}
 override-redirect = true
 wm-restack=bspwm
 
