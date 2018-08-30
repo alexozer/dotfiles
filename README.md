@@ -3,6 +3,22 @@
 These are automatically pushed nightly, and manually by me on occasion with
 a commit message equally lacking in description. Enjoy!
 
+## Screenshots
+
+![launcher](launcher.png)
+![full](full.png)
+
+## Install
+
+You can symlink these dotfiles to your home directory using GNU stow:
+
+```bash
+$ cd
+$ git clone https://github.com/alexozer/dotfiles.git .dotfiles
+$ cd .dotfiles
+$ stow vim zsh bspwm # ...
+```
+
 ## My Setup
 
 I use:
@@ -29,19 +45,3 @@ I use:
 - Human (cursor theme)
 - Ubuntu Mono derivative Powerline (terminal font)
 - Fira Code (VSCode font)
-
-## Install
-
-You can symlink these dotfiles to your home directory using GNU stow:
-
-```bash
-$ cd
-$ git clone https://github.com/alexozer/dotfiles.git .dotfiles
-$ cd .dotfiles
-$ stow vim zsh bspwm # ...
-```
-
-## Screenshots
-
-![launcher](launcher.png)
-![full](full.png)
