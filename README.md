@@ -17,7 +17,8 @@ I use:
 - Gnome Terminal
 - Zsh (shell)
 - Antigen (zsh plugin mananger)
-- Visual Studio Code (code editor)
+- Jetbrains IDEs (code editor)
+- Visual Studio Code (misc language editor)
 - Neovim (general-purpose text editor)
 - FZF (fuzzy searcher, I use for files, bookmarks, passwords, clipboard)
 - Clipmenu (clipboard history manager)
@@ -43,5 +44,4 @@ $ stow vim zsh bspwm # ...
 ## Screenshots
 
 ![launcher](launcher.png)
-![vscode](vscode.png)
 ![full](full.png)
