@@ -75,7 +75,7 @@ function e {
 	    $EDITOR $HOME/.config/bspwm/startup.sh
 	    ;;
 	env)
-	    $EDITOR $HOME/.profile
+	    $EDITOR $HOME/.zprofile
 	    ;;
 	ssh)
 	    $EDITOR $HOME/.ssh/config
