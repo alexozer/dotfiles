@@ -20,7 +20,6 @@ bspc monitor HDMI2 -d 10
 
 bspc rule -a Zathura state=tiled
 bspc rule -a Emacs state=tiled
-bspc rule -a "Firefox Developer Edition" state=tiled
 bspc rule -a Polybar border=off
 bspc rule -a "Org.gnome.Weather.Application" state=floating
 bspc rule -a "Gpick" state=floating
