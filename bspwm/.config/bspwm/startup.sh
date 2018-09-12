@@ -6,7 +6,7 @@ sxhkd &
 xsetroot -cursor_name left_ptr
 
 # run hidden gnome-terminal instance to act as server
-bspc rule --add Gnome-terminal --one-shot state=floating hidden=on
+bspc rule --add Gnome-terminal --one-shot state=floating hidden=on desktop=^10
 gnome-terminal &
 
 compton &
