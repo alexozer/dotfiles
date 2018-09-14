@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+firefox-developer-edition inbox.google.com
+firefox-developer-edition messenger.com
+firefox-developer-edition cuauv.slack.com

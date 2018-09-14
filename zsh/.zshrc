@@ -155,5 +155,9 @@ function syskeep() {
   cp "$1" "$d"/
 }
 
+function vbuild() {
+  iverilog -g2012 -o "$1" "$1".v && ./"$1"
+}
+
 # OPAM configuration
 . /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
