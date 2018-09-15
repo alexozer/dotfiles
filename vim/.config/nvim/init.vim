@@ -188,7 +188,7 @@ augroup END
 
 augroup verilog
 	autocmd!
-	autocmd FileType verilog setlocal shiftwidth=2
+	autocmd FileType verilog setlocal ft=systemverilog shiftwidth=2
 augroup END
 
 " Misc
