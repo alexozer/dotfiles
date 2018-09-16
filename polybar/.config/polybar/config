@@ -32,8 +32,7 @@ line-color = ${colors.purple}
 border-size = 0
 
 font-0 = NotoSans-Regular:size=14;2
-font-1 = "Ionicons:pixelsize=19;4"
-font-2 = "Material Icons:pixelsize=19;6"
+font-1 = "SauceCodePro Nerd Font:pixelsize=17;3"
 wm-name = BSPWM
 
 
@@ -51,12 +50,12 @@ margin-stop = ${bar/top.height}
 
 [module/date]
 type = internal/date
-date = "  %a %d"
+date = "  %a %d"
 
 [module/time]
 type = internal/date
 ; The right separator doesn't seem to apply to the panel, so add it in the date format
-date = "  %I:%M   "
+date = "  %I:%M   "
 
 [module/bspwm]
 type = internal/bspwm
@@ -64,7 +63,7 @@ enable-click = false
 enable-scroll = false
 
 format = <label-mode>  <label-state>
-label-monocle = ""
+label-monocle = ""
 
 label-focused = %name%
 label-focused-foreground = ${colors.foreground}
@@ -87,10 +86,10 @@ label-empty-padding = 2
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume =   %percentage%%
+label-volume = 墳  %percentage%%
 
 format-muted = <label-muted>
-label-muted =   %percentage%%
+label-muted = ﱝ  %percentage%%
 format-muted-foreground = ${colors.comment}
 
 bar-volume-width = 10
@@ -104,7 +103,7 @@ bar-volume-empty = ${module/volume.bar-volume-fill}
 type = internal/xbacklight
 
 format = <label>
-label = " %percentage%%"
+label = " %percentage%%"
 
 bar-width = 10
 bar-indicator = |
@@ -116,9 +115,9 @@ type = internal/network
 interface = wlp3s0
 
 format-connected = <label-connected>
-label-connected =   %essid%
+label-connected = 直  %essid%
 format-disconnected = <label-disconnected>
-label-disconnected =   disconnected
+label-disconnected = 直  disconnected
 
 [module/battery]
 type = internal/battery
@@ -131,16 +130,17 @@ time-format = %-H hr %-M min
 ; format-discharging = <ramp-capacity> <label-discharging>
 ;format-full = <ramp-capacity> <label-full>
 format-charging = <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-label-charging =  %percentage%%  %time%
+format-discharging = <ramp-capacity>  <label-discharging>
+label-charging =   %percentage%%  %time%
 label-discharging = %percentage%%  %time%
 label-full =  %percentage%%
-
-ramp-capacity-0 = " "
+;
+ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${colors.red}
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-3 = " "
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
 [module/music]
 type = custom/script
@@ -152,7 +152,7 @@ tail = true
 type = custom/script
 interval = 300
 format = <label>
-format-prefix = "  "
+format-prefix = "  "
 ; format-prefix-foreground = ${colors.foreground}
 exec = ~/.config/polybar/weather.sh
 
