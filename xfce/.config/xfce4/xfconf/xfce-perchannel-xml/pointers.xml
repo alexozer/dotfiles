@@ -37,4 +37,10 @@
     <property name="Acceleration" type="double" value="5.000000"/>
     <property name="ReverseScrolling" type="bool" value="false"/>
   </property>
+  <property name="Bluetooth__Mouse" type="empty">
+    <property name="RightHanded" type="bool" value="true"/>
+    <property name="ReverseScrolling" type="bool" value="false"/>
+    <property name="Threshold" type="int" value="1"/>
+    <property name="Acceleration" type="double" value="5.000000"/>
+  </property>
 </channel>
