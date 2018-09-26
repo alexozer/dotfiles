@@ -17,9 +17,9 @@
           <property name="image-style" type="int" value="5"/>
           <property name="last-image" type="string" value="/home/alex/pic/bg/low-poly-space.png"/>
           <property name="color1" type="array">
-            <value type="uint" value="65535"/>
-            <value type="uint" value="65535"/>
-            <value type="uint" value="65535"/>
+            <value type="uint" value="0"/>
+            <value type="uint" value="0"/>
+            <value type="uint" value="0"/>
             <value type="uint" value="65535"/>
           </property>
           <property name="backdrop-cycle-enable" type="bool" value="false"/>
@@ -181,12 +181,12 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="3"/>
-          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/low-poly-space.png"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="3"/>
-          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/low-poly-space.png"/>
         </property>
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -715,7 +715,7 @@
       </property>
     </property>
     <property name="single-workspace-mode" type="bool" value="true"/>
-    <property name="single-workspace-number" type="int" value="1"/>
+    <property name="single-workspace-number" type="int" value="0"/>
   </property>
   <property name="desktop-icons" type="empty">
     <property name="icon-size" type="uint" value="32"/>

@@ -68,6 +68,9 @@ function e {
 	bspwm)
 	    $EDITOR $HOME/.config/bspwm/bspwmrc
 	    ;;
+	i3)
+	    $EDITOR $HOME/.i3/config
+	    ;;
 	vim)
 	    $EDITOR $HOME/.vimrc
 	    ;;

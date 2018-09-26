@@ -9,12 +9,12 @@ xsetroot -cursor_name left_ptr
 bspc rule --add Gnome-terminal --one-shot state=floating hidden=on desktop=^10
 gnome-terminal &
 
-compton &
+# compton &
 
 xfsettingsd &
-xfdesktop --disable-wm-check &
 xfce4-notifyd &
 polybar top --reload &
+nitrogen --restore &
 
 dex -a &
 thunar --daemon &
