@@ -4,15 +4,21 @@
 
 bspc config pointer_modifier mod4
 
-bspc config -m primary top_padding			28
-bspc config border_width 		4
-bspc config window_gap 			0
+panel_height=28
+window_gap=4
+
+bspc config border_width 		0
+bspc config window_gap 			$window_gap
+bspc config -m primary top_padding			$((panel_height - 4))
+bspc config bottom_padding -$window_gap
+bspc config left_padding -$window_gap
+bspc config right_padding -$window_gap
 
 bspc config presel_feedback_color '#1B2B34' 
 
-bspc config borderless_monocle  true
-bspc config gapless_monocle     true
-bspc config single_monocle      true
+# bspc config borderless_monocle  true
+# bspc config gapless_monocle     true
+# bspc config single_monocle      true
 
 bspc config initial_polarity second_child
 bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
