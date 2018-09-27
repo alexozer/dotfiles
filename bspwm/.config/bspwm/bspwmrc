@@ -18,10 +18,10 @@ bspc config presel_feedback_color '#1B2B34'
 bspc config initial_polarity second_child
 
 bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
-bspc monitor HDMI2 -d 10
+bspc monitor HDMI2 -d ext
 
-bspc config remove_unplugged_monitors true
-bspc config remove_disabled_monitors true
+# bspc config remove_unplugged_monitors true
+# bspc config remove_disabled_monitors true
 
 bspc rule -a Zathura state=tiled
 bspc rule -a Emacs state=tiled

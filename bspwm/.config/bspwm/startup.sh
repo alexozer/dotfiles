@@ -12,7 +12,7 @@ gnome-terminal &
 xfsettingsd &
 xfce4-notifyd &
 polybar top --reload &
-nitrogen --restore &
+xfdesktop --disable-wm-check &
 
 dex -a &
 thunar --daemon &
