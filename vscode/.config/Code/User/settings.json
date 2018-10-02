@@ -6,8 +6,6 @@
   "editor.fontSize": 13,
   "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
-  "editor.renderControlCharacters": false,
-  "editor.renderWhitespace": "none",
   "editor.tabCompletion": true,
   "keyboard.dispatch": "keyCode",
   "vim.leader": "<space>",
@@ -32,11 +30,27 @@
       "after": ["g", "$"]
     }
   ],
-  "C_Cpp.intelliSenseEngine": "Default",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": [":"],
+      "after": [";"]
+    },
+    {
+      "before": ["H"],
+      "after": ["g", "^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "$"]
+    }
+  ],
   "editor.acceptSuggestionOnEnter": "off",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
-  "javascript.validate.enable": false,
   "latex-workshop.chktex.enabled": true,
   "prettier.bracketSpacing": false,
   "prettier.semi": false,
@@ -59,7 +73,6 @@
     "**/bower_components": true,
     "**/_build": true
   },
-  "editor.tabSize": 2,
   "git.autofetch": true,
   "prettier.printWidth": 100,
   "shellcheck.run": "onSave",
@@ -86,15 +99,5 @@
   "vim.foldfix": false,
   "workbench.colorTheme": "Dracula",
   "search.smartCase": true,
-  "latex-workshop.view.pdf.viewer": "tab",
-  "python.formatting.autopep8Args": [],
-  "[python]": {},
-  "[cpp]": {},
-  "C_Cpp.default.cppStandard": "c++17",
-  "[python]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 4
-  },
-  "python.pythonPath": "/usr/bin/python3",
-  "C_Cpp.clang_format_style": "LLVM"
+  "latex-workshop.view.pdf.viewer": "tab"
 }
