@@ -13,6 +13,7 @@ endif
 
 " colors
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'liuchengxu/space-vim-dark'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yuttie/hydrangea-vim'
 Plug 'liuchengxu/space-vim-dark'
@@ -157,9 +158,6 @@ set undofile " Enable persistent undo
 set undodir=~/.vim/tmp/undo//     " undo files
 
 " Autocmd
-
-" Bug workaround, see https://github.com/neovim/neovim/pull/7985#issuecomment-390101083
-autocmd VimResized * redraw!
 
 " jump to last cursor position in file
 function! SetCursorPosition()
