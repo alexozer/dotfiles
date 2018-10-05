@@ -90,7 +90,7 @@ set mouse=a
 set nofoldenable
 
 set background=dark
-colorscheme dracula
+colorscheme space-vim-dark
 hi Comment cterm=italic
 
 syntax enable			" enable syntax processing
@@ -231,7 +231,7 @@ let g:ale_lint_on_text_changed="never"
 
 " lightline
 let g:lightline = {
-      \ 'colorscheme': 'Dracula',
+      \ 'colorscheme': 'one',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },
