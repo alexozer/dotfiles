@@ -13,7 +13,6 @@ endif
 
 " colors
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'liuchengxu/space-vim-dark'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yuttie/hydrangea-vim'
 Plug 'liuchengxu/space-vim-dark'
@@ -180,8 +179,7 @@ augroup END
 
 augroup ocaml
 	autocmd!
-	autocmd FileType ocaml setlocal tabstop=2
-	autocmd FileType ocaml setlocal shiftwidth=2
+	autocmd FileType ocaml setlocal tabstop=2 shiftwidth=2
 augroup END
 
 augroup verilog

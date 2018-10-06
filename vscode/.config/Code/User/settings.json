@@ -3,7 +3,6 @@
   // "editor.fontFamily": "Iosevka Medium",
   // "editor.fontFamily": "Ubuntu Mono derivative Powerline",
   "editor.fontFamily": "Fira Code Medium",
-  "editor.fontSize": 13,
   "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
   "editor.tabCompletion": true,
