@@ -99,5 +99,6 @@
   "vim.foldfix": false,
   "workbench.colorTheme": "Dracula",
   "search.smartCase": true,
-  "latex-workshop.view.pdf.viewer": "tab"
+  "latex-workshop.view.pdf.viewer": "tab",
+  "workbench.startupEditor": "newUntitledFile"
 }
