@@ -27,7 +27,6 @@ I use:
 - Arch Linux
 - Bspwm (window manager)
 - Xfce (desktop environment minus window manager)
-- Compton (compositor, used for transparent borders and panel)
 - Whiskermenu (launcher)
 - Polybar (panel)
 - Gnome Terminal
