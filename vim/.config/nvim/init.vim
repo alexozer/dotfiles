@@ -18,8 +18,8 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'liuchengxu/space-vim-dark'
 
 " tools
-Plug 'junegunn/vim-plug'
 Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-fugitive'
 Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -212,7 +212,7 @@ if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
-let g:ctrlp_map = '<leader><space>'
+let g:ctrlp_map = '<leader>p'
 let g:ctrlp_working_path_mode=''
 
 " pencil
