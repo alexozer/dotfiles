@@ -1,0 +1,2 @@
+"061329bcd5cb540179fb1b2ee478ed7679d91d20"
+#s(undo-tree [nil ([nil (#1=[nil nil ((nil org-todo-head nil 8 . 26) (nil org-todo-head nil 7 . 8) (nil org-todo-head nil 3 . 7) (nil org-todo-head nil 2 . 3) (nil org-todo-head nil 1 . 2) (#(" " 0 1 (fontified t line-prefix "" wrap-prefix #("* " 0 2 (face org-indent)) face org-level-1)) . 2) (3 . 9) 1) nil (23489 27506 570532 398000) 0 nil]) ((21 . 22) (1 . 21) (t 23489 27384 113835 115000)) nil (23489 27506 570544 905000) 0 nil]) nil nil (23489 27506 570548 110000) 0 nil] #1# 89 2 nil)

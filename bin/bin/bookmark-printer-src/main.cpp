@@ -7,14 +7,12 @@
 int main() {
   const std::string BOOKMARKS_FILE =
       std::string(std::getenv("HOME")) + "/doc/personal/bookmarks";
+  constexpr int MAX_LEN = 30;
 
   std::fstream bmFile(BOOKMARKS_FILE);
   if (!bmFile.is_open()) {
     std::cout << "Failed to open " << BOOKMARKS_FILE << std::endl;
   }
-
-  std::string line;
-  constexpr int MAX_LEN = 30;
 
   std::stringstream padBufStream;
   for (int i = 0; i < MAX_LEN; i++) {
@@ -22,15 +20,16 @@ int main() {
   }
   std::string padBuf = padBufStream.str();
 
+  std::string line;
   while (!bmFile.eof()) {
     std::getline(bmFile, line);
 
     // Blank or comment
-    if (line.size() == 0 || line[0] == '#') {
+    if (line.empty() || line[0] == '#') {
       continue;
     }
 
-    int pos = line.find('\t');
+    auto pos = line.find('\t');
     if (pos == std::string::npos) {
       std::cout << "Invalid entry, no TAB found" << std::endl;
       return 1;

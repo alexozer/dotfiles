@@ -1,0 +1,16 @@
+"d6d9bfbea689d192c8c8f23e8bf7b2845365c7b6"
+#s(undo-tree [nil (#1=[nil nil ((568 . 1086) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background \"#292b2e\" :foreground \"#b2b2b2\" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 150 :width normal :foundry \"1ASC\" :family \"Ubuntu Mono Derivative Powerline\")))))" 0 518 (fontified nil)) . -568) (565 . 567) (324 . 328) (#(" " 0 1 (fontified nil)) . 324) (#("
+" 0 1 (fontified nil)) . -562) (324 . 325) (561 . 562) (323 . 324) (#(" " 0 1 (fontified nil)) . 323) (313 . 561) (#(" " 0 1 (fontified nil)) . 313) (1 . 314) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-collection-setup-minibuffer t)
+ '(package-selected-packages
+   (quote
+    (org-autolist org-autolist-mode helm helm-config real-auto-save elfeed-org elfeed olivetti evil-org which-key counsel ivy evil-commentary spacemacs-theme general evil-god-state god-mode evil-collection evil org-plus-contrib use-package))))" 0 566 (fontified nil)) . -1) (t 23489 5534 971910 879000)) nil (23489 5541 377842 37000) 0 nil]) nil nil (23489 5541 377851 916000) 0 nil] #1# 1208 1 nil)

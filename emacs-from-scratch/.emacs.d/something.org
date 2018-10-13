@@ -1,0 +1,7 @@
+* Day
+** TODO finish thing 1
+** DONE sadf asdf 
+CLOSED: [2018-10-12 Fri 17:49]
+* Week
+* Month
+** this is so annoying!
