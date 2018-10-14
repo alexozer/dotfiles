@@ -46,7 +46,7 @@
   ;; More responsive and doesn't hang!
   fast-but-imprecise-scrolling nil
   jit-lock-defer-time 0
-
+  line-spacing 0
   custom-file (expand-file-name "custom.el" user-emacs-directory)
 )
 
@@ -74,25 +74,26 @@
 
   :config (evil-mode))
 
-;; (use-package spacemacs-common
-;;   :ensure spacemacs-theme
-;;   :init
-;;   (setq spacemacs-theme-org-height nil)
-;;   (setq spacemacs-theme-org-highlight nil)
-;;   :config
-;;   (load-theme 'spacemacs-dark t))
-
-(use-package doom-themes
-  :config
-  (load-theme 'doom-nord-light))
-
 (use-package evil-commentary
   :config (evil-commentary-mode))
+
+(use-package spacemacs-common
+  :ensure spacemacs-theme
+
+  :init
+  ;; (setq spacemacs-theme-org-height nil)
+  ;; (setq spacemacs-theme-org-highlight nil)
+
+  :config
+  (load-theme 'spacemacs-dark t))
 
 (use-package org
   :ensure org-plus-contrib
   :hook (org-mode . org-indent-mode)
-  )
+
+  :init
+  (setq org-archive-location "%s-archive::datetree/")
+)
 
 (use-package general
   :config
@@ -117,13 +118,20 @@
     :states 'normal
     :prefix "SPC"
 
+    "SPC" 'execute-extended-command
     "i" (lambda ()
           (interactive)
           (find-file (expand-file-name "init.el" user-emacs-directory)))
+    "t" (lambda ()
+          (interactive)
+          (find-file "~/doc/personal/todo/todo.org"))
     )
+
+  ;; Not 100% sure how key-translation-map is working well with evil
+  (general-def key-translation-map "ESC" "C-g")
 
   (general-def org-mode-map
     :states 'normal
-
-    "RET" 'ozer/new-org-heading)
+    "RET" 'ozer/new-org-heading
+    "t" 'org-todo)
   )

@@ -1,3 +1,19 @@
-"710aa170cbd304e94335771aaa4328a41b27c969"
-#s(undo-tree [nil (#1=[nil nil ((359 . 602) (278 . 282) (#(" " 0 1 (fontified nil)) . 278) (#("
-" 0 1 (fontified nil)) . -356) (278 . 279) (355 . 356) (277 . 278) (#(" " 0 1 (fontified nil)) . 277) (267 . 355) (#(" " 0 1 (fontified nil)) . 267) (1 . 268) (t 23489 28028 69100 969000)) nil (23489 28068 438669 899000) 0 nil]) nil nil (23489 28068 438675 350000) 0 nil] #1# 100 1 nil)
+"d32c7bcb6063984f288dfd6d7a40aff54e866b7d"
+#s(undo-tree [nil (#1=[nil nil ((914 . 1231) (#("(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-done ((t (:foreground \"dim gray\" :strike-through \"lawn green\")))))" 0 317 (fontified nil)) . -914) (911 . 913) (735 . 739) (#(" " 0 1 (fontified nil)) . 735) (#("
+" 0 1 (fontified nil)) . -908) (735 . 736) (907 . 908) (734 . 735) (#(" " 0 1 (fontified nil)) . 734) (724 . 907) (#(" " 0 1 (fontified nil)) . 724) (694 . 725) (278 . 282) (#(" " 0 1 (fontified nil)) . 278) (#("
+" 0 1 (fontified nil)) . -691) (278 . 279) (690 . 691) (277 . 278) (#(" " 0 1 (fontified nil)) . 277) (267 . 690) (#(" " 0 1 (fontified nil)) . 267) (1 . 268) (#("(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    (\"6b2636879127bf6124ce541b1b2824800afc49c6ccd65439d6eb987dbf200c36\" \"f0dc4ddca147f3c7b1c7397141b888562a48d9888f1595d69572db73be99a024\" \"d2e9c7e31e574bf38f4b0fb927aaff20c1e5f92f72001102758005e53d77b8c9\" \"cd736a63aa586be066d5a1f0e51179239fe70e16a9f18991f6f5d99732cabb32\" \"6d589ac0e52375d311afaa745205abb6ccb3b21f6ba037104d71111e7e76a3fc\" \"fe666e5ac37c2dfcf80074e88b9252c71a22b6f5d2f566df9a7aa4f9bea55ef8\" default)))
+ '(package-selected-packages
+   (quote
+    (mixed-pitch evil-escape use-package tao-theme spacemacs-theme real-auto-save org-plus-contrib org-autolist helm general evil-commentary doom-themes counsel))))" 0 898 (fontified nil)) . -1) (t 23489 35813 726196 589000)) nil (23489 36544 72178 108000) 0 nil]) nil nil (23489 36544 72184 432000) 0 nil] #1# 1423 1 nil)
