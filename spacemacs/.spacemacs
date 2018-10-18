@@ -501,7 +501,10 @@ before packages are loaded."
   (add-hook 'focus-out-hook #'garbage-collect)
 
   (spacemacs/set-leader-keys
-    "gt" (lambda () (interactive) (find-file "~/doc/personal/org/todo.org")))
+    "gt" (lambda () (interactive) (find-file "~/doc/personal/org/todo.org"))
+    "ga" (lambda () (interactive) (find-file "~/doc/personal/org/archive.org"))
+    "gs" (lambda () (interactive) (find-file "~/doc/personal/org/stickies.org"))
+    )
 
   (add-hook 'org-mode-hook (lambda () (org-indent-mode) (spacemacs/scale-up-font)))
   )
