@@ -152,3 +152,6 @@ super + {bracketleft,bracketright}
 
 super + shift + b
 	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
+
+super + {Down,Up}
+	xbacklight -{dec,inc} 1

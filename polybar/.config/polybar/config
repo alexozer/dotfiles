@@ -41,7 +41,7 @@ tray-background = ${colors.background}
 override-redirect = true
 wm-restack=bspwm
 
-modules-right = music bspwm xbacklight volume battery wlan weather date time
+modules-right = music bspwm xbacklight volume battery wlan weather date
 
 [global/wm]
 margin-stop = ${bar/top.height}
