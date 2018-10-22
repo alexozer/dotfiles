@@ -10,9 +10,9 @@ endif
 
 " Plug
 if has('nvim')
-	call plug#begin('~/.local/share/nvim/plugged')
+  call plug#begin('~/.local/share/nvim/plugged')
 else
-	call plug#begin('~/.vim/plugged')
+  call plug#begin('~/.vim/plugged')
 endif
 
 " Colors
@@ -112,7 +112,7 @@ let g:netrw_home='~/.local/share/nvim'  " Don't store history in vim config dir
 " Load colorscheme
 set background=dark
 colorscheme space-vim-dark
-syntax enable			" Enable syntax processing
+syntax on           " Enable syntax processing
 
 "
 " Mappings
@@ -132,6 +132,10 @@ noremap L $
 " Allow using ; to access command mode in normal and visual mode
 noremap ; :
 noremap : ;
+
+" Move by visual-line by default
+noremap j gj
+noremap k gk
 
 " Splits: use g prefix instead of <C-w>
 nnoremap gh <C-w>h
