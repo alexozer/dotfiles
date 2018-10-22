@@ -1,8 +1,12 @@
 " Alex Ozer
 
 if !has('nvim')
-	set nocompatible
+  set nocompatible
 endif
+
+"
+" Plugins
+"
 
 " Plug
 if has('nvim')
@@ -11,13 +15,13 @@ else
 	call plug#begin('~/.vim/plugged')
 endif
 
-" colors
+" Colors
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yuttie/hydrangea-vim'
 Plug 'liuchengxu/space-vim-dark'
 
-" tools
+" Tools
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-fugitive'
@@ -34,7 +38,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
 
-" maybe wanted in the future
+" Maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
 "Plug 'moll/vim-bbye' " when buffer closed, don't close window
 "Plug 'SirVer/ultisnips'
@@ -51,10 +55,10 @@ Plug 'junegunn/goyo.vim'
 "Plug 'scrooloose/syntastic', {'for': 'ocaml'}
 "Plug 'neomake/neomake'
 "if has('nvim')
-"	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"	Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go'}
-"	Plug 'zchee/deoplete-jedi', {'for': 'python'}
-"	Plug 'zchee/deoplete-clang', {'for': 'cpp'}
+"  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"  Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go'}
+"  Plug 'zchee/deoplete-jedi', {'for': 'python'}
+"  Plug 'zchee/deoplete-clang', {'for': 'cpp'}
 "endif
 "Plug 'klen/python-mode', {'for': 'python'}
 "Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
@@ -65,100 +69,104 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-" Leader
-let mapleader=","
-let maplocalleader="\\"
+"
+" Options
+"
 
-" Spaces
 filetype plugin indent on
 
-set tabstop=4			" number of visual spaces per TAB
-set shiftwidth=4        " no seriously, four spaces per tab
-set nojoinspaces
+" Spaces
+set tabstop=4       " Number of visual spaces per TAB
+set softtabstop=4   " Number of spaces in tab when editing
+set shiftwidth=4    " Number of spaces to use for autoindent
+set expandtab       " Tabs are space
+set autoindent
+set copyindent      " Copy indent from the previous line
 
 " UI
-set termguicolors
-set timeoutlen=1000
-set ttimeoutlen=0
+set termguicolors   " Enable true-color colorscheme support
+set wildmenu        " Visual autocomplete for command menu
+set cursorline	    " Highlight current line
+set mouse=a         " Enable selecting with mouse
+set splitbelow      " Open horizontal splits below current split
+set splitright      " Open vertical splits to the right of current split
+set hidden          " Okay to background modified buffers
+set laststatus=2    " Window will always have a status line
+set scrolloff=4	    " Leave lines visible at top and bottom of buffer
+set noshowmode      " Annoying mode display, the cursor shows which mode we're in
+set ttimeoutlen=0   " Respond to escape immediately
 
-"set relativenumber		" show line numbers relative to current
-set wildmenu			" visual autocomplete for command menu
-set lazyredraw			" redraw only when we need to (not during macros)
-set cursorline			" highlight current line
-set mouse=a
-set nofoldenable
+" Searching
+set ignorecase      " Case-insensitive
+set smartcase       " Override ignorecase if search includes capital letters
+set nohlsearch      " Don't highlight search after search is completed
+set gdefault        " When using :s command, replace all instances on line by default
 
+set clipboard=unnamedplus
+
+" Swap/backup/undo
+set noswapfile      " Disable concurrent editing warning, Vim warns when saving a modified file anyway
+set undofile        " Enable persistent undo
+let g:netrw_home='~/.local/share/nvim'  " Don't store history in vim config dir
+ 
+" Load colorscheme
 set background=dark
 colorscheme space-vim-dark
-hi Comment cterm=italic
+syntax enable			" Enable syntax processing
 
-syntax enable			" enable syntax processing
+"
+" Mappings
+"
 
-" Use ; instead of : for Command-line-mode
+" Loader
+let mapleader = ","
+let maplocalleader = "\\"
+
+" Make Y behave like D and C, instead of like yy
+nnoremap Y y$	
+
+" Much better use of H and L
+noremap H ^
+noremap L $
+
+" Allow using ; to access command mode in normal and visual mode
 noremap ; :
 noremap : ;
 
-set scrolloff=4			" leave lines visible at top and bottom of buffer
-
-set noshowmatch			" don't show matching brackets by flickering
-
-set guitablabel=%t
-
-" splits: use g prefix instead of <C-w>
+" Splits: use g prefix instead of <C-w>
 nnoremap gh <C-w>h
 nnoremap gl <C-w>l
 nnoremap gj <C-w>j
 nnoremap gk <C-w>k
-
 nnoremap gH <C-w>H
 nnoremap gL <C-w>L
 nnoremap gJ <C-w>J
 nnoremap gK <C-w>K
 
-" easier tab manipulation / navigation
+" Easier tab manipulation / navigation
 nnoremap <silent> <leader><tab> :tabnew<cr>
 nnoremap <silent> <leader><s-tab> :tabc<cr>
 nnoremap <silent> <tab> :tabn<cr>
 nnoremap <silent> <s-tab> :tabp<cr>
 
-" easier to escape neovim terminal
-if has('nvim')
-	tnoremap <esc> <c-\><c-n>
-endif
+nnoremap <leader><leader> :e#<cr> " Open last file
 
-" Buffers, Splits, Tabs
-set splitbelow " Open horizontal splits below current split
-set splitright " Open vertical splits to the right of current split
-set hidden		 " okay to background modified buffers
+" Control-Backspace deletes last work in insert mode
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
 
-nnoremap <leader><leader> :e#<cr> " open last file
+" Edit/source vimrc
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
-" Searching
-set incsearch			" search as characters are entered
-set ignorecase		" case-insensitive
-set smartcase			" override ignorecase if search includes capital letters
-set nohlsearch
+" Make word before cursor upper-case
+inoremap <c-u> <esc>bgUwgi
 
-set gdefault			" when using :s command, replace all instances on line by default
-
-" Movement
-" make Y behave like D and C, instead of like yy
-nnoremap Y y$	
-
-" easier than ^ and $ and I never use the default behavior.
-" some plugins like to remap $ and 0 and I'd like to use their remappings,
-" so I use ?map instead of ?noremap
-map 0 ^
-map H 0
-map L $
-
-set noswapfile
-set undofile " Enable persistent undo
-set undodir=~/.vim/tmp/undo//     " undo files
-
+"
 " Autocmd
+"
 
-" jump to last cursor position in file
+" Jump to last cursor position in file
 function! SetCursorPosition()
   if &filetype !~ 'svn\|commit\c'
     if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -172,6 +180,7 @@ augroup restore_cursor
 	autocmd BufReadPost * call SetCursorPosition()
 augroup END
 
+" Disable cursorline with latex, slows down vim a lot
 augroup latex
 	autocmd!
 	autocmd FileType tex setlocal nocursorline
@@ -182,26 +191,9 @@ augroup ocaml
 	autocmd FileType ocaml setlocal tabstop=2 shiftwidth=2
 augroup END
 
-augroup verilog
-	autocmd!
-	autocmd FileType verilog setlocal ft=systemverilog shiftwidth=2
-augroup END
-
-" Misc
-" edit/source vimrc
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
-set clipboard=unnamedplus
-
-" Make word before cursor upper-case
-inoremap <c-u> <esc>bgUwgi
-
-" Control-Backspace deletes last work in insert mode
-noremap! <C-BS> <C-w>
-noremap! <C-h> <C-w>
-
-" Plugin Config
+"
+" Plugins
+"
 
 " nerdtree
 nnoremap <leader>3 :NERDTreeToggle<cr>
@@ -212,7 +204,7 @@ if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
-let g:ctrlp_map = '<leader><space>'
+let g:ctrlp_map = '<leader>p'
 let g:ctrlp_working_path_mode=''
 
 " pencil
@@ -232,8 +224,7 @@ let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ }
-set noshowmode
+\ },
+\ }
 
-" vim:tabstop=2
+" vim:shiftwidth=2

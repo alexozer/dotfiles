@@ -38,8 +38,6 @@ alias vim=$EDITOR # Vim always points to whichever vim version is installed
 alias svim="sudo -E $EDITOR" # Use sudo with vim
 alias o='exo-open' # Open file with default program
 alias matlab='matlab -nodesktop -nosplash' # Matlab repl
-alias a="xhost + > /dev/null && ${CUAUV_SOFTWARE}docker-helper.sh ssh"
-alias cs="cd $CUAUV_SOFTWARE"
 alias pgen="gopass generate"
 
 # Auto ls
@@ -91,6 +89,10 @@ function e {
 	    return 1
 	    ;;
     esac
+}
+
+function cs {
+    ~/cuauv/workspaces/worktrees/master/docker/auv-docker.py cdw "${1:-master}"
 }
 
 # Calculator with vim, codi, and python
