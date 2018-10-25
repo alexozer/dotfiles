@@ -95,6 +95,13 @@ function cs {
     ~/cuauv/workspaces/worktrees/master/docker/auv-docker.py cdw "${1:-master}"
 }
 
+function auv-pull() {
+  pushd
+  cd ~/cuauv/workspaces/worktrees/master
+  docker pull wds68/cuauv:master
+  popd
+}
+
 # Calculator with vim, codi, and python
 function calc {
     local syntax="${1:-python}"
