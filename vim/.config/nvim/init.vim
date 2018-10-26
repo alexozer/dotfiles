@@ -196,7 +196,7 @@ augroup ocaml
 augroup END
 
 "
-" Plugins
+" Plugin Config
 "
 
 " nerdtree
