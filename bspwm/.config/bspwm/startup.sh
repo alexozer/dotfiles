@@ -17,3 +17,4 @@ xfdesktop --disable-wm-check &
 dex -a &
 thunar --daemon &
 CM_SELECTIONS="clipboard" clipmenud &
+tdrop emacs &

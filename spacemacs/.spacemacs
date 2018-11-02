@@ -33,7 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -207,6 +207,10 @@ It should only modify the values of Spacemacs settings."
                                :size 22
                                :weight normal
                                :width normal)
+   ;; dotspacemacs-default-font '("Ubuntu Mono Derivative Powerline"
+   ;;                             :size 25
+   ;;                             :weight normal
+   ;;                             :width normal)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -444,7 +448,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
    dotspacemacs-remap-Y-to-y$ t
 
    org-want-todo-bindings t
-   org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)"))
+   ;; org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)"))
    org-archive-location "~/doc/personal/org/archive.org::datetree/"
    )
   )
@@ -486,6 +490,9 @@ before packages are loaded."
    evil-ex-substitute-global t
    evil-insert-state-message nil
    evil-visual-state-message nil
+   evil-ex-search-persistent-highlight nil
+
+   ;; default-text-properties '(line-spacing 0.10 line-height 1.10)
   )
 
   ;; Use escape to abort anything
@@ -501,13 +508,66 @@ before packages are loaded."
   (add-hook 'focus-out-hook #'garbage-collect)
 
   (spacemacs/set-leader-keys
-    "gt" (lambda () (interactive) (find-file "~/doc/personal/org/todo.org"))
+    "gd" (lambda () (interactive) (find-file "~/doc/personal/org/todo.org"))
     "ga" (lambda () (interactive) (find-file "~/doc/personal/org/archive.org"))
     "gs" (lambda () (interactive) (find-file "~/doc/personal/org/stickies.org"))
+    "gt" (lambda () (interactive) (find-file "~/doc/personal/org/tickler.org")))
+
+  (defun ozer/org ()
+    (org-indent-mode)
+    (spacemacs/scale-up-font)
+    (spacemacs/toggle-truncate-lines-off))
+
+  (add-hook 'org-mode-hook 'ozer/org)
+
+  (defun ozer/new-heading (default-enter open-below)
+    (if (org-at-heading-p)
+        ;; Enter once will make new heading, twice will clear
+        (if (string= (org-entry-get nil "ITEM") "")
+            (progn
+             (evil-change (line-beginning-position) (line-end-position))
+             (unless (save-excursion (previous-line) (org-at-heading-p))
+               (previous-line)
+             )
+             )
+          ;; Insert a new TODO if we're on a TODO
+          (if (org-get-todo-state)
+              (org-insert-todo-heading-respect-content)
+            (org-insert-heading-respect-content)
+            )
+          (unless open-below (org-metaup))
+          (evil-append 1)
+          )
+
+      ;; Do whatever enter normally does
+      (funcall default-enter)
+      )
     )
 
-  (add-hook 'org-mode-hook (lambda () (org-indent-mode) (spacemacs/scale-up-font)))
+  (evil-define-key 'normal org-mode-map
+    (kbd "RET") (lambda () (interactive) (ozer/new-heading 'org-open-at-point t))
+    )
+  (evil-define-key 'normal org-mode-map
+    (kbd "<S-return>") (lambda () (interactive) (ozer/new-heading 'org-table-copy-down nil))
+    )
+  (evil-define-key 'insert org-mode-map
+    (kbd "RET") (lambda () (interactive) (ozer/new-heading 'org-return t))
+    )
+  (evil-define-key 'insert org-mode-map
+    (kbd "<S-return>") (lambda () (interactive) (ozer/new-heading 'org-table-copy-down nil))
+    )
 
+  ;; (defun ozer/done-archive ()
+  ;;   (let ((done (org-entry-is-done-p))
+  ;;         (archived (member "ARCHIVE" (org-get-tags))))
+  ;;     (when (or (and done (not archived)) (and (not done) archived))
+  ;;       (org-toggle-archive-tag))
+  ;;     )
+  ;;   )
+
+  ;; (add-hook 'org-after-todo-state-change-hook 'ozer/done-archive)
+
+  (add-hook 'after-init-hook (lambda () (find-file "~/doc/personal/org/todo.org")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -522,12 +582,15 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
  '(custom-safe-themes
    (quote
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
+ '(org-agenda-files (quote ("~/doc/personal/org/todo.org")))
  '(package-selected-packages
    (quote
-    (org-bullets evil-escape ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox overseer org-projectile org-present org-pomodoro org-mime org-download org-brain open-junk-file neotree nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot font-lock+ flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish define-word counsel-projectile column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line))))
+    (org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-brain mmm-mode markdown-toc markdown-mode htmlize helm-org-rifle gnuplot gh-md evil-org ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file neotree nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish define-word counsel-projectile column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -535,4 +598,5 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
+
 
