@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+dex -da |\
+while read -r line; do
+    progn="$(echo "$line" | cut -d' ' -f3)"
+    [ "$progn" = "redshift-gtk" ] && "$progn" &
+done

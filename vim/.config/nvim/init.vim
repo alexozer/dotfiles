@@ -1,19 +1,11 @@
 " Alex Ozer
 
-if !has('nvim')
-  set nocompatible
-endif
-
 "
 " Plugins
 "
 
 " Plug
-if has('nvim')
-  call plug#begin('~/.local/share/nvim/plugged')
-else
-  call plug#begin('~/.vim/plugged')
-endif
+call plug#begin('~/.local/share/nvim/plugged')
 
 " Colors
 Plug 'NLKNguyen/papercolor-theme'
@@ -22,9 +14,8 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'liuchengxu/space-vim-dark'
 
 " Tools
-Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/vim-plug'
-Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
 Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
@@ -76,32 +67,34 @@ call plug#end()
 filetype plugin indent on
 
 " Spaces
-set tabstop=4       " Number of visual spaces per TAB
-set softtabstop=4   " Number of spaces in tab when editing
-set shiftwidth=4    " Number of spaces to use for autoindent
-set expandtab       " Tabs are space
+set tabstop=4            " Number of visual spaces per TAB
+set softtabstop=4        " Number of spaces in tab when editing
+set shiftwidth=4         " Number of spaces to use for autoindent
+set expandtab            " Tabs are space
 set autoindent
-set copyindent      " Copy indent from the previous line
+set copyindent           " Copy indent from the previous line
 
 " UI
-set termguicolors   " Enable true-color colorscheme support
-set wildmenu        " Visual autocomplete for command menu
-set cursorline	    " Highlight current line
-set mouse=a         " Enable selecting with mouse
-set splitbelow      " Open horizontal splits below current split
-set splitright      " Open vertical splits to the right of current split
-set hidden          " Okay to background modified buffers
-set laststatus=2    " Window will always have a status line
-set scrolloff=4	    " Leave lines visible at top and bottom of buffer
-set noshowmode      " Annoying mode display, the cursor shows which mode we're in
-set ttimeoutlen=0   " Respond to escape immediately
+set termguicolors        " Enable true-color colorscheme support
+set wildmenu             " Visual autocomplete for command menu
+set cursorline	         " Highlight current line
+set mouse=a              " Enable selecting with mouse
+set splitbelow           " Open horizontal splits below current split
+set splitright           " Open vertical splits to the right of current split
+set hidden               " Okay to background modified buffers
+set laststatus=2         " Window will always have a status line
+set scrolloff=4	         " Leave lines visible at top and bottom of buffer
+set noshowmode           " Annoying mode display, the cursor shows which mode we're in
+set ttimeoutlen=0        " Respond to escape immediately
 
-" Searching
-set ignorecase      " Case-insensitive
-set smartcase       " Override ignorecase if search includes capital letters
-set nohlsearch      " Don't highlight search after search is completed
-set gdefault        " When using :s command, replace all instances on line by default
+" Search and Substitute
+set ignorecase           " Case-insensitive
+set smartcase            " Override ignorecase if search includes capital letters
+set nohlsearch           " Don't highlight search after search is completed
+set gdefault             " When using :s command, replace all instances on line by default
+set inccommand=nosplit   " Show substitutions as they are typed
 
+" Clipboard
 set clipboard=unnamedplus
 
 " Swap/backup/undo

@@ -14,7 +14,7 @@ xfce4-notifyd &
 polybar top --reload &
 xfdesktop --disable-wm-check &
 
-dex -a &
 thunar --daemon &
 CM_SELECTIONS="clipboard" clipmenud &
-tdrop emacs &
+
+dex -a

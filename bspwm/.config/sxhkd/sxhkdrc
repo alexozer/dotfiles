@@ -22,12 +22,7 @@ super + {n,i}
 
 # Toggle between previous desktop if target desktop number is current desktop
 super + {1-9,0}
-	target={1-9,10}; \
-	if [ "$(bspc query -D -d focused)" != "$(bspc query -D -d ^$target)" ]; then; \
-		bspc desktop ^$target --focus; \
-	else; \
-		bspc desktop last --focus; \
-	fi
+	bspc desktop ^{1-9,10} --focus
 
 super + shift + {1-9,0}
 	bspc node --to-desktop ^{1-9,10} --focus
@@ -117,8 +112,11 @@ XF86LaunchB
 super + shift + Escape
 	pkill -USR1 -x sxhkd
 
+super + g; r
+	pkill -x -USR1 redshift
+
 super + t
-	gnome-terminal -- htop
+	gnome-terminal-popup htop 160x48
 
 super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
