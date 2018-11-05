@@ -153,6 +153,3 @@ super + shift + b
 
 super + {Down,Up}
 	xbacklight -{dec,inc} 1
-
-super + semicolon
-	tdrop emacs

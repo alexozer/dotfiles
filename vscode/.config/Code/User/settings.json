@@ -97,7 +97,7 @@
     }
   ],
   "vim.foldfix": false,
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Tomorrow Night Blue",
   "search.smartCase": true,
   "latex-workshop.view.pdf.viewer": "tab",
   "workbench.startupEditor": "newUntitledFile",
