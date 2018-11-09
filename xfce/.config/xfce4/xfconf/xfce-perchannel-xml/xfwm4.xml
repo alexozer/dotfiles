@@ -73,46 +73,46 @@
     <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
     <property name="workspace_names" type="array">
-      <value type="string" value="2"/>
       <value type="string" value="1"/>
       <value type="string" value="3"/>
+      <value type="string" value="2"/>
       <value type="string" value="4"/>
       <value type="string" value="5"/>
       <value type="string" value="6"/>
       <value type="string" value="7"/>
       <value type="string" value="8"/>
       <value type="string" value="9"/>
-      <value type="string" value="9"/>
-      <value type="string" value="10"/>
-      <value type="string" value="Desktop"/>
-      <value type="string" value="Workspace 13"/>
-      <value type="string" value="Workspace 14"/>
-      <value type="string" value="Workspace 15"/>
-      <value type="string" value="Workspace 16"/>
-      <value type="string" value="Workspace 17"/>
-      <value type="string" value="Workspace 18"/>
-      <value type="string" value="Workspace 19"/>
-      <value type="string" value="Workspace 20"/>
-      <value type="string" value="Workspace 21"/>
-      <value type="string" value="Workspace 22"/>
-      <value type="string" value="Workspace 23"/>
-      <value type="string" value="Workspace 24"/>
-      <value type="string" value="Workspace 25"/>
-      <value type="string" value="Workspace 26"/>
-      <value type="string" value="Workspace 27"/>
-      <value type="string" value="Workspace 28"/>
-      <value type="string" value="Workspace 29"/>
-      <value type="string" value="Workspace 30"/>
-      <value type="string" value="Workspace 31"/>
-      <value type="string" value="Workspace 32"/>
-      <value type="string" value="Workspace 33"/>
-      <value type="string" value="Workspace 34"/>
-      <value type="string" value="Workspace 35"/>
-      <value type="string" value="Workspace 36"/>
-      <value type="string" value="Workspace 37"/>
-      <value type="string" value="Workspace 38"/>
-      <value type="string" value="Workspace 39"/>
-      <value type="string" value="Workspace 40"/>
+      <value type="string" value="0"/>
+      <value type="string" value="music"/>
+      <value type="string" value="web"/>
+      <value type="string" value="files"/>
+      <value type="string" value="term"/>
+      <value type="string" value="code"/>
+      <value type="string" value="mail"/>
+      <value type="string" value="web"/>
+      <value type="string" value="music"/>
+      <value type="string" value="files"/>
+      <value type="string" value="term"/>
+      <value type="string" value="mail"/>
+      <value type="string" value="code"/>
+      <value type="string" value="music"/>
+      <value type="string" value="files"/>
+      <value type="string" value="web"/>
+      <value type="string" value="term"/>
+      <value type="string" value="code"/>
+      <value type="string" value="mail"/>
+      <value type="string" value="web"/>
+      <value type="string" value="music"/>
+      <value type="string" value="files"/>
+      <value type="string" value="term"/>
+      <value type="string" value="code"/>
+      <value type="string" value="mail"/>
+      <value type="string" value="music"/>
+      <value type="string" value="web"/>
+      <value type="string" value="term"/>
+      <value type="string" value="files"/>
+      <value type="string" value="code"/>
+      <value type="string" value="mail"/>
       <value type="string" value="Workspace 41"/>
       <value type="string" value="Workspace 42"/>
     </property>

@@ -178,6 +178,61 @@
           <property name="image-style" type="int" value="3"/>
           <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
         </property>
+        <property name="workspace29" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace30" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace31" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace32" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace33" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace34" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace35" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace36" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace37" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace38" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
+        <property name="workspace39" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/mars-big.jpg"/>
+        </property>
       </property>
       <property name="monitor1" type="empty">
         <property name="image-path" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
