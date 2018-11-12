@@ -3,12 +3,13 @@
 export GOPATH1="$HOME/build/go"
 export GOPATH2="$HOME/code/go"
 export GOPATH="$GOPATH1:$GOPATH2"
-export NPM_PACKAGES="$HOME/.npm-packages"
+export npm_config_prefix=~/.node_modules
 
 export PATH="$PATH:\
 $HOME/bin:\
 $GOPATH1/bin:\
 $GOPATH2/bin:\
+$npm_config_prefix/bin:\
 $HOME/code/auv/link-stage:\
 $HOME/.gem/ruby/2.4.0/bin:\
 $HOME/.cargo/bin:\
