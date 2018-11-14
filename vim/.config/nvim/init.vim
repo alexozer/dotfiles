@@ -16,7 +16,6 @@ Plug 'liuchengxu/space-vim-dark'
 " Tools
 Plug 'junegunn/vim-plug'
 Plug 'sheerun/vim-polyglot'
-Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
@@ -28,6 +27,7 @@ Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
+Plug 'tomtom/tcomment_vim'
 
 " Maybe wanted in the future
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
@@ -56,7 +56,7 @@ Plug 'junegunn/goyo.vim'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'xolox/vim-misc' | Pl?g 'xolox/vim-session'
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
-" Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
@@ -103,9 +103,10 @@ set undofile        " Enable persistent undo
 let g:netrw_home='~/.local/share/nvim'  " Don't store history in vim config dir
  
 " Load colorscheme
+syntax on           " Enable syntax processing
 set background=dark
 colorscheme space-vim-dark
-syntax on           " Enable syntax processing
+hi Comment guifg=#5C6370 ctermfg=59
 
 "
 " Mappings
@@ -223,5 +224,10 @@ let g:lightline = {
       \   'readonly': '%{&readonly?"":""}',
 \ },
 \ }
+
+" tcomment
+
+let g:tcomment_mapleader1=''
+noremap <C-_> :TComment<cr>
 
 " vim:shiftwidth=2

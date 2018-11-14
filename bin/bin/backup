@@ -16,8 +16,13 @@ doBackup() {
 	# Push dotfiles
 	cd "$HOME"/.dotfiles
 	git add .
-	git commit -m "Update $(date +%D)"
+	git commit -m "Update $(date +%D)" || :
 	git push
+
+	# Add notes to git repo
+	cd "$HOME"/doc/personal/Dropbox/notes
+	git add .
+	git commit -m "Update $(date +%D)" || :
 
 	# Record installed packages
 	pacman -Qqen > ~/doc/personal/arch/pkgs-native-explicit.txt
