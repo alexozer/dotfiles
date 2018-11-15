@@ -230,4 +230,8 @@ let g:lightline = {
 let g:tcomment_mapleader1=''
 noremap <C-_> :TComment<cr>
 
+" goyo
+
+nnoremap <leader>g :Goyo<cr>
+
 " vim:shiftwidth=2

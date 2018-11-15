@@ -153,3 +153,9 @@ super + shift + b
 
 super + {Down,Up}
 	xbacklight -{dec,inc} 1
+
+super + semicolon
+	gnome-terminal -e "nvim doc/personal/Dropbox/notes/todo.md"
+
+super + apostrophe
+	gnome-terminal -e "nvim doc/personal/Dropbox/notes/notes.md"
