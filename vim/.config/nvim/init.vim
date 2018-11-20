@@ -101,7 +101,7 @@ set clipboard=unnamedplus
 set noswapfile      " Disable concurrent editing warning, Vim warns when saving a modified file anyway
 set undofile        " Enable persistent undo
 let g:netrw_home='~/.local/share/nvim'  " Don't store history in vim config dir
- 
+
 " Load colorscheme
 syntax on           " Enable syntax processing
 set background=dark
@@ -173,20 +173,11 @@ function! SetCursorPosition()
   end
 endfunction
 
-augroup restore_cursor
-	autocmd!
-	autocmd BufReadPost * call SetCursorPosition()
-augroup END
-
-" Disable cursorline with latex, slows down vim a lot
-augroup latex
-	autocmd!
-	autocmd FileType tex setlocal nocursorline
-augroup END
-
-augroup ocaml
-	autocmd!
-	autocmd FileType ocaml setlocal tabstop=2 shiftwidth=2
+augroup group
+  autocmd!
+  autocmd BufReadPost * call SetCursorPosition()
+  autocmd FileType tex setlocal nocursorline  " Slows down Vim a lot
+  autocmd FileType ocaml setlocal tabstop=2 shiftwidth=2
 augroup END
 
 "
@@ -222,8 +213,8 @@ let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
-\ },
-\ }
+      \ },
+      \ }
 
 " tcomment
 

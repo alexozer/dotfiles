@@ -171,7 +171,5 @@ function vbuild() {
   iverilog -g2012 -o "$1" "$1".v && ./"$1"
 }
 
-alias j="vim ~/doc/personal/Dropbox/notes/journal.md"
-
 # OPAM configuration
 . /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

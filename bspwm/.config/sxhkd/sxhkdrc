@@ -116,7 +116,7 @@ super + g; r
 	pkill -x -USR1 redshift
 
 super + t
-	gnome-terminal-popup htop 160x48
+	gnome-terminal -e htop
 
 super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"
@@ -159,3 +159,6 @@ super + semicolon
 
 super + apostrophe
 	gnome-terminal -e "nvim doc/personal/Dropbox/notes/notes.md"
+
+super + shift + semicolon
+	gnome-terminal -e "nvim doc/personal/Dropbox/notes/journal.md"
