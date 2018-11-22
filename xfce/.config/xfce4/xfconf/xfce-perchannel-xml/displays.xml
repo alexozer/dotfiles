@@ -4,8 +4,8 @@
   <property name="Default" type="empty">
     <property name="eDP1" type="string" value="Laptop">
       <property name="Active" type="bool" value="true"/>
-      <property name="Resolution" type="string" value="1280x800"/>
-      <property name="RefreshRate" type="double" value="59.810326"/>
+      <property name="Resolution" type="string" value="960x540"/>
+      <property name="RefreshRate" type="double" value="59.629027"/>
       <property name="Rotation" type="int" value="0"/>
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="true"/>

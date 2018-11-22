@@ -96,17 +96,21 @@ super + {s, S}; {r,f,w}
 	tee >(xargs notify-send 'Screenshot captured') >(xsel -ib)
 
 # for laptop
-{XF86AudioRaiseVolume, XF86AudioLowerVolume, XF86AudioMute}
-	pamixer {--increase 2,--decrease 2,--toggle-mute}
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+	pamixer --{increase,decrease} 2
 
-super + XF86AudioMute
-	pamixer --mute
+XF86AudioMute
+	pamixer --mute ;\
+	pamixer --source 1 --mute
+
+XF86LaunchA
+	pamixer --unmute
+
+XF86LaunchB
+	pamixer --source 1 --unmute
 
 {XF86AudioPrev, XF86AudioPlay, XF86AudioNext}
 	playerctl {previous, play-pause, next}
-
-XF86LaunchB
-	betterlockscreen -l
 
 # make sxhkd reload its configuration files:
 super + shift + Escape
