@@ -102,5 +102,6 @@
   "latex-workshop.view.pdf.viewer": "tab",
   "workbench.startupEditor": "newUntitledFile",
   "C_Cpp.clang_format_fallbackStyle": "LLVM",
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "python.pythonPath": "/usr/bin/python3"
 }
