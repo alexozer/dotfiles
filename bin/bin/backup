@@ -3,7 +3,7 @@
 set -uo pipefail
 shopt -s dotglob nullglob
 
-backupDirs="code doc pic .dotfiles"
+backupDirs="code doc pic .dotfiles win"
 tetherSSID="Alex's iPhone"
 
 doBackup() {

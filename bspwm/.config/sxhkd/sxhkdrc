@@ -91,9 +91,8 @@ super + e
 	thunar
 
 super + {s, S}; {r,f,w}
-	maim {,-d 2} {-s,-i root,-i $(xdotool getactivewindow)} /tmp/screenshot.png && ;\
-	imgur.sh /tmp/screenshot.png | head -n1 | ;\
-	tee >(xargs notify-send 'Screenshot captured') >(xsel -ib)
+	maim {,-d 2} {-s,-i root,-i $(xdotool getactivewindow)} ~/screenshot.png && ;\
+	notify-send 'Screenshot captured'
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
