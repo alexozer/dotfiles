@@ -165,3 +165,6 @@ super + apostrophe
 
 super + shift + semicolon
 	gnome-terminal -e "nvim doc/personal/Dropbox/notes/journal.md"
+
+super + slash
+	mailspring
