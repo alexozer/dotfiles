@@ -103,5 +103,6 @@
   "workbench.startupEditor": "newUntitledFile",
   "C_Cpp.clang_format_fallbackStyle": "LLVM",
   "diffEditor.ignoreTrimWhitespace": false,
-  "python.pythonPath": "/usr/bin/python3"
+  "python.pythonPath": "/usr/bin/python3",
+  "window.titleBarStyle": "native"
 }
