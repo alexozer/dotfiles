@@ -5,8 +5,8 @@ a commit message equally lacking in description. Enjoy!
 
 ## Screenshots
 
-![launcher](launcher.png)
 ![full](full.png)
+![fakebusy](fakebusy.png)
 
 ## Install
 
