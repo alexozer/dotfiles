@@ -83,19 +83,6 @@
     "<C-n>": false
   },
   "vim.disableExtension": false,
-  "latex-workshop.latex.tools": [
-    {
-      "command": "latexmk",
-      "args": [
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-pdf",
-        "-shell-escape",
-        "%DOC%"
-      ]
-    }
-  ],
   "vim.foldfix": false,
   "workbench.colorTheme": "Horizon",
   "search.smartCase": true,
