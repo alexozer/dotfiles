@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo tune2fs -l /dev/sda5 | grep 'Filesystem created:'
