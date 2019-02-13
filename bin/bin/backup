@@ -3,7 +3,7 @@
 set -uo pipefail
 shopt -s dotglob nullglob
 
-backupDirs="code doc pic .dotfiles win"
+backupDirs="code doc pic .dotfiles win .local/share/dolphin-emu"
 tetherSSID="Alex's iPhone"
 
 doBackup() {
