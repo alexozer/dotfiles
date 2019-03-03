@@ -4,7 +4,7 @@ import time
 import sys
 
 import gi
-gi.require_version('Playerctl', '1.0')
+gi.require_version('Playerctl', '2.0')
 from gi.repository import Playerctl, GLib
 
 MUSIC_ICON = ''
