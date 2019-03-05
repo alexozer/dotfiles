@@ -9,7 +9,7 @@ window_gap=4
 
 bspc config border_width 		0
 bspc config window_gap 			$window_gap
-bspc config -m primary top_padding			$((panel_height - 4))
+bspc config -m primary top_padding			$((panel_height - window_gap))
 bspc config bottom_padding -$window_gap
 bspc config left_padding -$window_gap
 bspc config right_padding -$window_gap
