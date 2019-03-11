@@ -310,7 +310,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/alex/pic/bg/vapour.jpg"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/wallhaven-693382.jpg"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -740,8 +740,8 @@
       <property name="monitorHDMI2" type="empty">
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="3"/>
-          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/home/alex/pic/bg/murder-capital.png"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -782,6 +782,16 @@
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="3"/>
           <property name="last-image" type="string" value="/home/alex/pic/bg/vapour.jpg"/>
+        </property>
+        <property name="workspace9" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
+        </property>
+        <property name="workspace10" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
         </property>
       </property>
     </property>
