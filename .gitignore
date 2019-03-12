@@ -3,6 +3,7 @@
 /vim/.config/nvim/tmp/
 .mypy_cache/
 /polybar/.config/polybar/secrets.sh
+/xfce/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 
 /urlwatch/
 /isync/
