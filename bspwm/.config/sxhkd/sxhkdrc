@@ -73,7 +73,10 @@ super + shift + {comma,period}
 #
 
 super + space
-	rofi -show drun -show-icons
+	gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
+
+super + shift + space
+	gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch gksudo'
 
 super + Return
 	gnome-terminal
