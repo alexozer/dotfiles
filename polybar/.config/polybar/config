@@ -23,6 +23,9 @@ offset-y = 0
 module-margin-left = 0
 module-margin-right = 6
 
+; Fix tray overlapping problem https://github.com/jaagr/polybar/issues/591#issuecomment-474948739
+fixed-center = false
+
 ; Transparent dracula background
 ; background = #7F282a36
 background = #FF282a36
