@@ -91,5 +91,6 @@
   "C_Cpp.clang_format_fallbackStyle": "LLVM",
   "diffEditor.ignoreTrimWhitespace": false,
   "python.pythonPath": "/usr/bin/python2",
-  "window.titleBarStyle": "native"
+  "window.titleBarStyle": "native",
+  "C_Cpp.dimInactiveRegions": false
 }
