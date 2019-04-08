@@ -17,4 +17,6 @@ xfdesktop --disable-wm-check &
 thunar --daemon &
 CM_SELECTIONS="clipboard" clipmenud &
 
+hexchat --minimize=2 &
+
 dex -a
