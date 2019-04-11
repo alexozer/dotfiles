@@ -174,3 +174,6 @@ super + shift + apostrophe
 
 super + slash
 	mailspring
+
+super + shift + slash
+	gnome-terminal -e "tmux new-session -A -s weechat weechat"

@@ -17,4 +17,7 @@ xfdesktop --disable-wm-check &
 thunar --daemon &
 CM_SELECTIONS="clipboard" clipmenud &
 
+tmux new-session -A -s weechat weechat &
+
 dex -a
+
