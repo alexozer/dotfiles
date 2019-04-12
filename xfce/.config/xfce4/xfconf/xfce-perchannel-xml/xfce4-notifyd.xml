@@ -26,8 +26,10 @@
       <value type="string" value="notify-send"/>
       <value type="string" value="ntfy"/>
       <value type="string" value="org.gnome.Fractal"/>
+      <value type="string" value="org.gnome.Geary"/>
       <value type="string" value="org.kde.kdenlive"/>
       <value type="string" value="org.kdenlive.kdenlive"/>
+      <value type="string" value="Orion"/>
       <value type="string" value="OSD Lyrics"/>
       <value type="string" value="owncloud"/>
       <value type="string" value="Spotify"/>
