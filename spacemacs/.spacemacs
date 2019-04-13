@@ -212,7 +212,7 @@ It should only modify the values of Spacemacs settings."
    ;;                             :size 25
    ;;                             :weight normal
    ;;                             :width normal)
-   dotspacemacs-default-font '("Input Mono"
+   dotspacemacs-default-font '("Ubuntu Mono"
                                :size 20
                                :weight normal
                                :width normal)
