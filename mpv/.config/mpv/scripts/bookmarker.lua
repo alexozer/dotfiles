@@ -39,6 +39,16 @@ function saveTable(t, path)
     return true
 end
 
+--// Save a table as json to a file
+function saveBookmarkLine(t, path)	
+    -- a simple machanism to make it transactional
+    local contents = utils.format_json(t) .. "\n"
+    local file = io.open(path, "a")
+    file:write(contents)    
+    io.close(file)
+    return true
+end
+
 --// Load a table from a json-file
 function loadTable(path)
     local contents = ""
@@ -94,6 +104,16 @@ function getConfigFile()
   	return os.getenv("APPDATA"):gsub("\\", "/") .. "/mpv/bookmarks.json"
   else	
 	return os.getenv("HOME") .. "/.config/mpv/bookmarks.json"
+  end
+end
+
+--// default file to save/load bookmarks to/from
+--// TODO actually learn LUA and don't copy the whole function you doofus
+function getBookmarkLogFile()
+  if is_windows() then
+  	return os.getenv("APPDATA"):gsub("\\", "/") .. "/mpv/bookmark-log.json"
+  else	
+	return os.getenv("HOME") .. "/.config/mpv/bookmark-log.json"
   end
 end
 
@@ -182,6 +202,17 @@ function bookmark_save(slot)
   mp.osd_message("Bookmark#" .. slot .. " saved.")  
 end
 mp.register_script_message("bookmark-set", bookmark_save)
+
+--// handle "bookmark-append" function triggered by a key in "input.conf"
+function bookmark_append(slot)
+  bookmark = currentPositionAsBookmark()
+  local result = saveBookmarkLine(bookmark, getBookmarkLogFile())
+  if result ~= true then
+    mp.osd_message("Error saving: " .. result)
+  end
+  mp.osd_message("Appended bookmark to log.")
+end
+mp.register_script_message("bookmark-append", bookmark_append)
 
 --// handle "bookmark-update" function triggered by a key in "input.conf" | basically updates latest saved/loaded bookmark if current file is with in the same directory
 function last_bookmark_update()
