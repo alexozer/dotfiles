@@ -109,12 +109,18 @@ end
 
 --// default file to save/load bookmarks to/from
 --// TODO actually learn LUA and don't copy the whole function you doofus
+-- function getBookmarkLogFile()
+--   if is_windows() then
+--   	return os.getenv("APPDATA"):gsub("\\", "/") .. "/mpv/bookmark-log.json"
+--   else	
+-- 	return os.getenv("HOME") .. "/.config/mpv/bookmark-log.json"
+--   end
+-- end
+
+--// default file to save/load bookmarks to/from
+--// TODO actually learn LUA and don't copy the whole function you doofus
 function getBookmarkLogFile()
-  if is_windows() then
-  	return os.getenv("APPDATA"):gsub("\\", "/") .. "/mpv/bookmark-log.json"
-  else	
-	return os.getenv("HOME") .. "/.config/mpv/bookmark-log.json"
-  end
+  return "bookmark-log.jsonl" --// Use current dir
 end
 
 --// print current bookmark object

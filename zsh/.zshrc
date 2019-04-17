@@ -39,6 +39,7 @@ alias svim="sudo -E $EDITOR" # Use sudo with vim
 alias o='exo-open' # Open file with default program
 alias matlab='matlab -nodesktop -nosplash' # Matlab repl
 alias pgen="gopass generate"
+alias dl-audio="youtube-dl -x --audio-format flac"
 
 # Auto ls
 function chpwd {
