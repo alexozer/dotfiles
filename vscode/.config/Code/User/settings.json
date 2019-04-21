@@ -76,7 +76,6 @@
   "git.autofetch": true,
   "prettier.printWidth": 100,
   "shellcheck.run": "onSave",
-  "workbench.iconTheme": "vscode-icons",
   "yaml.format.enable": false,
   "vim.handleKeys": {
     "<C-b>": false,
@@ -92,5 +91,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "python.pythonPath": "/usr/bin/python2",
   "window.titleBarStyle": "native",
-  "C_Cpp.dimInactiveRegions": false
+  "C_Cpp.dimInactiveRegions": false,
+  "python.formatting.provider": "none",
+  "editor.wordWrap": "wordWrapColumn"
 }
