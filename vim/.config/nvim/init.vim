@@ -30,6 +30,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tomtom/tcomment_vim'
 
 " Maybe wanted in the future
+"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
 "Plug 'moll/vim-bbye' " when buffer closed, don't close window
 "Plug 'SirVer/ultisnips'
