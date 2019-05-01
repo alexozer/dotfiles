@@ -94,5 +94,7 @@
   "C_Cpp.dimInactiveRegions": false,
   "python.formatting.provider": "none",
   "editor.wordWrap": "wordWrapColumn",
-  "C_Cpp.updateChannel": "Insiders"
+  "C_Cpp.updateChannel": "Insiders",
+  "C_Cpp.default.cppStandard": "c++14",
+  "explorer.confirmDragAndDrop": false
 }
