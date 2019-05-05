@@ -163,8 +163,8 @@ super + {Down,Up}
 super + semicolon
 	gnome-terminal -e "nvim doc/personal/Dropbox/notes/todo.md"
 
-super + apostrophe
-	gnome-terminal -e "nvim doc/personal/Dropbox/notes/notes.md"
+# super + apostrophe
+	# gnome-terminal -e "nvim doc/personal/Dropbox/notes/notes.md"
 
 super + shift + semicolon
 	gnome-terminal -e "nvim doc/personal/Dropbox/notes/journal.md"
