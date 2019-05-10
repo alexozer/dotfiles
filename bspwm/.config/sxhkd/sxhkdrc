@@ -170,7 +170,7 @@ super + shift + semicolon
 	gnome-terminal -e "nvim doc/personal/Dropbox/notes/journal.md"
 
 super + shift + apostrophe
-	gnome-terminal -e "nvim doc/personal/Dropbox/notes/worklog.md"
+	gnome-terminal -e "nvim doc/personal/Dropbox/notes/daylog.md"
 
 super + slash
 	mailspring
