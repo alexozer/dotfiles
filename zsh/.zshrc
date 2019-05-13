@@ -155,11 +155,6 @@ function redir() {
     mv "$tmpDir" "$1"
 }
 
-# Fork
-function f() {
-  "$@" & disown
-}
-
 # Store a system configuration file in dotfiles
 function syskeep() {
   d=~/.dotfiles/system$(dirname "$1")
