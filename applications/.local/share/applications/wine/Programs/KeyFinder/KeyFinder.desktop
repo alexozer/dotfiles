@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=KeyFinder
+Exec=env WINEPREFIX="/home/alex/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/alex/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/KeyFinder/KeyFinder.lnk
+Type=Application
+StartupNotify=true
+Path=/home/alex/.wine/dosdevices/c:/Program Files (x86)/Magical Jelly Bean
+Icon=C361_keyfinder.0
+StartupWMClass=keyfinder.exe
