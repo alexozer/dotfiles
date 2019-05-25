@@ -2,10 +2,10 @@
 
 <channel name="keyboard-layout" version="1.0">
   <property name="Default" type="empty">
-    <property name="XkbDisable" type="bool" value="true"/>
+    <property name="XkbDisable" type="bool" value="false"/>
     <property name="XkbOptions" type="empty">
-      <property name="Group" type="string" value="grp:alts_toggle"/>
-      <property name="Compose" type="string" value="compose:caps"/>
+      <property name="Group" type="string" value=""/>
+      <property name="Compose" type="string" value=""/>
     </property>
     <property name="XkbModel" type="string" value=""/>
   </property>
