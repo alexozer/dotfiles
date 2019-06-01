@@ -32,7 +32,7 @@ doBackup() {
 
 	# Backup files
 	for dir in $backupDirs; do
-		rclone sync "$HOME"/"$dir" box:"$dir" --skip-links
+		rclone sync -v "$HOME"/"$dir" box:"$dir" --skip-links
 	done
 }
 
