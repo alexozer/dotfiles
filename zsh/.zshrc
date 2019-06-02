@@ -1,4 +1,4 @@
-if [[ "$(hostname)" == "tinfoil" ]]; then
+if [[ "$(hostname)" == "tinfoil" ]] || [[ "$(hostname)" == "tinbox" ]]; then
   source /usr/share/zsh/share/antigen.zsh
 else
   source ~/build/antigen.zsh
