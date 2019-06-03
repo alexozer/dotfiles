@@ -135,10 +135,10 @@ super + O
 	fzf-dmenu | xargs echo -n | xargs -0 exo-open'
 
 super + u
-	spotify --force-device-scale-factor=1.4
+	spotify --force-device-scale-factor=1.2
 
-super + p
-	gnome-terminal-popup "CM_LAUNCHER='fzf-dmenu' clipmenu -i"
+# super + p
+	# gnome-terminal-popup "CM_LAUNCHER='fzf-dmenu' clipmenu -i"
 
 # Password manager
 super + shift + p
@@ -151,8 +151,15 @@ super + shift + ctrl + p
 super + x
 	gnome-terminal-popup fkill 160x24
 
-super + {bracketleft,bracketright}
-	xrandr --output primary --mode {1280x800,2560x1600}
+super + bracketleft
+	xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --off --output DVI-D-0 --off ;\
+	killall polybar ;\
+	polybar top
+
+super + bracketright
+	xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x386 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 2560x0 --rotate right --scale 1.0x1.0 --output DVI-D-0 --off ;\
+	killall polybar ;\
+	polybar top
 
 super + shift + b
 	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24

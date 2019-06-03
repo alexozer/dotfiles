@@ -34,8 +34,8 @@ line-size = 3
 line-color = ${colors.purple}
 border-size = 0
 
-font-0 = NotoSans-Regular:size=14;2
-font-1 = "SauceCodePro Nerd Font:pixelsize=17;3"
+font-0 = NotoSans-Regular:size=13;2
+font-1 = "SauceCodePro Nerd Font:pixelsize=16;3"
 wm-name = BSPWM
 
 tray-position = right
@@ -45,7 +45,7 @@ override-redirect = true
 wm-restack=bspwm
 
 ; modules-right = music bspwm xbacklight volume battery wlan weather date time
-modules-right = music bspwm wlan weather date time
+modules-right = music bspwm volume wlan weather date time
 
 [global/wm]
 margin-stop = ${bar/top.height}
