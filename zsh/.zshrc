@@ -41,15 +41,25 @@ alias matlab='matlab -nodesktop -nosplash' # Matlab repl
 alias pgen="gopass generate"
 alias f=lnch
 
+function oue() {
+  ~/ro/UnrealEngine/Engine/Binaries/Linux/UE4Editor "$(realpath "$1")" -opengl4
+}
+
+alias oro='oue ~/ro/UnrealMKB/UnrealMKB/UnrealMKB.uproject'
+
 # Auto ls
 function chpwd {
     ls --color=always
 }
 
-# Copying to clipboard didn't seem to be working
-function gist {
-  /usr/bin/gist -p | tee >(xsel -b)
-}
+# # Copying to clipboard didn't seem to be working
+# function gist {
+#   /usr/bin/gist -p "$@" | tee >(xsel -b)
+# }
+#
+# function gis() {
+#   gist -a -f "$1" < "$1"
+# }
 
 # Shortcuts to edit config files
 function e {

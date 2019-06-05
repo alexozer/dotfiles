@@ -28,6 +28,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
 Plug 'tomtom/tcomment_vim'
+Plug 'alok/notational-fzf-vim'
 
 " Maybe wanted in the future
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -155,8 +156,8 @@ noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
 " Edit/source vimrc
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>ve :e $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
 
 " Make word before cursor upper-case
 inoremap <c-u> <esc>bgUwgi
@@ -225,5 +226,10 @@ noremap <C-_> :TComment<cr>
 " goyo
 
 nnoremap <leader>g :Goyo<cr>
+
+" notational-fzf-vim
+
+let g:nv_search_paths = ['~/doc/Dropbox/notes']
+nnoremap <silent> <leader>s :NV<CR>
 
 " vim:shiftwidth=2
