@@ -142,7 +142,7 @@ super + u
 
 # Password manager
 super + shift + p
-	gnome-terminal-popup gopass-ui
+	gnome-terminal-popup pass-ui
 
 # Wait a second before typing password so form can refocus
 super + shift + ctrl + p

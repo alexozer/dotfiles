@@ -96,5 +96,6 @@
   "editor.wordWrap": "wordWrapColumn",
   "C_Cpp.updateChannel": "Insiders",
   "C_Cpp.default.cppStandard": "c++14",
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "editor.fontSize": 12
 }

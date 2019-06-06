@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob globstar
+
+prefix=${PASSWORD_STORE_DIR-~/.password-store}
+password_files=( "$prefix"/**/*.gpg )
+password_files=( "${password_files[@]#"$prefix"/}" )
+password_files=( "${password_files[@]%.gpg}" )
+
+pw_name=$(printf '%s\n' "${password_files[@]}" | fzf-dmenu)
+echo poop: "$pw_name"
+
+[[ -z $pw_name ]] && exit
+
+lnch type-this "${1:-0.05}" "$(pass show "$pw_name")"

@@ -38,8 +38,13 @@ alias vim=$EDITOR # Vim always points to whichever vim version is installed
 alias svim="sudo -E $EDITOR" # Use sudo with vim
 alias o='exo-open' # Open file with default program
 alias matlab='matlab -nodesktop -nosplash' # Matlab repl
-alias pgen="gopass generate"
 alias f=lnch
+
+function pgen() {
+  pass generate "$@" && \
+  echo 'Pushing changes to password store' && \
+  pass git push
+}
 
 function oue() {
   ~/ro/UnrealEngine/Engine/Binaries/Linux/UE4Editor "$(realpath "$1")" -opengl4
