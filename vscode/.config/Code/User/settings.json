@@ -86,7 +86,7 @@
   "search.smartCase": true,
   "latex-workshop.view.pdf.viewer": "tab",
   "workbench.startupEditor": "newUntitledFile",
-  "C_Cpp.clang_format_fallbackStyle": "LLVM",
+  "C_Cpp.clang_format_fallbackStyle": "none",
   "diffEditor.ignoreTrimWhitespace": false,
   "python.pythonPath": "/usr/bin/python2",
   "window.titleBarStyle": "native",

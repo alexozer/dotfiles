@@ -31,6 +31,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'alok/notational-fzf-vim'
 
 " Maybe wanted in the future
+"Plug 'plasticboy/vim-markdown'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
 "Plug 'moll/vim-bbye' " when buffer closed, don't close window

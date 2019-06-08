@@ -8,7 +8,6 @@ password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
 pw_name=$(printf '%s\n' "${password_files[@]}" | fzf-dmenu)
-echo poop: "$pw_name"
 
 [[ -z $pw_name ]] && exit
 
