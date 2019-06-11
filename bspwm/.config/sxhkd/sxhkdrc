@@ -161,6 +161,11 @@ super + bracketright
 	killall polybar ;\
 	polybar top
 
+super + shift + bracketleft
+	xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --off ;\
+	killall polybar;\
+	polybar top
+
 super + shift + b
 	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
 

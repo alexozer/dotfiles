@@ -97,5 +97,6 @@
   "C_Cpp.default.cppStandard": "c++14",
   "explorer.confirmDragAndDrop": false,
   "editor.fontSize": 12,
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
+  "files.autoSaveDelay": null
 }

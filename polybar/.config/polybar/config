@@ -14,7 +14,8 @@ red = #ff5555
 yellow = #f1fa8c
 
 [bar/top]
-monitor = DisplayPort-0
+; monitor = DisplayPort-0
+monitor = HDMI-A-0
 bottom = false
 width = 100%
 height = 28
