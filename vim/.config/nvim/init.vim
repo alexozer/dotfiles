@@ -29,6 +29,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'alok/notational-fzf-vim'
+Plug 'vim-scripts/vim-auto-save'
 
 " Maybe wanted in the future
 "Plug 'plasticboy/vim-markdown'
@@ -214,6 +215,10 @@ let g:ale_lint_on_text_changed="never"
 " lightline
 let g:lightline = {
       \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename' ] ]
+      \ },
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },
@@ -232,5 +237,13 @@ nnoremap <leader>g :Goyo<cr>
 
 let g:nv_search_paths = ['~/doc/Dropbox/notes']
 nnoremap <silent> <leader>s :NV<CR>
+
+" vim-auto-save
+
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_silent = 1  " do not display the auto-save notification
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+cabbrev w echoerr 'Stop saving manually!'
+cabbrev wq echoerr 'No need to save and quit'
 
 " vim:shiftwidth=2
