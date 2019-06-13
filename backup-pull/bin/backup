@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -uo pipefail
+shopt -s dotglob nullglob
+
+backupDirs="code doc pic .dotfiles win vid music .local/share/dolphin-emu"
+tetherSSID="Alex's iPhone"
+
+doBackup() {
+	# Push dotfiles
+	cd "$HOME"/.dotfiles
+	git pull
+
+	# Record installed packages
+	pacman -Qqen > ~/doc/personal/arch/pkgs-native-explicit.txt
+	pacman -Qqem > ~/doc/personal/arch/pkgs-foreign-explicit.txt
+	pacman -Qqn > ~/doc/personal/arch/pkgs-native-all.txt
+	pacman -Qqm > ~/doc/personal/arch/pkgs-foreign-all.txt
+}
+
+fail() {
+	notify-me "Backup failed!" "$*"
+	return 1
+}
+
+errors=$(doBackup 2>&1) || fail "$errors"
