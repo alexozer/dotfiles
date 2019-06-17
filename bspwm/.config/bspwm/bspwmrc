@@ -36,5 +36,6 @@ bspc rule -a "Org.gnome.Weather.Application" state=floating
 bspc rule -a "Gpick" state=floating
 bspc rule -a "GLava" state=floating layer=below sticky=true locked=true border=off rectangle=2560x1600+0+0
 bspc rule -a Pavucontrol state=floating
+bspc rule -a UE4Editor desktop=^2
 
 "$HOME"/.config/bspwm/startup.sh &
