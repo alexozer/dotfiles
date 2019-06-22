@@ -17,7 +17,6 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'junegunn/vim-plug'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'metakirby5/codi.vim'
@@ -28,7 +27,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
 Plug 'tomtom/tcomment_vim'
-Plug 'alok/notational-fzf-vim'
+Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/vim-auto-save'
 
 " Maybe wanted in the future
@@ -61,6 +60,7 @@ Plug 'vim-scripts/vim-auto-save'
 "Plug 'xolox/vim-misc' | Pl?g 'xolox/vim-session'
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 "Plug 'vimwiki/vimwiki'
+"Plug 'alok/notational-fzf-vim'
 
 call plug#end()
 
@@ -151,15 +151,15 @@ nnoremap <silent> <leader><s-tab> :tabc<cr>
 nnoremap <silent> <tab> :tabn<cr>
 nnoremap <silent> <s-tab> :tabp<cr>
 
-nnoremap <leader><leader> :e#<cr> " Open last file
+nnoremap <silent> <leader><leader> :e#<cr> " Open last file
 
 " Control-Backspace deletes last work in insert mode
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
 " Edit/source vimrc
-nnoremap <leader>ve :e $MYVIMRC<cr>
-nnoremap <leader>vs :source $MYVIMRC<cr>
+nnoremap <silent> <leader>ve :e $MYVIMRC<cr>
+nnoremap <silent> <leader>vs :source $MYVIMRC<cr>
 
 " Make word before cursor upper-case
 inoremap <c-u> <esc>bgUwgi
@@ -190,16 +190,15 @@ augroup END
 "
 
 " nerdtree
-nnoremap <leader>3 :NERDTreeToggle<cr>
+nnoremap <silent> <leader>3 :NERDTreeToggle<cr>
 
-" ctrlp
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
-let g:ctrlp_map = '<leader><space>'
-let g:ctrlp_working_path_mode=''
+" fzf.vim
+
+nnoremap <silent> <leader><space> :Files<cr>
+nnoremap <silent> <leader>s :Files ~/doc/Dropbox/notes<cr>
+
+" Enter notes directory so I can create, rename, move files
+nnoremap <silent> <leader>d :cd ~/doc/Dropbox/notes<cr>
 
 " pencil
 augroup pencil
@@ -228,16 +227,11 @@ let g:lightline = {
 " tcomment
 
 let g:tcomment_mapleader1=''
-noremap <C-_> :TComment<cr>
+noremap <silent> <C-_> :TComment<cr>
 
 " goyo
 
-nnoremap <leader>g :Goyo<cr>
-
-" notational-fzf-vim
-
-let g:nv_search_paths = ['~/doc/Dropbox/notes']
-nnoremap <silent> <leader>s :NV<CR>
+nnoremap <silent> <leader>g :Goyo<cr>
 
 " vim-auto-save
 

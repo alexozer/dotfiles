@@ -1,21 +1,20 @@
-if [[ "$(hostname)" == "tinfoil" ]] || [[ "$(hostname)" == "tinbox" ]]; then
-  source /usr/share/zsh/share/antigen.zsh
-else
-  source ~/build/antigen.zsh
-fi
+export ZSH=~/.oh-my-zsh
 
-antigen use oh-my-zsh
+ZSH_THEME="robbyrussell"
+HYPHEN_INSENSITIVE="true"
+DISABLE_AUTO_UPDATE=true
+plugins=(
+  git
+  pip
+  command-not-found
+  extract
+  gitignore
+  history-substring-search
+  vi-mode
+  last-working-dir
+)
 
-antigen bundle git
-antigen bundle pip
-antigen bundle command-not-found
-antigen bundle extract
-antigen bundle gitignore
-antigen bundle history-substring-search
-antigen bundle vi-mode
-antigen bundle last-working-dir
-
-antigen apply
+source "$ZSH"/oh-my-zsh.sh
 
 # Search command history
 bindkey -M vicmd "j" history-substring-search-down
@@ -42,6 +41,7 @@ alias matlab='matlab -nodesktop -nosplash' # Matlab repl
 alias f=lnch
 
 function pgen() {
+  # Don't push if I just type 'pgen' for some reason
   pass generate "$@" && \
   echo 'Pushing changes to password store' && \
   pass git push
