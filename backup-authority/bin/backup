@@ -7,7 +7,8 @@ backupDirs="code doc pic .dotfiles win vid music .local/share/dolphin-emu"
 tetherSSID="Alex's iPhone"
 
 doBackup() {
-	asdfasdfasdf
+	sh sdfasdfasdfasdfasd
+
 	# Avoid backing up over tethered cell connection
 	if [[ "$(iwgetid --raw)" = "$tetherSSID" ]]; then
 		echo "Connected to $tetherSSID, not backing up"
