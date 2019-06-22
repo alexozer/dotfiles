@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-set -uo pipefail
+set -euo pipefail
 shopt -s dotglob nullglob
 
 backupDirs="code doc pic .dotfiles win vid music .local/share/dolphin-emu"
 tetherSSID="Alex's iPhone"
 
-function doBackup() {
+doBackup() {
 	sh sdfasdfasdfasdfasd
 
 	# Avoid backing up over tethered cell connection
@@ -41,7 +41,7 @@ function doBackup() {
 	sh ~/.oh-my-zsh/tools/upgrade.sh
 }
 
-function fail() {
+fail() {
 	notify-me "Backup failed!" "$*"
 	return 1
 }
