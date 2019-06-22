@@ -7,7 +7,7 @@ backupDirs="code doc pic .dotfiles win vid music .local/share/dolphin-emu"
 tetherSSID="Alex's iPhone"
 
 doBackup() {
-	set -euo pipefail
+	set -e
 	sh sdfasdfasdfasdfasd
 
 	# Avoid backing up over tethered cell connection
