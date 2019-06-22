@@ -6,7 +6,7 @@ shopt -s dotglob nullglob
 backupDirs="code doc pic .dotfiles win vid music .local/share/dolphin-emu"
 tetherSSID="Alex's iPhone"
 
-function doBackup() {
+doBackup() {
 	set -euo pipefail
 	sh sdfasdfasdfasdfasd
 
