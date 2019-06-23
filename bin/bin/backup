@@ -4,6 +4,7 @@ import time
 import subprocess
 import os
 import shlex
+import socket
 
 backup_dirs = ['code', 'doc', 'pic', '.dotfiles', 'win', 'vid', 'music', '.local/share/dolphin-emu']
 tether_ssid = "Alex's iPhone"
@@ -32,11 +33,22 @@ def cd(path):
     os.chdir(os.path.expanduser(path))
 
 
-def do_backup():
-    # Avoid backing up over tethered cell connection
-    if sh('iwgetid --raw') == tether_ssid:
-        raise RuntimeError(f'Connected to {tether_ssid}, not backing up')
+def notify(title, message):
+    email_content = f'Subject: {title}\n{message}'
+    email_address = sh('pass show emailaddress')
+    sh(f'msmtp {email_address}', stdin_str=email_content)
 
+    summary = shlex.quote(str(message).split('\n')[0])
+    sh(f'notify-send "{title}" {summary}')
+
+
+def record_installed_packages():
+    sh('pacman -Qqen > ~/doc/personal/arch/pkgs-native-explicit.txt')
+    sh('pacman -Qqem > ~/doc/personal/arch/pkgs-foreign-explicit.txt')
+    sh('pacman -Qqn > ~/doc/personal/arch/pkgs-native-all.txt')
+    sh('pacman -Qqm > ~/doc/personal/arch/pkgs-foreign-all.txt')
+
+def do_backup_tinbox():
     date = time.ctime()
 
     # Push dotfiles
@@ -50,11 +62,7 @@ def do_backup():
     sh('git add .')
     sh(f'git commit -m "Update {date}"', check=False)
 
-    # Record installed packages
-    sh('pacman -Qqen > ~/doc/personal/arch/pkgs-native-explicit.txt')
-    sh('pacman -Qqem > ~/doc/personal/arch/pkgs-foreign-explicit.txt')
-    sh('pacman -Qqn > ~/doc/personal/arch/pkgs-native-all.txt')
-    sh('pacman -Qqm > ~/doc/personal/arch/pkgs-foreign-all.txt')
+    record_installed_packages()
 
     # Upgrade oh-my-zsh, because why not do it here?
     sh('sh ~/.oh-my-zsh/tools/upgrade.sh')
@@ -64,18 +72,28 @@ def do_backup():
         sh(f'rclone sync "$HOME"/"{dir}" box:"{dir}" --skip-links')
 
 
-def notify(title, message):
-    email_content = f'Subject: {title}\n{message}'
-    email_address = sh('pass show emailaddress')
-    sh(f'msmtp {email_address}', stdin_str=email_content)
+def do_backup_tinfoil():
+    # Pull dotfiles
+    cd('~/.dotfiles')
+    sh('git pull')
 
-    summary = shlex.quote(str(message).split('\n')[0])
-    sh(f'notify-send "{title}" {summary}')
+    record_installed_packages()
 
 
 if __name__ == '__main__':
     try:
-        do_backup()
+        # Avoid backing up over tethered cell connection
+        if sh('iwgetid --raw') == tether_ssid:
+            raise RuntimeError(f'Connected to {tether_ssid}, not backing up')
+
+        hostname = socket.gethostname()
+        if hostname == 'tinbox':
+            do_backup_tinbox()
+        elif hostname == 'tinfoil':
+            do_backup_tinfoil()
+        else:
+            raise RuntimeError(f'Unknown hostname "{hostname}", not running backup')
+
     except ShellError as e:
         notify('Backup failed!', e.msg)
     except Exception as e:
