@@ -65,8 +65,9 @@ def do_backup():
 
 
 def notify(title, message):
-    email = f'Subject: {title}\n{message}'
-    sh('msmtp "$(pass show emailaddress)"', stdin_str=email)
+    email_content = f'Subject: {title}\n{message}'
+    email_address = sh('pass show emailaddress')
+    sh(f'msmtp {email_address}', stdin_str=email_content)
 
     summary = shlex.quote(str(message).split('\n')[0])
     sh(f'notify-send "{title}" {summary}')
