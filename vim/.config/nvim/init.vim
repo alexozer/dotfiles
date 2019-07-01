@@ -22,7 +22,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'metakirby5/codi.vim'
 Plug 'reedes/vim-pencil'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
@@ -31,7 +30,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/vim-auto-save'
 
 " Maybe wanted in the future
+"Plug 'tpope/vim-fugitive'
+"Plug 'w0rp/ale'
 "Plug 'plasticboy/vim-markdown'
+"Plug 'gabrielelana/vim-markdown'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 "Plug 'bling/vim-bufferline' " show buffer list in status bar
 "Plug 'moll/vim-bbye' " when buffer closed, don't close window

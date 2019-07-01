@@ -48,6 +48,7 @@ def record_installed_packages():
     sh('pacman -Qqn > ~/doc/personal/arch/pkgs-native-all.txt')
     sh('pacman -Qqm > ~/doc/personal/arch/pkgs-foreign-all.txt')
 
+
 def do_backup_tinbox():
     date = time.ctime()
 
