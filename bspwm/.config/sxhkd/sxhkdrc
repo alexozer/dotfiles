@@ -169,14 +169,11 @@ super + shift + bracketleft
 super + shift + b
 	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
 
+super + shift + Return
+	gnome-terminal -e 'nvim -c "Files ~/doc/Dropbox/notes"'
+
 super + {Down,Up}
 	xbacklight -{dec,inc} 1
-
-super + semicolon
-	gnome-terminal -e "nvim doc/Dropbox/notes/todo.md"
-
-super + apostrophe
-	gnome-terminal -e "nvim doc/Dropbox/notes/journal.md"
 
 super + slash
 	mailspring
