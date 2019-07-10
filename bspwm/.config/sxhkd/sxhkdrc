@@ -146,7 +146,7 @@ super + shift + p
 
 # Wait a second before typing password so form can refocus
 super + shift + ctrl + p
-	gnome-terminal-popup "gopass-ui 1"
+	gnome-terminal-popup "pass-ui 1"
 
 super + x
 	gnome-terminal-popup fkill 160x24
