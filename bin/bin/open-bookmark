@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-BOOKMARKS_FILE=~/doc/personal/bookmarks
-
-name="$(rg '^(.*?)\t' "$BOOKMARKS_FILE" --only-matching | fzf --reverse)"
-# rg "^$name\\t(.*$)" | xargs --no-run-if-empty firefox-developer-edition
-echo "$name"
-# rg "^$name\\t(.*$)" "$BOOKMARKS_FILE"

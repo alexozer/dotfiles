@@ -6,7 +6,7 @@
 
 int main() {
   const std::string BOOKMARKS_FILE =
-      std::string(std::getenv("HOME")) + "/doc/personal/bookmarks";
+    std::string(std::getenv("HOME")) + "/doc/personal/bookmarks";
   constexpr int MAX_LEN = 30;
 
   std::fstream bmFile(BOOKMARKS_FILE);
@@ -52,6 +52,6 @@ int main() {
     }
 
     std::cout << clippedTitle << thisPad << "\t\x1b[36m" << url << "\x1b[m"
-              << std::endl;
+      << std::endl;
   }
 }

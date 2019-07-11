@@ -5,4 +5,4 @@ if [[ -z "$1" ]]; then
     exit 1
 fi
 
-youtube-dl -x --audio-format "${2:-mp3}" "$1"
+youtube-dl --extract-audio --restrict-filenames --audio-format "${2:-mp3}" "$1"
