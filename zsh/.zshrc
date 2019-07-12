@@ -40,6 +40,7 @@ alias o='exo-open' # Open file with default program
 alias matlab='matlab -nodesktop -nosplash' # Matlab repl
 alias f=lnch
 alias youtube-dl='youtube-dl --restrict-filenames'
+alias cn='cd ~/doc/Dropbox/notes'
 
 function pgen() {
   # Don't push if I just type 'pgen' for some reason
