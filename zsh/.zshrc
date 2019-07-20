@@ -41,6 +41,7 @@ alias matlab='matlab -nodesktop -nosplash' # Matlab repl
 alias f=lnch
 alias youtube-dl='youtube-dl --restrict-filenames'
 alias cn='cd ~/doc/Dropbox/notes'
+alias bm='ln -s "$PWD" "$(basename "$PWD")"'
 
 function pgen() {
   # Don't push if I just type 'pgen' for some reason
