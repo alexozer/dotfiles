@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-bookmark-printer |
+bmprint |
 fzf-tmux --reverse -u 30% --ansi --no-hscroll --tiebreak=begin |
 awk 'BEGIN { FS = "\t" } { print $2 }' |
 xargs --no-run-if-empty lnch firefox-developer-edition
