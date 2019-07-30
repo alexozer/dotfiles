@@ -6,7 +6,18 @@ import os
 import shlex
 import socket
 
-backup_dirs = ['code', 'doc', 'pic', '.dotfiles', 'win', 'vid', 'music', '.local/share/dolphin-emu']
+backup_dirs = [
+    'code',
+    'doc',
+    'pic',
+    '.dotfiles',
+    'win',
+    'vid',
+    'music',
+    '.local/share/dolphin-emu',
+    '.weechat',
+]
+
 tether_ssid = "Alex's iPhone"
 
 

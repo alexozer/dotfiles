@@ -27,6 +27,7 @@
       <value type="string" value="notify-send"/>
       <value type="string" value="ntfy"/>
       <value type="string" value="org.gnome.Evolution"/>
+      <value type="string" value="org.gnome.Evolution-alarm-notify"/>
       <value type="string" value="org.gnome.Fractal"/>
       <value type="string" value="org.gnome.Geary"/>
       <value type="string" value="org.kde.kdenlive"/>
