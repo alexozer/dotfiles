@@ -185,6 +185,7 @@ augroup group
   autocmd FileType tex setlocal nocursorline  " Slows down Vim a lot
   autocmd FileType ocaml setlocal tabstop=2 shiftwidth=2
   autocmd FileType gitcommit let g:auto_save = 0
+  autocmd VimResized * wincmd = " Balance windows when Vim resized
 augroup END
 
 "
