@@ -28,6 +28,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/vim-auto-save'
+Plug 'alok/notational-fzf-vim'
 
 " Maybe wanted in the future
 "Plug 'tpope/vim-fugitive'
@@ -62,7 +63,6 @@ Plug 'vim-scripts/vim-auto-save'
 "Plug 'xolox/vim-misc' | Pl?g 'xolox/vim-session'
 "Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 "Plug 'vimwiki/vimwiki'
-"Plug 'alok/notational-fzf-vim'
 
 call plug#end()
 
@@ -202,6 +202,11 @@ nnoremap <silent> <leader>s :Files ~/doc/Dropbox/notes<cr>
 
 " Enter notes directory so I can create, rename, move files
 nnoremap <silent> <leader>d :cd ~/doc/Dropbox/notes<cr>
+
+" notational-fzf-vim
+
+let g:nv_search_paths = ['~/doc/Dropbox/notes']
+nnoremap <silent> <leader>r :NV<cr>
 
 " pencil
 augroup pencil
