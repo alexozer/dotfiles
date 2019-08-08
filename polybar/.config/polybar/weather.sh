@@ -5,7 +5,8 @@
 
 # Config
 UNITS="imperial"
-SYMBOL="°"
+DEGREES_SYMBOL="°"
+SUNSET_SYMBOL="滋"
 # End config
 
 LOC_URL='https://location.services.mozilla.com/v1/geolocate?key=geoclue'
@@ -28,4 +29,7 @@ weather_desc="$(echo "$weather" | jq -r '.weather[0].description')"
 weather_desc="${weather_desc^}" # Capitalize
 weather_temp="$(echo "$weather" | jq '.main.temp + 0.5 | floor')"
 
-echo "$weather_desc $weather_temp$SYMBOL"
+weather_sunset_sec="$(echo "$weather" | jq '.sys.sunset')"
+weather_sunset_time="$(date --date="@$weather_sunset_sec" +%I:%M)"
+
+echo "$weather_desc $weather_temp$DEGREES_SYMBOL     $SUNSET_SYMBOL $weather_sunset_time"
