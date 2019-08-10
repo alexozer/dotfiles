@@ -20,6 +20,6 @@ CM_SELECTIONS="clipboard" clipmenud &
 steam -silent &
 discord &
 tmux new-session -A -d -s weechat weechat &
+timetrack &
 
-dex -a
-
+dex -a &

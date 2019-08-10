@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+logdir=~/doc/Dropbox/notes/timetrack
+mkdir -p "$logdir"
+
+while sleep $((45 * 60)); do
+    status="$(zenity --entry --text 'What are you doing right now?')"
+    title="# $(date +%c)"
+    month="$(date +%b)"
+    month="${month,,}"
+    year="$(date +%Y)"
+
+    logfile="$logdir/$month-$year.md"
+    echo -e "$title\n\n$status\n" >> "$logfile"
+done
