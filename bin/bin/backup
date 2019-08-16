@@ -16,6 +16,7 @@ backup_dirs = [
     'music',
     '.local/share/dolphin-emu',
     '.weechat',
+    'iso',
 ]
 
 tether_ssid = "Alex's iPhone"
