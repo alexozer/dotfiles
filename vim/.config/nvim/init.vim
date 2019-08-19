@@ -92,6 +92,7 @@ set laststatus=2         " Window will always have a status line
 set scrolloff=4	         " Leave lines visible at top and bottom of buffer
 set noshowmode           " Annoying mode display, the cursor shows which mode we're in
 set ttimeoutlen=0        " Respond to escape immediately
+set number
 
 " Search and Substitute
 set ignorecase           " Case-insensitive

@@ -62,11 +62,11 @@ super + {_,shift + }r
 super + ctrl + {h,j,k,l}
 	bspc node --presel-dir \~{west,south,north,east}
 
-super + {comma,period}
-	bspc monitor --focus {west,east}
+super + {comma,period,slash}
+	bspc monitor --focus {DisplayPort-0, DVI-D-0, HDMI-A-0}
 
-super + shift + {comma,period}
-	bspc node --to-monitor {west,east} --follow
+super + shift + {comma,period,slash}
+	bspc node --to-monitor {DisplayPort-0, DVI-D-0, HDMI-A-0} --follow
 
 #
 # wm-independent keybindings
@@ -152,19 +152,16 @@ super + x
 	gnome-terminal-popup fkill 160x24
 
 super + bracketleft
-	xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --off --output DVI-D-0 --off ;\
-	killall polybar ;\
-	polybar top
+	xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --off --output DVI-D-0 --off
 
 super + bracketright
-	xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x386 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 2560x0 --rotate right --scale 1.0x1.0 --output DVI-D-0 --off ;\
-	killall polybar ;\
-	polybar top
+	xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x249 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 381x1689 --rotate inverted --output DVI-D-0 --mode 1920x1080 --pos 2560x0 --rotate right
 
 super + shift + bracketleft
-	xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --off ;\
-	killall polybar;\
-	polybar top
+	xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --off
+
+super + backslash
+	killall polybar && polybar top --reload
 
 super + shift + b
 	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
@@ -174,9 +171,6 @@ super + shift + Return
 
 super + {Down,Up}
 	xbacklight -{dec,inc} 1
-
-super + slash
-	mailspring
 
 super + shift + slash
 	gnome-terminal -e "tmux new-session -A -s weechat weechat"
