@@ -62,11 +62,11 @@ super + {_,shift + }r
 super + ctrl + {h,j,k,l}
 	bspc node --presel-dir \~{west,south,north,east}
 
-super + {comma,period,slash}
-	bspc monitor --focus {DisplayPort-0, DVI-D-0, HDMI-A-0}
+super + {comma,period}
+	bspc monitor --focus {DisplayPort-0, DVI-D-0}
 
-super + shift + {comma,period,slash}
-	bspc node --to-monitor {DisplayPort-0, DVI-D-0, HDMI-A-0} --follow
+super + shift + {comma,period}
+	bspc node --to-monitor {DisplayPort-0, DVI-D-0} --follow
 
 #
 # wm-independent keybindings
