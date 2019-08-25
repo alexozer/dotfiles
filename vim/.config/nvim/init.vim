@@ -33,7 +33,6 @@ Plug 'alok/notational-fzf-vim'
 " Maybe wanted in the future
 "Plug 'tpope/vim-fugitive'
 "Plug 'w0rp/ale'
-"Plug 'plasticboy/vim-markdown'
 "Plug 'gabrielelana/vim-markdown'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 "Plug 'bling/vim-bufferline' " show buffer list in status bar

@@ -59,7 +59,7 @@ def record_installed_packages():
     sh('pacman -Qqem > ~/doc/personal/arch/pkgs-foreign-explicit.txt')
     sh('pacman -Qqn > ~/doc/personal/arch/pkgs-native-all.txt')
     sh('pacman -Qqm > ~/doc/personal/arch/pkgs-foreign-all.txt')
-
+    
 
 def do_backup_tinbox():
     date = time.ctime()
@@ -74,6 +74,15 @@ def do_backup_tinbox():
     cd('~/doc/Dropbox/notes')
     sh('git add .')
     sh(f'git commit -m "Update {date}"', check=False)
+
+    # Push romhack notes
+    # cd('~/doc/project/romhack/notes')
+    # sh('rm -rf ./*')
+    # sh('cp -r ~/doc/Dropbox/notes/romhack/* .')
+    # sh('git add .')
+    # date = time.ctime()
+    # sh('git commit -m "Update {date}"', check=False)
+    # sh('git push')
 
     record_installed_packages()
 
