@@ -14,17 +14,18 @@
         <property name="Y" type="int" value="0"/>
       </property>
     </property>
-    <property name="HDMI1" type="string" value="2. Ancor Communications Inc 23&quot;">
+    <property name="HDMI1" type="string" value="ASUS 23&quot;">
       <property name="Active" type="bool" value="true"/>
       <property name="Resolution" type="string" value="1920x1080"/>
       <property name="RefreshRate" type="double" value="60.000000"/>
-      <property name="Rotation" type="int" value="0"/>
+      <property name="Rotation" type="int" value="270"/>
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="false"/>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="0"/>
+        <property name="X" type="int" value="2560"/>
         <property name="Y" type="int" value="0"/>
       </property>
+      <property name="EDID" type="string" value="5859b764107fb5e67bff457b6f2350fcddb02ab7"/>
     </property>
     <property name="VGA1" type="string" value="3. Dell 19&quot;">
       <property name="Active" type="bool" value="false"/>
@@ -62,7 +63,7 @@
         <property name="Y" type="int" value="0"/>
       </property>
     </property>
-    <property name="DP2" type="string" value="1. Dell 25&quot;">
+    <property name="DP2" type="string" value="Dell 25&quot;">
       <property name="Active" type="bool" value="true"/>
       <property name="Resolution" type="string" value="2560x1440"/>
       <property name="RefreshRate" type="double" value="59.950550"/>
@@ -71,8 +72,9 @@
       <property name="Primary" type="bool" value="false"/>
       <property name="Position" type="empty">
         <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="0"/>
+        <property name="Y" type="int" value="206"/>
       </property>
+      <property name="EDID" type="string" value="b8565311855442bb187a977da7d5e518c85557be"/>
     </property>
     <property name="VGA-1" type="string" value="1. VBX ">
       <property name="Active" type="bool" value="true"/>
@@ -119,7 +121,7 @@
       <property name="Primary" type="bool" value="true"/>
       <property name="Position" type="empty">
         <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="219"/>
+        <property name="Y" type="int" value="217"/>
       </property>
       <property name="EDID" type="string" value="b8565311855442bb187a977da7d5e518c85557be"/>
     </property>
