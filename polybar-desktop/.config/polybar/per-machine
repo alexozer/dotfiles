@@ -1,2 +1,7 @@
-monitor = DisplayPort-0
+; AMD graphics
+monitor = DisplayPort-0 
+
+; Intel graphics
+; monitor = DP2 
+
 font-0 = NotoSans-Regular:size=13;2
