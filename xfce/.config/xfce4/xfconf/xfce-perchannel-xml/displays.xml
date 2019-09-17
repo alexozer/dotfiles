@@ -72,7 +72,7 @@
       <property name="Primary" type="bool" value="true"/>
       <property name="Position" type="empty">
         <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="217"/>
+        <property name="Y" type="int" value="0"/>
       </property>
       <property name="EDID" type="string" value="b8565311855442bb187a977da7d5e518c85557be"/>
     </property>
@@ -121,7 +121,7 @@
       <property name="Primary" type="bool" value="true"/>
       <property name="Position" type="empty">
         <property name="X" type="int" value="0"/>
-        <property name="Y" type="int" value="217"/>
+        <property name="Y" type="int" value="243"/>
       </property>
       <property name="EDID" type="string" value="b8565311855442bb187a977da7d5e518c85557be"/>
     </property>

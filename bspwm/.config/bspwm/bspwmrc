@@ -11,12 +11,12 @@ if [[ "$(hostname)" == "tinfoil" ]]; then
 
 elif [[ "$(hostname)" == "tinbox" ]]; then
     # Discrete graphics
-    primary_monitor=DisplayPort-0
-    secondary_monitor=HDMI-A-0
+    # primary_monitor=DisplayPort-0
+    # secondary_monitor=HDMI-A-0
 
     # Integrated graphics
-    # primary_monitor=DP2
-    # secondary_monitor=HDMI1
+    primary_monitor=DP2
+    secondary_monitor=HDMI1
 fi
 
 bspc config pointer_modifier mod4

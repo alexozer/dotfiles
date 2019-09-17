@@ -1156,6 +1156,18 @@
           <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/xfce-stripes.png"/>
         </property>
       </property>
+      <property name="monitorDVI-D-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/alex/pic/cube-carpet-fractal.jpg"/>
+        </property>
+      </property>
     </property>
     <property name="single-workspace-mode" type="bool" value="true"/>
     <property name="single-workspace-number" type="int" value="0"/>
