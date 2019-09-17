@@ -96,6 +96,7 @@ def do_backup_tinbox():
     # Backup files
     for backup_dir in backup_dirs:
         sh(f'rclone sync "$HOME"/"{backup_dir}" box:"{backup_dir}" --skip-links')
+    sh(f'rclone sync "/etc" box:"etc" --skip-links')
 
 
 def do_backup_tinfoil():
