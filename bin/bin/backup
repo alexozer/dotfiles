@@ -28,6 +28,8 @@ class ShellError(Exception):
 
 
 def sh(cmd, check=True, stdin_str=None):
+    print(f'Running command: {cmd}')
+
     proc = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     stdout, stderr = proc.communicate(stdin_str)
     if check and proc.returncode != 0:
@@ -39,7 +41,7 @@ def sh(cmd, check=True, stdin_str=None):
         )
         raise ShellError(msg)
 
-    print(f'Command: {cmd}\nStdout:\n{stdout}')  # TODO remove
+    print(f'Stdout:\n{stdout}\nStderr:\n{stderr}')
     return stdout
 
 
