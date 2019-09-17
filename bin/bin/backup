@@ -38,6 +38,8 @@ def sh(cmd, check=True, stdin_str=None):
             f'Stderr:\n{stderr}'
         )
         raise ShellError(msg)
+
+    print(f'Command: {cmd}\nStdout:\n{stdout}')  # TODO remove
     return stdout
 
 
@@ -90,8 +92,8 @@ def do_backup_tinbox():
     sh('sh ~/.oh-my-zsh/tools/upgrade.sh')
 
     # Backup files
-    for dir in backup_dirs:
-        sh(f'rclone sync "$HOME"/"{dir}" box:"{dir}" --skip-links')
+    for backup_dir in backup_dirs:
+        sh(f'rclone sync "$HOME"/"{backup_dir}" box:"{backup_dir}" --skip-links')
 
 
 def do_backup_tinfoil():
