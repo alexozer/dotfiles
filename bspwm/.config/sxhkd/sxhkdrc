@@ -234,7 +234,7 @@ super + o
 	gnome-terminal-popup browser-bookmarks
 
 super + O
-	gnome-terminal-popup 'rg --color never --files |\
+	gnome-terminal-popup 'rg --color never --files 2>/dev/null |\
 	fzf-dmenu | xargs echo -n | xargs -0 exo-open'
 
 # super + u
