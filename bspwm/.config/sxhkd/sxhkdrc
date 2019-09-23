@@ -2,7 +2,7 @@
 # bspwm keybindings
 #
 
-super + grave; {l, s, p, r}
+super + shift q; {l, s, p, r}
 	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot}
 
 super + c
@@ -19,132 +19,131 @@ super + b
 
 # Focus desktops
 
-super + a:
-	bspc desktop ^1 --focus
-
-super + s:
-	bspc desktop ^2 --focus
-
-super + d:
-	bspc desktop ^3 --focus
-
-super + f:
-	bspc desktop ^4 --focus
-
-super + r:
-	bspc desktop ^5 --focus
-
-super + e:
-	bspc desktop ^6 --focus
-
-super + w:
-	bspc desktop ^7 --focus
-
-super + q:
-	bspc desktop ^8 --focus
-
-super + u:
-	bspc desktop ^9 --focus
-
-super + i:
-	bspc desktop ^10 --focus
+# super + a:
+# 	bspc desktop ^1 --focus
+# 
+# super + s:
+# 	bspc desktop ^2 --focus
+# 
+# super + d:
+# 	bspc desktop ^3 --focus
+# 
+# super + f:
+# 	bspc desktop ^4 --focus
+# 
+# super + r:
+# 	bspc desktop ^5 --focus
+# 
+# super + e:
+# 	bspc desktop ^6 --focus
+# 
+# super + w:
+# 	bspc desktop ^7 --focus
+# 
+# super + q:
+# 	bspc desktop ^8 --focus
+# 
+# super + u:
+# 	bspc desktop ^9 --focus
+# 
+# super + i:
+# 	bspc desktop ^10 --focus
 
 # Move window to desktop
 
-super + shift a:
-	bspc node --to-desktop ^1 --focus
-
-super + shift + s:
-	bspc node --to-desktop ^2 --focus
-
-super + shift + d:
-	bspc node --to-desktop ^3 --focus
-
-super + shift + f:
-	bspc node --to-desktop ^4 --focus
-
-super + shift + r:
-	bspc node --to-desktop ^5 --focus
-
-super + shift + e:
-	bspc node --to-desktop ^6 --focus
-
-super + shift + w:
-	bspc node --to-desktop ^7 --focus
-
-super + shift + q:
-	bspc node --to-desktop ^8 --focus
-
-super + shift + u:
-	bspc node --to-desktop ^9 --focus
-
-super + shift + i:
-	bspc node --to-desktop ^10 --focus
+# super + shift a:
+# 	bspc node --to-desktop ^1 --focus
+# 
+# super + shift + s:
+# 	bspc node --to-desktop ^2 --focus
+# 
+# super + shift + d:
+# 	bspc node --to-desktop ^3 --focus
+# 
+# super + shift + f:
+# 	bspc node --to-desktop ^4 --focus
+# 
+# super + shift + r:
+# 	bspc node --to-desktop ^5 --focus
+# 
+# super + shift + e:
+# 	bspc node --to-desktop ^6 --focus
+# 
+# super + shift + w:
+# 	bspc node --to-desktop ^7 --focus
+# 
+# super + shift + q:
+# 	bspc node --to-desktop ^8 --focus
+# 
+# super + shift + u:
+# 	bspc node --to-desktop ^9 --focus
+# 
+# super + shift + i:
+# 	bspc node --to-desktop ^10 --focus
 
 # Reorder desktops
 
-super + ctrl + a:
-	bspc desktop --swap ^1 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + s:
-	bspc desktop --swap ^2 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + d:
-	bspc desktop --swap ^3 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + f:
-	bspc desktop --swap ^4 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + r:
-	bspc desktop --swap ^5 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + e:
-	bspc desktop --swap ^6 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + w:
-	bspc desktop --swap ^7 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + q:
-	bspc desktop --swap ^8 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + u:
-	bspc desktop --swap ^9 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-super + ctrl + i:
-	bspc desktop --swap ^10 --focus; \
- 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
-
-# super + {n,i}
-	# bspc desktop primary:focused#{next,prev}.local --focus
-
-# super + {1-9,0}
-# 	bspc desktop ^{1-9,10} --focus
+# super + ctrl + a:
+# 	bspc desktop --swap ^1 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
-# super + shift + {1-9,0}
-# 	bspc node --to-desktop ^{1-9,10} --focus
+# super + ctrl + s:
+# 	bspc desktop --swap ^2 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
-# super + shift + {n,i}
-# 	bspc node --to-desktop primary:focused#{next,prev}.local --focus
+# super + ctrl + d:
+# 	bspc desktop --swap ^3 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
-# super + ctrl + shift + {1-9,0}
-# 	bspc desktop --swap ^{1-9,10} --focus; \
-# 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+# super + ctrl + f:
+# 	bspc desktop --swap ^4 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
-# super + ctrl + shift + {n,i}
-# 	bspc desktop --swap primary:focused#{next,prev}.local --focus; \
-# 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+# super + ctrl + r:
+# 	bspc desktop --swap ^5 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
+# super + ctrl + e:
+# 	bspc desktop --swap ^6 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+# 
+# super + ctrl + w:
+# 	bspc desktop --swap ^7 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+# 
+# super + ctrl + q:
+# 	bspc desktop --swap ^8 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+# 
+# super + ctrl + u:
+# 	bspc desktop --swap ^9 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+# 
+# super + ctrl + i:
+# 	bspc desktop --swap ^10 --focus; \
+#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
-super + {_,shift + }v
+super + {n,i}
+  bspc desktop primary:focused#{next,prev}.local --focus
+
+super + {1-9,0}
+	bspc desktop ^{1-9,10} --focus
+
+super + shift + {1-9,0}
+	bspc node --to-desktop ^{1-9,10} --focus
+
+super + shift + {n,i}
+	bspc node --to-desktop primary:focused#{next,prev}.local --focus
+
+super + ctrl + shift + {1-9,0}
+	bspc desktop --swap ^{1-9,10} --focus; \
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+super + ctrl + shift + {n,i}
+	bspc desktop --swap primary:focused#{next,prev}.local --focus; \
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+super + {_,shift + }f
 	bspc node --state {\~floating,\~pseudo_tiled}
 
 super + y
@@ -193,7 +192,7 @@ super + w
 super + shift + w
 	firefox-developer-edition --private-window
 
-super + g
+super + e
 	thunar
 
 super + {z, shift + z}; {r,f,w}
@@ -237,8 +236,8 @@ super + O
 	gnome-terminal-popup 'rg --color never --files 2>/dev/null |\
 	fzf-dmenu | xargs echo -n | xargs -0 exo-open'
 
-# super + u
-	# spotify --force-device-scale-factor=1.2
+super + u
+	spotify --force-device-scale-factor=1.2
 
 # super + p
 	# gnome-terminal-popup "CM_LAUNCHER='fzf-dmenu' clipmenu -i"
