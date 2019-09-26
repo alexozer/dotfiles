@@ -195,7 +195,7 @@ super + shift + w
 super + e
 	thunar
 
-super + {z, shift + z}; {r,f,w}
+super + {s, shift + s}; {r,f,w}
 	maim {,-d 2} {-s,-i root,-i $(xdotool getactivewindow)} ~/screenshot.png && ;\
 	notify-send 'Screenshot captured'
 

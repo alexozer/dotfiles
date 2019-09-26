@@ -51,6 +51,12 @@ function pgen() {
   pass git push
 }
 
+function pins() {
+  pass insert "$@" && \
+  echo 'Pushing changes to password store' && \
+  pass git push
+}
+
 function oue() {
   ~/ro/UnrealEngine/Engine/Binaries/Linux/UE4Editor "$(realpath "$1")" -opengl4
 }
