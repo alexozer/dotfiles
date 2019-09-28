@@ -91,7 +91,7 @@ def do_backup_tinbox():
     record_installed_packages()
 
     # Upgrade oh-my-zsh, because why not do it here?
-    sh('sh ZSH=~/.oh-my-zsh ~/.oh-my-zsh/tools/upgrade.sh')
+    sh('ZSH=~/.oh-my-zsh sh ~/.oh-my-zsh/tools/upgrade.sh')
 
     # Backup files
     for backup_dir in backup_dirs:
