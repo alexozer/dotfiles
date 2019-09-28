@@ -94,7 +94,7 @@ def do_backup_tinbox():
     sh('ZSH=~/.oh-my-zsh sh ~/.oh-my-zsh/tools/upgrade.sh')
 
     # Backup files
-    for backup_dir in backup_dirs:
+    for backup_dir in backup_dirs.copy().shuffle():
         sh(f'rclone sync "$HOME"/"{backup_dir}" box:"{backup_dir}" --skip-links')
     sh(f'rclone sync "/etc" box:"etc" --skip-links')
 
