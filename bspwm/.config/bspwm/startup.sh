@@ -11,7 +11,6 @@ gnome-terminal &
 
 xfsettingsd &
 xfce4-notifyd &
-polybar top --reload &
 xfdesktop --disable-wm-check &
 
 thunar --daemon &
@@ -26,3 +25,5 @@ timetrack &
 dropbox &
 
 dex -a &
+
+sleep 1 && polybar top --reload &
