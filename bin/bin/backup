@@ -5,6 +5,7 @@ import subprocess
 import os
 import shlex
 import socket
+import random
 
 backup_dirs = [
     'code',
@@ -94,7 +95,9 @@ def do_backup_tinbox():
     sh('ZSH=~/.oh-my-zsh sh ~/.oh-my-zsh/tools/upgrade.sh')
 
     # Backup files
-    for backup_dir in backup_dirs.copy().shuffle():
+    shuffled_dirs = backup_dirs.copy()
+    random.shuffle(shuffled_dirs)
+    for backup_dir in shuffled_dirs:
         sh(f'rclone sync "$HOME"/"{backup_dir}" box:"{backup_dir}" --skip-links')
     sh(f'rclone sync "/etc" box:"etc" --skip-links')
 
