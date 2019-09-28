@@ -80,7 +80,7 @@ def do_backup_tinbox():
     sh(f'git commit -m "Update {date}"', check=False)
 
     # Push romhack notes
-    # cd('~/doc/project/romhack/notes')
+    # cd('~/doc/projects/romhack/notes')
     # sh('rm -rf ./*')
     # sh('cp -r ~/doc/Dropbox/notes/romhack/* .')
     # sh('git add .')
