@@ -116,6 +116,9 @@ if __name__ == '__main__':
         if sh('iwgetid --raw') == tether_ssid:
             raise RuntimeError(f'Connected to {tether_ssid}, not backing up')
 
+        # Wait 10s for network
+        time.sleep(10)
+
         hostname = socket.gethostname()
         if hostname == 'tinbox':
             do_backup_tinbox()
