@@ -113,7 +113,7 @@ def do_backup_tinfoil():
 if __name__ == '__main__':
     try:
         # Wait for network
-        # time.sleep(60)
+        time.sleep(60)
 
         # Avoid backing up over tethered cell connection
         if sh('iwgetid --raw') == tether_ssid:
