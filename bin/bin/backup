@@ -112,12 +112,17 @@ def do_backup_tinfoil():
 
 if __name__ == '__main__':
     try:
+        # Wait for network
+        # time.sleep(60)
+
         # Avoid backing up over tethered cell connection
         if sh('iwgetid --raw') == tether_ssid:
             raise RuntimeError(f'Connected to {tether_ssid}, not backing up')
 
-        # Wait for network
-        time.sleep(60)
+        # Check for conflicted notes
+        conflicts = sh('rg --files ~/doc/Dropbox/notes | rg -i "conflicted copy"').strip()
+        if conflicts != '':
+            notify('Conflict detected in notes', conflicts)
 
         hostname = socket.gethostname()
         if hostname == 'tinbox':
