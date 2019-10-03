@@ -2,7 +2,7 @@
 Type=Application
 Name=Wine Internet Explorer
 MimeType=image/jpeg;
-Exec=env WINEPREFIX="/home/alex/.wine" wine start /ProgIDOpen pjpegfile %f
+Exec=env WINEPREFIX="/home/alex/build/lutris/livesplit" /home/ubuntu/buildbot/runners/wine/ge-protonified-4.9-nofshack-1.8-x86_64/bin/wine start /ProgIDOpen pjpegfile %f
 NoDisplay=true
 StartupNotify=true
-Icon=7596_iexplore.0
+Icon=FB4C_iexplore.0

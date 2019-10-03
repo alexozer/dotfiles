@@ -1,7 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=A Wine application
+Name=LiveSplit
 MimeType=application/x-wine-extension-lss;
-Exec=env WINEPREFIX="/home/alex/.wine" wine start /ProgIDOpen LiveSplit.SplitsFile %f
+Exec=env WINEPREFIX="/home/alex/build/lutris/livesplit" /home/ubuntu/buildbot/runners/wine/ge-protonified-4.9-nofshack-1.8-x86_64/bin/wine start /ProgIDOpen LiveSplit.SplitsFile %f
 NoDisplay=true
 StartupNotify=true
+Icon=7AF4_LiveSplit.0
