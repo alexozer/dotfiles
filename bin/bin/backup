@@ -120,7 +120,7 @@ if __name__ == '__main__':
             raise RuntimeError(f'Connected to {tether_ssid}, not backing up')
 
         # Check for conflicted notes
-        conflicts = sh('rg --files ~/doc/Dropbox/notes | rg -i "conflicted copy"').strip()
+        conflicts = sh('rg --files ~/doc/Dropbox/notes | rg -i "conflicted copy"', check=False).strip()
         if conflicts != '':
             notify('Conflict detected in notes', conflicts)
 
