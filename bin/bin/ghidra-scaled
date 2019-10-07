@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-run_scaled --scale=1.5 /usr/bin/ghidra
