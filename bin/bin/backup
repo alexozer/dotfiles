@@ -99,7 +99,7 @@ def do_backup_tinbox():
     random.shuffle(shuffled_dirs)
     for backup_dir in shuffled_dirs:
         sh(f'rclone sync "$HOME"/"{backup_dir}" box:"{backup_dir}" --skip-links')
-    sh(f'rclone sync "/etc" box:"etc" --skip-links')
+    sh(f'rclone sync "/etc" box:"etc" --skip-links', check=False)
 
 
 def do_backup_tinfoil():
