@@ -195,9 +195,12 @@ super + shift + w
 super + e
 	thunar
 
-super + {s, shift + s}; {r,f,w}
-	maim {,-d 2} {-s,-i root,-i $(xdotool getactivewindow)} ~/screenshot.png && ;\
-	notify-send 'Screenshot captured'
+Print
+	maim -s ~/screenshot.png
+
+# super + {s, shift + s}; {r,f,w}
+	# maim {,-d 2} {-s,-i root,-i $(xdotool getactivewindow)} ~/screenshot.png && ;\
+	# notify-send 'Screenshot captured'
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
