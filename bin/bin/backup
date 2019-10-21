@@ -7,6 +7,12 @@ import shlex
 import socket
 import random
 
+"""
+TODO:
+- Deal with /etc/ permission issues
+- Push romhack notes
+"""
+
 backup_dirs = [
     'code',
     'doc',
@@ -51,9 +57,15 @@ def cd(path):
 
 
 def notify(title, message):
-    email_content = f'Subject: {title}\n{message}'
-    email_address = sh('pass show emailaddress')
-    sh(f'msmtp {email_address}', stdin_str=email_content)
+    email_address = None
+    try:
+        email_address = read_email_from_file()
+    except Exception:
+        pass # We already tried to verify email earlier, best we can do now is show a notificatiopn
+
+    if email_address is not None:
+        email_content = f'Subject: {title}\n{message}'
+        sh(f'msmtp {email_address}', stdin_str=email_content)
 
     summary = shlex.quote(str(message).split('\n')[0])
     sh(f'notify-send "{title}" {summary}')
@@ -69,25 +81,22 @@ def record_installed_packages():
 def do_backup_tinbox():
     date = time.ctime()
 
+    # Commit and push romhack notes
+    cd('~/doc/Dropbox/notes/romhack')
+    sh('git add .')
+    sh(f'git commit -m "Update {date}"', check=False)
+    sh('git push')
+
+    # Commit notes
+    cd('~/doc/Dropbox/notes')
+    sh('git add .')
+    sh(f'git commit -m "Update {date}"', check=False)
+
     # Push dotfiles
     cd('~/.dotfiles')
     sh('git add .')
     sh(f'git commit -m "Update {date}"', check=False)
     sh('git push')
-
-    # Add notes to git repo
-    cd('~/doc/Dropbox/notes')
-    sh('git add .')
-    sh(f'git commit -m "Update {date}"', check=False)
-
-    # Push romhack notes
-    # cd('~/doc/projects/romhack/notes')
-    # sh('rm -rf ./*')
-    # sh('cp -r ~/doc/Dropbox/notes/romhack/* .')
-    # sh('git add .')
-    # date = time.ctime()
-    # sh('git commit -m "Update {date}"', check=False)
-    # sh('git push')
 
     record_installed_packages()
 
@@ -110,10 +119,19 @@ def do_backup_tinfoil():
     record_installed_packages()
 
 
+def read_email_from_file():
+    with open(os.path.expanduser('~/.email'), 'r') as f:
+        return f.read().strip()
+
+
 if __name__ == '__main__':
     try:
-        # Wait for network
-        time.sleep(60)
+        # Test that reading the email address for error reporting works
+        print(f'Using {read_email_from_file()} as notification email address')
+
+        # pause = 60
+        # print(f'Pausing to wait for network for {pause} seconds')
+        # time.sleep(pause)
 
         # Avoid backing up over tethered cell connection
         if sh('iwgetid --raw') == tether_ssid:
