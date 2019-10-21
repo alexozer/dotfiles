@@ -81,18 +81,18 @@ def record_installed_packages():
 def do_backup_tinbox():
     date = time.ctime()
 
-    # Commit and push romhack notes
+    print('Commit and push romhack notes')
     cd('~/doc/Dropbox/notes/romhack')
     sh('git add .')
     sh(f'git commit -m "Update {date}"', check=False)
     sh('git push')
 
-    # Commit notes
+    print('Commit notes')
     cd('~/doc/Dropbox/notes')
     sh('git add .')
     sh(f'git commit -m "Update {date}"', check=False)
 
-    # Push dotfiles
+    print('Push dotfiles')
     cd('~/.dotfiles')
     sh('git add .')
     sh(f'git commit -m "Update {date}"', check=False)
@@ -100,10 +100,10 @@ def do_backup_tinbox():
 
     record_installed_packages()
 
-    # Upgrade oh-my-zsh, because why not do it here?
+    print('Upgrade oh-my-zsh, because why not do it here?')
     sh('ZSH=~/.oh-my-zsh sh ~/.oh-my-zsh/tools/upgrade.sh')
 
-    # Backup files
+    print('Backup files')
     shuffled_dirs = backup_dirs.copy()
     random.shuffle(shuffled_dirs)
     for backup_dir in shuffled_dirs:
@@ -112,7 +112,7 @@ def do_backup_tinbox():
 
 
 def do_backup_tinfoil():
-    # Pull dotfiles
+    print('Pull dotfiles')
     cd('~/.dotfiles')
     sh('git pull')
 
@@ -126,22 +126,23 @@ def read_email_from_file():
 
 if __name__ == '__main__':
     try:
-        # Test that reading the email address for error reporting works
+        print('Test that reading the email address for error reporting works')
         print(f'Using {read_email_from_file()} as notification email address')
 
         # pause = 60
         # print(f'Pausing to wait for network for {pause} seconds')
         # time.sleep(pause)
 
-        # Avoid backing up over tethered cell connection
+        print('Avoid backing up over tethered cell connection')
         if sh('iwgetid --raw') == tether_ssid:
             raise RuntimeError(f'Connected to {tether_ssid}, not backing up')
 
-        # Check for conflicted notes
+        print('Check for conflicted notes')
         conflicts = sh('rg --files ~/doc/Dropbox/notes | rg -i "conflicted copy"', check=False).strip()
         if conflicts != '':
             notify('Conflict detected in notes', conflicts)
 
+        print('Check hostname to determine how to backup')
         hostname = socket.gethostname()
         if hostname == 'tinbox':
             do_backup_tinbox()
