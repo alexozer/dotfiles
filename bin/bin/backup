@@ -7,10 +7,6 @@ import shlex
 import socket
 import random
 
-"""
-TODO:
-- Deal with /etc/ permission issues
-"""
 
 backup_dirs = [
     'code',
@@ -131,9 +127,9 @@ if __name__ == '__main__':
         print('Test that reading the email address for error reporting works')
         print(f'Using {read_email_from_file()} as notification email address')
 
-        # pause = 60
-        # print(f'Pausing to wait for network for {pause} seconds')
-        # time.sleep(pause)
+        pause = 60
+        print(f'Pausing to wait for network for {pause} seconds')
+        time.sleep(pause)
 
         print('Avoid backing up over tethered cell connection')
         if sh('iwgetid --raw') == tether_ssid:
