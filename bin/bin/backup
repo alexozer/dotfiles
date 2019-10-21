@@ -102,9 +102,9 @@ def do_backup_tinbox():
     print('Upgrade oh-my-zsh, because why not do it here?')
     sh('ZSH=~/.oh-my-zsh sh ~/.oh-my-zsh/tools/upgrade.sh')
 
-    print('Backup /etc')
-    sh('rsync -r --delete /etc ~/.local/share || $(case "$?" in 0|23) exit 0 ;; *) exit $?; esac)')
-    sh(f'rclone sync "~/.local/share/etc" box:"etc" --skip-links')
+    print('Make archive of /etc')
+    # Avoids having to deal with permission/special file issues during syncing
+    sh('tar cJPf ~/doc/personal/arch/$(hostname)-etc.tar.xz /etc/', check=False)
 
     print('Backup files')
     shuffled_dirs = backup_dirs.copy()
