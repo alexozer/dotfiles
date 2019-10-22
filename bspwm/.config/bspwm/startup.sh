@@ -18,11 +18,13 @@ CM_SELECTIONS="clipboard" clipmenud &
 
 steam -silent &
 discord &
-tmux new-session -A -d -s weechat weechat &
-tmux new-session -A -d -s backup backup &
 timetrack &
 # redshift-gtk &
 dropbox &
+
+# Try to start new sessions; if they already exist, oh well
+tmux new-session -d -s weechat weechat &
+tmux new-session -d -s backup backup &
 
 dex -a &
 

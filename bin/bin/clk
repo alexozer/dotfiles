@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Print time in different timezones
+
+PT=US/Pacific date
+CT=`TZ=US/Central date`
+UK=`TZ=US/
