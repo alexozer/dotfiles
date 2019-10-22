@@ -6,7 +6,7 @@ a commit message equally lacking in description. Enjoy!
 ## Screenshots
 
 ![full](full.png)
-![fakebusy](fakebusy.png)
+![busy](busy.png)
 
 ## Install
 
@@ -23,7 +23,11 @@ $ stow vim zsh bspwm # ...
 
 I use:
 
-- Macbook Pro Retina 2015 (MF840LL/A)
+- Hardware
+    - Desktop: [this custom build](https://pcpartpicker.com/list/WJv8D2)
+    - Laptop: Macbook Pro Retina 2015 MF840LL/A
+    - Primary monitor: Dell Ultrasharp U2415
+    - Keyboard: KBD75 V1
 - Arch Linux
 - Bspwm (window manager)
 - Xfce (desktop environment minus window manager)
@@ -31,16 +35,15 @@ I use:
 - Polybar (panel)
 - Gnome Terminal
 - Zsh (shell)
-- Antigen (zsh plugin mananger)
+- Oh My Zsh (zsh plugin mananger)
 - Jetbrains IDEs (code editor)
-- Visual Studio Code (misc language editor)
-- Neovim (general-purpose text editor)
-- FZF (fuzzy searcher, I use for files, bookmarks, passwords, clipboard)
+- Neovim (for general-purpose text editing, light code editing)
+- Visual Studio Code (for misc. language editing)
+- FZF (fuzzy searcher, I use for files, bookmarks, passwords, clipboard, vim, killing processes)
 - Clipmenu (clipboard history manager)
-- gopass (password manager)
-- Dracula (terminal, Vim, VSCode, Polybar, and Rofi colorscheme)
+- pass (password manager)
+- Dracula (terminal, VSCode, and Polybar colorscheme)
 - Arc Darker (GTK theme)
 - Papirus (icon theme)
 - Human (cursor theme)
-- Ubuntu Mono derivative Powerline (terminal font)
-- Fira Code (VSCode font)
+- Fira Code / Fira Mono (editor / terminal font)
