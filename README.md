@@ -36,6 +36,7 @@ I use:
 - Gnome Terminal
 - Zsh (shell)
 - Oh My Zsh (zsh plugin mananger)
+- Firefox Developer Edition (browser)
 - Jetbrains IDEs (code editor)
 - Neovim (for general-purpose text editing, light code editing)
 - Visual Studio Code (for misc. language editing)
