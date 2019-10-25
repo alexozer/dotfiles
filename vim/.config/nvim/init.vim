@@ -149,10 +149,10 @@ nnoremap gJ <C-w>J
 nnoremap gK <C-w>K
 
 " Easier tab manipulation / navigation
-nnoremap <silent> <leader><tab> :tabnew<cr>
-nnoremap <silent> <leader><s-tab> :tabc<cr>
-nnoremap <silent> <tab> :tabn<cr>
-nnoremap <silent> <s-tab> :tabp<cr>
+" nnoremap <silent> <leader><tab> :tabnew<cr>
+" nnoremap <silent> <leader><s-tab> :tabc<cr>
+" nnoremap <silent> <tab> :tabn<cr>
+" nnoremap <silent> <s-tab> :tabp<cr>
 
 nnoremap <silent> <leader><leader> :e#<cr> " Open last file
 
@@ -248,11 +248,9 @@ nnoremap <silent> <leader>g :Goyo<cr>
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_silent = 1  " do not display the auto-save notification
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
-set updatetime=1000
+" set updatetime=1000
 
 " sideways.vim
 
 nnoremap <silent> <c-h> :SidewaysLeft<cr>
 nnoremap <silent> <c-l> :SidewaysRight<cr>
-
-" vim:shiftwidth=2
