@@ -199,6 +199,9 @@ nnoremap <silent> <leader>3 :NERDTreeToggle<cr>
 
 " fzf.vim
 
+" List files fast, and ignore stuff in .gitignore if in git rep if in git repo
+let $FZF_DEFAULT_COMMAND = 'rg --files'
+
 nnoremap <silent> <leader><space> :Files<cr>
 nnoremap <silent> <leader>s :Files ~/doc/Dropbox/notes<cr>
 
