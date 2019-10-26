@@ -12,6 +12,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yuttie/hydrangea-vim'
 Plug 'liuchengxu/space-vim-dark'
+Plug 'reedes/vim-colors-pencil'
 
 " Tools
 Plug 'junegunn/vim-plug'
@@ -27,9 +28,11 @@ Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/fzf.vim'
-Plug 'vim-scripts/vim-auto-save'
 Plug 'alok/notational-fzf-vim'
+Plug 'vim-scripts/vim-auto-save'
 Plug 'AndrewRadev/sideways.vim'
+Plug 'godlygeek/tabular' " Automatic table formatting for vim-markdown
+Plug 'gabrielelana/vim-markdown'
 
 " Maybe wanted in the future
 "Plug 'tpope/vim-fugitive'
@@ -204,6 +207,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 nnoremap <silent> <leader><space> :Files<cr>
 nnoremap <silent> <leader>s :Files ~/doc/Dropbox/notes<cr>
+nnoremap <silent> <leader>b :Buffers<cr>
 
 " Enter notes directory so I can create, rename, move files
 nnoremap <silent> <leader>d :cd ~/doc/Dropbox/notes<cr>
@@ -257,3 +261,7 @@ let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
 nnoremap <silent> <c-h> :SidewaysLeft<cr>
 nnoremap <silent> <c-l> :SidewaysRight<cr>
+
+" vim-markdown
+
+let g:markdown_enable_spell_checking = 0
