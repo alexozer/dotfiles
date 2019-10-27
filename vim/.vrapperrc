@@ -1,0 +1,24 @@
+" Make Y behave like D and C, instead of like yy
+nnoremap Y y$	
+
+" Much better use of H and L
+noremap H ^
+noremap L $
+
+" Allow using ; to access command mode in normal and visual mode
+noremap ; :
+noremap : ;
+
+" Move by visual-line by default
+" noremap j gj
+" noremap k gk
+
+" Splits: use g prefix instead of <C-w>
+nnoremap gh <C-w>h
+nnoremap gl <C-w>l
+nnoremap gj <C-w>j
+nnoremap gk <C-w>k
+nnoremap gH <C-w>H
+nnoremap gL <C-w>L
+nnoremap gJ <C-w>J
+nnoremap gK <C-w>K
