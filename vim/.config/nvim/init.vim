@@ -35,6 +35,7 @@ Plug 'godlygeek/tabular' " Automatic table formatting for vim-markdown
 Plug 'gabrielelana/vim-markdown'
 
 " Maybe wanted in the future
+" Plug 'liuchengxu/space-vim-theme'
 "Plug 'tpope/vim-fugitive'
 "Plug 'w0rp/ale'
 "Plug 'gabrielelana/vim-markdown'
@@ -202,7 +203,7 @@ nnoremap <silent> <leader>3 :NERDTreeToggle<cr>
 
 " fzf.vim
 
-" List files fast, and ignore stuff in .gitignore if in git rep if in git repo
+" List files fast, and ignore stuff in .gitignore if in git repo
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 nnoremap <silent> <leader><space> :Files<cr>
@@ -213,7 +214,6 @@ nnoremap <silent> <leader>b :Buffers<cr>
 nnoremap <silent> <leader>d :cd ~/doc/Dropbox/notes<cr>
 
 " notational-fzf-vim
-
 let g:nv_search_paths = ['~/doc/Dropbox/notes']
 nnoremap <silent> <leader>r :NV<cr>
 
@@ -242,26 +242,21 @@ let g:lightline = {
       \ }
 
 " tcomment
-
 let g:tcomment_mapleader1=''
 noremap <silent> <C-_> :TComment<cr>
 
 " goyo
-
 nnoremap <silent> <leader>g :Goyo<cr>
 
 " vim-auto-save
-
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_silent = 1  " do not display the auto-save notification
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " set updatetime=1000
 
 " sideways.vim
-
 nnoremap <silent> <c-h> :SidewaysLeft<cr>
 nnoremap <silent> <c-l> :SidewaysRight<cr>
 
 " vim-markdown
-
 let g:markdown_enable_spell_checking = 0
