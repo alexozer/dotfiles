@@ -3,7 +3,6 @@
   // "editor.fontFamily": "Iosevka Medium",
   // "editor.fontFamily": "Ubuntu Mono derivative Powerline",
   "editor.fontFamily": "Fira Code Medium",
-  "editor.lineNumbers": "off",
   "editor.minimap.enabled": false,
   "editor.tabCompletion": true,
   "keyboard.dispatch": "keyCode",
@@ -13,38 +12,74 @@
   "window.zoomLevel": 0,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [";"],
-      "after": [":"]
+      "before": [
+        ";"
+      ],
+      "after": [
+        ":"
+      ]
     },
     {
-      "before": [":"],
-      "after": [";"]
+      "before": [
+        ":"
+      ],
+      "after": [
+        ";"
+      ]
     },
     {
-      "before": ["H"],
-      "after": ["g", "^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "g",
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["g", "$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "g",
+        "$"
+      ]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [";"],
-      "after": [":"]
+      "before": [
+        ";"
+      ],
+      "after": [
+        ":"
+      ]
     },
     {
-      "before": [":"],
-      "after": [";"]
+      "before": [
+        ":"
+      ],
+      "after": [
+        ";"
+      ]
     },
     {
-      "before": ["H"],
-      "after": ["g", "^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "g",
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["g", "$"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "g",
+        "$"
+      ]
     }
   ],
   "editor.acceptSuggestionOnEnter": "off",
@@ -82,7 +117,7 @@
   },
   "vim.disableExtension": false,
   "vim.foldfix": false,
-  "workbench.colorTheme": "Winter is Coming (Dark Blue - No Italics)",
+  "workbench.colorTheme": "One Monokai 80s",
   "search.smartCase": true,
   "latex-workshop.view.pdf.viewer": "tab",
   "workbench.startupEditor": "newUntitledFile",
@@ -97,8 +132,9 @@
   "C_Cpp.default.cppStandard": "c++14",
   "explorer.confirmDragAndDrop": false,
   "editor.fontSize": 12,
-  "workbench.statusBar.visible": false,
+  // "workbench.statusBar.visible": false,
   "files.autoSave": "afterDelay",
   "explorer.confirmDelete": false,
+  "update.mode": "manual",
   "vsicons.dontShowNewVersionMessage": true
 }
