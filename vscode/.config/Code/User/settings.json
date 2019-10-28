@@ -4,84 +4,11 @@
   // "editor.fontFamily": "Ubuntu Mono derivative Powerline",
   "editor.fontFamily": "Fira Code Medium",
   "editor.minimap.enabled": false,
-  "editor.tabCompletion": true,
   "keyboard.dispatch": "keyCode",
   "vim.leader": "<space>",
   "vim.useCtrlKeys": true,
   "window.menuBarVisibility": "hidden",
   "window.zoomLevel": 0,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        ";"
-      ],
-      "after": [
-        ":"
-      ]
-    },
-    {
-      "before": [
-        ":"
-      ],
-      "after": [
-        ";"
-      ]
-    },
-    {
-      "before": [
-        "H"
-      ],
-      "after": [
-        "g",
-        "^"
-      ]
-    },
-    {
-      "before": [
-        "L"
-      ],
-      "after": [
-        "g",
-        "$"
-      ]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        ";"
-      ],
-      "after": [
-        ":"
-      ]
-    },
-    {
-      "before": [
-        ":"
-      ],
-      "after": [
-        ";"
-      ]
-    },
-    {
-      "before": [
-        "H"
-      ],
-      "after": [
-        "g",
-        "^"
-      ]
-    },
-    {
-      "before": [
-        "L"
-      ],
-      "after": [
-        "g",
-        "$"
-      ]
-    }
-  ],
   "editor.acceptSuggestionOnEnter": "off",
   "editor.fontLigatures": true,
   "editor.formatOnSave": true,
@@ -101,7 +28,7 @@
   "ocaml.lintOnChange": false,
   "ocaml.lintOnSave": true,
   "ocaml.replPath.unix": "utop",
-  // "files.autoSave": "afterDelay",
+  "files.autoSave": "afterDelay",
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -133,8 +60,84 @@
   "explorer.confirmDragAndDrop": false,
   "editor.fontSize": 12,
   // "workbench.statusBar.visible": false,
-  "files.autoSave": "afterDelay",
   "explorer.confirmDelete": false,
   "update.mode": "manual",
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  // "workbench.colorCustomizations": {
+  //   "editorError.foreground": "#00000000",
+  //   "editorWarning.foreground": "#00000000",
+  //   "editorInfo.foreground": "#00000000"
+  // },
+  "errorLens.errorForeground": "#ffffff80",
+  "errorLens.warningForeground": "#ffffff80",
+  "errorLens.hintForeground": "#ffffff80",
+  "errorLens.infoForeground": "#ffffff80",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        ":"
+      ],
+      "after": [
+        ";"
+      ]
+    },
+    {
+      "before": [
+        ";"
+      ],
+      "after": [
+        ":"
+      ]
+    },
+    {
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
+    },
+    {
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        ":"
+      ],
+      "after": [
+        ";"
+      ]
+    },
+    {
+      "before": [
+        ";"
+      ],
+      "after": [
+        ":"
+      ]
+    },
+    {
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
+    },
+    {
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ]
+    }
+  ],
 }
