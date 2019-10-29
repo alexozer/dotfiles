@@ -2,8 +2,8 @@
 Version=1.0
 Type=Application
 Name=IntelliJ IDEA Community Edition
-Icon=/usr/share/idea/bin/idea.svg
-Exec="/usr/share/idea/bin/idea.sh" %f
+Icon=/home/alex/build/idea-IC-192.6817.14/bin/idea.svg
+Exec="/home/alex/build/idea-IC-192.6817.14/bin/idea.sh" %f
 Comment=Capable and Ergonomic IDE for JVM
 Categories=Development;IDE;
 Terminal=false
