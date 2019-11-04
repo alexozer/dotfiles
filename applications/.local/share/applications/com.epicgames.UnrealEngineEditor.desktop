@@ -3,8 +3,8 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Exec=/home/alex/doc/projects/rolled-out/UnrealEngine/Engine/Binaries/Linux/UnrealVersionSelector-Linux-Shipping -editor %f
-Path=/home/alex/doc/projects/rolled-out/UnrealEngine/Engine/Binaries/Linux
+Exec=/home/alex/doc/projects/rolledout/UnrealEngine/Engine/Binaries/Linux/UnrealVersionSelector-Linux-Shipping -editor %f
+Path=/home/alex/doc/projects/rolledout/UnrealEngine/Engine/Binaries/Linux
 Name=Unreal Engine Editor
 Icon=ubinary
 Terminal=false

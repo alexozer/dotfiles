@@ -4,8 +4,8 @@
 Version=1.0
 Type=Application
 NoDisplay=true
-Exec=/home/alex/doc/projects/rolled-out/UnrealEngine/Engine/Binaries/Linux/UnrealVersionSelector-Linux-Shipping -switchversion %f
-Path=/home/alex/doc/projects/rolled-out/UnrealEngine/Engine/Binaries/Linux
+Exec=/home/alex/doc/projects/rolledout/UnrealEngine/Engine/Binaries/Linux/UnrealVersionSelector-Linux-Shipping -switchversion %f
+Path=/home/alex/doc/projects/rolledout/UnrealEngine/Engine/Binaries/Linux
 Name=Unreal Version Selector
 Icon=ubinary
 Terminal=false
