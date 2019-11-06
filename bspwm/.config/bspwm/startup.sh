@@ -28,4 +28,6 @@ tmux new-session -d -s backup backup &
 
 dex -a &
 
+udiskie --no-notify --tray &
+
 sleep 1 && polybar top --reload &
