@@ -7,7 +7,8 @@ fi
 
 export ZSH=~/.oh-my-zsh
 
-HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE=true
+COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_UPDATE=true
 plugins=(
   git
@@ -35,8 +36,6 @@ else
 	export EDITOR=vim
 fi
 
-export HYPHEN_INSENSITIVE="true"
-export COMPLETION_WAITING_DOTS="true"
 export KEYTIMEOUT=1 # Don't pause much when entering normal mode
 export CUAUV_SOFTWARE="$HOME/code/auv/"
 export SDL_GAMECONTROLLERCONFIG="03000000790000004618000010010000,mayflash limited GameCube Controller Adapter,a:a3,b:b0,x:b2,y:b3,guide:b9,leftstick:a4,leftx:a0,lefty:a1,rightx:a5,righty:a2,lefttrigger:b4,righttrigger:b5,platform:Linux,"
