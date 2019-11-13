@@ -14,6 +14,7 @@ Plug 'yuttie/hydrangea-vim'
 Plug 'liuchengxu/space-vim-dark' " Older theme
 Plug 'liuchengxu/space-vim-theme' " Newer theme
 Plug 'reedes/vim-colors-pencil'
+Plug 'romainl/Apprentice'
 
 " Tools
 Plug 'junegunn/vim-plug'
@@ -118,6 +119,10 @@ syntax on           " Enable syntax processing
 set background=dark
 colorscheme space-vim-dark
 hi Comment guifg=#5C6370 ctermfg=59
+
+if &diff
+    colorscheme apprentice
+endif
 
 "
 " Mappings
