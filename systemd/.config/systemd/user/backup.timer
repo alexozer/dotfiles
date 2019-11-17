@@ -1,0 +1,11 @@
+[Unit]
+Description=Backup system and perform other daily maintenance
+
+[Timer]
+OnCalendar=daily
+
+# Run immediately if system was powered off when timer was supposed to run
+Persistent=true
+
+[Install]
+WantedBy=timers.target
