@@ -49,6 +49,8 @@ alias youtube-dl='youtube-dl --restrict-filenames'
 alias cn='cd ~/doc/Dropbox/notes'
 alias bm='ln -s "$(realpath .)" ~/"$(basename "$(realpath .)")"'
 alias ck='cd ~/doc/projects/keyboard/qmk_firmware/keyboards/kbdfans/kbd75/keymaps/alexozer'
+alias cdol='cd ~/.local/share/dolphin-emu/GC/USA'
+alias makej='make -j$(nproc)'
 
 function pgen() {
   # Don't push if I just type 'pgen' for some reason
