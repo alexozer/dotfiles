@@ -47,7 +47,6 @@ alias matlab='matlab -nodesktop -nosplash' # Matlab repl
 alias f=lnch
 alias youtube-dl='youtube-dl --restrict-filenames'
 alias cn='cd ~/doc/Dropbox/notes'
-alias bm='ln -s "$(realpath .)" ~/"$(basename "$(realpath .)")"'
 alias ck='cd ~/doc/projects/keyboard/qmk_firmware/keyboards/kbdfans/kbd75/keymaps/alexozer'
 alias cdol='cd ~/.local/share/dolphin-emu/GC/USA'
 alias makej='make -j$(nproc)'
@@ -70,6 +69,11 @@ function oue() {
 }
 
 alias oro='oue ~/ro/UnrealMKB/UnrealMKB/UnrealMKB.uproject'
+
+# Bookmark a dir in my home directory
+function bm() {
+  ln -s "$(realpath "$1")" ~/"$(basename "$(realpath "$1")")"
+}
 
 # Auto ls
 function chpwd {
