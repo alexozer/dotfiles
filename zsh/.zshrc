@@ -65,14 +65,15 @@ function pins() {
 }
 
 function oue() {
-  ~/ro/UnrealEngine/Engine/Binaries/Linux/UE4Editor "$(realpath "$1")" -opengl4
+  ~/doc/projects/rolledout/UnrealEngine/Engine/Binaries/Linux/UE4Editor "$(realpath "$1")" -opengl4
 }
 
-alias oro='oue ~/ro/UnrealMKB/UnrealMKB/UnrealMKB.uproject'
+alias oro='oue ~/doc/projects/rolledout/UnrealMKB/UnrealMKB/UnrealMKB.uproject'
 
 # Bookmark a dir in my home directory
 function bm() {
-  ln -s "$(realpath "$1")" ~/"$(basename "$(realpath "$1")")"
+  link_name="${2:-"$(basename "$(realpath "$1")")"}"
+  ln -s "$(realpath "$1")" ~/"$link_name"
 }
 
 # Auto ls
