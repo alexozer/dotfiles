@@ -36,10 +36,6 @@ else
 	export EDITOR=vim
 fi
 
-export KEYTIMEOUT=1 # Don't pause much when entering normal mode
-export CUAUV_SOFTWARE="$HOME/code/auv/"
-export SDL_GAMECONTROLLERCONFIG="03000000790000004618000010010000,mayflash limited GameCube Controller Adapter,a:a3,b:b0,x:b2,y:b3,guide:b9,leftstick:a4,leftx:a0,lefty:a1,rightx:a5,righty:a2,lefttrigger:b4,righttrigger:b5,platform:Linux,"
-
 alias vim=$EDITOR # Vim always points to whichever vim version is installed
 alias svim="sudo -E $EDITOR" # Use sudo with vim
 alias o='exo-open' # Open file with default program
@@ -65,10 +61,15 @@ function pins() {
 }
 
 function oue() {
-  ~/doc/projects/rolledout/UnrealEngine/Engine/Binaries/Linux/UE4Editor "$(realpath "$1")" -opengl4
+  if [[ -z "$1" ]]; then
+    echo "Please provide a project file"
+  else
+    ~/doc/projects/rolledout/UnrealEngine/Engine/Binaries/Linux/UE4Editor "$(realpath "$1")" -opengl4
+  fi
 }
 
 alias oro='oue ~/doc/projects/rolledout/UnrealMKB/UnrealMKB/UnrealMKB.uproject'
+alias rru='oro -game'
 
 # Bookmark a dir in my home directory
 function bm() {
@@ -100,8 +101,11 @@ case "$1" in
     $EDITOR "$HOME/.zshrc"
     source "$HOME/.zshrc"
     ;;
-  zshenv)
+  env)
     $EDITOR "$HOME/.zshenv"
+    ;;
+  startupenv)
+    $EDITOR "$HOME/.zprofile"
     ;;
   bspwm)
     $EDITOR $HOME/.config/bspwm/bspwmrc
@@ -205,9 +209,6 @@ function syskeep() {
 function vbuild() {
   iverilog -g2012 -o "$1" "$1".v && ./"$1"
 }
-
-# OPAM configuration
-. /home/alex/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
