@@ -140,4 +140,6 @@
       ]
     }
   ],
+  "gitlens.hovers.currentLine.over": "line",
+  "vscode-neovim.neovimPath": "/usr/bin/nvim",
 }
