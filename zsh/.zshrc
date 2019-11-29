@@ -69,7 +69,7 @@ function oue() {
 }
 
 alias oro='oue ~/doc/projects/rolledout/UnrealMKB/UnrealMKB/UnrealMKB.uproject'
-alias rru='oro -game'
+alias rro='oro -game'
 
 # Bookmark a dir in my home directory
 function bm() {
