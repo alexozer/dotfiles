@@ -1,7 +1,5 @@
 {
   "editor.wordWrapColumn": 100,
-  // "editor.fontFamily": "Iosevka Medium",
-  // "editor.fontFamily": "Ubuntu Mono derivative Powerline",
   "editor.fontFamily": "Fira Code Medium",
   "editor.minimap.enabled": false,
   "keyboard.dispatch": "keyCode",
@@ -141,6 +139,9 @@
     }
   ],
   "gitlens.hovers.currentLine.over": "line",
-  "vscode-neovim.neovimPath": "/usr/bin/nvim",
   "editor.wordWrap": "wordWrapColumn",
+  "scm.diffDecorationsGutterVisibility": "hover",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
 }
