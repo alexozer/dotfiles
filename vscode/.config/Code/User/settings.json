@@ -139,7 +139,6 @@
     }
   ],
   "gitlens.hovers.currentLine.over": "line",
-  "editor.wordWrap": "wordWrapColumn",
   "scm.diffDecorationsGutterVisibility": "hover",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
