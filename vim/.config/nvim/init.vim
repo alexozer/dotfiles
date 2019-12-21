@@ -15,6 +15,7 @@ Plug 'liuchengxu/space-vim-dark' " Older theme
 Plug 'liuchengxu/space-vim-theme' " Newer theme
 Plug 'reedes/vim-colors-pencil'
 Plug 'romainl/Apprentice'
+Plug 'arcticicestudio/nord-vim'
 
 " Tools
 Plug 'junegunn/vim-plug'
