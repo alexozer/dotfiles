@@ -143,4 +143,5 @@
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
+  "cmake.cpptools.intelliSenseMode": "gcc-x64",
 }
