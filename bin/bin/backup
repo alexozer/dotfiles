@@ -102,6 +102,9 @@ def do_backup_tinbox():
     # Avoids having to deal with permission/special file issues during syncing
     sh('tar cJPf ~/doc/personal/arch/$(hostname)-etc.tar.xz /etc/', check=False)
 
+    print('Backup Ghidra community server repository')
+    sh('rsync -r --delete --rsync-path="sudo rsync" aws:/home/ghidra/ghidra-repositories ~/doc/personal/')
+
     print('Backup files')
     shuffled_dirs = backup_dirs.copy()
     random.shuffle(shuffled_dirs)

@@ -144,4 +144,5 @@
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "cmake.cpptools.intelliSenseMode": "gcc-x64",
+  "cmake.configureOnOpen": true,
 }
