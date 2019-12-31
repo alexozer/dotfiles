@@ -71,6 +71,8 @@ function oue() {
 alias oro='oue ~/doc/projects/rolledout/UnrealMKB/UnrealMKB/UnrealMKB.uproject'
 alias rro='oro -game'
 
+alias makedme='makej && sudo setcap cap_sys_ptrace=eip Dolphin-memory-engine && ./Dolphin-memory-engine'
+
 # Bookmark a dir in my home directory
 function bm() {
   link_name="${2:-"$(basename "$(realpath "$1")")"}"

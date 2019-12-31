@@ -71,6 +71,14 @@ def record_installed_packages():
     sh('pacman -Qqem > ~/doc/personal/arch/pkgs-foreign-explicit.txt')
     sh('pacman -Qqn > ~/doc/personal/arch/pkgs-native-all.txt')
     sh('pacman -Qqm > ~/doc/personal/arch/pkgs-foreign-all.txt')
+
+
+def backup_aws():
+    print('Backup Ghidra community server repository')
+    ghidra_src = ' '.join(f'aws:/home/ghidra/{d}' for d in ['ghidra-repositories', 'ghidra-install'])
+    ghidra_dest = '~/doc/personal/aws-backup/ghidra/'
+    sh(f'mkdir -p {ghidra_dest}')
+    sh(f'rsync -r --delete --rsync-path="sudo rsync" {ghidra_src} {ghidra_dest}')
     
 
 def do_backup_tinbox():
@@ -102,8 +110,7 @@ def do_backup_tinbox():
     # Avoids having to deal with permission/special file issues during syncing
     sh('tar cJPf ~/doc/personal/arch/$(hostname)-etc.tar.xz /etc/', check=False)
 
-    print('Backup Ghidra community server repository')
-    sh('rsync -r --delete --rsync-path="sudo rsync" aws:/home/ghidra/ghidra-repositories ~/doc/personal/')
+    backup_aws()
 
     print('Backup files')
     shuffled_dirs = backup_dirs.copy()
