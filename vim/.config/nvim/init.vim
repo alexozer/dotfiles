@@ -19,7 +19,7 @@ Plug 'arcticicestudio/nord-vim'
 
 " Tools
 Plug 'junegunn/vim-plug'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -35,7 +35,7 @@ Plug 'alok/notational-fzf-vim'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'godlygeek/tabular' " Automatic table formatting for vim-markdown
-Plug 'gabrielelana/vim-markdown'
+" Plug 'gabrielelana/vim-markdown'
 
 " Maybe wanted in the future
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}

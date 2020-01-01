@@ -145,4 +145,5 @@
   },
   "cmake.cpptools.intelliSenseMode": "gcc-x64",
   "cmake.configureOnOpen": true,
+  "prettier.proseWrap": "never",
 }
