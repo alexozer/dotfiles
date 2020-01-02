@@ -75,9 +75,8 @@ def record_installed_packages():
 
 def backup_aws():
     print('Backup Ghidra community server repository')
-    ghidra_src = ' '.join(f'aws:/home/ghidra/{d}' for d in ['ghidra-repositories', 'ghidra-install'])
+    ghidra_src = 'aws:/home/ghidra/'
     ghidra_dest = '~/doc/personal/aws-backup/ghidra/'
-    sh(f'mkdir -p {ghidra_dest}')
     sh(f'rsync -r --delete --rsync-path="sudo rsync" {ghidra_src} {ghidra_dest}')
     
 
