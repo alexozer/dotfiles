@@ -10,8 +10,6 @@ if [[ "$(hostname)" == "tinfoil" ]]; then
     secondary_monitor=HDMI2
 
 elif [[ "$(hostname)" == "tinbox" ]]; then
-    bspc config focus_follows_pointer true
-
     # Discrete graphics
     primary_monitor=DisplayPort-0
     secondary_monitor=HDMI-A-0
@@ -21,6 +19,7 @@ elif [[ "$(hostname)" == "tinbox" ]]; then
     # secondary_monitor=HDMI1
 fi
 
+bspc config focus_follows_pointer true
 bspc config pointer_modifier mod4
 
 bspc config border_width 0
