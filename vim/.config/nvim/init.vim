@@ -1,6 +1,28 @@
 " Alex Ozer
 
 "
+" Minimal config for vscode-neovim
+"
+
+if exists('g:vscode')
+  " Leader
+  let mapleader = ","
+  let maplocalleader = "\\"
+
+  " Make Y behave like D and C, instead of like yy
+  nnoremap Y y$
+
+  " Much better use of H and L
+  noremap H ^
+  noremap L $
+
+  " Allow using ; to access command mode in normal and visual mode
+  noremap ; :
+  noremap : ;
+
+else
+
+"
 " Plugins
 "
 
@@ -129,12 +151,12 @@ endif
 " Mappings
 "
 
-" Loader
+" Leader
 let mapleader = ","
 let maplocalleader = "\\"
 
 " Make Y behave like D and C, instead of like yy
-nnoremap Y y$	
+nnoremap Y y$
 
 " Much better use of H and L
 noremap H ^
@@ -270,3 +292,5 @@ let g:markdown_enable_spell_checking = 0
 
 " neomake
 " call neomake#configure#automake('w')
+
+endif " vscode-neovim
