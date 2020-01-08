@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=notepad
-MimeType=text/plain;
-Exec=env WINEPREFIX="/home/alex/build/lutris/livesplit" /home/ubuntu/buildbot/runners/wine/ge-protonified-4.9-nofshack-1.8-x86_64/bin/wine start /ProgIDOpen txtfile %f
-NoDisplay=true
-StartupNotify=true
-Icon=1E64_notepad.0

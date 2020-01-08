@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Documentation
-Exec=env WINEPREFIX="/home/alex/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/alex/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/Streamlabs/Streamlabs\\ Chatbot/Documentation.lnk
-Type=Application
-StartupNotify=true
-Path=/home/alex/.wine/dosdevices/c:/users/alex/Application Data/Streamlabs/Streamlabs Chatbot/Docs
-Icon=13A5_Documentation.0

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Streamlabs Chatbot
-Exec=env WINEPREFIX="/home/alex/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/alex/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\\ Menu/Programs/Streamlabs/Streamlabs\\ Chatbot/Streamlabs\\ Chatbot.lnk
-Type=Application
-StartupNotify=true
-Path=/home/alex/.wine/dosdevices/c:/users/alex/Application Data/Streamlabs/Streamlabs Chatbot
-Icon=DC9A_Streamlabs Chatbot.0
-StartupWMClass=streamlabs chatbot.exe
