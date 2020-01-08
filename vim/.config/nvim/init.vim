@@ -120,7 +120,12 @@ set laststatus=2         " Window will always have a status line
 set scrolloff=4	         " Leave lines visible at top and bottom of buffer
 set noshowmode           " Annoying mode display, the cursor shows which mode we're in
 set ttimeoutlen=0        " Respond to escape immediately
-set number
+set number               " Line numbers
+
+" Enable cursor blinking (seemingly preserves terminal blink timing?)
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 " Search and Substitute
 set ignorecase           " Case-insensitive
