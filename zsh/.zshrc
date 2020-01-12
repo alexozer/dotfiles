@@ -24,10 +24,13 @@ plugins=(
 source "$ZSH"/oh-my-zsh.sh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Search command history
-bindkey -M vicmd "j" history-substring-search-down
-bindkey -M vicmd "k" history-substring-search-up
-setopt HIST_IGNORE_ALL_DUPS
+# bindkey -M vicmd "j" history-substring-search-down
+# bindkey -M vicmd "k" history-substring-search-up
+# setopt HIST_IGNORE_ALL_DUPS
 
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
