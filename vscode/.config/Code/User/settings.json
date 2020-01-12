@@ -9,7 +9,6 @@
   "window.zoomLevel": 0,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.fontLigatures": true,
-  "editor.formatOnSave": true,
   "latex-workshop.chktex.enabled": true,
   "prettier.bracketSpacing": false,
   "prettier.semi": false,
