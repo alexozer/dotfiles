@@ -84,11 +84,11 @@ def backup_aws():
 def do_backup_tinbox():
     date = time.ctime()
 
-    print('Commit and push romhack notes')
-    cd('~/doc/Dropbox/notes/romhack')
-    sh('git add .')
-    sh(f'git commit -m "Update {date}"', check=False)
-    sh('git push')
+    # print('Commit and push romhack notes')
+    # cd('~/doc/Dropbox/notes/romhack')
+    # sh('git add .')
+    # sh(f'git commit -m "Update {date}"', check=False)
+    # sh('git push')
 
     print('Commit notes')
     cd('~/doc/Dropbox/notes')

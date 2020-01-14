@@ -240,7 +240,7 @@ nnoremap <silent> <leader>3 :NERDTreeToggle<cr>
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 nnoremap <silent> <leader><space> :Files<cr>
-nnoremap <silent> <leader>s :Files ~/doc/Dropbox/notes<cr>
+nnoremap <silent> <leader>s :Files ~/doc/Dropbox<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 
 " Enter notes directory so I can create, rename, move files
