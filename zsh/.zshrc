@@ -26,6 +26,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+source /etc/profile.d/autojump.zsh
 
 # Search command history
 # bindkey -M vicmd "j" history-substring-search-down
