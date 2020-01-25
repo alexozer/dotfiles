@@ -462,6 +462,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
    scroll-conservatively 1000 ;; Only 'jump' when moving this far
    mouse-wheel-progressive-speed nil ;; Don't accelerate scrolling
    redisplay-dont-pause t ;; Don't pause display on input
+   vc-follow-symlinks nil ;; Don't warn about my symlinked dotfiles
 
    evil-want-Y-yank-to-eol t
    evil-vsplit-window-right t
