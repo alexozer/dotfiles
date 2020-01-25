@@ -26,34 +26,36 @@ This function should only modify configuration layer settings."
    ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
 
-   ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(ocaml
-     markdown
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
      auto-completion
      ;; better-defaults
      emacs-lisp
      ;; git
+     helm
+     ;; lsp
      ;; markdown
-     neotree
-     org
+     multiple-cursors
+     ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
+     spell-checking
+     syntax-checking
+     treemacs
      ;; version-control
+     coq
+     evil-commentary
      )
 
    ;; List of additional packages that will be installed without being
@@ -69,7 +71,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(evil-escape org-bullets)
+   dotspacemacs-excluded-packages '()
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -94,10 +96,10 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-enable-emacs-pdumper nil
 
-   ;; File path pointing to emacs 27.1 executable compiled with support
-   ;; for the portable dumper (this is currently the branch pdumper).
-   ;; (default "emacs-27.0.50")
-   dotspacemacs-emacs-pdumper-executable-file "emacs-27.0.50"
+   ;; Name of executable file pointing to emacs 27+. This executable must be
+   ;; in your PATH.
+   ;; (default "emacs")
+   dotspacemacs-emacs-pdumper-executable-file "emacs"
 
    ;; Name of the Spacemacs dump file. This is the file will be created by the
    ;; portable dumper in the cache directory under dumps sub-directory.
@@ -131,8 +133,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-use-spacelpa nil
 
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
-   ;; (default nil)
-   dotspacemacs-verify-spacelpa-archives nil
+   ;; (default t)
+   dotspacemacs-verify-spacelpa-archives t
 
    ;; If non-nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. Note that checking for
@@ -153,9 +155,6 @@ It should only modify the values of Spacemacs settings."
    ;; (default 'vim)
    dotspacemacs-editing-style 'vim
 
-   ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
-   dotspacemacs-verbose-loading nil
-
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
    ;; banner, `random' chooses a random text banner in `core/banners'
@@ -175,6 +174,11 @@ It should only modify the values of Spacemacs settings."
 
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
+
+   ;; Default major mode for a new empty buffer. Possible values are mode
+   ;; names such as `text-mode'; and `nil' to use Fundamental mode.
+   ;; (default `text-mode')
+   dotspacemacs-new-empty-buffer-major-mode 'text-mode
 
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
@@ -202,18 +206,9 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
-   ;; quickly tweak the mode-line size to make separators look not too crappy.
-   ;; dotspacemacs-default-font '("Source Code Pro"
-   ;;                             :size 22
-   ;;                             :weight normal
-   ;;                             :width normal)
-   ;; dotspacemacs-default-font '("Ubuntu Mono Derivative Powerline"
-   ;;                             :size 25
-   ;;                             :weight normal
-   ;;                             :width normal)
-   dotspacemacs-default-font '("Ubuntu Mono"
-                               :size 20
+   ;; Default font or prioritized list of fonts.
+   dotspacemacs-default-font '("Fira Mono Medium"
+                               :size 10.0
                                :weight normal
                                :width normal)
 
@@ -225,7 +220,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-emacs-command-key "SPC"
 
    ;; The key used for Vim Ex commands (default ":")
-   dotspacemacs-ex-command-key ";"
+   dotspacemacs-ex-command-key ":"
 
    ;; The leader key accessible in `emacs state' and `insert state'
    ;; (default "M-m")
@@ -316,6 +311,11 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil) (Emacs 24.4+ only)
    dotspacemacs-maximized-at-startup nil
 
+   ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
+   ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
+   ;; borderless fullscreen. (default nil)
+   dotspacemacs-undecorated-at-startup nil
+
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -343,10 +343,14 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-smooth-scrolling t
 
    ;; Control line numbers activation.
-   ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
-   ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
+   ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
+   ;; `prog-mode' and `text-mode' derivatives. If set to `relative', line
+   ;; numbers are relative. If set to `visual', line numbers are also relative,
+   ;; but lines are only visual lines are counted. For example, folded lines
+   ;; will not be counted and wrapped lines are counted as multiple lines.
    ;; This variable can also be set to a property list for finer control:
    ;; '(:relative nil
+   ;;   :visual nil
    ;;   :disabled-for-modes dired-mode
    ;;                       doc-view-mode
    ;;                       markdown-mode
@@ -354,6 +358,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       pdf-view-mode
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
+   ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
    dotspacemacs-line-numbers nil
 
@@ -366,7 +371,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-smartparens-strict-mode nil
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
-   ;; over any automatically added closing parenthesis, bracket, quote, etc…
+   ;; over any automatically added closing parenthesis, bracket, quote, etc...
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
    dotspacemacs-smart-closing-parenthesis nil
 
@@ -449,12 +454,22 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq-default
-   spacemacs-theme-org-height nil
-   dotspacemacs-remap-Y-to-y$ t
+   use-dialog-box nil
 
-   org-want-todo-bindings t
-   ;; org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)" "CANCELED(c)"))
-   org-archive-location "~/doc/personal/org/archive.org::datetree/"
+   ;; Scroll better?
+   scroll-margin 4 ;; Scroll N lines to screen edge
+   scroll-step 1 ;; Keyboard scroll one line at a time
+   scroll-conservatively 1000 ;; Only 'jump' when moving this far
+   mouse-wheel-progressive-speed nil ;; Don't accelerate scrolling
+   redisplay-dont-pause t ;; Don't pause display on input
+
+   evil-want-Y-yank-to-eol t
+   evil-vsplit-window-right t
+   evil-split-window-below t
+   evil-ex-substitute-global t
+   evil-insert-state-message nil
+   evil-visual-state-message nil
+   evil-ex-search-persistent-highlight nil
    )
   )
 
@@ -472,107 +487,11 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  (setq-default
-   use-dialog-box nil
-   vc-follow-symlinks nil
-
-   undo-tree-auto-save-history t
-   undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))
-
-   ;; Scroll better?
-   scroll-conservatively 1000 ;; Only 'jump' when moving this fa
-   scroll-margin 4 ;; Scroll N lines to screen edge
-   scroll-step 1 ;; Keyboard scroll one line at a time
-   mouse-wheel-progressive-speed nil ;; Don't accelerate scrolling
-   redisplay-dont-pause t ;; Don't pause display on input
-   ;; Always redraw immediately when scrolling,
-   ;; More responsive and doesn't hang!
-   fast-but-imprecise-scrolling nil
-   jit-lock-defer-time 0
-
-   evil-vsplit-window-right t
-   evil-split-window-below t
-   evil-ex-substitute-global t
-   evil-insert-state-message nil
-   evil-visual-state-message nil
-   evil-ex-search-persistent-highlight nil
-
-   ;; default-text-properties '(line-spacing 0.10 line-height 1.10)
-  )
-
-  ;; Use escape to abort anything
-  (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
-
-  (evil-global-set-key 'motion ":" 'evil-repeat-find-char)
-  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
-  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-  (evil-global-set-key 'motion "H" 'evil-first-non-blank)
-  (evil-global-set-key 'motion "L" 'evil-end-of-line)
-
-  (save-place-mode) ;; Restore cursor position in file on open
-  (add-hook 'focus-out-hook #'garbage-collect)
-
-  (spacemacs/set-leader-keys
-    "gd" (lambda () (interactive) (find-file "~/doc/personal/org/todo.org"))
-    "ga" (lambda () (interactive) (find-file "~/doc/personal/org/archive.org"))
-    "gs" (lambda () (interactive) (find-file "~/doc/personal/org/stickies.org"))
-    "gt" (lambda () (interactive) (find-file "~/doc/personal/org/tickler.org")))
-
-  (defun ozer/org ()
-    (org-indent-mode)
-    (spacemacs/scale-up-font)
-    (spacemacs/toggle-truncate-lines-off))
-
-  (add-hook 'org-mode-hook 'ozer/org)
-
-  (defun ozer/new-heading (default-enter open-below)
-    (if (org-at-heading-p)
-        ;; Enter once will make new heading, twice will clear
-        (if (string= (org-entry-get nil "ITEM") "")
-            (progn
-             (evil-change (line-beginning-position) (line-end-position))
-             (unless (save-excursion (previous-line) (org-at-heading-p))
-               (previous-line)
-             )
-             )
-          ;; Insert a new TODO if we're on a TODO
-          (if (org-get-todo-state)
-              (org-insert-todo-heading-respect-content)
-            (org-insert-heading-respect-content)
-            )
-          (unless open-below (org-metaup))
-          (evil-append 1)
-          )
-
-      ;; Do whatever enter normally does
-      (funcall default-enter)
-      )
-    )
-
-  (evil-define-key 'normal org-mode-map
-    (kbd "RET") (lambda () (interactive) (ozer/new-heading 'org-open-at-point t))
-    )
-  (evil-define-key 'normal org-mode-map
-    (kbd "<S-return>") (lambda () (interactive) (ozer/new-heading 'org-table-copy-down nil))
-    )
-  (evil-define-key 'insert org-mode-map
-    (kbd "RET") (lambda () (interactive) (ozer/new-heading 'org-return t))
-    )
-  (evil-define-key 'insert org-mode-map
-    (kbd "<S-return>") (lambda () (interactive) (ozer/new-heading 'org-table-copy-down nil))
-    )
-
-  ;; (defun ozer/done-archive ()
-  ;;   (let ((done (org-entry-is-done-p))
-  ;;         (archived (member "ARCHIVE" (org-get-tags))))
-  ;;     (when (or (and done (not archived)) (and (not done) archived))
-  ;;       (org-toggle-archive-tag))
-  ;;     )
-  ;;   )
-
-  ;; (add-hook 'org-after-todo-state-change-hook 'ozer/done-archive)
-
-  (add-hook 'after-init-hook (lambda () (find-file "~/doc/personal/org/todo.org")))
+  (define-key evil-normal-state-map (kbd ";") 'evil-ex)
+  (define-key evil-normal-state-map (kbd ":") 'evil-repeat-find-char)
+  (define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
+  (define-key evil-normal-state-map (kbd "H") 'evil-first-non-blank)
+  (define-key evil-normal-state-map (kbd "C-/") 'evil-commentary-line)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -589,7 +508,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet-snippets helm-company helm-c-yasnippet fuzzy company-statistics auto-yasnippet yasnippet ac-ispell auto-complete utop tuareg caml ocp-indent helm-gtags ggtags flycheck-ocaml merlin flycheck counsel-gtags company tao-theme ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox overseer org-projectile org-present org-pomodoro org-mime org-download org-brain open-junk-file neotree nameless move-text mmm-mode markdown-toc macrostep lorem-ipsum link-hint indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio gnuplot gh-md font-lock+ flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish define-word counsel-projectile column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line))))
+    (evil-commentary proof-general company-coq company-math math-symbol-lists yasnippet-snippets helm-company helm-c-yasnippet fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler writeroom-mode visual-fill-column winum volatile-highlights vi-tilde-fringe uuidgen treemacs-projectile treemacs-persp treemacs-evil treemacs ht pfuture toc-org symon symbol-overlay string-inflection spaceline-all-the-icons spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode password-generator paradox spinner overseer org-bullets open-junk-file nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile projectile helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag google-translate golden-ratio flycheck-package package-lint flycheck pkg-info epl let-alist flycheck-elsa flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump doom-modeline shrink-path all-the-icons memoize f dash s devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link ace-jump-helm-line helm avy helm-core popup which-key use-package pcre2el org-plus-contrib hydra lv hybrid-mode font-lock+ evil goto-chg undo-tree dotenv-mode diminish bind-map bind-key async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -597,5 +516,3 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  )
 )
-
-
