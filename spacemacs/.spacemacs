@@ -50,7 +50,7 @@ This function should only modify configuration layer settings."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     spell-checking
+     ;; spell-checking
      syntax-checking
      treemacs
      ;; version-control
@@ -471,6 +471,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
    evil-insert-state-message nil
    evil-visual-state-message nil
    evil-ex-search-persistent-highlight nil
+
+   coq-compile-before-require t
    )
   )
 
@@ -493,6 +495,9 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
   (define-key evil-normal-state-map (kbd "H") 'evil-first-non-blank)
   (define-key evil-normal-state-map (kbd "C-/") 'evil-commentary-line)
+
+  ;; Disable smartparens because it makes typing comments really slow
+  (spacemacs/toggle-smartparens-globally-off)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
