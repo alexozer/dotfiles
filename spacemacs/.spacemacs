@@ -71,7 +71,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(smartparens) ;; smartparens makes typing lag like crazy sometimes
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -495,9 +495,6 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
   (define-key evil-normal-state-map (kbd "H") 'evil-first-non-blank)
   (define-key evil-normal-state-map (kbd "C-/") 'evil-commentary-line)
-
-  ;; Disable smartparens because it makes typing comments really slow
-  (spacemacs/toggle-smartparens-globally-off)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
