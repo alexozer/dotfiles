@@ -27,9 +27,9 @@
   "ocaml.replPath.unix": "utop",
   "files.autoSave": "afterDelay",
   "search.exclude": {
-    "**/node_modules": true,
+    "**/_build": true,
     "**/bower_components": true,
-    "**/_build": true
+    "**/node_modules": true
   },
   "git.autofetch": true,
   "prettier.printWidth": 100,
@@ -146,4 +146,5 @@
   "cmake.configureOnOpen": true,
   "prettier.proseWrap": "never",
   "vscode-neovim.neovimPath": "/usr/bin/nvim",
+  "editor.renderWhitespace": "all",
 }
