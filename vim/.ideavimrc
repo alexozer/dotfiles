@@ -1,3 +1,13 @@
-source ~/.config/nvim/init.vim
+" Make Y behave like D and C, instead of like yy
+nnoremap Y y$
+
+" Much better use of H and L
+noremap H ^
+noremap L $
+
+" Allow using ; to access command mode in normal and visual mode
+noremap ; :
+noremap : ;
+
 set surround
 set clipboard+=ideaput
