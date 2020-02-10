@@ -40,5 +40,7 @@ export SDL_GAMECONTROLLERCONFIG="03000000790000004618000010010000,mayflash limit
 export UNREAL_PATH=~/doc/projects/rolledout/UnrealEngine
 export NumUBTBuildTasks="$(nproc)"
 
+export SMB2TOOLS=~/doc/projects/romhack/util/smb2-tools/smb2-tools
+
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
