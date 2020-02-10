@@ -56,7 +56,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'alok/notational-fzf-vim'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'AndrewRadev/sideways.vim'
-Plug 'godlygeek/tabular' " Automatic table formatting for vim-markdown
+" Plug 'godlygeek/tabular' " Automatic table formatting for vim-markdown
 " Plug 'gabrielelana/vim-markdown'
 
 " Maybe wanted in the future
