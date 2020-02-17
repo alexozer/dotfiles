@@ -146,5 +146,4 @@
   "cmake.configureOnOpen": true,
   "prettier.proseWrap": "never",
   "vscode-neovim.neovimPath": "/usr/bin/nvim",
-  "editor.renderWhitespace": "all",
 }
