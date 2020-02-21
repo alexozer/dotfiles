@@ -41,6 +41,7 @@ export UNREAL_PATH=~/doc/projects/rolledout/UnrealEngine
 export NumUBTBuildTasks="$(nproc)"
 
 export SMB2TOOLS=~/doc/projects/romhack/util/smb2-tools/smb2-tools
+export GHIDRA_INSTALL_DIR=~/build/ghidra-9.1.1/ghidra_9.1.1_PUBLIC
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

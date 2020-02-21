@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-GTK_THEME=Arc /usr/bin/eclipse
+export GTK_THEME=Arc
+/usr/bin/eclipse
