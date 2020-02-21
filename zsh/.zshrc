@@ -28,16 +28,11 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /etc/profile.d/autojump.zsh
 
-# Search command history
-# bindkey -M vicmd "j" history-substring-search-down
-# bindkey -M vicmd "k" history-substring-search-up
-# setopt HIST_IGNORE_ALL_DUPS
-
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
-	export EDITOR=nvim
+  export EDITOR=nvim
 else
-	export EDITOR=vim
+  export EDITOR=vim
 fi
 
 alias vim=$EDITOR # Vim always points to whichever vim version is installed
