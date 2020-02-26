@@ -11,3 +11,6 @@ noremap : ;
 
 set surround
 set clipboard+=ideaput
+
+set ignorecase
+set smartcase
