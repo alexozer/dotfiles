@@ -10,7 +10,8 @@ noremap ; :
 noremap : ;
 
 set surround
-set clipboard+=ideaput
+set clipboard=unnamedplus,ideaput
 
 set ignorecase
 set smartcase
+set incsearch
