@@ -473,6 +473,10 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
    evil-visual-state-message nil
    evil-ex-search-persistent-highlight nil
 
+   ;; Spacemacs wraps some evil variables so we have to do this
+   vim-style-remap-Y-to-y$ t
+   vim-style-ex-substitute-global t
+
    coq-compile-before-require t
    )
   )
