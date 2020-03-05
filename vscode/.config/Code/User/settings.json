@@ -6,7 +6,7 @@
   "vim.leader": "<space>",
   "vim.useCtrlKeys": true,
   "window.menuBarVisibility": "hidden",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.fontLigatures": true,
   "latex-workshop.chktex.enabled": true,
