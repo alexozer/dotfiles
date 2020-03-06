@@ -2,6 +2,8 @@
 # running on each zsh invocation. See ~/.zprofile for environment variable setup
 # that I only want to run once at startup.
 
+export TERMINAL
+
 export GOPATH1="$HOME/build/go"
 export GOPATH2="$HOME/code/go"
 export GOPATH="$GOPATH1:$GOPATH2"

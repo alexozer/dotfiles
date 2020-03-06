@@ -263,7 +263,7 @@ let g:pencil#conceallevel = 0
 let g:ale_lint_on_text_changed="never"
 let g:ale_cursor_detail = 1
 
-" lightline
+" lightlin
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {

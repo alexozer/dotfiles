@@ -279,3 +279,4 @@ super + {Down,Up}
 
 super + shift + slash
 	gnome-terminal -e "tmux new-session -A -s weechat weechat"
+
