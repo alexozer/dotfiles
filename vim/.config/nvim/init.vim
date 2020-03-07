@@ -41,7 +41,7 @@ Plug 'arcticicestudio/nord-vim'
 
 " Tools
 Plug 'junegunn/vim-plug'
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -56,8 +56,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'alok/notational-fzf-vim'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'AndrewRadev/sideways.vim'
-" Plug 'godlygeek/tabular' " Automatic table formatting for vim-markdown
-" Plug 'gabrielelana/vim-markdown'
+Plug 'godlygeek/tabular' " Automatic table formatting for vim-markdown
+Plug 'gabrielelana/vim-markdown'
 
 " Maybe wanted in the future
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -111,7 +111,6 @@ set copyindent           " Copy indent from the previous line
 " UI
 set termguicolors        " Enable true-color colorscheme support
 set wildmenu             " Visual autocomplete for command menu
-set cursorline	         " Highlight current line
 set mouse=a              " Enable selecting with mouse
 set splitbelow           " Open horizontal splits below current split
 set splitright           " Open vertical splits to the right of current split
@@ -121,11 +120,13 @@ set scrolloff=4	         " Leave lines visible at top and bottom of buffer
 set noshowmode           " Annoying mode display, the cursor shows which mode we're in
 set ttimeoutlen=0        " Respond to escape immediately
 set number               " Line numbers
+" Disabled for now, seems to add a lot of latency
+" set cursorline	         " Highlight current line
 
 " Enable cursor blinking (seemingly preserves terminal blink timing?)
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-  \,a:blinkwait700-blinkoff400-blinkon250
-  \,sm:block-blinkwait175-blinkoff150-blinkon175
+" set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+"   \,a:blinkwait700-blinkoff400-blinkon250
+"   \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 " Search and Substitute
 set ignorecase           " Case-insensitive
