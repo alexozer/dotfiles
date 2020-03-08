@@ -184,7 +184,7 @@ super + shift + space
 	gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch gksudo'
 
 super + Return
-	gnome-terminal
+	nextkitty
 
 super + w
 	firefox-developer-edition
@@ -227,7 +227,7 @@ super + g; r
 	pkill -x -USR1 redshift
 
 super + t
-	gnome-terminal -e htop
+	nextkitty -e htop
 
 super + ctrl + p
 	ntfy -b phone send "$(xsel -b)"

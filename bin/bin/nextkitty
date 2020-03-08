@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Show a hidden Kitty terminal
+kittyid="$( { xdotool search --class 'kitty' & xdotool search --onlyvisible --class 'kitty'; } | sort | uniq -u | head -n1)"
+bspc node "$kittyid" --to-desktop focused
+bspc node "$kittyid" --state tiled
+bspc node "$kittyid" --flag hidden=off
+bspc node "$kittyid" --focus
+
+# Spawn another to replace it (which bspwm should hide)
+kitty &
