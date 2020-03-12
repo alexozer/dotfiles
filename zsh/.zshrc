@@ -96,38 +96,44 @@ function chpwd {
 function e {
 case "$1" in
   keys)
-    $EDITOR $HOME/.config/sxhkd/sxhkdrc
+    "$EDITOR" "$HOME"/.config/sxhkd/sxhkdrc
     ;;
   zsh)
-    $EDITOR "$HOME/.zshrc"
-    source "$HOME/.zshrc"
+    "$EDITOR" "$HOME"/.zshrc
+    source "$HOME"/.zshrc
     ;;
   env)
-    $EDITOR "$HOME/.zshenv"
+    "$EDITOR" "$HOME"/.zshenv
     ;;
   startupenv)
-    $EDITOR "$HOME/.zprofile"
+    "$EDITOR" "$HOME"/.zprofile
     ;;
   bspwm)
-    $EDITOR $HOME/.config/bspwm/bspwmrc
+    "$EDITOR" "$HOME"/.config/bspwm/bspwmrc
     ;;
   i3)
-    $EDITOR $HOME/.i3/config
+    "$EDITOR" "$HOME"/.i3/config
     ;;
   vim)
-    $EDITOR $HOME/.vimrc
+    "$EDITOR" "$HOME"/.vimrc
     ;;
   startup)
-    $EDITOR $HOME/.config/bspwm/startup.sh
+    "$EDITOR" "$HOME"/.config/bspwm/startup.sh
     ;;
   env)
-    $EDITOR $HOME/.zprofile
+    "$EDITOR" "$HOME"/.zprofile
     ;;
   ssh)
-    $EDITOR $HOME/.ssh/config
+    "$EDITOR" "$HOME"/.ssh/config
     ;;
   bar)
-    $EDITOR $HOME/.config/polybar/config
+    "$EDITOR" "$HOME"/.config/polybar/config
+    ;;
+  todo)
+    "$EDITOR" "$HOME"/doc/Dropbox/notes/todo.md
+    ;;
+  term)
+    "$EDITOR" "$HOME"/.config/kitty/kitty.conf
     ;;
   *)
     echo "$1: invalid option"
