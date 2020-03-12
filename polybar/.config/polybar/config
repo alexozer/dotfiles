@@ -51,12 +51,12 @@ margin-stop = ${bar/top.height}
 
 [module/date]
 type = internal/date
-date = "  %a %d"
+date = "   %a %d"
 
 [module/time]
 type = internal/date
 ; The right separator doesn't seem to apply to the panel, so add it in the date format
-date = "  %I:%M   "
+date = "   %I:%M   "
 
 [module/bspwm]
 type = internal/bspwm
@@ -87,10 +87,10 @@ label-empty-padding = 2
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume = 墳  %percentage%%
+label-volume = 墳   %percentage%%
 
 format-muted = <label-muted>
-label-muted = ﱝ  %percentage%%
+label-muted = ﱝ   %percentage%%
 format-muted-foreground = ${colors.comment}
 
 bar-volume-width = 10
@@ -116,9 +116,9 @@ type = internal/network
 interface = wlp3s0
 
 format-connected = <label-connected>
-label-connected = 直  %essid%
+label-connected = 直   %essid%
 format-disconnected = <label-disconnected>
-label-disconnected = 直  disconnected
+label-disconnected = 直   disconnected
 
 [module/battery]
 type = internal/battery
@@ -145,15 +145,14 @@ ramp-capacity-4 = 
 
 [module/music]
 type = custom/script
-exec = ~/.config/polybar/mpris.py
-
+exec = ~/.config/polybar/player-mpris-tail.py --icon-playing '   ' --icon-paused '   '
 tail = true
 
 [module/weather]
 type = custom/script
 interval = 300
 format = <label>
-format-prefix = "  "
+format-prefix = "    "
 ; format-prefix-foreground = ${colors.foreground}
 exec = ~/.config/polybar/weather.sh
 

@@ -6,7 +6,7 @@
 # Config
 UNITS="imperial"
 DEGREES_SYMBOL="°"
-SUNSET_SYMBOL="滋"
+SUNSET_SYMBOL="滋  "
 # End config
 
 LOC_URL='https://location.services.mozilla.com/v1/geolocate?key=geoclue'

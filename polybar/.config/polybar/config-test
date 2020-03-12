@@ -1,9 +1,0 @@
-[bar/top]
-modules-right = network
-tray-position = right
-
-[module/network]
-type = internal/network
-interface = wlp3s0
-format-connected = <label-connected>
-label-connected = %essid%
