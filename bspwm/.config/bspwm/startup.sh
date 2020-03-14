@@ -8,6 +8,10 @@ xsetroot -cursor_name left_ptr
 # Spawn a bunch of kitty terminals in the background
 rebootkitty &
 
+# Still use gnome-terminal for popup terminals for now
+bspc rule --add Gnome-terminal --one-shot state=floating hidden=on desktop=^10
+gnome-terminal &
+
 xfsettingsd &
 xfce4-notifyd &
 xfdesktop --disable-wm-check &
