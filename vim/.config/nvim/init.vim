@@ -248,7 +248,7 @@ nnoremap <silent> <leader>b :Buffers<cr>
 nnoremap <silent> <leader>d :cd ~/doc/Dropbox/notes<cr>
 
 " notational-fzf-vim
-let g:nv_search_paths = ['~/doc/Dropbox/notes']
+let g:nv_search_paths = ['~/doc/Dropbox']
 nnoremap <silent> <leader>r :NV<cr>
 
 " pencil

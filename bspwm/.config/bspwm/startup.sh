@@ -17,7 +17,7 @@ xfce4-notifyd &
 xfdesktop --disable-wm-check &
 thunar --daemon &
 steam -silent &
-discord &
+# discord &
 timetrack &
 dropbox &
 tmux new-session -d -s weechat weechat &
