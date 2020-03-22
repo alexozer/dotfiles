@@ -241,14 +241,15 @@ nnoremap <silent> <leader>3 :NERDTreeToggle<cr>
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 nnoremap <silent> <leader><space> :Files<cr>
-nnoremap <silent> <leader>s :Files ~/doc/Dropbox<cr>
+nnoremap <silent> <leader>s :Files ~/doc/Dropbox/notes<cr>
+nnoremap <silent> <leader>S :Files ~/doc/Dropbox/monkeyball-hacking-notes<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 
 " Enter notes directory so I can create, rename, move files
 nnoremap <silent> <leader>d :cd ~/doc/Dropbox/notes<cr>
 
 " notational-fzf-vim
-let g:nv_search_paths = ['~/doc/Dropbox']
+let g:nv_search_paths = ['~/doc/Dropbox/notes', '~/doc/Dropbox/monkeyball-hacking-notes']
 nnoremap <silent> <leader>r :NV<cr>
 
 " pencil
@@ -275,8 +276,6 @@ let g:lightline = {
       \   'readonly': '%{&readonly?"":""}',
       \ },
       \ }
-
-asdf asdkjf as;dlfk jas;flksj f;asdlj
 
 " tcomment
 let g:tcomment_mapleader1=''
