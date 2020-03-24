@@ -3,280 +3,285 @@
 #
 
 super + shift q; {l, s, p, r}
-	{bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot}
+    {bspc quit, systemctl suspend, systemctl poweroff, systemctl reboot}
+
+# super + c
+#     if-dropdown 'tdrop -a -m -y 28 -h -28 --name="kitty-dropdown" kitty --name "kitty-dropdown" --title "kitty-dropdown"' 'bspc node --close'
 
 super + c
-	bspc node --close
+    bspc node --close
 
 super + equal
-	bspc node @/ --ratio 0.6180339903912632
+    bspc node @/ --ratio 0.6180339903912632
 
 super + minus
-	bspc node @/ --equalize
+    bspc node @/ --equalize
 
 super + b
-	bspc node @/ --balance
+    bspc node @/ --balance
 
 # Focus desktops
 
 # super + a:
-# 	bspc desktop ^1 --focus
+#     bspc desktop ^1 --focus
 # 
 # super + s:
-# 	bspc desktop ^2 --focus
+#     bspc desktop ^2 --focus
 # 
 # super + d:
-# 	bspc desktop ^3 --focus
+#     bspc desktop ^3 --focus
 # 
 # super + f:
-# 	bspc desktop ^4 --focus
+#     bspc desktop ^4 --focus
 # 
 # super + r:
-# 	bspc desktop ^5 --focus
+#     bspc desktop ^5 --focus
 # 
 # super + e:
-# 	bspc desktop ^6 --focus
+#     bspc desktop ^6 --focus
 # 
 # super + w:
-# 	bspc desktop ^7 --focus
+#     bspc desktop ^7 --focus
 # 
 # super + q:
-# 	bspc desktop ^8 --focus
+#     bspc desktop ^8 --focus
 # 
 # super + u:
-# 	bspc desktop ^9 --focus
+#     bspc desktop ^9 --focus
 # 
 # super + i:
-# 	bspc desktop ^10 --focus
+#     bspc desktop ^10 --focus
 
 # Move window to desktop
 
 # super + shift a:
-# 	bspc node --to-desktop ^1 --focus
+#     bspc node --to-desktop ^1 --focus
 # 
 # super + shift + s:
-# 	bspc node --to-desktop ^2 --focus
+#     bspc node --to-desktop ^2 --focus
 # 
 # super + shift + d:
-# 	bspc node --to-desktop ^3 --focus
+#     bspc node --to-desktop ^3 --focus
 # 
 # super + shift + f:
-# 	bspc node --to-desktop ^4 --focus
+#     bspc node --to-desktop ^4 --focus
 # 
 # super + shift + r:
-# 	bspc node --to-desktop ^5 --focus
+#     bspc node --to-desktop ^5 --focus
 # 
 # super + shift + e:
-# 	bspc node --to-desktop ^6 --focus
+#     bspc node --to-desktop ^6 --focus
 # 
 # super + shift + w:
-# 	bspc node --to-desktop ^7 --focus
+#     bspc node --to-desktop ^7 --focus
 # 
 # super + shift + q:
-# 	bspc node --to-desktop ^8 --focus
+#     bspc node --to-desktop ^8 --focus
 # 
 # super + shift + u:
-# 	bspc node --to-desktop ^9 --focus
+#     bspc node --to-desktop ^9 --focus
 # 
 # super + shift + i:
-# 	bspc node --to-desktop ^10 --focus
+#     bspc node --to-desktop ^10 --focus
 
 # Reorder desktops
 
 # super + ctrl + a:
-# 	bspc desktop --swap ^1 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^1 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + s:
-# 	bspc desktop --swap ^2 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^2 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + d:
-# 	bspc desktop --swap ^3 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^3 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + f:
-# 	bspc desktop --swap ^4 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^4 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + r:
-# 	bspc desktop --swap ^5 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^5 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + e:
-# 	bspc desktop --swap ^6 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^6 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + w:
-# 	bspc desktop --swap ^7 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^7 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + q:
-# 	bspc desktop --swap ^8 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^8 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + u:
-# 	bspc desktop --swap ^9 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^9 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # 
 # super + ctrl + i:
-# 	bspc desktop --swap ^10 --focus; \
-#  	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+#     bspc desktop --swap ^10 --focus; \
+#      bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 super + {n,i}
   bspc desktop primary:focused#{next,prev}.local --focus
 
 super + {1-9,0}
-	bspc desktop ^{1-9,10} --focus
+    bspc desktop ^{1-9,10} --focus
 
 super + shift + {1-9,0}
-	bspc node --to-desktop ^{1-9,10} --focus
+    bspc node --to-desktop ^{1-9,10} --focus
 
 super + shift + {n,i}
-	bspc node --to-desktop primary:focused#{next,prev}.local --focus
+    bspc node --to-desktop primary:focused#{next,prev}.local --focus
 
 super + ctrl + shift + {1-9,0}
-	bspc desktop --swap ^{1-9,10} --focus; \
-	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+    bspc desktop --swap ^{1-9,10} --focus; \
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 super + ctrl + shift + {n,i}
-	bspc desktop --swap primary:focused#{next,prev}.local --focus; \
-	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+    bspc desktop --swap primary:focused#{next,prev}.local --focus; \
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 super + {_,shift + }f
-	bspc node --state {\~floating,\~pseudo_tiled}
+    bspc node --state {\~floating,\~pseudo_tiled}
 
 super + y
-	bspc node --to-node last.!automatic
+    bspc node --to-node last.!automatic
 
 super + m
-	bspc desktop --layout next
+    bspc desktop --layout next
 
 super + {h,j,k,l}
-	bspc node --focus {west,south,north,east}
+    bspc node --focus {west,south,north,east}
 
 super + shift + {h,j,k,l}
-	bspc node --swap {west,south,north,east} --focus
+    bspc node --swap {west,south,north,east} --focus
 
 super + {_,shift + }Tab
-	bspc node --focus {next.local,prev.local}
+    bspc node --focus {next.local,prev.local}
 
 super + {_,shift + }r
-	bspc node @/ --rotate {270,90}
+    bspc node @/ --rotate {270,90}
 
 super + ctrl + {h,j,k,l}
-	bspc node --presel-dir \~{west,south,north,east}
+    bspc node --presel-dir \~{west,south,north,east}
 
 super + {comma,period}
-	bspc monitor --focus {DisplayPort-0, DVI-D-0}
+    bspc monitor --focus {DisplayPort-0, DVI-D-0}
 
 super + shift + {comma,period}
-	bspc node --to-monitor {DisplayPort-0, DVI-D-0} --follow
+    bspc node --to-monitor {DisplayPort-0, DVI-D-0} --follow
 
 #
 # wm-independent keybindings
 #
 
 super + space
-	gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
+    gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
 
 super + shift + space
-	gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch gksudo'
+    gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch gksudo'
+
+# super + Return
+#     tdrop -a -m -y 28 -h -28 --name="kitty-dropdown" kitty --name "kitty-dropdown" --title "kitty-dropdown"
 
 super + Return
-	nextkitty
+    nextkitty
 
 super + w
-	firefox-developer-edition
+    firefox-developer-edition
 
 super + shift + w
-	firefox-developer-edition --private-window
+    firefox-developer-edition --private-window
 
 super + e
-	thunar
+    thunar
 
 {Print,super + s}
-	maim -s ~/screenshot.png
+    maim -s ~/screenshot.png
 
 # super + {s, shift + s}; {r,f,w}
-	# maim {,-d 2} {-s,-i root,-i $(xdotool getactivewindow)} ~/screenshot.png && ;\
-	# notify-send 'Screenshot captured'
+    # maim {,-d 2} {-s,-i root,-i $(xdotool getactivewindow)} ~/screenshot.png && ;\
+    # notify-send 'Screenshot captured'
 
 # for laptop
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-	pamixer --{increase,decrease} 2
+    pamixer --{increase,decrease} 2
 
 XF86AudioMute
-	pamixer --mute ;\
-	pamixer --source 1 --mute
+    pamixer --mute ;\
+    pamixer --source 1 --mute
 
 XF86LaunchA
-	pamixer --unmute
+    pamixer --unmute
 
 XF86LaunchB
-	pamixer --source 1 --unmute
+    pamixer --source 1 --unmute
 
 {XF86AudioPrev, XF86AudioPlay, XF86AudioNext}
-	playerctl {previous, play-pause, next}
+    playerctl {previous, play-pause, next}
 
 # make sxhkd reload its configuration files:
 super + shift + Escape
-	pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd
 
 super + g; r
-	pkill -x -USR1 redshift
+    pkill -x -USR1 redshift
 
-super + t
-	nextkitty -e htop
+# super + t
+#     nextkitty -e htop
 
 super + ctrl + p
-	ntfy -b phone send "$(xsel -b)"
+    ntfy -b phone send "$(xsel -b)"
 
 super + o
-	gnome-terminal-popup browser-bookmarks
+    gnome-terminal-popup browser-bookmarks
 
 super + O
-	gnome-terminal-popup 'rg --color never --files 2>/dev/null |\
-	fzf-dmenu | xargs echo -n | xargs -0 exo-open'
+    gnome-terminal-popup 'rg --color never --files 2>/dev/null |\
+    fzf-dmenu | xargs echo -n | xargs -0 exo-open'
 
 super + u
-	spotify --force-device-scale-factor=1.2
+    spotify --force-device-scale-factor=1.2
 
 # super + p
-	# gnome-terminal-popup "CM_LAUNCHER='fzf-dmenu' clipmenu -i"
+    # gnome-terminal-popup "CM_LAUNCHER='fzf-dmenu' clipmenu -i"
 
 # Password manager
 super + shift + p
-	gnome-terminal-popup pass-ui
+    gnome-terminal-popup pass-ui
 
 # Wait a second before typing password so form can refocus
 super + shift + ctrl + p
-	gnome-terminal-popup "pass-ui 1"
+    gnome-terminal-popup "pass-ui 1"
 
 super + x
-	gnome-terminal-popup fkill 160x24
+    gnome-terminal-popup fkill 160x24
 
 super + bracketleft
-	xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --off --output DVI-D-0 --off
+    xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --off --output DVI-D-0 --off
 
 super + bracketright
-	xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x249 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 381x1689 --rotate inverted --output DVI-D-0 --mode 1920x1080 --pos 2560x0 --rotate right
+    xrandr --output DisplayPort-0 --primary --mode 2560x1440 --pos 0x249 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 381x1689 --rotate inverted --output DVI-D-0 --mode 1920x1080 --pos 2560x0 --rotate right
 
 super + shift + bracketleft
-	xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --off
+    xrandr --output DisplayPort-0 --off --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output DVI-D-0 --off
 
 super + backslash
-	post-resume
+    post-resume
 
 super + shift + b
-	gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
+    gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
 
 super + shift + Return
-	gnome-terminal -e 'nvim -c "Files ~/doc/Dropbox/notes"'
+    gnome-terminal -e 'nvim -c "Files ~/doc/Dropbox/notes"'
 
 super + {Down,Up}
-	xbacklight -{dec,inc} 1
+    xbacklight -{dec,inc} 1
 
 super + shift + slash
-	gnome-terminal -e "tmux new-session -A -s weechat weechat"
-
+    gnome-terminal -e "tmux new-session -A -s weechat weechat"

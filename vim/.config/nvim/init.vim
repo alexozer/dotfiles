@@ -186,7 +186,7 @@ nnoremap gL <C-w>L
 nnoremap gJ <C-w>J
 nnoremap gK <C-w>K
 
-" Easier tab manipulation / navigation
+" Easier tab manipulation / nav... I don't believe them igation
 " nnoremap <silent> <leader><tab> :tabnew<cr>
 " nnoremap <silent> <leader><s-tab> :tabc<cr>
 " nnoremap <silent> <tab> :tabn<cr>
