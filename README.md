@@ -8,6 +8,8 @@ a commit message equally lacking in description. Enjoy!
 ![full](full.png)
 ![busy](busy.png)
 
+(this is bspwm, I've recently switched to i3 however, we'll see how it goes...)
+
 ## Install
 
 You can symlink these dotfiles to your home directory using GNU stow:
@@ -16,7 +18,7 @@ You can symlink these dotfiles to your home directory using GNU stow:
 $ cd
 $ git clone https://github.com/alexozer/dotfiles.git .dotfiles
 $ cd .dotfiles
-$ stow vim zsh bspwm # ...
+$ stow vim zsh i3 # ...
 ```
 
 ## My Setup
@@ -29,22 +31,20 @@ I use:
     - Primary monitor: Dell Ultrasharp U2415
     - Keyboard: KBD75 V1
 - Arch Linux
-- Bspwm (window manager)
-- Xfce (desktop environment minus window manager)
-- Whiskermenu (launcher)
-- Polybar (panel)
-- Gnome Terminal
+- i3 (window manager)
+- Xfce (desktop environment utilities)
+- FZF (fuzzy searcher, I use for programs, files, bookmarks, passwords, clipboard, vim, killing processes)
+- Kitty (terminal)
 - Zsh (shell)
 - Oh My Zsh (zsh plugin mananger)
 - Firefox Developer Edition (browser)
-- Jetbrains IDEs (code editor)
-- Neovim (for general-purpose text editing, light code editing)
+- Jetbrains IDEs (for "deeper" coding)
+- Neovim (for general-purpose text editing, light coding)
 - Visual Studio Code (for misc. language editing)
-- FZF (fuzzy searcher, I use for files, bookmarks, passwords, clipboard, vim, killing processes)
 - Clipmenu (clipboard history manager)
 - pass (password manager)
-- Dracula (terminal, VSCode, and Polybar colorscheme)
+- Dracula (terminal colorscheme)
 - Arc Darker (GTK theme)
 - Papirus (icon theme)
 - Human (cursor theme)
-- Fira Code / Fira Mono (editor / terminal font)
+- Fira Code/Fira Mono (editor, terminal, status bar font)
