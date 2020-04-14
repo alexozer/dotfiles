@@ -53,6 +53,7 @@ bspc rule -a Zenity focus=off
 bspc rule -a Spotify desktop=^8
 bspc rule -a Slack desktop=^9
 bspc rule -a kitty state=floating hidden=on desktop=^10
+bspc rule -a dolphin-emu state=floating
 # bspc rule -a kitty state=floating
 
 "$HOME"/.config/bspwm/startup.sh &

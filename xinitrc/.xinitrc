@@ -32,4 +32,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-exec bspwm
+# if [[ $XDG_VTNR -eq 1 ]]; then
+#   exec bspwm
+# elif [[ $XDG_VTNR -eq 2 ]]; then
+#   exec i3
+# fi
+if [[ $XDG_VTNR -eq 1 ]]; then
+    exec i3
+fi

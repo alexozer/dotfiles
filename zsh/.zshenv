@@ -19,7 +19,9 @@ $HOME/.gem/ruby/2.4.0/bin:\
 $HOME/.cargo/bin:\
 $HOME/.npm-packages/bin:\
 $HOME/.local/bin:\
-/opt/n64/bin"
+$HOME/build/emsdk:\
+$HOME/build/emsdk/node/12.9.1_64bit/bin:\
+$HOME/build/emsdk/upstream/emscripten:"
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix java guis
 export MATLAB_JAVA="/usr/lib/jvm/java-8-openjdk/jre"

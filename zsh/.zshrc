@@ -111,9 +111,6 @@ case "$1" in
   bspwm)
     "$EDITOR" "$HOME"/.config/bspwm/bspwmrc
     ;;
-  i3)
-    "$EDITOR" "$HOME"/.i3/config
-    ;;
   vim)
     "$EDITOR" "$HOME"/.vimrc
     ;;
@@ -132,8 +129,11 @@ case "$1" in
   todo)
     "$EDITOR" "$HOME"/doc/Dropbox/notes/todo.md
     ;;
-  term)
+  kitty)
     "$EDITOR" "$HOME"/.config/kitty/kitty.conf
+    ;;
+  i3)
+    "$EDITOR" "$HOME"/.config/i3/config
     ;;
   *)
     echo "$1: invalid option"

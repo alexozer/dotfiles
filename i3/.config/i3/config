@@ -1,0 +1,341 @@
+# TODO
+# Terminal stuff
+#   Instant terminal open
+#   Completely replace gnome-terminal with kitty
+#   Floating popup for fzf actions
+# Port window rules
+# How to deal with transplanting windows / undoing getting stuck in a weird child node layout state
+# Wrong bar size on first startup
+# Resizing split to half/golden ratio
+# Focus browser tab when linked clicked on another workspace
+# Discord push-to-talk
+# Fix chord keybindings (some double-mod chords seem to overlap with i3 non-deterministically)
+# Set wallpaper (nitrogen --restore does not play nicely with xfsettingsd, and xfce4 wallpaper setter does not play nicely with i3)
+# Fix dex
+# Aesthetics
+#   Dual polybar setup
+#   i3 window colors
+#   i3 titlebar alignment and font
+#   Reorganize sections of this config file
+#   i3bar / windows wrong size on first startup (race condition with xfsettingsd?)
+#   Window borders?
+
+# Things that are apparently impossible with i3:
+# Moving tabs around with mouse / middle-click to close window
+# Move tiled window around container / to different monitor with mouse
+
+# i3 config file (v4)
+# Table of Contents
+# 0. Variables
+# 1. System & Settings
+# 2. Window Navigation & Management
+# 3. Workspaces
+# 4. Application Management
+# 5. Scripts
+# 6.
+# 7.
+# 8. Startup
+# X. Colors
+# Y. Modes
+# Z. Overflow
+
+#### 0. Variables
+
+# windows key is used for deep management
+set $mod4key Mod4
+set $mod4 bindsym Mod4
+set $smod4 bindsym Mod4+Shift
+set $cmod4 bindsym Mod4+Control
+set $scmod4 bindsym Mod4+Shift+Control
+
+# default terminal is kitty
+set $terminal kitty -1
+
+# clean up code
+set $ex exec --no-startup-id
+set $exa exec_always --no-startup-id
+set $br bindsym --release
+set $scr /home/efex/scripts
+
+# i3 does not allow variables inside variable definitions grrr
+set $outleftname DisplayPort-0
+set $outrightname DVI-D-0
+set $outleft output DisplayPort-0
+set $outright output DVI-D-0
+
+#### 1. System & Settings
+
+# titlebar settings
+font pango:Fira Code Medium 9
+title_align center
+
+# general settings
+gaps outer 0
+gaps inner 0
+default_border pixel 4
+default_floating_border pixel 4
+hide_edge_borders both
+# popup_during_fullscreen smart
+workspace_layout tabbed
+focus_on_window_activation focus
+
+# workspace_auto_back_and_forth yes
+# floating_minimum_size 500 x 500
+# floating_maximum_size 1000 x 1000
+
+#### 2. Window Navigation & Management
+
+# change focus
+$mod4+h focus left
+$mod4+j focus down
+$mod4+k focus up
+$mod4+l focus right
+
+# move focused window
+$smod4+h move left
+$smod4+j move down
+$smod4+k move up
+$smod4+l move right
+
+# enter fullscreen mode for the focused container
+# $mod4+f     fullscreen toggle
+# $smod4+f    focus parent; fullscreen toggle
+# $cmod4+f    focus parent; focus parent; fullscreen toggle
+# $scmod4+f   focus parent; focus parent; focus parent; fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+$mod4+t layout toggle tabbed split
+
+# set to horizontal split
+$mod4+semicolon split h
+
+# set to vertical split
+$mod4+v split v
+
+# floating management
+floating_modifier $mod4key
+
+# toggle tiling / floating
+$smod4+space floating toggle
+
+# change focus between tiling / floating windows
+# $mod4+space focus mode_toggle
+
+# focus the parent container
+$mod4+i focus parent
+
+# focus the child container
+$mod4+n focus child
+
+$mod4+c kill
+
+#### 3. Workspaces
+
+# Define workspace names+numbers
+# set $wsweb workspace 1:web
+# set $wsterm workspace 2:term
+set $ws1 workspace 1:1
+set $ws2 workspace 2:2
+set $ws3 workspace 3:3
+set $ws4 workspace 4:4
+set $ws5 workspace 5:5
+set $ws6 workspace 6:6
+set $wsmusic workspace 7:music
+set $wschat workspace 8:chat
+set $wsmon workspace 9:mon
+
+# switch to workspace
+$mod4+a $ws1
+$mod4+s $ws2
+$mod4+d $ws3
+$mod4+f $ws4
+$mod4+q $ws5
+$mod4+w $ws6
+$mod4+e $wsmusic
+$mod4+r $wschat
+
+# move focused container to workspace
+$smod4+a move container to $ws1, $ws1
+$smod4+s move container to $ws2, $ws2
+$smod4+d move container to $ws3, $ws3
+$smod4+f move container to $ws4, $ws4
+$smod4+q move container to $ws5, $ws5
+$smod4+w move container to $ws6, $ws6
+$smod4+e move container to $wsmusic, $wsmusic
+$smod4+r move container to $wschat, $wschat
+
+# set default workspaces
+$ws1 $outleft
+$ws2 $outleft
+$ws3 $outleft
+$ws4 $outleft
+$ws5 $outleft
+$ws6 $outleft
+$wschat $outleft
+$wsmusic $outleft
+$wsmon $outright
+
+# Focus/move stuff between monitors
+$mod4+comma focus $outleft
+$mod4+period focus $outright
+$smod4+comma move container to $outleft, focus $outleft
+$smod4+period move container to $outright, focus $outright
+$scmod4+comma move workspace to $outleft
+$scmod4+period move workspace to $outright
+
+# scratchpad
+# $mod4+slash     scratchpad show
+# $smod4+slash    move scratchpad
+# $cmod4+slash    [floating] move scratchpad
+
+# marks
+$mod4+braceleft     exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+$mod4+braceright    exec i3-input -F 'swap container with mark %s' -l 1 -P 'Mark: '
+$mod4+y     mark --add --toggle swapee
+$smod4+y    swap container with mark swapee
+
+#### 4. Application Management
+
+# Launch stuff
+$mod4+Return $ex $terminal
+$mod4+space $ex gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
+$mod4+o $ex gnome-terminal-popup browser-bookmarks
+$smod4+o $ex gnome-terminal-popup 'rg --color never --files 2>/dev/null | fzf-dmenu | xargs echo -n | xargs -0 exo-open'
+$smod4+p $ex gnome-terminal-popup 'pass-ui'
+$smod4+b $ex gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
+$smod4+slash $ex $terminal tmux new-session -A -s weechat weechat
+$mod4+x $ex $terminal fkill
+$smod4+t $ex $terminal htop
+
+# Audio
+bindsym XF86AudioRaiseVolume $ex pamixer --increase 2
+bindsym XF86AudioLowerVolume $ex pamixer --decrease 2
+bindsym XF86AudioMute $ex pamixer --mute, $ex pamixer --source 1 --mute
+bindsym XF86LaunchA $ex pamixer --unmute
+bindsym XF86LaunchB $ex pamixer --source 1 --unmute
+bindsym XF86AudioPrev $ex playerctl previous
+bindsym XF86AudioPlay $ex playerctl play-pause
+bindsym XF86AudioNext $ex playerctl next
+
+# Backlight (on laptop)
+$mod4+Down $ex xbacklight -dec 1
+$mod4+Up $ex xbacklight -inc 1
+
+# Screenshot
+bindsym Print $ex flameshot gui
+
+# Reload desktop configurations
+$smod4+Escape $ex pkill -USR1 -x sxhkd, restart
+
+#### 8. Startup
+
+$ex sxhkd
+
+# No X cursor shape
+$ex xsetroot -cursor_name left_ptr
+
+# $ex nitrogen --restore
+$ex dex -a
+$ex xfsettingsd
+$ex xfce4-notifyd
+$ex thunar --daemon
+$ex steam -silent
+$ex tmux new-session -d -s weechat weechat
+$ex udiskie --no-notify --tray
+
+# $ex xfdesktop --disable-wm-check
+# redshift-gtk &
+# CM_SELECTIONS="clipboard" clipmenud &
+
+# $ex polybar top --reload
+
+# # window rules
+# for_window [title="System Monitor"] border pixel 0
+# for_window [title="Calculator"] floating enable
+# for_window [class="mpv"] border pixel 0
+# for_window [class="vlc"] border pixel 0
+# for_window [class="Firefox"] border pixel 0
+# for_window [class="discord"] floating enable
+# for_window [class="Slack"] floating enable
+
+# # Open specific applications in floating mode
+# for_window [title="alsamixer"] floating enable border pixel 1
+# for_window [class="calamares"] floating enable border normal
+# for_window [class="Clipgrab"] floating enable
+# for_window [title="File Transfer*"] floating enable
+# for_window [class="fpakman"] floating enable
+# for_window [class="Galculator"] floating enable border pixel 1
+# for_window [class="GParted"] floating enable border normal
+# for_window [title="i3_help"] floating enable sticky enable border normal
+# for_window [class="Lightdm-settings"] floating enable
+# for_window [class="Lxappearance"] floating enable sticky enable border normal
+# for_window [class="Manjaro-hello"] floating enable
+# for_window [class="Manjaro Settings Manager"] floating enable border normal
+# for_window [title="MuseScore: Play Panel"] floating enable
+# for_window [class="Nitrogen"] floating enable sticky enable border normal
+# for_window [class="Oblogout"] fullscreen enable
+# for_window [class="octopi"] floating enable
+# for_window [title="About Pale Moon"] floating enable
+# for_window [class="Pamac-manager"] floating enable
+# for_window [class="Pavucontrol"] floating enable
+# for_window [class="qt5ct"] floating enable sticky enable border normal
+# for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+# for_window [class="Simple-scan"] floating enable border normal
+# for_window [class="(?i)System-config-printer.py"] floating enable border normal
+# for_window [class="Skype"] floating enable border normal
+# for_window [class="Timeset-gui"] floating enable border normal
+# for_window [class="(?i)virtualbox"] floating enable border normal
+# for_window [class="Xfburn"] floating enable
+#
+# workspace layouts
+# $exa "i3-msg 'workspace 1; append_layout /home/efex/.config/i3/layouts/main-workflow-1.json'"
+
+#### X. Colors
+
+# set_from_resource $color0 color0 #ffffff
+# set_from_resource $red color1 #ffffff
+# set_from_resource $green color2 #ffffff
+# set_from_resource $yellow color3 #ffffff
+# set_from_resource $blue color4 #ffffff
+# set_from_resource $purple color5 #ffffff
+# set_from_resource $aqua color6 #ffffff
+# set_from_resource $dark-gray color7 #ffffff
+# set_from_resource $light-gray color8 #ffffff
+# set_from_resource $dark-red color9 #ffffff
+# set_from_resource $dark-green color10 #ffffff
+# set_from_resource $dark-yellow color11 #ffffff
+# set_from_resource $dark-blue color12 #ffffff
+# set_from_resource $dark-purple color13 #ffffff
+# set_from_resource $dark-aqua color14 #ffffff
+# set_from_resource $color15 color15 #ffffff
+# set_from_resource $orange color16 #ffffff
+# set_from_resource $dark-orange color17 #ffffff
+# set_from_resource $bg bg #ffffff
+# set_from_resource $bg0 bg0 #ffffff
+# set_from_resource $bg1 bg1 #ffffff
+# set_from_resource $bg2 bg2 #ffffff
+# set_from_resource $bg3 bg3 #ffffff
+# set_from_resource $bg4 bg4 #ffffff
+# set_from_resource $fg fg #ffffff
+# set_from_resource $fg0 fg0 #ffffff
+# set_from_resource $fg1 fg1 #ffffff
+# set_from_resource $fg2 fg2 #ffffff
+# set_from_resource $fg3 fg3 #ffffff
+# set_from_resource $fg4 fg4 #ffffff
+#
+# # class                 border      bg		      text		  ind.		    child_border
+# client.focused          $dark-blue  $dark-blue      $bg		    $dark-blue     $dark-blue
+# client.focused_inactive $fg2		    $fg2		    $bg		    $bg		      $bg
+# client.unfocused        $bg4		    $bg4		    $bg		    $bg		      $bg
+# client.urgent           $red		    $red		    $fg		    $red		    $red
+# client.placeholder      $yellow		  $yellow		  $yellow	  $yellow	    $yellow
+#
+# client.background       #ffffff
+
+#### Z. Overflow
+
+bar {
+        status_command i3status
+        strip_workspace_numbers yes
+        tray_output $outleftname
+}

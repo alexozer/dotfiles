@@ -246,7 +246,8 @@ nnoremap <silent> <leader>S :Files ~/doc/Dropbox/monkeyball-hacking-notes<cr>
 nnoremap <silent> <leader>b :Buffers<cr>
 
 " Enter notes directory so I can create, rename, move files
-nnoremap <silent> <leader>d :cd ~/doc/Dropbox/notes<cr>
+nnoremap <leader>d :cd ~/doc/Dropbox/notes<cr>
+nnoremap <leader>D :cd ~/doc/Dropbox/monkeyball-hacking-notes<cr>
 
 " notational-fzf-vim
 let g:nv_search_paths = ['~/doc/Dropbox/notes', '~/doc/Dropbox/monkeyball-hacking-notes']

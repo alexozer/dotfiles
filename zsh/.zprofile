@@ -40,6 +40,8 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
+if [[ ! $DISPLAY ]]; then
+  if [[ $XDG_VTNR -eq 1 || $XDG_VTNR -eq 2 ]]; then
+    exec startx
+  fi
 fi
