@@ -134,14 +134,14 @@ $mod4+c kill
 # Define workspace names+numbers
 # set $wsweb workspace 1:web
 # set $wsterm workspace 2:term
-set $ws1 workspace 1:1
-set $ws2 workspace 2:2
-set $ws3 workspace 3:3
-set $ws4 workspace 4:4
-set $ws5 workspace 5:5
-set $ws6 workspace 6:6
-set $wsmusic workspace 7:music
-set $wschat workspace 8:chat
+set $wsmusic workspace 1:music
+set $wschat workspace 2:chat
+set $ws1 workspace 3:1
+set $ws2 workspace 4:2
+set $ws3 workspace 5:3
+set $ws4 workspace 6:4
+set $ws5 workspace 7:5
+set $ws6 workspace 8:6
 set $wsmon workspace 9:mon
 
 # switch to workspace
@@ -338,4 +338,5 @@ bar {
         status_command i3status
         strip_workspace_numbers yes
         tray_output $outleftname
+        output $outleftname
 }
