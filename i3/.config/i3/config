@@ -250,6 +250,7 @@ $ex udiskie --no-notify --tray
 # $ex polybar top --reload
 
 # # window rules
+for_window [class="dolphin-emu"] floating enable
 # for_window [title="System Monitor"] border pixel 0
 # for_window [title="Calculator"] floating enable
 # for_window [class="mpv"] border pixel 0
