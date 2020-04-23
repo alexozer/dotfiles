@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Game 455712169795780630
-Exec=/home/alex/doc/projects/romhack/util/dolphin/Build/Binaries/dolphin-emu %u
+Exec=/home/alex/doc/projects/romhack/dolphin/Build/Binaries/dolphin-emu %u
 Type=Application
 NoDisplay=true
 Categories=Discord;Games;

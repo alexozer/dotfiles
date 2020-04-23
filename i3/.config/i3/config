@@ -49,7 +49,7 @@ set $cmod4 bindsym Mod4+Control
 set $scmod4 bindsym Mod4+Shift+Control
 
 # default terminal is kitty
-set $terminal kitty -1
+set $terminal kitty
 
 # clean up code
 set $ex exec --no-startup-id
@@ -134,14 +134,14 @@ $mod4+c kill
 # Define workspace names+numbers
 # set $wsweb workspace 1:web
 # set $wsterm workspace 2:term
-set $wsmusic workspace 1:music
-set $wschat workspace 2:chat
-set $ws1 workspace 3:1
-set $ws2 workspace 4:2
-set $ws3 workspace 5:3
-set $ws4 workspace 6:4
-set $ws5 workspace 7:5
-set $ws6 workspace 8:6
+set $ws1 workspace 1:1
+set $ws2 workspace 2:2
+set $ws3 workspace 3:3
+set $ws4 workspace 4:4
+set $ws5 workspace 5:5
+set $ws6 workspace 6:6
+set $wsmusic workspace 7:music
+set $wschat workspace 8:chat
 set $wsmon workspace 9:mon
 
 # switch to workspace
@@ -198,7 +198,8 @@ $smod4+y    swap container with mark swapee
 
 # Launch stuff
 $mod4+Return $ex $terminal
-$mod4+space $ex gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
+$smod4+Return $ex $terminal bash --login
+$mod4+space $ex $terminal 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
 $mod4+o $ex gnome-terminal-popup browser-bookmarks
 $smod4+o $ex gnome-terminal-popup 'rg --color never --files 2>/dev/null | fzf-dmenu | xargs echo -n | xargs -0 exo-open'
 $smod4+p $ex gnome-terminal-popup 'pass-ui'
@@ -236,6 +237,7 @@ $ex xsetroot -cursor_name left_ptr
 
 # $ex nitrogen --restore
 $ex dex -a
+$ex kittybreeder init
 $ex xfsettingsd
 $ex xfce4-notifyd
 $ex thunar --daemon
@@ -251,6 +253,8 @@ $ex udiskie --no-notify --tray
 
 # # window rules
 for_window [class="dolphin-emu"] floating enable
+#for_window [class="kitty"] move scratchpad
+
 # for_window [title="System Monitor"] border pixel 0
 # for_window [title="Calculator"] floating enable
 # for_window [class="mpv"] border pixel 0

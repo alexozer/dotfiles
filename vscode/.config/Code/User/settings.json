@@ -41,7 +41,6 @@
   },
   "vim.disableExtension": false,
   "vim.foldfix": false,
-  "workbench.colorTheme": "Nord",
   "search.smartCase": true,
   "latex-workshop.view.pdf.viewer": "tab",
   "workbench.startupEditor": "newUntitledFile",
