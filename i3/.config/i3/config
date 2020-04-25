@@ -199,7 +199,7 @@ $smod4+y    swap container with mark swapee
 # Launch stuff
 $mod4+Return $ex $terminal
 $smod4+Return $ex $terminal bash --login
-$mod4+space $ex $terminal 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
+$mod4+space $ex gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
 $mod4+o $ex gnome-terminal-popup browser-bookmarks
 $smod4+o $ex gnome-terminal-popup 'rg --color never --files 2>/dev/null | fzf-dmenu | xargs echo -n | xargs -0 exo-open'
 $smod4+p $ex gnome-terminal-popup 'pass-ui'
@@ -237,7 +237,6 @@ $ex xsetroot -cursor_name left_ptr
 
 # $ex nitrogen --restore
 $ex dex -a
-$ex kittybreeder init
 $ex xfsettingsd
 $ex xfce4-notifyd
 $ex thunar --daemon
