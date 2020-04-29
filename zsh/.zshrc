@@ -28,6 +28,8 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /etc/profile.d/autojump.zsh
 
+bindkey "^[[34~" backward-kill-word # Ctrl-Backspace deletes last word in xterm
+
 # if neovim is installed, use it
 if hash nvim 2>/dev/null; then
   export EDITOR=nvim
@@ -134,6 +136,10 @@ case "$1" in
     ;;
   i3)
     "$EDITOR" "$HOME"/.config/i3/config
+    ;;
+  xres)
+    "$EDITOR" "$HOME"/.Xresources
+    xrdb "$HOME"/.Xresources
     ;;
   *)
     echo "$1: invalid option"

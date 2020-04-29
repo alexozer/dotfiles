@@ -9,7 +9,7 @@ export GOPATH2="$HOME/code/go"
 export GOPATH="$GOPATH1:$GOPATH2"
 export npm_config_prefix=~/.node_modules
 
-export PATH="$PATH:\
+PATH="$PATH:\
 $HOME/bin:\
 $GOPATH1/bin:\
 $GOPATH2/bin:\

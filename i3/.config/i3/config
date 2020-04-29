@@ -48,8 +48,8 @@ set $smod4 bindsym Mod4+Shift
 set $cmod4 bindsym Mod4+Control
 set $scmod4 bindsym Mod4+Shift+Control
 
-# default terminal is kitty
 set $terminal kitty
+set $floatterm uxterm -class uxterm-floating -e
 
 # clean up code
 set $ex exec --no-startup-id
@@ -160,7 +160,7 @@ $smod4+s move container to $ws2, $ws2
 $smod4+d move container to $ws3, $ws3
 $smod4+f move container to $ws4, $ws4
 $smod4+q move container to $ws5, $ws5
-$smod4+w move container to $ws6, $ws6
+$smod4+w move container to $ws6, $ws6 
 $smod4+e move container to $wsmusic, $wsmusic
 $smod4+r move container to $wschat, $wschat
 
@@ -198,14 +198,13 @@ $smod4+y    swap container with mark swapee
 
 # Launch stuff
 $mod4+Return $ex $terminal
-$smod4+Return $ex $terminal bash --login
-$mod4+space $ex gnome-terminal-popup 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
-$mod4+o $ex gnome-terminal-popup browser-bookmarks
-$smod4+o $ex gnome-terminal-popup 'rg --color never --files 2>/dev/null | fzf-dmenu | xargs echo -n | xargs -0 exo-open'
-$smod4+p $ex gnome-terminal-popup 'pass-ui'
-$smod4+b $ex gnome-terminal-popup 'nvim ~/doc/personal/bookmarks' 160x24
+$mod4+space $ex $floatterm bash -c 'compgen -c | fzf-dmenu | xargs --no-run-if-empty lnch'
+$mod4+o $ex $floatterm browser-bookmarks
+$smod4+o $ex $floatterm 'rg --color never --files 2>/dev/null | fzf-dmenu | xargs echo -n | xargs -0 exo-open'
+$smod4+p $ex $floatterm 'pass-ui'
+$smod4+b $ex $floatterm 'nvim ~/doc/personal/bookmarks'
 $smod4+slash $ex $terminal tmux new-session -A -s weechat weechat
-$mod4+x $ex $terminal fkill
+$mod4+x $ex $floatterm fkill
 $smod4+t $ex $terminal htop
 
 # Audio
@@ -226,7 +225,7 @@ $mod4+Up $ex xbacklight -inc 1
 bindsym Print $ex flameshot gui
 
 # Reload desktop configurations
-$smod4+Escape $ex pkill -USR1 -x sxhkd, restart
+$smod4+Escape restart, $ex pkill -USR1 -x sxhkd
 
 #### 8. Startup
 
@@ -235,11 +234,11 @@ $ex sxhkd
 # No X cursor shape
 $ex xsetroot -cursor_name left_ptr
 
-# $ex nitrogen --restore
-$ex dex -a
 $ex xfsettingsd
 $ex xfce4-notifyd
-$ex thunar --daemon
+# $ex nitrogen --restore
+$ex dex -a
+# $ex thunar --daemon # Does this do anything nowadays?
 $ex steam -silent
 $ex tmux new-session -d -s weechat weechat
 $ex udiskie --no-notify --tray
@@ -250,47 +249,10 @@ $ex udiskie --no-notify --tray
 
 # $ex polybar top --reload
 
-# # window rules
+# window rules
 for_window [class="dolphin-emu"] floating enable
-#for_window [class="kitty"] move scratchpad
+for_window [class="uxterm-floating"] floating enable
 
-# for_window [title="System Monitor"] border pixel 0
-# for_window [title="Calculator"] floating enable
-# for_window [class="mpv"] border pixel 0
-# for_window [class="vlc"] border pixel 0
-# for_window [class="Firefox"] border pixel 0
-# for_window [class="discord"] floating enable
-# for_window [class="Slack"] floating enable
-
-# # Open specific applications in floating mode
-# for_window [title="alsamixer"] floating enable border pixel 1
-# for_window [class="calamares"] floating enable border normal
-# for_window [class="Clipgrab"] floating enable
-# for_window [title="File Transfer*"] floating enable
-# for_window [class="fpakman"] floating enable
-# for_window [class="Galculator"] floating enable border pixel 1
-# for_window [class="GParted"] floating enable border normal
-# for_window [title="i3_help"] floating enable sticky enable border normal
-# for_window [class="Lightdm-settings"] floating enable
-# for_window [class="Lxappearance"] floating enable sticky enable border normal
-# for_window [class="Manjaro-hello"] floating enable
-# for_window [class="Manjaro Settings Manager"] floating enable border normal
-# for_window [title="MuseScore: Play Panel"] floating enable
-# for_window [class="Nitrogen"] floating enable sticky enable border normal
-# for_window [class="Oblogout"] fullscreen enable
-# for_window [class="octopi"] floating enable
-# for_window [title="About Pale Moon"] floating enable
-# for_window [class="Pamac-manager"] floating enable
-# for_window [class="Pavucontrol"] floating enable
-# for_window [class="qt5ct"] floating enable sticky enable border normal
-# for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-# for_window [class="Simple-scan"] floating enable border normal
-# for_window [class="(?i)System-config-printer.py"] floating enable border normal
-# for_window [class="Skype"] floating enable border normal
-# for_window [class="Timeset-gui"] floating enable border normal
-# for_window [class="(?i)virtualbox"] floating enable border normal
-# for_window [class="Xfburn"] floating enable
-#
 # workspace layouts
 # $exa "i3-msg 'workspace 1; append_layout /home/efex/.config/i3/layouts/main-workflow-1.json'"
 
