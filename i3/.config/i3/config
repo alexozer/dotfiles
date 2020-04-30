@@ -202,6 +202,7 @@ $mod4+space $ex $floatterm bash -c 'compgen -c | fzf-dmenu | xargs --no-run-if-e
 $mod4+o $ex $floatterm browser-bookmarks
 $smod4+o $ex $floatterm 'rg --color never --files 2>/dev/null | fzf-dmenu | xargs echo -n | xargs -0 exo-open'
 $smod4+p $ex $floatterm 'pass-ui'
+$scmod4+p $ex $floatterm 'pass-ui 1'
 $smod4+b $ex $floatterm 'nvim ~/doc/personal/bookmarks'
 $smod4+slash $ex $terminal tmux new-session -A -s weechat weechat
 $mod4+x $ex $floatterm fkill
@@ -229,24 +230,21 @@ $smod4+Escape restart, $ex pkill -USR1 -x sxhkd
 
 #### 8. Startup
 
+$ex xsetroot -cursor_name left_ptr # No X cursor shape
 $ex sxhkd
-
-# No X cursor shape
-$ex xsetroot -cursor_name left_ptr
-
 $ex xfsettingsd
 $ex xfce4-notifyd
-# $ex nitrogen --restore
-$ex dex -a
-# $ex thunar --daemon # Does this do anything nowadays?
 $ex steam -silent
 $ex tmux new-session -d -s weechat weechat
 $ex udiskie --no-notify --tray
-
+$ex dropbox
+$ex flameshot
+# $ex nitrogen --restore
+# $ex dex -a # Seems dependent on which startup items you have enabled in Xfce
+# $ex thunar --daemon # Does this do anything nowadays?
 # $ex xfdesktop --disable-wm-check
 # redshift-gtk &
 # CM_SELECTIONS="clipboard" clipmenud &
-
 # $ex polybar top --reload
 
 # window rules
