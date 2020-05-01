@@ -72,8 +72,8 @@ title_align center
 # general settings
 gaps outer 0
 gaps inner 0
-default_border pixel 4
-default_floating_border pixel 4
+default_border pixel 2
+default_floating_border pixel 2
 hide_edge_borders both
 # popup_during_fullscreen smart
 workspace_layout tabbed
@@ -107,7 +107,7 @@ $smod4+l move right
 $mod4+t layout toggle tabbed split
 
 # set to horizontal split
-$mod4+semicolon split h
+$mod4+m split h
 
 # set to vertical split
 $mod4+v split v
