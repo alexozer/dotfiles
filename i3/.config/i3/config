@@ -232,15 +232,14 @@ $smod4+Escape restart, $ex pkill -USR1 -x sxhkd
 
 $ex xsetroot -cursor_name left_ptr # No X cursor shape
 $ex sxhkd
-$ex xfsettingsd
 $ex xfce4-notifyd
 $ex steam -silent
 $ex tmux new-session -d -s weechat weechat
 $ex udiskie --no-notify --tray
 $ex dropbox
 $ex flameshot
-# $ex nitrogen --restore
-# $ex dex -a # Seems dependent on which startup items you have enabled in Xfce
+$ex ~/.screenlayout/desktop-dual.sh
+$ex nitrogen --restore
 # $ex thunar --daemon # Does this do anything nowadays?
 # $ex xfdesktop --disable-wm-check
 # redshift-gtk &
