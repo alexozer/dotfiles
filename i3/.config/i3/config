@@ -230,6 +230,7 @@ $smod4+Escape restart, $ex pkill -USR1 -x sxhkd
 
 #### 8. Startup
 
+$ex nitrogen --restore
 $ex xsetroot -cursor_name left_ptr # No X cursor shape
 $ex sxhkd
 $ex xfce4-notifyd
@@ -239,7 +240,6 @@ $ex udiskie --no-notify --tray
 $ex dropbox
 $ex flameshot
 $ex ~/.screenlayout/desktop-dual.sh
-$ex nitrogen --restore
 # $ex thunar --daemon # Does this do anything nowadays?
 # $ex xfdesktop --disable-wm-check
 # redshift-gtk &
@@ -249,6 +249,10 @@ $ex nitrogen --restore
 # window rules
 for_window [class="dolphin-emu"] floating enable
 for_window [class="uxterm-floating"] floating enable
+assign [class="discord"] $wschat
+assign [class="Slack"] $wschat
+# Spotify needs for_window because it sets its class late
+for_window [class="Spotify"] move $wsmusic
 
 # workspace layouts
 # $exa "i3-msg 'workspace 1; append_layout /home/efex/.config/i3/layouts/main-workflow-1.json'"
