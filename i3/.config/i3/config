@@ -225,12 +225,15 @@ $mod4+Up $ex xbacklight -inc 1
 # Screenshot
 bindsym Print $ex flameshot gui
 
+# Open volume mixer
+$mod4+BackSpace $ex pavucontrol
+
 # Reload desktop configurations
 $smod4+Escape restart, $ex pkill -USR1 -x sxhkd
 
 #### 8. Startup
 
-$ex nitrogen --restore
+$ex sleep 1 && nitrogen --restore # Sleep to help prevent race condition
 $ex xsetroot -cursor_name left_ptr # No X cursor shape
 $ex sxhkd
 $ex xfce4-notifyd
