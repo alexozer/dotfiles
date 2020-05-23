@@ -236,7 +236,7 @@ augroup END
 "
 
 " nerdtree
-nnoremap <silent> <leader>3 :NERDTreeToggle<cr>
+nnoremap <silent> <F3> :NERDTreeToggle<cr>
 
 " fzf.vim
 
