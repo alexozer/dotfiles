@@ -36,7 +36,7 @@ _gen_fzf_default_opts
 
 # Keyring
 if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
+    export $(gnome-keyring-daemon -s)
     export SSH_AUTH_SOCK
 fi
 
