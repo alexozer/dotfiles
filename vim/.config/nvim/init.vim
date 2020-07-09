@@ -56,6 +56,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'alok/notational-fzf-vim'
 Plug 'vim-scripts/vim-auto-save'
 Plug 'AndrewRadev/sideways.vim'
+Plug 'tomasiser/vim-code-dark'
 " Plug 'godlygeek/tabular' " Automatic table formatting for vim-markdown
 " Plug 'gabrielelana/vim-markdown'
 
@@ -146,7 +147,7 @@ let g:netrw_home='~/.local/share/nvim'  " Don't store history in vim config dir
 " Load colorscheme
 syntax on           " Enable syntax processing
 set background=dark
-colorscheme space-vim-dark
+colorscheme codedark
 hi Comment guifg=#5C6370 ctermfg=59
 
 if &diff
