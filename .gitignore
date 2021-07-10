@@ -1,5 +1,6 @@
 /vim/.config/nvim/plugged/
 /vim/.config/nvim/.netrwhist
+/vim/.config/nvim/autoload/plug.vim.old
 /vim/.config/nvim/tmp/
 .mypy_cache/
 /polybar/.config/polybar/secrets.sh
