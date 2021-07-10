@@ -2,12 +2,12 @@
 # running on each zsh invocation. See ~/.zprofile for environment variable setup
 # that I only want to run once at startup.
 
-export TERMINAL
-
 export GOPATH1="$HOME/build/go"
 export GOPATH2="$HOME/code/go"
 export GOPATH="$GOPATH1:$GOPATH2"
 export npm_config_prefix=~/.node_modules
+
+export DEVKITPPC=/opt/devkitpro/devkitPPC
 
 PATH="$PATH:\
 $HOME/bin:\
@@ -21,7 +21,8 @@ $HOME/.npm-packages/bin:\
 $HOME/.local/bin:\
 $HOME/build/emsdk:\
 $HOME/build/emsdk/node/12.9.1_64bit/bin:\
-$HOME/build/emsdk/upstream/emscripten:"
+$HOME/build/emsdk/upstream/emscripten:\
+$DEVKITPPC/bin"
 
 export _JAVA_AWT_WM_NONREPARENTING=1 # fix java guis
 export MATLAB_JAVA="/usr/lib/jvm/java-8-openjdk/jre"
@@ -46,6 +47,8 @@ export NumUBTBuildTasks="$(nproc)"
 
 export SMB2TOOLS=~/doc/projects/romhack/util/smb2-tools/smb2-tools
 export GHIDRA_INSTALL_DIR=~/build/ghidra_9.1.2_PUBLIC
+
+export LS_COLORS='ow=1;34:tw=1;34'
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

@@ -1,3 +1,6 @@
+# Connect to tmux if we aren't already
+[[ -z "$TMUX" ]] && tmux new-session -A -s main
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -21,12 +24,14 @@ plugins=(
   last-working-dir
 )
 
-source "$ZSH"/oh-my-zsh.sh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-source /etc/profile.d/autojump.zsh
+source "$ZSH"/oh-my-zsh.sh
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+
+source /usr/share/autojump/autojump.zsh
 
 bindkey "^[[34~" backward-kill-word # Ctrl-Backspace deletes last word in xterm
 
@@ -47,6 +52,9 @@ alias cn='cd ~/doc/Dropbox'
 alias ck='cd ~/doc/projects/keyboard/qmk_firmware/keyboards/kbdfans/kbd75/keymaps/alexozer'
 alias cdol='cd ~/.local/share/dolphin-emu/GC/USA'
 alias makej='make -j$(nproc)'
+alias ch='cd /c/Users/ComplexPlane'
+alias cmd='cmd.exe /C'
+alias ff='/c/Program\ Files/Firefox\ Developer\ Edition/firefox.exe'
 
 function pgen() {
   # Don't push if I just type 'pgen' for some reason
@@ -208,5 +216,14 @@ function vbuild() {
   iverilog -g2012 -o "$1" "$1".v && ./"$1"
 }
 
+# function git() {
+#   if [[ "${PWD##/c/}" != "${PWD}" ]]; then
+#     git.exe "$@"
+#   else
+#     /usr/bin/git "$@"
+#   fi
+# }
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
