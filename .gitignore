@@ -1,0 +1,15 @@
+/vim/.config/nvim/plugged/
+/vim/.config/nvim/.netrwhist
+/vim/.config/nvim/autoload/plug.vim.old
+/vim/.config/nvim/tmp/
+.mypy_cache/
+/polybar/.config/polybar/secrets.sh
+/xfce/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+/kitty/.config/kitty/cached.json
+*.bak
+
+/urlwatch/
+/isync/
+/emacs/.emacs.d/private/elfeed.org
+/ssh/
+/mail/
