@@ -31,6 +31,7 @@ alias prm='gh pr create --web'
 alias pro='gh pr open --web'
 alias m='make -j'
 alias t='[[ -z "$TMUX" ]] && tmux new-session -A -s main'
+alias lg=lazygit
 
 # Auto ls
 function chpwd {
