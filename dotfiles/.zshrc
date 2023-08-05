@@ -38,48 +38,10 @@ function chpwd {
   ls --color=always
 }
 
-# Move contents of directory into current directory and delete original directory
-function undir() {
-  if [[ -z "$1" ]]; then
-    echo "Usage: $0 [dir]"
-    return 1
-  fi
-
-  if [[ ! -d "$1" ]]; then
-    echo "Directory '$1' not found"
-    return 1
-  fi
-
-  tmpRoot=~/.cache/undir
-  mkdir -p "$tmpRoot"
-  tmpDir="$(mktemp -d -p "$tmpRoot")"
-
-  mv "$1"/*(D) "$tmpDir"
-  rm -rf "$1"
-  mv -i "$tmpDir"/*(D) .
-
-  rm -rf "$tmpDir"
-}
-
-# Move contents of directory into new subdirectory
-function redir() {
-  if [[ -z "$1" ]]; then
-    echo "Usage: $0 [dir]"
-    return 1
-  fi
-
-  tmpRoot=~/.cache/undir
-  mkdir -p "$tmpRoot"
-  tmpDir="$(mktemp -d -p "$tmpRoot")"
-
-  mv ./*(D) "$tmpDir"
-  mv "$tmpDir" "$1"
-}
+[[ ! -f ~/.secrets.sh ]] || source ~/.secrets.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-[[ ! -f ~/.secrets.sh ]] || source ~/.secrets.sh
 
 # pnpm
 export PNPM_HOME="/home/alex/.local/share/pnpm"
