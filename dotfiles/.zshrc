@@ -49,4 +49,5 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ -s /home/alex/.autojump/etc/profile.d/autojump.sh ]] && source /home/alex/.autojump/etc/profile.d/autojump.sh
+[[ -f ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+[[ -f /opt/homebrew/etc/profile.d/autojump.sh ]] && . /opt/homebrew/etc/profile.d/autojump.sh
