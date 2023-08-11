@@ -22,7 +22,7 @@ export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source "$ZSH"/oh-my-zsh.sh
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin"
 
 export EDITOR=code
 alias vim=$EDITOR
