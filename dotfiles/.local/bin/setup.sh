@@ -28,23 +28,6 @@ rm -rf ~/.local/bin/lg ~/.local/bin/lazygit
 URL=$(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases/latest |\
     grep browser_download_url | cut -d '"' -f 4 | grep -i Linux_x86_64)
 curl -s -L "$URL" | tar xzf - -C ~/.local/bin lazygit
-mv ~/.local/bin/lazygit ~/.local/bin/lg
-
-echo "Installing neovim"
-mkdir -p ~/build
-URL=$(curl -s https://api.github.com/repos/neovim/neovim/releases/latest |\
-    grep browser_download_url | cut -d '"' -f 4 | grep -iE "linux64.tar.gz$")
-curl -s -L "$URL" | tar xzf - -C ~/build
-rm -rf ~/.local/bin/nvim
-ln -s ~/build/nvim-linux64/bin/nvim ~/.local/bin/nvim
-
-echo "Installing delta"
-rm -rf ~/build/delta
-mkdir -p ~/build/delta
-URL=$(curl -s https://api.github.com/repos/dandavison/delta/releases/latest |\
-    grep browser_download_url | cut -d '"' -f 4 | grep -iE "x86_64-unknown-linux-gnu.tar.gz$")
-curl -S -L "$URL" | tar xzf - --strip-components 1 -C ~/build/delta
-cp ~/build/delta/delta ~/.local/bin
 
 echo "Install kitty? (y/n)"
 read answer
