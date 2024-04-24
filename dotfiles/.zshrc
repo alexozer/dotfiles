@@ -24,14 +24,14 @@ source "$ZSH"/oh-my-zsh.sh
 
 export PATH="$PATH:$HOME/.local/bin"
 
-export EDITOR=code
-alias vim=$EDITOR
+export EDITOR=vim
 alias cmd='cmd.exe /C'
 alias prm='gh pr create --web'
 alias pro='gh pr open --web'
 alias m='make -j'
 alias t='[[ -z "$TMUX" ]] && tmux new-session -A -s main'
 alias lg=lazygit
+alias lzd=lazydocker
 
 # Auto ls
 function chpwd {
@@ -51,3 +51,10 @@ export PATH="$PNPM_HOME:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -f ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 [[ -f /opt/homebrew/etc/profile.d/autojump.sh ]] && . /opt/homebrew/etc/profile.d/autojump.sh
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
+export LLVM_SYS_160_PREFIX=$(brew --prefix llvm@16)
+
+export PATH="$PATH":$HOME/build/roc/target/release
+# bun completions
+[ -s "/Users/alex/.bun/_bun" ] && source "/Users/alex/.bun/_bun"
