@@ -22,9 +22,9 @@ export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source "$ZSH"/oh-my-zsh.sh
 
-export PATH="$PATH:$HOME/.local/bin"
-
+export PATH="$PATH:$HOME/.local/bin:$HOME/build/cross/bin"
 export EDITOR=vim
+
 alias cmd='cmd.exe /C'
 alias prm='gh pr create --web'
 alias pro='gh pr open --web'
@@ -56,5 +56,6 @@ export PATH="$PNPM_HOME:$PATH"
 export LLVM_SYS_160_PREFIX=$(brew --prefix llvm@16)
 
 export PATH="$PATH":$HOME/build/roc/target/release
+export PATH="$PATH":$HOME/go/bin
 # bun completions
 [ -s "/Users/alex/.bun/_bun" ] && source "/Users/alex/.bun/_bun"

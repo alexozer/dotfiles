@@ -55,11 +55,13 @@ set showcmd
 
 " Searching
 set incsearch
+set ignorecase
 set smartcase
 
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
+colorscheme sorbet
 
 noremap H ^
 noremap L $
@@ -70,5 +72,5 @@ nnoremap <c-l> <c-w><c-l>
 nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 
-colorscheme sorbet
 set mouse=a
+set ttymouse=xterm2
