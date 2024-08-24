@@ -1,0 +1,14 @@
+[
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "shift-h": "vim::FirstNonWhitespace",
+      "shift-l": "vim::EndOfLine"
+    }
+  },
+  {
+    "bindings": {
+      "alt-o": "editor::SwitchSourceHeader"
+    }
+  }
+]
