@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "theme": "Gruvbox Dark Hard",
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -14,16 +15,17 @@
     },
     "version": "2"
   },
-  "theme": "Fleet Dark",
   "buffer_font_family": "CommitMonoLigatures",
+  // "buffer_font_family": "Berkeley Mono Trial",
   // "buffer_font_family": "CommitMono",
   // "buffer_font_family": "Zed Sans",
   // "buffer_font_family": "Fira Code",
-  // "buffer_font_weight": 700,
+  // "buffer_font_weight": 2000,
   "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 11,
+  "ui_font_size": 13,
+  "buffer_font_size": 10,
   "autosave": "on_focus_change",
+  "languages": { "Markdown": { "soft_wrap": "editor_width" } },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
