@@ -9,11 +9,7 @@ export ZSH=~/.oh-my-zsh
 
 HYPHEN_INSENSITIVE=true
 COMPLETION_WAITING_DOTS="true"
-DISABLE_AUTO_UPDATE=true
 plugins=(
-  git
-  pip
-  command-not-found
   extract
   gitignore
 )
@@ -48,9 +44,10 @@ export PNPM_HOME="/home/alex/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Source whichever one is present, depending on OS
 [[ -f ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 [[ -f /opt/homebrew/etc/profile.d/autojump.sh ]] && . /opt/homebrew/etc/profile.d/autojump.sh
+
 # export VOLTA_HOME="$HOME/.volta"
 # export PATH="$VOLTA_HOME/bin:$PATH"
 export LLVM_SYS_160_PREFIX=$(brew --prefix llvm@16)
@@ -59,3 +56,6 @@ export PATH="$PATH":$HOME/build/roc/target/release
 export PATH="$PATH":$HOME/go/bin
 # bun completions
 [ -s "/Users/alex/.bun/_bun" ] && source "/Users/alex/.bun/_bun"
+
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh --disable-up-arrow)"
