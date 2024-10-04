@@ -33,6 +33,7 @@ $env_var\
 $crystal\
 $custom\
 $sudo\
+$fill\
 $cmd_duration\
 $line_break\
 $jobs\
@@ -42,4 +43,8 @@ $status\
 $os\
 $container\
 $shell\
-$character"""
+$character
+"""
+
+[fill]
+symbol = ' '
