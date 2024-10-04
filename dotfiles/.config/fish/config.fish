@@ -11,6 +11,9 @@ status --is-interactive; and source (jump shell fish | psub)
 # Install Starship
 starship init fish | source
 
+# Set up Rust
+source "$HOME/.cargo/env.fish"
+
 # Auto LS on directory change
 function __autols_hook --description "Auto ls" --on-event fish_prompt
   if test "$NO_AUTO_LS" != ""
