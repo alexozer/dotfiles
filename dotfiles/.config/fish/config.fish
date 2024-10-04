@@ -1,3 +1,10 @@
+# PATH additions
+fish_add_path "/opt/homebrew/bin/"
+fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/build/cross/bin"
+fish_add_path "$HOME/build/roc/target/release"
+fish_add_path "$HOME/go/bin"
+
 # Configure Jump
 status --is-interactive; and source (jump shell fish | psub)
 
