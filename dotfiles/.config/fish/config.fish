@@ -11,6 +11,10 @@ status --is-interactive; and source (jump shell fish | psub)
 # Install Starship
 starship init fish | source
 
+# Configure fzf (sorry, I don't like fish's Ctrl+R)
+export FZF_DEFAULT_OPTS="--layout=reverse"
+fzf --fish | source
+
 # Source secrets
 test -f ~/.secrets.sh && source ~/.secrets.sh
 
