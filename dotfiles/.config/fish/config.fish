@@ -4,6 +4,13 @@ fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/build/cross/bin"
 fish_add_path "$HOME/build/roc/target/release"
 fish_add_path "$HOME/go/bin"
+fish_add_path "/opt/devkitpro/devkitPPC/bin"
+
+# More environment variables
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=/opt/devkitpro/devkitARM
+export DEVKITPPC=/opt/devkitpro/devkitPPC
+export FZF_DEFAULT_OPTS="--layout=reverse"
 
 # Configure Jump
 status --is-interactive; and source (jump shell fish | psub)
@@ -12,7 +19,6 @@ status --is-interactive; and source (jump shell fish | psub)
 starship init fish | source
 
 # Configure fzf (sorry, I don't like fish's Ctrl+R)
-export FZF_DEFAULT_OPTS="--layout=reverse"
 fzf --fish | source
 
 # Source secrets
