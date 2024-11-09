@@ -7,14 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Fleet Dark",
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-20240620"
+      "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
   },
+  "theme": "Xcode Presentation Darker",
   // "buffer_font_family": "Departure Mono",
   "buffer_font_family": "CommitMonoLigatures",
   // "buffer_font_family": "Berkeley Mono Trial",
@@ -27,7 +27,15 @@
   "ui_font_size": 13,
   "buffer_font_size": 10,
   "autosave": "on_focus_change",
-  "languages": { "Markdown": { "soft_wrap": "editor_width" } },
+  "languages": {
+    "Markdown": { "soft_wrap": "editor_width" },
+    "Rust": {
+      // Whether to use additional LSP queries to format (and amend) the code after
+      // every "trigger" symbol input, defined by LSP server capabilities.
+      // Prevents overly aggressive autoclose behavior in current Rust LSP
+      "use_on_type_format": false
+    }
+  },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
