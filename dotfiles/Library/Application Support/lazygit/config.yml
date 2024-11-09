@@ -3,4 +3,9 @@ gui:
     selectedLineBgColor:
       - black
 os:
-  editPreset: 'vscode'
+  editPreset: "zed"
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
