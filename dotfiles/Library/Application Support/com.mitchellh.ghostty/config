@@ -1,0 +1,5 @@
+theme = xcodedarkhc
+shell-integration-features = no-cursor
+cursor-style = block
+font-size = 11
+keybind = global:alt+space=toggle_quick_terminal
