@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "inline_completion_provider": "supermaven"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
@@ -14,7 +17,7 @@
     },
     "version": "2"
   },
-  "theme": "Xcode Presentation Darker",
+  "theme": "Xcode Default Darker",
   // "buffer_font_family": "Departure Mono",
   "buffer_font_family": "CommitMonoLigatures",
   // "buffer_font_family": "Berkeley Mono Trial",
@@ -35,14 +38,14 @@
       // Prevents overly aggressive autoclose behavior in current Rust LSP
       "use_on_type_format": false
     }
-  },
-  "lsp": {
-    "rust-analyzer": {
-      "initialization_options": {
-        "check": {
-          "command": "clippy" // rust-analyzer.check.command (default: "check")
-        }
-      }
-    }
   }
+  // "lsp": {
+  //   "rust-analyzer": {
+  //     "initialization_options": {
+  //       "check": {
+  //         "command": "clippy" // rust-analyzer.check.command (default: "check")
+  //       }
+  //     }
+  //   }
+  // }
 }
