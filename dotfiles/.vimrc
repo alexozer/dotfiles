@@ -1,3 +1,8 @@
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
 " Don't try to be vi compatible
 set nocompatible
 
@@ -61,7 +66,7 @@ set smartcase
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
-colorscheme sorbet
+colorscheme wildcharm
 
 noremap H ^
 noremap L $
@@ -73,4 +78,10 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 
 set mouse=a
-set ttymouse=xterm2
+set clipboard=unnamed
+
+" Leader
+let mapleader=" "
+nnoremap <leader>f :GFiles<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>c :Colors<cr>
