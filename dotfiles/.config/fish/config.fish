@@ -12,14 +12,14 @@ export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export FZF_DEFAULT_OPTS="--layout=reverse"
 
-# Configure Jump
-status --is-interactive; and source (jump shell fish | psub)
-
-# Install Starship
-starship init fish | source
-
-# Configure fzf (sorry, I don't like fish's Ctrl+R)
-fzf --fish | source
+# Aliases
+alias cmd='cmd.exe /C'
+alias prm='gh pr create --web'
+alias pro='gh pr open --web'
+alias m='make -j$(nproc)'
+alias t='test -z "$TMUX" && tmux new-session -A -s main'
+alias lg='TERM=xterm-256color lazygit'
+alias lzd=lazydocker
 
 # Source secrets
 test -f ~/.secrets.sh && source ~/.secrets.sh
@@ -32,11 +32,11 @@ function __autols_hook --description "Auto ls" --on-event fish_prompt
   set  -g __autols_last (pwd)
 end
 
-# Aliases
-alias cmd='cmd.exe /C'
-alias prm='gh pr create --web'
-alias pro='gh pr open --web'
-alias m='make -j$(nproc)'
-alias t='test -z "$TMUX" && tmux new-session -A -s main'
-alias lg=lazygit
-alias lzd=lazydocker
+# Configure fzf (sorry, I don't like fish's Ctrl+R)
+fzf --fish | source
+
+# Install Starship
+starship init fish | source
+
+# Configure zoxide
+zoxide init fish --cmd j | source
