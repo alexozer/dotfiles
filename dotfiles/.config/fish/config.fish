@@ -22,6 +22,7 @@ alias lg=lazygit
 alias lzd=lazydocker
 alias ssh='TERM=xterm-256color /usr/bin/ssh'
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias vim=nvim
 
 # Source secrets
 test -f ~/.secrets.sh && source ~/.secrets.sh
