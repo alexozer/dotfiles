@@ -18,8 +18,10 @@ alias prm='gh pr create --web'
 alias pro='gh pr open --web'
 alias m='make -j$(nproc)'
 alias t='test -z "$TMUX" && tmux new-session -A -s main'
-alias lg='TERM=xterm-256color lazygit'
+alias lg=lazygit
 alias lzd=lazydocker
+alias ssh='TERM=xterm-256color /usr/bin/ssh'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 # Source secrets
 test -f ~/.secrets.sh && source ~/.secrets.sh
