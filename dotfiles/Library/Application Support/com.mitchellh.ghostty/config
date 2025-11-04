@@ -1,7 +1,8 @@
-theme = xcodedarkhc
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor, ssh-terminfo, ssh-env
 cursor-style = block
 font-size = 11
-font-family = "JetBrainsMono Nerd Font Mono"
-keybind = global:alt+space=toggle_quick_terminal
+font-family = "JetBrains Mono"
 confirm-close-surface = false
+keybind = shift+enter=text:\n
+maximize = true
+theme = Wombat

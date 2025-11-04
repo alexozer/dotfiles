@@ -4,7 +4,7 @@ gui:
       - black
   nerdFontsVersion: 3
 os:
-  editPreset: "zed"
+  editPreset: "vscode"
 
 git:
   paging:
