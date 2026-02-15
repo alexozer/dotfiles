@@ -23,6 +23,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- Behavior
+vim.opt.wrap = false
 vim.opt.mouse = 'a'
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
@@ -76,6 +77,15 @@ vim.keymap.set('n', '<Leader>wl', '<C-w><C-l>')
 vim.keymap.set('n', '<Leader>wj', '<C-w><C-j>')
 vim.keymap.set('n', '<Leader>wk', '<C-w><C-k>')
 
+vim.keymap.set('n', '<Leader>q', '<Cmd>bdelete<CR>')
+
+vim.keymap.set('n', ']g', function() require('gitsigns').nav_hunk('next') end)
+vim.keymap.set('n', '[g', function() require('gitsigns').nav_hunk('prev') end)
+vim.keymap.set('n', 'gu', function() require('gitsigns').reset_hunk() end)
+vim.keymap.set('v', 'gu', function() require('gitsigns').reset_hunk(
+    { vim.fn.line('.'), vim.fn.line('v') }
+) end)
+
 vim.keymap.set('n', '<C-/>', 'gcc', { remap = true })
 vim.keymap.set('v', '<C-/>', 'gc', { remap = true })
 vim.keymap.set('i', '<C-/>', '<C-o>gcc', { remap = true })
@@ -109,8 +119,6 @@ require('gitsigns').setup({
 
 require('telescope').setup({
   defaults = {
-    layout_config = { prompt_position = 'top' },
-    sorting_strategy = 'ascending',
     mappings = {
       i = { ['<Esc>'] = require('telescope.actions').close },
     },
@@ -124,10 +132,7 @@ vim.keymap.set('n', '<Leader>s', builtin.lsp_document_symbols)
 vim.keymap.set('n', "<Leader>'", builtin.resume)
 vim.keymap.set('n', '<Leader>d', builtin.diagnostics)
 vim.keymap.set('n', '<Leader>?', builtin.help_tags)
-vim.keymap.set('n', '<Leader>gc', builtin.git_commits)
-vim.keymap.set('n', '<Leader>gb', builtin.git_branches)
-vim.keymap.set('n', '<Leader>gs', builtin.git_status)
-vim.keymap.set('n', '<Leader>gt', builtin.git_stash)
+vim.keymap.set('n', '<leader>g', builtin.git_status)
 
 require('nvim-autopairs').setup({
   check_ts = true,
@@ -136,6 +141,13 @@ require('nvim-autopairs').setup({
 
 -- Treesitter: use built-in highlighting, nvim-treesitter only for parser auto-install
 require('nvim-treesitter').setup({ auto_install = true })
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'markdown', 'rst' },
+  callback = function()
+    vim.opt_local.wrap = true
+  end,
+})
 
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
