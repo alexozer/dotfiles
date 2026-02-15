@@ -1,12 +1,11 @@
 gui:
   theme:
     selectedLineBgColor:
-      - black
+      - "#1A53AC"
   nerdFontsVersion: 3
 os:
   editPreset: "vscode"
-
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
