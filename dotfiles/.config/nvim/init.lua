@@ -29,6 +29,7 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 vim.opt.breakindent = true
+vim.opt.showbreak = '↪ '
 vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
@@ -67,6 +68,8 @@ vim.g.maplocalleader = ' '
 -- My classic mappings
 vim.keymap.set('n', ';', ':')
 vim.keymap.set('n', ':', ';')
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', 'H', '^')
 vim.keymap.set('n', 'L', '$')
 vim.keymap.set('i', '<c-bs>', '<c-w>')
@@ -92,6 +95,7 @@ vim.keymap.set('i', '<C-/>', '<C-o>gcc', { remap = true })
 
 vim.keymap.set({'n', 'v'}, '<Leader>r', function() 
     vim.cmd(":source $MYVIMRC") 
+    vim.cmd("doautocmd FileType")
     print("Neovim config reloaded")
 end)
 
@@ -106,6 +110,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+    { src = "https://github.com/echasnovski/mini.statusline" },
 })
 require('gitsigns').setup({
   signs = {
@@ -154,6 +159,8 @@ vim.api.nvim_create_autocmd('FileType', {
     pcall(vim.treesitter.start)
   end,
 })
+
+require('mini.statusline').setup()
 
 -- Gruvbox-matching gitsigns colors
 vim.api.nvim_set_hl(0, 'GitSignsAdd',    { fg = '#b8bb26' })  -- gruvbox green
