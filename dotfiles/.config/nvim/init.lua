@@ -25,9 +25,11 @@ vim.opt.expandtab = true
 -- Behavior
 vim.opt.wrap = false
 vim.opt.mouse = 'a'
+vim.opt.mousescroll = 'ver:3,hor:0'
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
+vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.showbreak = '↪ '
 vim.opt.undofile = true
@@ -110,7 +112,6 @@ vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    { src = "https://github.com/echasnovski/mini.statusline" },
 })
 require('gitsigns').setup({
   signs = {
@@ -124,6 +125,8 @@ require('gitsigns').setup({
 
 require('telescope').setup({
   defaults = {
+    layout_config = { prompt_position = 'top' },
+    sorting_strategy = 'ascending',
     mappings = {
       i = { ['<Esc>'] = require('telescope.actions').close },
     },
@@ -159,8 +162,6 @@ vim.api.nvim_create_autocmd('FileType', {
     pcall(vim.treesitter.start)
   end,
 })
-
-require('mini.statusline').setup()
 
 -- Gruvbox-matching gitsigns colors
 vim.api.nvim_set_hl(0, 'GitSignsAdd',    { fg = '#b8bb26' })  -- gruvbox green
