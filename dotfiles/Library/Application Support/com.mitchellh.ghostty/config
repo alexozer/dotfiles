@@ -7,3 +7,4 @@ confirm-close-surface = false
 keybind = shift+enter=text:\n
 maximize = true
 theme = Moonfly
+unfocused-split-opacity = 0.85

@@ -1,6 +1,3 @@
--- Theme
-vim.cmd("colorscheme retrobox")
-
 -- Appearance
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
@@ -68,12 +65,12 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- My classic mappings
-vim.keymap.set('n', ';', ':')
-vim.keymap.set('n', ':', ';')
+vim.keymap.set({'n', 'v'}, ';', ':')
+vim.keymap.set({'n', 'v'}, ':', ';')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
-vim.keymap.set('n', 'H', '^')
-vim.keymap.set('n', 'L', '$')
+vim.keymap.set({'n', 'v'}, 'H', '^')
+vim.keymap.set({'n', 'v'}, 'L', '$')
 vim.keymap.set('i', '<c-bs>', '<c-w>')
 vim.keymap.set('i', '<a-bs>', '<c-w>')
 
@@ -102,7 +99,6 @@ vim.keymap.set({'n', 'v'}, '<Leader>r', function()
     print("Neovim config reloaded")
 end)
 
-
 --
 -- Plugins
 --
@@ -112,8 +108,15 @@ vim.pack.add({
     { src = "https://github.com/nvim-lua/plenary.nvim" },
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "master" },
+    { src = "https://github.com/vague-theme/vague.nvim" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 })
+
+require('vague').setup({
+  italic = false,
+})
+vim.cmd("colorscheme vague")
+
 require('gitsigns').setup({
   signs = {
     add          = { text = '▎' },
@@ -133,23 +136,21 @@ require('telescope').setup({
     },
   },
 })
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<Leader>f', builtin.find_files)
-vim.keymap.set('n', '<Leader>b', builtin.buffers)
-vim.keymap.set('n', '<Leader>/', builtin.live_grep)
-vim.keymap.set('n', '<Leader>s', builtin.lsp_document_symbols)
-vim.keymap.set('n', "<Leader>'", builtin.resume)
-vim.keymap.set('n', '<Leader>d', builtin.diagnostics)
-vim.keymap.set('n', '<Leader>?', builtin.help_tags)
-vim.keymap.set('n', '<leader>g', builtin.git_status)
+local telescope = require('telescope.builtin')
+vim.keymap.set('n', '<Leader>f', telescope.find_files)
+vim.keymap.set('n', '<Leader>b', telescope.buffers)
+vim.keymap.set('n', '<Leader>/', telescope.live_grep)
+vim.keymap.set('n', '<Leader>s', telescope.lsp_document_symbols)
+vim.keymap.set('n', "<Leader>'", telescope.resume)
+vim.keymap.set('n', '<Leader>d', telescope.diagnostics)
+vim.keymap.set('n', '<Leader>?', telescope.help_tags)
+vim.keymap.set('n', '<leader>g', telescope.git_status)
 
 require('nvim-autopairs').setup({
   check_ts = true,
   fast_wrap = { map = '<M-e>' },
+  ignored_next_char = "%S",
 })
-
--- Treesitter: use built-in highlighting, nvim-treesitter only for parser auto-install
-require('nvim-treesitter').setup({ auto_install = true })
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'markdown', 'rst' },
@@ -158,13 +159,20 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+local treesitter_langs = {
+    "rust",
+    "c",
+    "cpp",
+    "markdown",
+    "go",
+    "python",
+    "toml",
+    "typescript",
+    "javascript",
+    "zig",
+}
+require('nvim-treesitter').install(treesitter_langs)
 vim.api.nvim_create_autocmd('FileType', {
-  callback = function()
-    pcall(vim.treesitter.start)
-  end,
+    pattern = treesitter_langs,
+    callback = function() vim.treesitter.start() end,
 })
-
--- Gruvbox-matching gitsigns colors
-vim.api.nvim_set_hl(0, 'GitSignsAdd',    { fg = '#b8bb26' })  -- gruvbox green
-vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = '#83a598' })  -- gruvbox blue
-vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = '#fb4934' })  -- gruvbox red
