@@ -75,6 +75,7 @@ vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', 'H', '^')
 vim.keymap.set('n', 'L', '$')
 vim.keymap.set('i', '<c-bs>', '<c-w>')
+vim.keymap.set('i', '<a-bs>', '<c-w>')
 
 -- Window commands
 vim.keymap.set('n', '<Leader>wh', '<C-w><C-h>')

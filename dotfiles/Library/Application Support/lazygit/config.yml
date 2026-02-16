@@ -4,7 +4,7 @@ gui:
       - "#1A53AC"
   nerdFontsVersion: 3
 os:
-  editPreset: "vscode"
+  editPreset: "vim"
 git:
   pagers:
     - colorArg: always
