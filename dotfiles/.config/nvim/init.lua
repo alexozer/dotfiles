@@ -26,9 +26,6 @@ vim.opt.mousescroll = 'ver:3,hor:0'
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
-vim.opt.linebreak = true
-vim.opt.breakindent = true
-vim.opt.showbreak = '↪ '
 vim.opt.undofile = true
 vim.opt.updatetime = 50
 vim.opt.timeoutlen = 300
@@ -37,7 +34,6 @@ vim.opt.splitbelow = true
 vim.opt.confirm = true
 vim.opt.autowriteall = true
 vim.opt.autoread = true
-vim.cmd.filetype("plugin indent on")
 
 vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
   command = 'silent! checktime',
@@ -85,9 +81,11 @@ vim.keymap.set('n', '<Leader>q', '<Cmd>bdelete<CR>')
 vim.keymap.set('n', ']g', function() require('gitsigns').nav_hunk('next') end)
 vim.keymap.set('n', '[g', function() require('gitsigns').nav_hunk('prev') end)
 vim.keymap.set('n', 'gu', function() require('gitsigns').reset_hunk() end)
-vim.keymap.set('v', 'gu', function() require('gitsigns').reset_hunk(
-    { vim.fn.line('.'), vim.fn.line('v') }
-) end)
+vim.keymap.set('v', 'gu', function()
+  local start = math.min(vim.fn.line('.'), vim.fn.line('v'))
+  local stop = math.max(vim.fn.line('.'), vim.fn.line('v'))
+  require('gitsigns').reset_hunk({ start, stop })
+end)
 
 vim.keymap.set('n', '<C-/>', 'gcc', { remap = true })
 vim.keymap.set('v', '<C-/>', 'gc', { remap = true })
@@ -109,7 +107,6 @@ vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
     { src = "https://github.com/vague-theme/vague.nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 })
 
 require('vague').setup({
@@ -147,7 +144,6 @@ vim.keymap.set('n', '<Leader>?', telescope.help_tags)
 vim.keymap.set('n', '<leader>g', telescope.git_status)
 
 require('nvim-autopairs').setup({
-  check_ts = true,
   fast_wrap = { map = '<M-e>' },
   ignored_next_char = "%S",
 })
@@ -156,23 +152,8 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'markdown', 'rst' },
   callback = function()
     vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+    vim.opt_local.showbreak = '↪ '
   end,
-})
-
-local treesitter_langs = {
-    "rust",
-    "c",
-    "cpp",
-    "markdown",
-    "go",
-    "python",
-    "toml",
-    "typescript",
-    "javascript",
-    "zig",
-}
-require('nvim-treesitter').install(treesitter_langs)
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = treesitter_langs,
-    callback = function() vim.treesitter.start() end,
 })
