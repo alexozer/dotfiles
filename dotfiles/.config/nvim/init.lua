@@ -166,6 +166,9 @@ vim.keymap.set('n', "<Leader>'", telescope.resume)
 vim.keymap.set('n', '<Leader>d', telescope.diagnostics)
 vim.keymap.set('n', '<Leader>?', telescope.help_tags)
 vim.keymap.set('n', '<leader>g', telescope.git_status)
+vim.keymap.set('n', '<Leader>o', function()
+  telescope.find_files({ cwd = vim.fn.expand('%:p:h') })
+end)
 
 require('nvim-autopairs').setup({
   fast_wrap = { map = '<M-e>' },
