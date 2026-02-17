@@ -150,14 +150,17 @@ require('nvim-autopairs').setup({
 })
 
 local treesitter_langs = {
+  'bash',
   'c', 
   'cpp',
+  'fish',
   'go', 
   'javascript',
   'json', 
   'markdown', 
   'python',
   'rust',
+  'sh', -- Dummy - only used for FileType autocmd
   'starlark', 
   'toml', 
   'typescript',
