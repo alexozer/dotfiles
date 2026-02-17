@@ -35,24 +35,6 @@ vim.opt.confirm = true
 vim.opt.autowriteall = true
 vim.opt.autoread = true
 
-vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
-  command = 'silent! checktime',
-})
-
-vim.api.nvim_create_autocmd('FocusLost', {
-  command = 'silent! wall',
-})
-
-vim.api.nvim_create_autocmd('BufReadPost', {
-  callback = function()
-    local mark = vim.api.nvim_buf_get_mark(0, '"')
-    if mark[1] > 0 and mark[1] <= vim.api.nvim_buf_line_count(0) then
-      vim.api.nvim_win_set_cursor(0, mark)
-      vim.cmd('normal! zz')
-    end
-  end,
-})
-
 --
 -- Mappings
 --
@@ -92,22 +74,63 @@ vim.keymap.set('v', '<C-/>', 'gc', { remap = true })
 vim.keymap.set('i', '<C-/>', '<C-o>gcc', { remap = true })
 
 vim.keymap.set({'n', 'v'}, '<Leader>r', function() 
-    vim.cmd(":source $MYVIMRC") 
-    vim.cmd("doautocmd FileType")
-    print("Neovim config reloaded")
+  vim.cmd(":source $MYVIMRC") 
+  vim.cmd("doautocmd FileType")
+  print("Neovim config reloaded")
 end)
+
+--
+-- Autocmds
+--
+
+vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
+  command = 'silent! checktime',
+})
+
+vim.api.nvim_create_autocmd('FocusLost', {
+  command = 'silent! wall',
+})
+
+-- Jump to last file position upon opening
+vim.api.nvim_create_autocmd('BufReadPost', {
+  callback = function()
+    local mark = vim.api.nvim_buf_get_mark(0, '"')
+    if mark[1] > 0 and mark[1] <= vim.api.nvim_buf_line_count(0) then
+      vim.api.nvim_win_set_cursor(0, mark)
+      vim.cmd('normal! zz')
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'markdown', 'rst' },
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.breakindent = true
+    vim.opt_local.showbreak = '↪ '
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'lua' },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
+})
 
 --
 -- Plugins
 --
 
 vim.pack.add({
-    { src = "https://github.com/lewis6991/gitsigns.nvim" },
-    { src = "https://github.com/nvim-lua/plenary.nvim" },
-    { src = "https://github.com/nvim-telescope/telescope.nvim" },
-    { src = "https://github.com/windwp/nvim-autopairs" },
-    { src = "https://github.com/vague-theme/vague.nvim" },
-    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+  { src = "https://github.com/lewis6991/gitsigns.nvim" },
+  { src = "https://github.com/nvim-lua/plenary.nvim" },
+  { src = "https://github.com/nvim-telescope/telescope.nvim" },
+  { src = "https://github.com/windwp/nvim-autopairs" },
+  { src = "https://github.com/vague-theme/vague.nvim" },
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 })
 
 require('vague').setup({
@@ -149,12 +172,10 @@ require('nvim-autopairs').setup({
   ignored_next_char = "%S",
 })
 
-function shallow_copy(t)
-    local c = {}
-    for i,v in ipairs(t) do
-        c[i] = v
-    end
-    return c
+function table_append(orig, t)
+  for i,v in ipairs(t) do
+    table.insert(orig, v)
+  end
 end
 
 local langs = {
@@ -166,29 +187,22 @@ local langs = {
   'json', 
   'markdown', 
   'python',
+  'rst',
   'rust',
   'starlark', 
   'toml', 
   'typescript',
   'yaml',
 }
-local grammars = shallow_copy(langs)
-table.insert(grammars, 'bash')
-local filetypes = shallow_copy(langs)
-table.insert(filetypes, 'sh')
+local grammars = {}
+table_append(grammars, langs)
+table_append(grammars, { 'bash', 'starlark' })
+local filetypes = {}
+table_append(filetypes, langs)
+table_append(filetypes, { 'sh', 'bzl' })
 
 require('nvim-treesitter').install(grammars)
 vim.api.nvim_create_autocmd('FileType', {
   pattern = filetypes,
   callback = function() vim.treesitter.start() end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'markdown', 'rst' },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.linebreak = true
-    vim.opt_local.breakindent = true
-    vim.opt_local.showbreak = '↪ '
-  end,
 })
