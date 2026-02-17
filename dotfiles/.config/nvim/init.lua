@@ -107,6 +107,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-telescope/telescope.nvim" },
     { src = "https://github.com/windwp/nvim-autopairs" },
     { src = "https://github.com/vague-theme/vague.nvim" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 })
 
 require('vague').setup({
@@ -146,6 +147,26 @@ vim.keymap.set('n', '<leader>g', telescope.git_status)
 require('nvim-autopairs').setup({
   fast_wrap = { map = '<M-e>' },
   ignored_next_char = "%S",
+})
+
+local treesitter_langs = {
+  'c', 
+  'cpp',
+  'go', 
+  'javascript',
+  'json', 
+  'markdown', 
+  'python',
+  'rust',
+  'starlark', 
+  'toml', 
+  'typescript',
+  'yaml',
+}
+require('nvim-treesitter').install(treesitter_langs)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = treesitter_langs,
+  callback = function() vim.treesitter.start() end,
 })
 
 vim.api.nvim_create_autocmd('FileType', {
