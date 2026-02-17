@@ -149,8 +149,15 @@ require('nvim-autopairs').setup({
   ignored_next_char = "%S",
 })
 
-local treesitter_langs = {
-  'bash',
+function shallow_copy(t)
+    local c = {}
+    for i,v in ipairs(t) do
+        c[i] = v
+    end
+    return c
+end
+
+local langs = {
   'c', 
   'cpp',
   'fish',
@@ -160,15 +167,19 @@ local treesitter_langs = {
   'markdown', 
   'python',
   'rust',
-  'sh', -- Dummy - only used for FileType autocmd
   'starlark', 
   'toml', 
   'typescript',
   'yaml',
 }
-require('nvim-treesitter').install(treesitter_langs)
+local grammars = shallow_copy(langs)
+table.insert(grammars, 'bash')
+local filetypes = shallow_copy(langs)
+table.insert(filetypes, 'sh')
+
+require('nvim-treesitter').install(grammars)
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = treesitter_langs,
+  pattern = filetypes,
   callback = function() vim.treesitter.start() end,
 })
 
