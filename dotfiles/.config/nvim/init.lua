@@ -73,8 +73,8 @@ vim.keymap.set('n', '<C-/>', 'gcc', { remap = true })
 vim.keymap.set('v', '<C-/>', 'gc', { remap = true })
 vim.keymap.set('i', '<C-/>', '<C-o>gcc', { remap = true })
 
-vim.keymap.set({'n', 'v'}, '<Leader>r', function() 
-  vim.cmd(":source $MYVIMRC") 
+vim.keymap.set({'n', 'v'}, '<Leader>r', function()
+  vim.cmd(":source $MYVIMRC")
   vim.cmd("doautocmd FileType")
   print("Neovim config reloaded")
 end)
@@ -109,14 +109,6 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.linebreak = true
     vim.opt_local.breakindent = true
     vim.opt_local.showbreak = '↪ '
-  end,
-})
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua' },
-  callback = function()
-    vim.opt_local.tabstop = 2
-    vim.opt_local.shiftwidth = 2
   end,
 })
 
@@ -183,18 +175,18 @@ function table_append(orig, t)
 end
 
 local langs = {
-  'c', 
+  'c',
   'cpp',
   'fish',
-  'go', 
+  'go',
   'javascript',
-  'json', 
-  'markdown', 
+  'json',
+  'markdown',
   'python',
   'rst',
   'rust',
-  'starlark', 
-  'toml', 
+  'starlark',
+  'toml',
   'typescript',
   'yaml',
 }
