@@ -131,6 +131,7 @@ vim.pack.add({
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/vague-theme/vague.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+  { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 })
 
 require('vague').setup({
@@ -209,3 +210,15 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = filetypes,
   callback = function() vim.treesitter.start() end,
 })
+
+local harpoon = require('harpoon')
+harpoon:setup()
+vim.keymap.set("n", "<leader>p", function() harpoon:list():add() end)
+vim.keymap.set("n", "<C-'>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<C-l>", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<C-;>", function() harpoon:list():select(4) end)
+-- Toggle previous & next buffers stored within Harpoon list
+-- vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+-- vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
