@@ -60,15 +60,6 @@ vim.keymap.set('n', '<Leader>wk', '<C-w><C-k>')
 
 vim.keymap.set('n', '<Leader>q', '<Cmd>bdelete<CR>')
 
-vim.keymap.set('n', ']g', function() require('gitsigns').nav_hunk('next') end)
-vim.keymap.set('n', '[g', function() require('gitsigns').nav_hunk('prev') end)
-vim.keymap.set('n', 'gu', function() require('gitsigns').reset_hunk() end)
-vim.keymap.set('v', 'gu', function()
-  local start = math.min(vim.fn.line('.'), vim.fn.line('v'))
-  local stop = math.max(vim.fn.line('.'), vim.fn.line('v'))
-  require('gitsigns').reset_hunk({ start, stop })
-end)
-
 vim.keymap.set('n', '<C-/>', 'gcc', { remap = true })
 vim.keymap.set('v', '<C-/>', 'gc', { remap = true })
 vim.keymap.set('i', '<C-/>', '<C-o>gcc', { remap = true })
@@ -140,6 +131,14 @@ require('gitsigns').setup({
     changedelete = { text = '▎' },
   },
 })
+vim.keymap.set('n', ']g', function() require('gitsigns').nav_hunk('next') end)
+vim.keymap.set('n', '[g', function() require('gitsigns').nav_hunk('prev') end)
+vim.keymap.set('n', 'gu', function() require('gitsigns').reset_hunk() end)
+vim.keymap.set('v', 'gu', function()
+  local start = math.min(vim.fn.line('.'), vim.fn.line('v'))
+  local stop = math.max(vim.fn.line('.'), vim.fn.line('v'))
+  require('gitsigns').reset_hunk({ start, stop })
+end)
 
 require('telescope').setup({
   defaults = {
