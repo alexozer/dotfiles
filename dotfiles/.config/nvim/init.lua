@@ -111,7 +111,6 @@ vim.pack.add({
   -- Lua utility library that several other plugins need
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/vague-theme/vague.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
@@ -160,11 +159,6 @@ vim.keymap.set("n", "<Leader>?", FzfLua.commands)
 vim.keymap.set('n', '<Leader>o', function()
   FzfLua.files({ cwd = vim.fn.expand('%:p:h') })
 end)
-
-require('nvim-autopairs').setup({
-  fast_wrap = { map = '<M-e>' },
-  ignored_next_char = "%S",
-})
 
 function table_append(orig, t)
   for i,v in ipairs(t) do
