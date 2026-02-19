@@ -108,13 +108,14 @@ vim.api.nvim_create_autocmd('FileType', {
 --
 
 vim.pack.add({
-  { src = "https://github.com/lewis6991/gitsigns.nvim" },
+  -- Lua utility library that several other plugins need
   { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/nvim-telescope/telescope.nvim" },
+  { src = "https://github.com/lewis6991/gitsigns.nvim" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/vague-theme/vague.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
+  { src = "https://github.com/ibhagwan/fzf-lua" },
 })
 
 require('vague').setup({
@@ -122,7 +123,8 @@ require('vague').setup({
 })
 vim.cmd("colorscheme vague")
 
-require('gitsigns').setup({
+local gitsigns = require('gitsigns')
+gitsigns.setup({
   signs = {
     add          = { text = '▎' },
     change       = { text = '▎' },
@@ -131,35 +133,32 @@ require('gitsigns').setup({
     changedelete = { text = '▎' },
   },
 })
-vim.keymap.set('n', ']g', function() require('gitsigns').nav_hunk('next') end)
-vim.keymap.set('n', '[g', function() require('gitsigns').nav_hunk('prev') end)
-vim.keymap.set('n', 'gu', function() require('gitsigns').reset_hunk() end)
+vim.keymap.set('n', ']g', function() gitsigns.nav_hunk('next') end)
+vim.keymap.set('n', '[g', function() gitsigns.nav_hunk('prev') end)
+vim.keymap.set('n', 'gu', gitsigns.reset_hunk)
 vim.keymap.set('v', 'gu', function()
   local start = math.min(vim.fn.line('.'), vim.fn.line('v'))
   local stop = math.max(vim.fn.line('.'), vim.fn.line('v'))
-  require('gitsigns').reset_hunk({ start, stop })
+  gitsigns.reset_hunk({ start, stop })
 end)
 
-require('telescope').setup({
-  defaults = {
-    layout_config = { prompt_position = 'top' },
-    sorting_strategy = 'ascending',
-    mappings = {
-      i = { ['<Esc>'] = require('telescope.actions').close },
-    },
+require('fzf-lua').setup({
+  keymap = {
+    builtin = { ['<Esc>'] = 'hide' },
+    fzf = { ['esc'] = 'abort' },
   },
 })
-local telescope = require('telescope.builtin')
-vim.keymap.set('n', '<Leader>f', telescope.find_files)
-vim.keymap.set('n', '<Leader>b', telescope.buffers)
-vim.keymap.set('n', '<Leader>/', telescope.live_grep)
-vim.keymap.set('n', '<Leader>s', telescope.lsp_document_symbols)
-vim.keymap.set('n', "<Leader>'", telescope.resume)
-vim.keymap.set('n', '<Leader>d', telescope.diagnostics)
-vim.keymap.set('n', '<Leader>?', telescope.help_tags)
-vim.keymap.set('n', '<leader>g', telescope.git_status)
+vim.keymap.set("n", "<Leader>f", FzfLua.files)
+vim.keymap.set("n", "<Leader>b", FzfLua.buffers)
+vim.keymap.set("n", "<Leader>/", FzfLua.live_grep_native)
+vim.keymap.set("v", "<Leader>/", FzfLua.grep_visual)
+vim.keymap.set({"n", "v"}, "<Leader>*", FzfLua.grep_cword)
+vim.keymap.set("n", "<Leader>gs", FzfLua.git_status)
+vim.keymap.set("n", "<Leader>gb", FzfLua.git_branches)
+vim.keymap.set("n", "<Leader>'", FzfLua.resume)
+vim.keymap.set("n", "<Leader>?", FzfLua.commands)
 vim.keymap.set('n', '<Leader>o', function()
-  telescope.find_files({ cwd = vim.fn.expand('%:p:h') })
+  FzfLua.files({ cwd = vim.fn.expand('%:p:h') })
 end)
 
 require('nvim-autopairs').setup({

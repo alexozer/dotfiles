@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "fzf-lua": {
+      "rev": "b2c0603216adb92c6bba81053bc996d7ae95b77a",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
     "gitsigns.nvim": {
       "rev": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
