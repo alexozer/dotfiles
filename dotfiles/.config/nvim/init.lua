@@ -116,11 +116,17 @@ vim.pack.add({
   { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/windwp/nvim-autopairs" },
+  { src = "https://github.com/stevearc/oil.nvim" },
 })
 
-require('nvim-autopairs').setup({})
+local oil = require('oil')
+oil.setup()
+vim.keymap.set('n', '<leader>e', function() oil.open("") end) -- cwd
+vim.keymap.set('n', '<leader>E', function() oil.open(nil) end) -- buf dir
 
-require('vague').setup({
+require("nvim-autopairs").setup({})
+
+require("vague").setup({
   italic = false,
 })
 vim.cmd("colorscheme vague")
