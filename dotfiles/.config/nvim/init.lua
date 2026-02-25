@@ -45,10 +45,10 @@ vim.g.maplocalleader = ' '
 -- My classic mappings
 vim.keymap.set({'n', 'v'}, ';', ':')
 vim.keymap.set({'n', 'v'}, ':', ';')
-vim.keymap.set('n', 'j', 'gj')
-vim.keymap.set('n', 'k', 'gk')
-vim.keymap.set({'n', 'v'}, 'H', '^')
-vim.keymap.set({'n', 'v'}, 'L', '$')
+vim.keymap.set({'n', 'v'}, 'j', 'gj')
+vim.keymap.set({'n', 'v'}, 'k', 'gk')
+vim.keymap.set({'n', 'v'}, 'H', 'g^')
+vim.keymap.set({'n', 'v'}, 'L', 'g$')
 vim.keymap.set('i', '<c-bs>', '<c-w>')
 vim.keymap.set('i', '<a-bs>', '<c-w>')
 
@@ -117,12 +117,24 @@ vim.pack.add({
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/stevearc/oil.nvim" },
+  -- { src = "https://github.com/neovim/nvim-lspconfig" },
+  -- { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
+  -- { src = "https://github.com/Saghen/blink.cmp" },
 })
+
+-- vim.lsp.enable('rust_analyzer')
+-- vim.lsp.enable('clangd')
+-- vim.keymap.set({'n', 'v'}, 'gd', vim.lsp.buf.definition)
+
+-- require('tiny-inline-diagnostic').setup({})
+-- vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
+
+-- require('blink.cmp').setup({})
 
 local oil = require('oil')
 oil.setup()
-vim.keymap.set('n', '<leader>e', function() oil.open("") end) -- cwd
-vim.keymap.set('n', '<leader>E', function() oil.open(nil) end) -- buf dir
+vim.keymap.set('n', '<leader>e', function() oil.open(nil) end) -- buf dir
+vim.keymap.set('n', '<leader>E', function() oil.open("") end) -- cwd
 
 require("nvim-autopairs").setup({})
 
@@ -178,14 +190,17 @@ end
 local langs = {
   'c',
   'cpp',
+  'css',
   'fish',
   'go',
+  'html',
   'javascript',
   'json',
   'markdown',
   'python',
   'rst',
   'rust',
+  'sass',
   'starlark',
   'toml',
   'typescript',
@@ -206,8 +221,13 @@ vim.api.nvim_create_autocmd('FileType', {
 
 local harpoon = require('harpoon')
 harpoon:setup()
-vim.keymap.set("n", "<leader>p", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-vim.keymap.set("n", "gp", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>p", function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+vim.keymap.set("n", "gp", function()
+  harpoon:list():add()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
 vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<C-l>", function() harpoon:list():select(3) end)
