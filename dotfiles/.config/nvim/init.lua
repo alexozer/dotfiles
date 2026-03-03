@@ -28,7 +28,6 @@ vim.schedule(function()
 end)
 vim.opt.undofile = true
 vim.opt.updatetime = 50
-vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.confirm = true
@@ -63,12 +62,6 @@ vim.keymap.set('n', '<Leader>q', '<Cmd>bdelete<CR>')
 vim.keymap.set('n', '<C-/>', 'gcc', { remap = true })
 vim.keymap.set('v', '<C-/>', 'gc', { remap = true })
 vim.keymap.set('i', '<C-/>', '<C-o>gcc', { remap = true })
-
-vim.keymap.set({'n', 'v'}, '<Leader>r', function()
-  vim.cmd(":source $MYVIMRC")
-  vim.cmd("doautocmd FileType")
-  print("Neovim config reloaded")
-end)
 
 --
 -- Autocmds
@@ -108,28 +101,36 @@ vim.api.nvim_create_autocmd('FileType', {
 --
 
 vim.pack.add({
+  -- Themes
+  { src = 'https://github.com/EdenEast/nightfox.nvim' },
+  -- { src = "https://github.com/vague-theme/vague.nvim" },
+
   -- Lua utility library that several other plugins need
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/lewis6991/gitsigns.nvim" },
-  { src = "https://github.com/vague-theme/vague.nvim" },
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
   { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/stevearc/oil.nvim" },
-  -- { src = "https://github.com/neovim/nvim-lspconfig" },
-  -- { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
-  -- { src = "https://github.com/Saghen/blink.cmp" },
+  { src = "https://github.com/neovim/nvim-lspconfig" },
+  { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
+  { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
 })
 
--- vim.lsp.enable('rust_analyzer')
--- vim.lsp.enable('clangd')
--- vim.keymap.set({'n', 'v'}, 'gd', vim.lsp.buf.definition)
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('clangd')
+vim.lsp.enable('ts_ls')
+vim.keymap.set({'n', 'v'}, 'gd', vim.lsp.buf.definition)
 
--- require('tiny-inline-diagnostic').setup({})
--- vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
+require('tiny-inline-diagnostic').setup({})
+vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
 
--- require('blink.cmp').setup({})
+require('blink.cmp').setup({
+  keymap = {
+    preset = 'super-tab',
+  },
+})
 
 local oil = require('oil')
 oil.setup()
@@ -138,10 +139,7 @@ vim.keymap.set('n', '<leader>E', function() oil.open("") end) -- cwd
 
 require("nvim-autopairs").setup({})
 
-require("vague").setup({
-  italic = false,
-})
-vim.cmd("colorscheme vague")
+vim.cmd("colorscheme carbonfox")
 
 local gitsigns = require('gitsigns')
 gitsigns.setup({
@@ -161,6 +159,8 @@ vim.keymap.set('v', 'gu', function()
   local stop = math.max(vim.fn.line('.'), vim.fn.line('v'))
   gitsigns.reset_hunk({ start, stop })
 end)
+vim.keymap.set('n', '<leader>gb', gitsigns.blame)
+vim.keymap.set('n', '<leader>gd', gitsigns.diffthis)
 
 require('fzf-lua').setup({
   keymap = {
@@ -174,12 +174,17 @@ vim.keymap.set("n", "<Leader>/", FzfLua.live_grep_native)
 vim.keymap.set("v", "<Leader>/", FzfLua.grep_visual)
 vim.keymap.set({"n", "v"}, "<Leader>*", FzfLua.grep_cword)
 vim.keymap.set("n", "<Leader>gs", FzfLua.git_status)
-vim.keymap.set("n", "<Leader>gb", FzfLua.git_branches)
+vim.keymap.set("n", "<Leader>gc", FzfLua.git_branches)
 vim.keymap.set("n", "<Leader>'", FzfLua.resume)
 vim.keymap.set("n", "<Leader>?", FzfLua.commands)
 vim.keymap.set('n', '<Leader>o', function()
   FzfLua.files({ cwd = vim.fn.expand('%:p:h') })
 end)
+vim.keymap.set({"n", "v"}, "g/", FzfLua.lgrep_curbuf)
+vim.keymap.set({"n", "v"}, "<leader>d", FzfLua.diagnostics_document)
+vim.keymap.set({"n", "v"}, "<leader>D", FzfLua.diagnostics_workspace)
+vim.keymap.set({"n", "v"}, "<leader>s", FzfLua.lsp_document_symbols)
+vim.keymap.set({"n", "v"}, "<leader>S", FzfLua.lsp_workspace_symbols)
 
 function table_append(orig, t)
   for i,v in ipairs(t) do
@@ -200,7 +205,6 @@ local langs = {
   'python',
   'rst',
   'rust',
-  'sass',
   'starlark',
   'toml',
   'typescript',
