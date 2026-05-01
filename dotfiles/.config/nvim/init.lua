@@ -104,6 +104,7 @@ vim.pack.add({
   -- Themes
   { src = 'https://github.com/EdenEast/nightfox.nvim' },
   -- { src = "https://github.com/vague-theme/vague.nvim" },
+  -- { src = "https://github.com/catppuccin/nvim" },
 
   -- Lua utility library that several other plugins need
   { src = "https://github.com/nvim-lua/plenary.nvim" },
@@ -115,22 +116,24 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
-  { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
+  -- { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
 })
 
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('clangd')
 vim.lsp.enable('ts_ls')
+vim.lsp.enable('gopls')
 vim.keymap.set({'n', 'v'}, 'gd', vim.lsp.buf.definition)
 
 require('tiny-inline-diagnostic').setup({})
 vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
+vim.diagnostic.enable(false)
 
-require('blink.cmp').setup({
-  keymap = {
-    preset = 'super-tab',
-  },
-})
+-- require('blink.cmp').setup({
+--   keymap = {
+--     preset = 'super-tab',
+--   },
+-- })
 
 local oil = require('oil')
 oil.setup()
@@ -179,6 +182,17 @@ vim.keymap.set("n", "<Leader>'", FzfLua.resume)
 vim.keymap.set("n", "<Leader>?", FzfLua.commands)
 vim.keymap.set('n', '<Leader>o', function()
   FzfLua.files({ cwd = vim.fn.expand('%:p:h') })
+end)
+vim.keymap.set('n', '<Leader>l', function()
+  -- Toggle inline diagnostics
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+  local enabled_str = ""
+  if vim.diagnostic.is_enabled() then
+    enabled_str = "enabled"
+  else
+    enabled_str = "disabled"
+  end
+  print("Diagnostics: " .. enabled_str)
 end)
 vim.keymap.set({"n", "v"}, "g/", FzfLua.lgrep_curbuf)
 vim.keymap.set({"n", "v"}, "<leader>d", FzfLua.diagnostics_document)

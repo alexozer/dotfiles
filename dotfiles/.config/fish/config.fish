@@ -16,6 +16,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse"
 export HELIX_RUNTIME=~/build/helix/runtime
 export GHIDRA_INSTALL_DIR=$HOME/build/ghidra_12.0.1_PUBLIC
 export JAVA_HOME=/opt/homebrew/opt/openjdk@21
+export EDITOR=nvim
 
 # Aliases
 alias cmd='cmd.exe /C'
@@ -26,7 +27,8 @@ alias t='test -z "$TMUX" && tmux new-session -A -s main'
 alias lg=lazygit
 alias lzd=lazydocker
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-alias vim=nvim
+alias vim="$EDITOR"
+alias svim="sudo -E $EDITOR"
 
 # Source secrets
 test -f ~/.secrets.sh && source ~/.secrets.sh
