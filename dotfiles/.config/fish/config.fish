@@ -49,6 +49,3 @@ starship init fish | source
 
 # Configure zoxide
 zoxide init fish --cmd j | source
-
-# Amp CLI
-export PATH="/Users/alex/.amp/bin:$PATH"
