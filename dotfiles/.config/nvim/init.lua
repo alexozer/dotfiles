@@ -159,13 +159,11 @@ vim.diagnostic.enable(false)
 -- Toggle inline diagnostics
 vim.keymap.set('n', '<Leader>l', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-  local enabled_str = ""
   if vim.diagnostic.is_enabled() then
-    enabled_str = "enabled"
+    print("Diagnostics: enabled")
   else
-    enabled_str = "disabled"
+    print("Diagnostics: disabled")
   end
-  print("Diagnostics: " .. enabled_str)
 end)
 
 -- require('blink.cmp').setup({
