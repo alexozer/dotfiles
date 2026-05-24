@@ -121,7 +121,6 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
   { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
   { src = "https://github.com/ibhagwan/fzf-lua" },
-  { src = "https://github.com/windwp/nvim-autopairs" },
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
@@ -133,8 +132,6 @@ vim.pack.add({
 --
 
 vim.cmd("colorscheme carbonfox")
-
-require("nvim-autopairs").setup({})
 
 local oil = require('oil')
 oil.setup()
