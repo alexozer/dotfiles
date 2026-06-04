@@ -50,10 +50,8 @@ vim.g.maplocalleader = ' '
 -- My classic mappings
 vim.keymap.set({'n', 'v'}, ';', ':')
 vim.keymap.set({'n', 'v'}, ':', ';')
-vim.keymap.set({'n', 'v'}, 'j', 'gj')
-vim.keymap.set({'n', 'v'}, 'k', 'gk')
-vim.keymap.set({'n', 'v'}, 'H', 'g^')
-vim.keymap.set({'n', 'v'}, 'L', 'g$')
+vim.keymap.set({'n', 'v'}, 'H', '^')
+vim.keymap.set({'n', 'v'}, 'L', '$')
 vim.keymap.set('i', '<c-bs>', '<c-w>')
 vim.keymap.set('i', '<a-bs>', '<c-w>')
 
@@ -102,7 +100,13 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.linebreak = true
     vim.opt_local.breakindent = true
     vim.opt_local.showbreak = '↪ '
-  end,
+
+    vim.keymap.set({'n', 'v'}, 'j', 'gj')
+    vim.keymap.set({'n', 'v'}, 'k', 'gk')
+    vim.keymap.set({'n', 'v'}, 'H', 'g^', { buffer = true })
+    vim.keymap.set({'n', 'v'}, 'L', 'g$', { buffer = true })
+
+    end,
 })
 
 --
@@ -113,7 +117,6 @@ vim.pack.add({
   -- Themes
   { src = 'https://github.com/EdenEast/nightfox.nvim' },
   -- { src = "https://github.com/vague-theme/vague.nvim" },
-  -- { src = "https://github.com/catppuccin/nvim" },
 
   -- Lua utility library that several other plugins need
   { src = "https://github.com/nvim-lua/plenary.nvim" },
@@ -124,7 +127,7 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
-  -- { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
+  { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
 })
 
 --
@@ -147,7 +150,9 @@ vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('clangd')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('gopls')
+vim.lsp.enable('zls')
 vim.keymap.set({'n', 'v'}, 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', "<leader>r", vim.lsp.buf.rename)
 
 require('tiny-inline-diagnostic').setup({})
 vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
@@ -163,11 +168,12 @@ vim.keymap.set('n', '<Leader>l', function()
   end
 end)
 
--- require('blink.cmp').setup({
---   keymap = {
---     preset = 'super-tab',
---   },
--- })
+local cmp = require('blink.cmp')
+cmp.setup({
+  keymap = {
+    preset = 'super-tab',
+  },
+})
 
 --
 -- Git
@@ -204,24 +210,33 @@ require('fzf-lua').setup({
     fzf = { ['esc'] = 'abort' },
   },
 })
+
+function presave(f)
+  return function()
+    vim.cmd('wall')
+    f()
+  end
+end
+
 -- Helix/spacemacs style keybinds
-vim.keymap.set("n", "<Leader>f", FzfLua.files)
-vim.keymap.set("n", "<Leader>b", FzfLua.buffers)
-vim.keymap.set("n", "<Leader>/", FzfLua.live_grep_native)
-vim.keymap.set("v", "<Leader>/", FzfLua.grep_visual)
-vim.keymap.set({"n", "v"}, "<Leader>*", FzfLua.grep_cword)
-vim.keymap.set("n", "<Leader>gs", FzfLua.git_status)
-vim.keymap.set("n", "<Leader>gc", FzfLua.git_branches)
-vim.keymap.set("n", "<Leader>'", FzfLua.resume)
-vim.keymap.set("n", "<Leader>?", FzfLua.commands)
-vim.keymap.set('n', '<Leader>o', function()
+vim.keymap.set("n", "<Leader>f", presave(FzfLua.files))
+vim.keymap.set("n", "<Leader>b", presave(FzfLua.buffers))
+vim.keymap.set("n", "<Leader>gs", presave(FzfLua.git_status))
+vim.keymap.set("n", "<Leader>gc", presave(FzfLua.git_branches))
+vim.keymap.set("n", "<Leader>'", presave(FzfLua.resume))
+vim.keymap.set("n", "<Leader>?", presave(FzfLua.commands))
+vim.keymap.set('n', '<Leader>o', presave(function()
   FzfLua.files({ cwd = vim.fn.expand('%:p:h') })
-end)
-vim.keymap.set({"n", "v"}, "g/", FzfLua.lgrep_curbuf)
-vim.keymap.set({"n", "v"}, "<leader>d", FzfLua.diagnostics_document)
-vim.keymap.set({"n", "v"}, "<leader>D", FzfLua.diagnostics_workspace)
-vim.keymap.set({"n", "v"}, "<leader>s", FzfLua.lsp_document_symbols)
-vim.keymap.set({"n", "v"}, "<leader>S", FzfLua.lsp_workspace_symbols)
+end))
+vim.keymap.set({"n", "v"}, "<leader>d", presave(FzfLua.diagnostics_document))
+vim.keymap.set({"n", "v"}, "<leader>D", presave(FzfLua.diagnostics_workspace))
+vim.keymap.set({"n", "v"}, "<leader>s", presave(FzfLua.lsp_document_symbols))
+vim.keymap.set({"n", "v"}, "<leader>S", presave(FzfLua.lsp_workspace_symbols))
+-- Searching
+vim.keymap.set("n", "<Leader>/", presave(FzfLua.live_grep_native))
+vim.keymap.set("v", "<Leader>/", presave(FzfLua.grep_visual))
+vim.keymap.set({"n", "v"}, "<Leader>*", presave(FzfLua.grep_cword))
+vim.keymap.set({"n", "v"}, "g/", presave(FzfLua.lgrep_curbuf))
 
 --
 -- Tree-sitter
@@ -250,6 +265,7 @@ local langs = {
   'toml',
   'typescript',
   'yaml',
+  'zig',
 }
 local grammars = {}
 table_append(grammars, langs)
