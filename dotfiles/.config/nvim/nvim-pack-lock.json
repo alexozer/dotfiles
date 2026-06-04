@@ -54,14 +54,6 @@
     "tiny-inline-diagnostic.nvim": {
       "rev": "ba133b3e932416e4b9507095731a6d7276878fe8",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
-    },
-    "tokyonight.nvim": {
-      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
-      "src": "https://github.com/folke/tokyonight.nvim"
-    },
-    "vague.nvim": {
-      "rev": "fd58046b9d64259d9785e4aeb6d6f494c6943cad",
-      "src": "https://github.com/vague-theme/vague.nvim"
     }
   }
 }
