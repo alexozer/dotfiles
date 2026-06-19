@@ -3,7 +3,7 @@
     "blink.cmp": {
       "rev": "b650e976a927be6b46487a0a610b75af111376c5",
       "src": "https://github.com/Saghen/blink.cmp",
-      "version": ">=0.0.0"
+      "version": "1.0.0 - 2.0.0"
     },
     "blink.lib": {
       "rev": "b127d48bf8e9ac9cf41f6e0fbead317503f76558",
@@ -54,6 +54,10 @@
     "tiny-inline-diagnostic.nvim": {
       "rev": "ba133b3e932416e4b9507095731a6d7276878fe8",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
+    "vim": {
+      "rev": "7014644e25d5cebcb3e70a079804c44ec14d8e46",
+      "src": "https://github.com/embark-theme/vim"
     }
   }
 }

@@ -24,6 +24,7 @@ vim.opt.hlsearch = false
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.cinoptions:append(":0s,l1") -- Dont' indent switch case statements
 
 -- Behavior
 vim.opt.wrap = false
@@ -39,6 +40,8 @@ vim.opt.splitbelow = true
 vim.opt.confirm = true
 vim.opt.autowriteall = true
 vim.opt.autoread = true
+-- Don't change scroll position when jumping between buffers with Harpoon
+vim.opt.jumpoptions:append('view')
 
 --
 -- Mappings
@@ -77,8 +80,20 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold' }, {
 })
 
 -- Auto save
-vim.api.nvim_create_autocmd('FocusLost', {
-  command = 'silent! wall',
+vim.api.nvim_create_autocmd({ 'FocusLost', 'WinLeave', 'BufLeave', 'BufWritePre' }, {
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+    vim.cmd('silent! wall')
+  end
+})
+
+-- Don't automatically continue comment lines
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.opt_local.textwidth = 100
+    vim.opt_local.formatoptions:append('c')
+    vim.opt_local.formatoptions:remove({ 'r', 'o' })
+  end,
 })
 
 -- Jump to last file position upon opening
@@ -117,6 +132,7 @@ vim.pack.add({
   -- Themes
   { src = 'https://github.com/EdenEast/nightfox.nvim' },
   -- { src = "https://github.com/vague-theme/vague.nvim" },
+  { src = 'https://github.com/embark-theme/vim' },
 
   -- Lua utility library that several other plugins need
   { src = "https://github.com/nvim-lua/plenary.nvim" },
@@ -127,14 +143,15 @@ vim.pack.add({
   { src = "https://github.com/stevearc/oil.nvim" },
   { src = "https://github.com/neovim/nvim-lspconfig" },
   { src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
-  { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('*') },
+  { src = 'https://github.com/Saghen/blink.cmp', version = vim.version.range('1.*') },
 })
 
 --
 -- Misc
 --
 
-vim.cmd("colorscheme carbonfox")
+-- vim.cmd.colorscheme('carbonfox')
+vim.cmd.colorscheme('embark')
 
 local oil = require('oil')
 oil.setup()
@@ -153,6 +170,7 @@ vim.lsp.enable('gopls')
 vim.lsp.enable('zls')
 vim.keymap.set({'n', 'v'}, 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', "<leader>r", vim.lsp.buf.rename)
+vim.keymap.set('n', "<leader>a", vim.lsp.buf.code_action)
 
 require('tiny-inline-diagnostic').setup({})
 vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
@@ -213,7 +231,7 @@ require('fzf-lua').setup({
 
 function presave(f)
   return function()
-    vim.cmd('wall')
+    vim.cmd.wall()
     f()
   end
 end
