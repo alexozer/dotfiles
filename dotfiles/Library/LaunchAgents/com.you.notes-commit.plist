@@ -21,6 +21,6 @@
     <string>/tmp/notes-commit.log</string>
 
     <key>RunAtLoad</key>
-    <false/>
+    <true/>
 </dict>
 </plist>

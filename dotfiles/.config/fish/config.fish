@@ -7,6 +7,7 @@ fish_add_path "$HOME/build/roc/target/release"
 fish_add_path "$HOME/go/bin"
 fish_add_path /opt/devkitpro/devkitPPC/bin
 fish_add_path /opt/homebrew/opt/bazel@7/bin
+fish_add_path /Users/alex/.opencode/bin
 
 # More environment variables
 export DEVKITPRO=/opt/devkitpro
